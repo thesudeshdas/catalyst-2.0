@@ -1,5 +1,6 @@
 // import react
 import { ReactElement, useEffect, useRef, useState } from 'react';
+import ThemeToggle from '../../ThemeToggle/ThemeToggle';
 
 // props type
 export interface IImage {
@@ -61,6 +62,10 @@ export default function AuthPageLayout({
       </picture>
 
       {children}
+
+      <div className='fixed w-6 sm:w-8 top-0 right-2 sm:bottom-2 sm:top-auto sm:right-4'>
+        <ThemeToggle />
+      </div>
     </main>
   );
 }
