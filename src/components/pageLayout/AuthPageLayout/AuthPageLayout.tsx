@@ -63,7 +63,7 @@ export default function AuthPageLayout({
 
       {children}
 
-      <div className='fixed w-6 sm:w-8 top-0 right-2 sm:bottom-2 sm:top-auto sm:right-4'>
+      <div className='fixed w-6 sm:w-8 top-2 right-2 sm:bottom-2 sm:top-auto sm:right-4'>
         <ThemeToggle />
       </div>
     </main>

@@ -5,6 +5,7 @@ export default {
     extend: {}
   },
   plugins: [require('daisyui')],
+  darkMode: ['class', '[data-theme="dark"]'],
   daisyui: {
     themes: [
       {
@@ -34,5 +35,10 @@ export default {
         }
       }
     ]
+  },
+  theme: {
+    transitionDuration: {
+      DEFAULT: '600ms'
+    }
   }
 };
