@@ -1,11 +1,25 @@
 // import rrd
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 // import components
 import AuthPageLayout from '../../../components/pageLayout/AuthPageLayout/AuthPageLayout';
 import RegisterForm from '../../../components/forms/auth/RegisterForm/RegisterForm';
 
+// import utils
+import { isAccessTokenExpired } from '../../../utils/isTokenExpired/isAccessTokenExpired.utils';
+
 export default function Register() {
+  const accessToken = localStorage?.getItem('accessToken');
+
+  if (accessToken && !isAccessTokenExpired(JSON.parse(accessToken))) {
+    return (
+      <Navigate
+        to='/feed'
+        replace
+      />
+    );
+  }
+
   return (
     <AuthPageLayout
       imgSources={{
