@@ -1,61 +1,65 @@
-// import icons
-import { FiEye } from 'react-icons/fi';
+// import react-hook-form
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+// import zod
+import { zodResolver } from '@hookform/resolvers/zod';
+
+// import components
+import TextInput from '../../../inputs/TextInput/TextInput';
+import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import CheckboxInput from '../../../inputs/CheckboxInput/CheckboxInput';
+
+// import hooks
+import { useRegister } from './useRegister.hook';
+
+// import schema
+import { registerSchema } from './registerForm.schema';
+
+// import types
+import { IRegisterForm } from '../../../../types/authTypes/auth.types';
 
 export default function RegisterForm() {
+  const register = useRegister();
+
+  const { control, handleSubmit, watch } = useForm<IRegisterForm>({
+    resolver: zodResolver(registerSchema)
+  });
+
+  const onRegisterSubmit: SubmitHandler<IRegisterForm> = (data) => {
+    register(data);
+  };
+
+  const watchAcceptTerms = watch('acceptTerms');
+
   return (
     <form
       className='flex flex-col gap-6 md:items-start w-full'
-      noValidate
+      onSubmit={handleSubmit(onRegisterSubmit)}
     >
-      <label className='form-control w-full '>
-        <div className='label'>
-          <span className='label-text'>Name</span>
-        </div>
+      <TextInput
+        control={control}
+        name='name'
+        label='Name'
+        placeholder='Awesome Dev'
+      />
 
-        <input
-          type='text'
-          placeholder='Awesome Dev'
-          className='input input-bordered w-full '
-        />
-      </label>
+      <TextInput
+        control={control}
+        name='email'
+        label='Email Address'
+        placeholder='awesomedev@email.com'
+      />
 
-      <label className='form-control w-full '>
-        <div className='label'>
-          <span className='label-text'>Email address</span>
-        </div>
+      <PasswordInput
+        control={control}
+        name='password'
+        label='Password'
+      />
 
-        <input
-          type='text'
-          placeholder='awesomedev@email.com'
-          className='input input-bordered w-full '
-        />
-      </label>
-
-      <label className='form-control w-full'>
-        <div className='label'>
-          <span className='label-text'>Password</span>
-        </div>
-
-        <div className='join'>
-          <input
-            type='text'
-            placeholder='&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;'
-            className='input input-bordered w-full join-item'
-          />
-
-          <button className='btn btn-outline input-bordered join-item'>
-            <FiEye />
-          </button>
-        </div>
-      </label>
-
-      <div className='form-control'>
-        <label className='label cursor-pointer gap-2'>
-          <input
-            type='checkbox'
-            className='checkbox checkbox-primary'
-          />
-
+      <CheckboxInput
+        name='acceptTerms'
+        control={control}
+        label={
           <p className='label-text'>
             Creating an account means you&apos;re okay with our{' '}
             <a
@@ -74,11 +78,12 @@ export default function RegisterForm() {
               Notifications Settings.
             </a>
           </p>
-        </label>
-      </div>
+        }
+      />
 
       <button
         type='submit'
+        disabled={!watchAcceptTerms}
         className='btn btn-primary'
       >
         Register

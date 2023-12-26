@@ -1,6 +1,12 @@
 import { z } from 'zod';
 
-export const loginSchema = z.object({
+export const registerSchema = z.object({
+  name: z
+    .string({
+      required_error: 'Name is required'
+    })
+    .min(2, { message: 'Name must be at least 2 characters long' })
+    .max(32, { message: 'Name must be less than 32 characters long' }),
   email: z
     .string({
       required_error: 'Email is required'

@@ -21,7 +21,7 @@ export default function TextInput(
         {...field}
         type='text'
         placeholder={props.placeholder}
-        className='input input-bordered w-full '
+        className='input input-bordered w-full'
       />
 
       {error && (
