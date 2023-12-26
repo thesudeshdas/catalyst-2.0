@@ -2,13 +2,24 @@
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState('light');
+  const themeFromLocalStorage = localStorage.getItem('theme');
+
+  const [theme, setTheme] = useState<string>(
+    themeFromLocalStorage ? JSON.parse(themeFromLocalStorage) : 'light'
+  );
+
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
   // initially set the theme and "listen" for changes to apply them to the HTML tag
   useEffect(() => {
     document.querySelector('html')?.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  // set the theme in the local storage on changing of theme
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
   }, [theme]);
 
   return (
