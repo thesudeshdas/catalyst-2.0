@@ -2,7 +2,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 // import components
-import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
+// import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
 
 // import layouts
 import AppLayout from '../layouts/AppLayout/AppLayout';
@@ -26,14 +26,14 @@ export function AllRoutes() {
         element={<Register />}
       />
 
-      <Route element={<ProtectedRoutes />}>
-        <Route element={<AppLayout />}>
-          <Route
-            path='/feed'
-            element={<Feed />}
-          />
-        </Route>
+      {/* <Route element={<ProtectedRoutes />}> */}
+      <Route element={<AppLayout />}>
+        <Route
+          path='/feed'
+          element={<Feed />}
+        />
       </Route>
+      {/* </Route> */}
     </Routes>
   );
 }

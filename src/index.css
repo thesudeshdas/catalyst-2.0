@@ -14,9 +14,13 @@
 * {
   margin: 0;
 }
+html {
+  height: 100%;
+}
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 img,
 picture,
@@ -44,4 +48,5 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+  height: 100%;
 }

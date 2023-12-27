@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      aspectRatio: {
+        '4/3': '4 / 3'
+      }
+    }
   },
   plugins: [require('daisyui')],
   darkMode: ['class', '[data-theme="dark"]'],
@@ -38,7 +42,7 @@ export default {
   },
   theme: {
     transitionDuration: {
-      DEFAULT: '600ms'
+      DEFAULT: '300ms'
     }
   }
 };
