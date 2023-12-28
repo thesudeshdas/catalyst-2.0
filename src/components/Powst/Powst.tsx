@@ -17,7 +17,14 @@ export default function Powst() {
         </div>
       </div>
 
-      <div className='aspect-[4/3] relative rounded-md group overflow-hidden cursor-pointer'>
+      <div
+        className='aspect-[4/3] relative rounded-md group overflow-hidden cursor-pointer'
+        onClick={() =>
+          (
+            document.getElementById('powst_details_modal') as HTMLDialogElement
+          )?.showModal()
+        }
+      >
         <div className='aspect-[4/3] w-full'>
           <CustomImage
             imgSources={{
@@ -30,7 +37,7 @@ export default function Powst() {
           />
         </div>
 
-        <div className='w-full h-full absolute bottom-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform duration-100'>
+        <div className='w-full h-full absolute bottom-0 left-0 translate-y-full md:group-hover:translate-y-0 transition-transform duration-100'>
           <div className='absolute bottom-0 w-full h-full bg-gradient-to-t from-30% from-base-300'></div>
 
           <p className='absolute bottom-2 left-2 right-2 line-clamp-3 text-sm'>
@@ -43,11 +50,20 @@ export default function Powst() {
       </div>
 
       <div className='flex justify-between items-start gap-6'>
-        <div className='flex gap-2 items-center'>
-          <h2 className='line-clamp-1'>E-commerce web app</h2>
-        </div>
+        <h2
+          className='line-clamp-1 cursor-pointer'
+          onClick={() =>
+            (
+              document.getElementById(
+                'powst_details_modal'
+              ) as HTMLDialogElement
+            )?.showModal()
+          }
+        >
+          E-commerce web app
+        </h2>
 
-        <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 '>
+        <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 hover:text-red-500 cursor-pointer transition-colors'>
           <FiHeart />
 
           <p className='text-sm'>50k</p>
