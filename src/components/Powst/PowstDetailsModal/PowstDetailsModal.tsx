@@ -1,6 +1,3 @@
-// import react
-import { useEffect } from 'react';
-
 // import icons
 import {
   FiBookmark,
@@ -19,10 +16,6 @@ import UserProfileDividerLink from '../../links/UserProfileDividerLink/UserProfi
 import Powst from '../Powst';
 
 export default function PowstDetailsModal() {
-  useEffect(() => {
-    document.getElementById('powst_details_modal')?.scrollTo(0, 0);
-  }, []);
-
   return (
     <dialog
       id='powst_details_modal'
