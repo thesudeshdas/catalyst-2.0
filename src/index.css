@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* add the code bellow */
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -67,4 +80,7 @@ h6 {
   background-color: oklch(var(--p));
   border-radius: 0.375rem;
   width: 16px;
+}
+*::-webkit-scrollbar-corner {
+  background: var(--fallback-b1, oklch(var(--b1) / 1));
 }
