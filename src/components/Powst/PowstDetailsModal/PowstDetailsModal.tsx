@@ -1,3 +1,6 @@
+// import react
+import { useEffect } from 'react';
+
 // import icons
 import {
   FiBookmark,
@@ -12,11 +15,14 @@ import { DiReact } from 'react-icons/di';
 // import components
 import CustomImage from '../../images/CustomImage/CustomImage';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
-import UserProfileLink from '../../links/UserProfileLink/UserProfileLink';
 import UserProfileDividerLink from '../../links/UserProfileDividerLink/UserProfileDividerLink';
 import Powst from '../Powst';
 
 export default function PowstDetailsModal() {
+  useEffect(() => {
+    document.getElementById('powst_details_modal')?.scrollTo(0, 0);
+  }, []);
+
   return (
     <dialog
       id='powst_details_modal'
@@ -29,7 +35,13 @@ export default function PowstDetailsModal() {
               An e commerce web app
             </h2>
 
-            <UserProfileLink />
+            <UserAvatar
+              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+              name='Sudesh Das'
+              variant='profile'
+              size='md'
+              followAction
+            />
           </div>
 
           <div className='p-4 pt-0 pr-0 flex flex-col gap-4 bg-red'>
@@ -137,7 +149,10 @@ export default function PowstDetailsModal() {
           </form>
 
           <button className='btn btn-sm btn-square btn-ghost hover:bg-transparent'>
-            <UserAvatar src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+            <UserAvatar
+              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+              name='Sudesh Das'
+            />
           </button>
 
           <button className='btn btn-sm btn-square btn-ghost'>

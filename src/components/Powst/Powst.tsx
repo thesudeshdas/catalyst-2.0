@@ -16,9 +16,11 @@ export default function Powst({ sameUser = false }: IPowstProps) {
       {!sameUser && (
         <div className='flex justify-between items-center'>
           <div className='flex gap-2 items-center'>
-            <UserAvatar src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-
-            <h3 className='text-sm'>Dash</h3>
+            <UserAvatar
+              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+              name='Sudesh Das'
+              variant='profile'
+            />
           </div>
         </div>
       )}

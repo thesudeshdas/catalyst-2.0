@@ -13,7 +13,8 @@ export default function UserProfileDividerLink() {
       >
         <UserAvatar
           src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-          size='xxl'
+          name='Sudesh Das'
+          size='xl'
         />
 
         <h3 className='font-medium group-hover:text-primary transition-colors'>
