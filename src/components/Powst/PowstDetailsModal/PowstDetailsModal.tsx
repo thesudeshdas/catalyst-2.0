@@ -100,6 +100,33 @@ export default function PowstDetailsModal() {
               </div>
             </div>
 
+            <div className='flex flex-wrap gap-2 mb-12'>
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+
+              <div className='badge badge-outline badge-sm py-2.5'>
+                #default
+              </div>
+            </div>
+
             <UserProfileDividerLink />
 
             <div className='flex flex-col gap-4'>
