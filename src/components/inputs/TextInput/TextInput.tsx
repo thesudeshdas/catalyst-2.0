@@ -1,8 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+// import react hook form
 import { UseControllerProps, useController } from 'react-hook-form';
 
+// import icons
+import { FiInfo } from 'react-icons/fi';
+
+// declare props types
+interface ITextInputProps {
+  label?: string;
+  placeholder?: string;
+  tip?: string;
+  required?: boolean;
+}
+
 export default function TextInput(
-  props: { label?: string; placeholder?: string } & UseControllerProps<any>
+  props: ITextInputProps & UseControllerProps<any>
 ) {
   const {
     field,
@@ -11,9 +24,24 @@ export default function TextInput(
 
   return (
     <label className='form-control w-full'>
-      {props.label && (
-        <div className='label'>
-          <span className='label-text'>{props.label}</span>
+      {(props.label || props.tip) && (
+        <div className='flex items-center'>
+          {props.label && (
+            <div className='label'>
+              <span className='label-text'>
+                {props.label} {props.required && '*'}
+              </span>
+            </div>
+          )}
+
+          {props.tip && (
+            <div
+              className='tooltip tooltip-right cursor-pointer'
+              data-tip={props.tip}
+            >
+              <FiInfo className='h-[0.8rem] w-[0.8rem]' />
+            </div>
+          )}
         </div>
       )}
 
