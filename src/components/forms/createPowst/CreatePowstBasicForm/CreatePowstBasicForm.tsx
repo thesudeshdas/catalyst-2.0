@@ -7,6 +7,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 // import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
+// import hooks
+import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
+
 // import components
 import TextInput from '../../../inputs/TextInput/TextInput';
 
@@ -17,6 +20,8 @@ import { createPowstBasicSchema } from './createPowstBasicForm.schema';
 import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstBasicForm() {
+  const { setActiveStep } = useCreatePowst();
+
   const navigate = useNavigate();
 
   const { control, handleSubmit } = useForm<ICreatePowstBasicForm>({
@@ -27,6 +32,8 @@ export default function CreatePowstBasicForm() {
     data
   ) => {
     console.log({ data });
+    setActiveStep(1);
+
     navigate('/create/description');
   };
 
