@@ -17,7 +17,7 @@ import ThemeToggle from '../../ThemeToggle/ThemeToggle';
 
 export default function AppNav() {
   return (
-    <nav className='pr-2 md:p-2 lg:p-4 flex items-center gap-2 '>
+    <nav className='pr-2 md:p-2 lg:p-4 flex items-center gap-2 sticky top-0 z-10 bg-base-100'>
       <input
         id='mobile-sidebar'
         type='checkbox'
@@ -34,14 +34,14 @@ export default function AppNav() {
         </label>
       </div>
 
-      <div className='drawer-side z-20'>
+      <div className='drawer-side z-20 '>
         <label
           htmlFor='mobile-sidebar'
           aria-label='close sidebar'
           className='drawer-overlay'
         ></label>
 
-        <div className='p-4 w-80 min-h-full bg-base-200 flex flex-col'>
+        <div className='p-4 w-60 min-h-full bg-base-200 flex flex-col'>
           <Link
             to='/'
             className='p-0 flex items-center gap-2'
