@@ -13,7 +13,7 @@ export default function CreatePowstLayout() {
         <li className='step step-primary text-xs'>Basic details</li>
         <li className='step text-xs'>Description</li>
         <li className='step text-xs'>Tech stack</li>
-        <li className='step text-xs'>Image(s)</li>
+        <li className='step text-xs'>Image</li>
       </ul>
 
       <div className='flex-grow p-3 lg:px-5'>

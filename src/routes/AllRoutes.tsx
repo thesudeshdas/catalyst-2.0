@@ -18,6 +18,8 @@ import Feed from '../pages/Feed/Feed';
 // import powst creation pages
 import CreatePowstBasic from '../pages/CreatePowst/CreatePowstBasic/CreatePowstBasic';
 import CreatePowstDescription from '../pages/CreatePowst/CreatePowstDescription/CreatePowstDescription';
+import CreatePowstTech from '../pages/CreatePowst/CreatePowstTech/CreatePowstTech';
+import CreatePowstImage from '../pages/CreatePowst/CreatePowstImage/CreatePowstImage';
 
 export function AllRoutes() {
   return (
@@ -48,6 +50,16 @@ export function AllRoutes() {
         <Route
           path='/create/description'
           element={<CreatePowstDescription />}
+        />
+
+        <Route
+          path='/create/tech'
+          element={<CreatePowstTech />}
+        />
+
+        <Route
+          path='/create/image'
+          element={<CreatePowstImage />}
         />
 
         <Route
