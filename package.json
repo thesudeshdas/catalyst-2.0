@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@mdxeditor/editor": "^2.3.2",
     "axios": "^1.6.2",
     "jwt-decode": "^4.0.0",
     "notistack": "^3.0.1",

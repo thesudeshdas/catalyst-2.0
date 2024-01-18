@@ -84,3 +84,39 @@ h6 {
 *::-webkit-scrollbar-corner {
   background: var(--fallback-b1, oklch(var(--b1) / 1));
 }
+
+.mdx_editor h1,
+.mdx_editor h2,
+.mdx_editor h3,
+.mdx_editor h4,
+.mdx_editor h5,
+.mdx_editor h6 {
+  font-weight: bold;
+}
+
+.mdx_editor h1 {
+  font-size: 2em;
+}
+.mdx_editor h2 {
+  font-size: 1.5em;
+}
+.mdx_editor h3 {
+  font-size: 1.3em;
+}
+.mdx_editor h4 {
+  font-size: 1em;
+}
+.mdx_editor h5 {
+  font-size: 0.8em;
+}
+.mdx_editor h6 {
+  font-size: 0.7em;
+}
+
+.mdx_editor blockquote {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
