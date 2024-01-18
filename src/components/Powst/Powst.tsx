@@ -45,10 +45,10 @@ export default function Powst({ sameUser = false }: IPowstProps) {
           />
         </div>
 
-        <div className='w-full h-full absolute bottom-0 left-0 translate-y-full md:group-hover:translate-y-0 transition-transform duration-100'>
-          <div className='absolute bottom-0 w-full h-full bg-gradient-to-t from-30% from-black'></div>
+        <div className='absolute bottom-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity'></div>
 
-          <p className='absolute bottom-2 left-2 right-2 line-clamp-3 text-xs text-neutral-content'>
+        <div className='w-full h-full absolute bottom-0 left-0 translate-y-full md:group-hover:translate-y-0 transition-transform duration-100'>
+          <p className='absolute bottom-2 left-2 right-2 line-clamp-3 text-xs text-neutral-content font-medium'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem fugit,
             excepturi magnam omnis animi rerum culpa blanditiis perferendis
             praesentium perspiciatis veritatis illo, nisi explicabo eos quo
