@@ -14,3 +14,9 @@ export interface ICreatePowstBasicForm {
 export interface ICreatePowstTechForm {
   tech: string;
 }
+
+export interface ICreatePowstImageForm {
+  alt?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  image?: any;
+}

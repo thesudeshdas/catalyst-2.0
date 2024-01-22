@@ -27,6 +27,9 @@ export default function CreatePowstLayout() {
         <li className={`step ${activeStep >= 3 ? 'step-primary' : ''} text-xs`}>
           Image
         </li>
+        <li className={`step ${activeStep >= 4 ? 'step-primary' : ''} text-xs`}>
+          Review
+        </li>
       </ul>
 
       <div className='flex-grow p-3 lg:px-5'>
