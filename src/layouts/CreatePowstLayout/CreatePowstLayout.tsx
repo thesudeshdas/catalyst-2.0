@@ -14,7 +14,7 @@ export default function CreatePowstLayout() {
     <div className='flex flex-col min-h-full max-w-[1400px] mx-auto'>
       <CreateTopNav />
 
-      <ul className='steps max-w-[800px] mx-auto w-full my-6 lg:my-8 xl:my-12'>
+      <ul className='steps max-w-[800px] mx-auto w-full py-6 lg:my-8 xl:my-12 sticky top-14 bg-base-100'>
         <li className={`step ${activeStep >= 0 ? 'step-primary' : ''} text-xs`}>
           Basic details
         </li>
