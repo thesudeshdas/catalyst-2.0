@@ -26,15 +26,20 @@ import {
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css';
 
-// import types
+// import hooks
+import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 
 export default function CreatePowstDescriptionForm() {
   const navigate = useNavigate();
+
+  const { setActiveStep } = useCreatePowst();
 
   const ref = useRef<MDXEditorMethods>(null);
 
   const onCreatePowstNameSubmit = () => {
     console.log(ref.current?.getMarkdown());
+
+    setActiveStep(2);
     navigate('/create/tech');
   };
 

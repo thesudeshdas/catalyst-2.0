@@ -10,3 +10,7 @@ export interface ICreatePowstBasicForm {
   live: string;
   source: string;
 }
+
+export interface ICreatePowstTechForm {
+  tech: string;
+}
