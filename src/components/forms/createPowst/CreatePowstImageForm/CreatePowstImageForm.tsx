@@ -2,7 +2,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 
 // import rrd
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // import icons
 import { FiPlus } from 'react-icons/fi';
@@ -30,7 +30,6 @@ const imageMimeType = /image\/(png|jpg|jpeg)/i;
 
 export default function CreatePowstImageForm() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const { setActiveStep } = useCreatePowst();
 
@@ -79,12 +78,6 @@ export default function CreatePowstImageForm() {
       console.log('coming here', { error });
     }
   };
-
-  useEffect(() => {
-    if (pathname.includes('image')) {
-      setActiveStep(3);
-    }
-  }, [pathname, setActiveStep]);
 
   // For handling the preview of the uploaded image
   useEffect(() => {
