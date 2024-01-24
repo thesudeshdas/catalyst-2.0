@@ -30,7 +30,7 @@ import { ICreatePowstTechForm } from '../../../../types/createPowstTypes/createP
 import { techIcons } from '../../../../assets/resources/techStack.icons';
 
 export default function CreatePowstTechForm() {
-  const { setActiveStep } = useCreatePowst();
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
 
   const navigate = useNavigate();
 
@@ -43,14 +43,18 @@ export default function CreatePowstTechForm() {
 
   const [selectedTech, setSelectedTech] = useState<
     { name: string; versions: string }[]
-  >([]);
+  >(localPowst?.techStack || []);
 
   const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstTechForm> = (
     data
   ) => {
     console.log({ data });
-    setActiveStep(3);
 
+    savePowstInLocal({
+      techStack: selectedTech
+    });
+
+    setActiveStep(3);
     navigate('/create/image');
   };
 

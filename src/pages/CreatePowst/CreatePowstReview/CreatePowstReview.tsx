@@ -19,13 +19,15 @@ import CreatePowstPreviousButton from '../../../components/forms/createPowst/Cre
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
 
-  const { setActiveStep } = useCreatePowst();
+  const { localPowst, setActiveStep } = useCreatePowst();
 
   useEffect(() => {
     if (pathname.includes('review')) {
       setActiveStep(4);
     }
   }, [pathname, setActiveStep]);
+
+  console.log('from review', localPowst);
 
   return (
     <main className='flex flex-col gap-4 items-center'>

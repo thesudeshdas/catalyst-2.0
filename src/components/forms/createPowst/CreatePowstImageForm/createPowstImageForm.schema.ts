@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 import { z } from 'zod';
 
-const MAX_FILE_SIZE = 500000;
+const MAX_FILE_SIZE = 5000000;
 const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png'];
 
 export const createPowstImageSchema = z.object({
@@ -13,14 +13,14 @@ export const createPowstImageSchema = z.object({
   image: z
     .any()
     .refine((files) => {
-      console.log('from schema', files?.length);
+      console.log('from schema exist', files?.length, files);
 
-      return files !== undefined;
+      return files?.length > 0 || files;
     }, 'Image is required.')
     .refine((files) => {
-      console.log('from schema', files?.size);
+      console.log('from schema size', files?.size);
 
-      return files?.size <= MAX_FILE_SIZE;
+      return files?.size <= MAX_FILE_SIZE || files?.size === undefined;
     }, `Max file size is 5MB.`)
     .refine(
       (files) => ACCEPTED_IMAGE_TYPES.includes(files?.type),

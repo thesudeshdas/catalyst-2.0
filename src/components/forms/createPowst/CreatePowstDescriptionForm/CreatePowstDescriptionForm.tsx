@@ -1,5 +1,5 @@
 // import react
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 // import rrd
 import { useNavigate } from 'react-router-dom';
@@ -28,17 +28,31 @@ import '@mdxeditor/editor/style.css';
 
 // import hooks
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
+
+// import components
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 export default function CreatePowstDescriptionForm() {
   const navigate = useNavigate();
 
-  const { localPowst, setActiveStep } = useCreatePowst();
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
 
   const ref = useRef<MDXEditorMethods>(null);
 
+  const [markdownInEditor, setMarkdownInEditor] = useState<string>(
+    localPowst?.description
+  );
+
+  const handleMarkdownChange = (markdownText: string) => {
+    setMarkdownInEditor(markdownText);
+  };
+
   const onCreatePowstNameSubmit = () => {
     console.log(ref.current?.getMarkdown());
+
+    savePowstInLocal({
+      description: ref.current?.getMarkdown()
+    });
 
     setActiveStep(2);
     navigate('/create/tech');
@@ -53,7 +67,7 @@ export default function CreatePowstDescriptionForm() {
     >
       <div className=' w-full border rounded-md'>
         <MDXEditor
-          markdown='# Hello world'
+          markdown={markdownInEditor}
           plugins={[
             headingsPlugin(),
             quotePlugin(),
@@ -74,7 +88,7 @@ export default function CreatePowstDescriptionForm() {
             })
           ]}
           ref={ref}
-          onChange={console.log}
+          onChange={handleMarkdownChange}
           className='mdx_editor'
         />
       </div>

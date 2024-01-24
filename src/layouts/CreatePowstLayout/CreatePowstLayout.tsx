@@ -1,5 +1,5 @@
 // import react
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // import rrd
 import { Outlet } from 'react-router-dom';
@@ -11,7 +11,29 @@ import { IPowst } from '../../types/createPowstTypes/createPowst.types';
 export default function CreatePowstLayout() {
   const [activeStep, setActiveStep] = useState<number>(0);
 
-  const [localPowst, setLocalPowst] = useState<Partial<IPowst>>({});
+  const localPowstFromStorage: string =
+    localStorage?.getItem('localPowst') || '';
+
+  const [localPowst, setLocalPowst] = useState<Partial<IPowst>>(
+    localPowstFromStorage
+      ? JSON.parse(localPowstFromStorage)
+      : {
+          description: ''
+        }
+  );
+
+  const savePowstInLocal = (data: Partial<IPowst>) => {
+    setLocalPowst((prevLocalPowst) => ({ ...prevLocalPowst, ...data }));
+  };
+
+  useEffect(() => {
+    console.log('set hua na?', localPowst);
+
+    localStorage.setItem(
+      'localPowst',
+      JSON.stringify({ ...localPowst, image: undefined })
+    );
+  }, [localPowst]);
 
   return (
     <div className='flex flex-col min-h-full max-w-[1400px] mx-auto'>
@@ -36,7 +58,13 @@ export default function CreatePowstLayout() {
       </ul>
 
       <div className='flex-grow p-3 lg:px-5'>
-        <Outlet context={{ setActiveStep, localPowst, setLocalPowst }} />
+        <Outlet
+          context={{
+            setActiveStep,
+            localPowst,
+            savePowstInLocal
+          }}
+        />
       </div>
     </div>
   );

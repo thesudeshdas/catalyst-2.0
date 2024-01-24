@@ -5,7 +5,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // import icons
-import { FiChevronsRight, FiPlus } from 'react-icons/fi';
+import { FiChevronsRight, FiInfo, FiPlus } from 'react-icons/fi';
 
 // import react hook form
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -32,18 +32,22 @@ const imageMimeType = /image\/(png|jpg|jpeg)/i;
 export default function CreatePowstImageForm() {
   const navigate = useNavigate();
 
-  const { setActiveStep } = useCreatePowst();
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
 
   const {
     control,
     handleSubmit,
     formState: { errors },
+    formState,
     clearErrors
   } = useForm<ICreatePowstImageForm>({
-    resolver: zodResolver(createPowstImageSchema)
+    resolver: zodResolver(createPowstImageSchema),
+    defaultValues: {
+      image: localPowst?.image
+    }
   });
 
-  const [file, setFile] = useState<File>();
+  const [file, setFile] = useState<File>(localPowst?.image);
   const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>();
 
   const handleImageUpload = (
@@ -54,6 +58,8 @@ export default function CreatePowstImageForm() {
     clearErrors('image');
 
     const file = event?.target?.files?.[0];
+
+    console.log({ file });
 
     if (!file?.type.match(imageMimeType)) {
       alert('Image mime type is not valid');
@@ -70,14 +76,12 @@ export default function CreatePowstImageForm() {
     // const formData = new FormData();
     // formData.append('files', data?.image?.[0]);
 
-    try {
-      console.log({ data });
+    console.log({ data });
 
-      setActiveStep(4);
-      navigate('/create/review');
-    } catch (error) {
-      console.log('coming here', { error });
-    }
+    savePowstInLocal({ image: data?.image });
+
+    setActiveStep(4);
+    navigate('/create/review');
   };
 
   // For handling the preview of the uploaded image
@@ -94,6 +98,8 @@ export default function CreatePowstImageForm() {
         }
       };
       fileReader.readAsDataURL(file);
+
+      console.log({ fileReader });
     }
 
     return () => {
@@ -103,6 +109,8 @@ export default function CreatePowstImageForm() {
       }
     };
   }, [file]);
+
+  console.log('from image', { localPowst, formState });
 
   return (
     <form
@@ -178,9 +186,23 @@ export default function CreatePowstImageForm() {
       <div className='flex justify-between w-full'>
         <CreatePowstPreviousButton link='/create/tech' />
 
-        <button className='btn btn-primary'>
-          Save and Next <FiChevronsRight className='h-6 w-6' />
-        </button>
+        <div className='flex items-center gap-2'>
+          <button
+            className='btn btn-primary'
+            disabled={!file}
+          >
+            Save and Next <FiChevronsRight className='h-6 w-6' />
+          </button>
+
+          {!file && (
+            <div
+              className='tooltip tooltip-right cursor-pointer'
+              data-tip='You need to upload an image'
+            >
+              <FiInfo className='h-5 w-5' />
+            </div>
+          )}
+        </div>
       </div>
     </form>
   );

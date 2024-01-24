@@ -20,13 +20,10 @@ import TextInput from '../../../inputs/TextInput/TextInput';
 import { createPowstBasicSchema } from './createPowstBasicForm.schema';
 
 // import types
-import {
-  ICreatePowstBasicForm,
-  IPowst
-} from '../../../../types/createPowstTypes/createPowst.types';
+import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstBasicForm() {
-  const { localPowst, setLocalPowst, setActiveStep } = useCreatePowst();
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
 
   const navigate = useNavigate();
 
@@ -42,18 +39,12 @@ export default function CreatePowstBasicForm() {
   const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstBasicForm> = (
     data
   ) => {
-    console.log({ data });
-
-    setLocalPowst(
-      (prevLocalPowst): Partial<IPowst> => ({ ...prevLocalPowst, ...data })
-    );
+    savePowstInLocal(data);
 
     setActiveStep(1);
 
     navigate('/create/description');
   };
-
-  console.log({ localPowst });
 
   return (
     <form

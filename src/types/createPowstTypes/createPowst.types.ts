@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 export interface ICreatePowstContext {
   setActiveStep: Dispatch<SetStateAction<number>>;
-  setLocalPowst: Dispatch<SetStateAction<Partial<IPowst>>>;
+  savePowstInLocal: Dispatch<SetStateAction<Partial<IPowst>>>;
   localPowst: IPowst;
 }
 
@@ -28,4 +28,5 @@ export interface IPowst
     ICreatePowstTechForm,
     ICreatePowstImageForm {
   description: string;
+  techStack: { name: string; versions: string }[];
 }
