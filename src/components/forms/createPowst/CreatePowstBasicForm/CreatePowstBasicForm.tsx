@@ -21,13 +21,20 @@ import { createPowstBasicSchema } from './createPowstBasicForm.schema';
 
 // import types
 import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
+import { useEffect } from 'react';
+import { useBlocker } from '../../../../contexts/BlockerContext/blockerContext.hook';
 
 export default function CreatePowstBasicForm() {
-  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
-
   const navigate = useNavigate();
 
-  const { control, handleSubmit } = useForm<ICreatePowstBasicForm>({
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
+  const { setBlocked } = useBlocker();
+
+  const {
+    control,
+    handleSubmit,
+    formState: { isDirty }
+  } = useForm<ICreatePowstBasicForm>({
     resolver: zodResolver(createPowstBasicSchema),
     defaultValues: {
       live: localPowst?.live,
@@ -41,10 +48,18 @@ export default function CreatePowstBasicForm() {
   ) => {
     savePowstInLocal(data);
 
+    setBlocked(false);
+
     setActiveStep(1);
 
     navigate('/create/description');
   };
+
+  useEffect(() => {
+    if (isDirty) {
+      setBlocked(true);
+    }
+  }, [isDirty, localPowst]);
 
   return (
     <form

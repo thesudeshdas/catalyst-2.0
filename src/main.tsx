@@ -19,6 +19,9 @@ import { AllRoutes } from './routes/AllRoutes.tsx';
 // import styles
 import './index.css';
 
+// import contexts
+import BlockerProvider from './contexts/BlockerContext/BlockerContext';
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -42,7 +45,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             horizontal: 'center'
           }}
         >
-          {AllRoutes()}
+          <BlockerProvider>{AllRoutes()}</BlockerProvider>
         </SnackbarProvider>
       </QueryClientProvider>
     </BrowserRouter>

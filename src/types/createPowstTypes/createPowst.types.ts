@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction } from 'react';
 export interface ICreatePowstContext {
   setActiveStep: Dispatch<SetStateAction<number>>;
   savePowstInLocal: Dispatch<SetStateAction<Partial<IPowst>>>;
+  clearPowstInLocal: () => void;
   localPowst: IPowst;
 }
 
