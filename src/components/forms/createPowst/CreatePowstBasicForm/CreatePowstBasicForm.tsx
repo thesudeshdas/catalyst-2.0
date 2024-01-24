@@ -20,25 +20,40 @@ import TextInput from '../../../inputs/TextInput/TextInput';
 import { createPowstBasicSchema } from './createPowstBasicForm.schema';
 
 // import types
-import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
+import {
+  ICreatePowstBasicForm,
+  IPowst
+} from '../../../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstBasicForm() {
-  const { setActiveStep } = useCreatePowst();
+  const { localPowst, setLocalPowst, setActiveStep } = useCreatePowst();
 
   const navigate = useNavigate();
 
   const { control, handleSubmit } = useForm<ICreatePowstBasicForm>({
-    resolver: zodResolver(createPowstBasicSchema)
+    resolver: zodResolver(createPowstBasicSchema),
+    defaultValues: {
+      live: localPowst?.live,
+      name: localPowst?.name,
+      source: localPowst?.source
+    }
   });
 
   const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstBasicForm> = (
     data
   ) => {
     console.log({ data });
+
+    setLocalPowst(
+      (prevLocalPowst): Partial<IPowst> => ({ ...prevLocalPowst, ...data })
+    );
+
     setActiveStep(1);
 
     navigate('/create/description');
   };
+
+  console.log({ localPowst });
 
   return (
     <form

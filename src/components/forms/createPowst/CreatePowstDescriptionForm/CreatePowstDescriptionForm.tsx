@@ -33,7 +33,7 @@ import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstP
 export default function CreatePowstDescriptionForm() {
   const navigate = useNavigate();
 
-  const { setActiveStep } = useCreatePowst();
+  const { localPowst, setActiveStep } = useCreatePowst();
 
   const ref = useRef<MDXEditorMethods>(null);
 
@@ -43,6 +43,8 @@ export default function CreatePowstDescriptionForm() {
     setActiveStep(2);
     navigate('/create/tech');
   };
+
+  console.log('from desc', { localPowst });
 
   return (
     <form

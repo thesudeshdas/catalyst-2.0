@@ -6,9 +6,12 @@ import { Outlet } from 'react-router-dom';
 
 // import components
 import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
+import { IPowst } from '../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstLayout() {
   const [activeStep, setActiveStep] = useState<number>(0);
+
+  const [localPowst, setLocalPowst] = useState<Partial<IPowst>>({});
 
   return (
     <div className='flex flex-col min-h-full max-w-[1400px] mx-auto'>
@@ -33,7 +36,7 @@ export default function CreatePowstLayout() {
       </ul>
 
       <div className='flex-grow p-3 lg:px-5'>
-        <Outlet context={{ setActiveStep }} />
+        <Outlet context={{ setActiveStep, localPowst, setLocalPowst }} />
       </div>
     </div>
   );
