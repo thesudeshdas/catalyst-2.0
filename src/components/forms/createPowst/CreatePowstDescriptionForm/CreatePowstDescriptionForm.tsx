@@ -4,10 +4,10 @@ import { useRef } from 'react';
 // import rrd
 import { useNavigate } from 'react-router-dom';
 
-// import react hook form
+// import icons
+import { FiChevronsRight } from 'react-icons/fi';
 
-// import zod
-
+// import react mdx editor
 import {
   BlockTypeSelect,
   BoldItalicUnderlineToggles,
@@ -28,6 +28,7 @@ import '@mdxeditor/editor/style.css';
 
 // import hooks
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
+import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 export default function CreatePowstDescriptionForm() {
   const navigate = useNavigate();
@@ -80,13 +81,16 @@ export default function CreatePowstDescriptionForm() {
         Get markdown
       </button> */}
 
-      <button
-        className='btn btn-primary'
-        type='button'
-        onClick={onCreatePowstNameSubmit}
-      >
-        Save and Next
-      </button>
+      <div className='flex justify-between w-full'>
+        <CreatePowstPreviousButton link='/create/basic' />
+
+        <button
+          className='btn btn-primary'
+          onClick={onCreatePowstNameSubmit}
+        >
+          Save and Next <FiChevronsRight className='h-6 w-6' />
+        </button>
+      </div>
     </form>
   );
 }

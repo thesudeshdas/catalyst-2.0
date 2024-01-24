@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 // import icons
-import { TbChevronLeft } from 'react-icons/tb';
+import { FiChevronLeft } from 'react-icons/fi';
 
 // import components
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';
@@ -14,7 +14,7 @@ export default function CreateTopNav() {
         to='/feed'
         className='flex items-center flex-grow'
       >
-        <TbChevronLeft className='h-6 w-6 md:h-7 md:w-7 z-10' />
+        <FiChevronLeft className='h-6 w-6 md:h-7 md:w-7 z-10' />
 
         <p className='text-xs font-semibold'>Take me back</p>
       </Link>

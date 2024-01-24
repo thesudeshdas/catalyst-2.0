@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 
 // import rrd
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 // import icons
 import { DiReact } from 'react-icons/di';
@@ -14,6 +14,7 @@ import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout
 import UserAvatar from '../../../components/avatars/UserAvatar/UserAvatar';
 import CustomImage from '../../../components/images/CustomImage/CustomImage';
 import UserProfileDividerLink from '../../../components/links/UserProfileDividerLink/UserProfileDividerLink';
+import CreatePowstPreviousButton from '../../../components/forms/createPowst/CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
@@ -141,10 +142,8 @@ export default function CreatePowstReview() {
         </div>
       </div>
 
-      <div className='flex gap-4'>
-        <Link to='/create/image'>
-          <button className='btn btn-outline'>Go Back</button>
-        </Link>
+      <div className='flex justify-between w-full max-w-[800px]'>
+        <CreatePowstPreviousButton link='/create/image' />
 
         <button className='btn btn-primary'>Create</button>
       </div>

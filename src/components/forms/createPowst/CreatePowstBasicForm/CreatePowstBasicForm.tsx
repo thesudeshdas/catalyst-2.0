@@ -1,6 +1,9 @@
 // import rrd
 import { useNavigate } from 'react-router-dom';
 
+// import icons
+import { FiChevronsRight } from 'react-icons/fi';
+
 // import react hook form
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -65,7 +68,9 @@ export default function CreatePowstBasicForm() {
         placeholder='www.theamazingproject.com'
       />
 
-      <button className='btn btn-primary'>Save and Next</button>
+      <button className='btn btn-primary self-end'>
+        Save and Next <FiChevronsRight className='h-6 w-6' />
+      </button>
     </form>
   );
 }

@@ -5,7 +5,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // import icons
-import { FiPlus } from 'react-icons/fi';
+import { FiChevronsRight, FiPlus } from 'react-icons/fi';
 
 // import react hook form
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -25,6 +25,7 @@ import { createPowstImageSchema } from './createPowstImageForm.schema';
 
 // import types
 import { ICreatePowstImageForm } from '../../../../types/createPowstTypes/createPowst.types';
+import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 const imageMimeType = /image\/(png|jpg|jpeg)/i;
 
@@ -167,12 +168,20 @@ export default function CreatePowstImageForm() {
         tip='We recommend providing the alt for the image you upload'
       />
 
-      <button
+      {/* <button
         className='btn btn-primary'
         type='submit'
       >
         Save and Next
-      </button>
+      </button> */}
+
+      <div className='flex justify-between w-full'>
+        <CreatePowstPreviousButton link='/create/tech' />
+
+        <button className='btn btn-primary'>
+          Save and Next <FiChevronsRight className='h-6 w-6' />
+        </button>
+      </div>
     </form>
   );
 }

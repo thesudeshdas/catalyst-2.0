@@ -1,6 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// import react
+import { useState } from 'react';
+
 // import rrd
 import { useNavigate } from 'react-router-dom';
+
+// import icons
+import { FiChevronsRight, FiInfo } from 'react-icons/fi';
 
 // import react hook form
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -13,15 +18,16 @@ import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLay
 
 // import components
 import TextInput from '../../../inputs/TextInput/TextInput';
+import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 // import schema
 import { createPowstTechSchema } from './createPowstTechForm.schema';
 
 // import types
 import { ICreatePowstTechForm } from '../../../../types/createPowstTypes/createPowst.types';
+
+// import assets
 import { techIcons } from '../../../../assets/resources/techStack.icons';
-import { useState } from 'react';
-import { FiInfo } from 'react-icons/fi';
 
 export default function CreatePowstTechForm() {
   const { setActiveStep } = useCreatePowst();
@@ -123,22 +129,26 @@ export default function CreatePowstTechForm() {
         </div>
       </div>
 
-      <div className='flex items-center gap-2'>
-        <button
-          className='btn btn-primary'
-          disabled={selectedTech?.length === 0}
-        >
-          Save and Next
-        </button>
+      <div className='flex justify-between w-full'>
+        <CreatePowstPreviousButton link='/create/description' />
 
-        {selectedTech?.length === 0 && (
-          <div
-            className='tooltip tooltip-right cursor-pointer'
-            data-tip='You need to add at least one tech'
+        <div className='flex items-center gap-2'>
+          <button
+            className='btn btn-primary'
+            disabled={selectedTech?.length === 0}
           >
-            <FiInfo className='h-5 w-5' />
-          </div>
-        )}
+            Save and Next <FiChevronsRight className='h-6 w-6' />
+          </button>
+
+          {selectedTech?.length === 0 && (
+            <div
+              className='tooltip tooltip-right cursor-pointer'
+              data-tip='You need to add at least one tech'
+            >
+              <FiInfo className='h-5 w-5' />
+            </div>
+          )}
+        </div>
       </div>
     </form>
   );
