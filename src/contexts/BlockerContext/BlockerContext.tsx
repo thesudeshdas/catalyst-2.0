@@ -20,7 +20,6 @@ export default function BlockerProvider({ children }: { children: ReactNode }) {
 
   const blockedNavigation = (
     navigationLink: string,
-    // eslint-disable-next-line @typescript-eslint/ban-types
     executeFunction?: Function
   ) => {
     if (blocked) {
@@ -41,7 +40,6 @@ export default function BlockerProvider({ children }: { children: ReactNode }) {
     setNavigateTo('');
   };
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
   const discardAndNavigate = (executeFunction?: Function): void => {
     setShowBlockerModal(false);
     setBlocked(false);
