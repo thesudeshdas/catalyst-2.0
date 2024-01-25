@@ -2,7 +2,7 @@
 import { FiChevronLeft } from 'react-icons/fi';
 
 // import hooks
-import { useBlocker } from '../../../contexts/BlockerContext/blockerContext.hook';
+import useBlocker from '../../../contexts/BlockerContext/blockerContext.hook';
 
 // import components
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 // import rrd
 import { Outlet } from 'react-router-dom';
 
-// import contexts
-import { useBlocker } from '../../contexts/BlockerContext/blockerContext.hook';
+// import hooks
+import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
 
 // import components
 import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';

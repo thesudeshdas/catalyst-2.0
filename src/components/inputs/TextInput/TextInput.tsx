@@ -27,9 +27,10 @@ export default function TextInput(
       {(props.label || props.tip) && (
         <div className='flex items-center'>
           {props.label && (
-            <div className='label'>
-              <span className='label-text'>
-                {props.label} {props.required && '*'}
+            <div className='label gap-1'>
+              <span className='label-text'>{props.label}</span>
+              <span className='label-text text-error'>
+                {props.required && '*'}
               </span>
             </div>
           )}
