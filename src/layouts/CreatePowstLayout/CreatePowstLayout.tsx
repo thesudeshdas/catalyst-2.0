@@ -4,10 +4,15 @@ import { useEffect, useState } from 'react';
 // import rrd
 import { Outlet } from 'react-router-dom';
 
+// import contexts
+import { useBlocker } from '../../contexts/BlockerContext/blockerContext.hook';
+
 // import components
 import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
+import BlockerModal from '../../components/modals/BlockerModal/BlockerModal';
+
+// import types
 import { IPowst } from '../../types/createPowstTypes/createPowst.types';
-import { useBlocker } from '../../contexts/BlockerContext/blockerContext.hook';
 
 export default function CreatePowstLayout() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -46,19 +51,24 @@ export default function CreatePowstLayout() {
     );
   }, [localPowst]);
 
-  console.log({ blocked });
+  useEffect(() => {
+    if (blocked && showBlockerModal) {
+      (
+        document.getElementById('blocker_navigation_modal') as HTMLDialogElement
+      )?.showModal();
+    }
+  }, [blocked, showBlockerModal]);
 
   return (
     <div className='flex flex-col min-h-full max-w-[1400px] mx-auto'>
       <CreateTopNav clearPowstInLocal={clearPowstInLocal} />
 
       {blocked && showBlockerModal && (
-        <>
-          <button onClick={() => cancelNavigation()}>Cancel</button>
-          <button onClick={() => discardAndNavigate(clearPowstInLocal)}>
-            Discard
-          </button>
-        </>
+        <BlockerModal
+          cancelNavigation={cancelNavigation}
+          discardAndNavigate={discardAndNavigate}
+          executeFunction={clearPowstInLocal}
+        />
       )}
 
       <ul className='steps max-w-[800px] mx-auto w-full py-6 lg:my-8 xl:my-12 sticky top-14 bg-base-100 z-10'>
