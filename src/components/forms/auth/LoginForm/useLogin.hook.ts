@@ -14,14 +14,12 @@ import axios, { AxiosError } from 'axios';
 import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
 
 // import types
-import { ILoginBody } from '../../../../types/authTypes/auth.types';
+import {
+  ILoginBody,
+  ILoginResponse
+} from '../../../../types/authTypes/auth.types';
 
-export interface ITokenResponse {
-  accessToken: string;
-  refreshToken: string;
-}
-
-const loginApi = async (body: ILoginBody) => {
+const loginApi = async (body: ILoginBody): Promise<ILoginResponse> => {
   try {
     const { data } = await axios.post('http://localhost:8000/auth/login', body);
 
@@ -38,13 +36,13 @@ export function useLogin() {
   const navigate = useNavigate();
 
   const { mutate: loginMutation } = useMutation<
-    ITokenResponse,
+    ILoginResponse,
     Error,
     ILoginBody
   >((body) => loginApi(body), {
     onSuccess: (data) => {
-      localStorage.setItem('accessToken', JSON.stringify(data.accessToken));
-      localStorage.setItem('refreshToken', JSON.stringify(data.refreshToken));
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
 
       navigate('/feed');
     },

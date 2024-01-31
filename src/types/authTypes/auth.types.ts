@@ -8,6 +8,11 @@ export interface ILoginBody {
   password: string;
 }
 
+export interface ILoginResponse {
+  accessToken: string;
+  refreshToken: string;
+}
+
 export interface IRegisterForm {
   name: string;
   email: string;
