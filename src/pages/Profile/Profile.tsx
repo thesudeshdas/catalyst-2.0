@@ -17,6 +17,7 @@ import {
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 import PortfolioTab from './Portfolio/Portfolio';
 import ProjectsTab from './Projects/Projects';
+import BlogsTab from './Blogs/Blogs';
 
 export default function Profile() {
   const [profileTab, setProfileTab] = useState<string>('projects');
@@ -133,7 +134,7 @@ export default function Profile() {
 
         <div
           role='tablist'
-          className='tabs tabs-lifted'
+          className='tabs tabs-bordered'
         >
           <input
             type='radio'
@@ -166,12 +167,7 @@ export default function Profile() {
             checked={profileTab === 'blogs'}
             onChange={() => handleProfileTabChange('blogs')}
           />
-          <div
-            role='tabpanel'
-            className='tab-content bg-base-100 border-base-300 rounded-box p-6'
-          >
-            Tab content 3
-          </div>
+          <BlogsTab />
         </div>
       </div>
 

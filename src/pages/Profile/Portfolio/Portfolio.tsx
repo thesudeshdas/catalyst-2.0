@@ -5,7 +5,7 @@ export default function PortfolioTab() {
   return (
     <div
       role='tabpanel'
-      className='tab-content bg-base-100 border-base-300 rounded-box p-4'
+      className='tab-content bg-base-100 rounded-box py-4'
     >
       <article className='flex flex-col gap-4 '>
         <div className='flex flex-col sm:flex-row gap-4 items-start justify-between'>
