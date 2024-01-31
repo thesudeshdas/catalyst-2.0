@@ -14,6 +14,7 @@ import Register from '../pages/auth/Register/Register';
 
 // import app pages
 import Feed from '../pages/Feed/Feed';
+import Profile from '../pages/Profile/Profile';
 
 // import powst creation pages
 import CreatePowstBasic from '../pages/CreatePowst/CreatePowstBasic/CreatePowstBasic';
@@ -34,14 +35,19 @@ export function AllRoutes() {
         element={<Register />}
       />
 
-      {/* <Route element={<ProtectedRoutes />}> */}
       <Route element={<AppLayout />}>
         <Route
           path='/feed'
           element={<Feed />}
         />
+
+        <Route
+          path='/profile'
+          element={<Profile />}
+        />
       </Route>
 
+      {/* <Route element={<ProtectedRoutes />}> */}
       <Route element={<CreatePowstLayout />}>
         <Route
           path='/create/basic'

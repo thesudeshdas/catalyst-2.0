@@ -70,7 +70,7 @@ export default function AppNav() {
 
             <li>
               <Link
-                to='/portfolio'
+                to='/profile'
                 className='p-0 flex items-center gap-2'
               >
                 <TbBriefcase className='h-6 w-6' />
@@ -128,7 +128,7 @@ export default function AppNav() {
         </Link>
 
         <Link
-          to='/portfolio'
+          to='/profile'
           className='flex items-center gap-2 relative overflow-hidden h-[1.5rem] md:h-[1.75rem] w-[1.5rem] md:w-[1.75rem] hover:w-[6.5rem] transition-all '
         >
           <TbBriefcase className='h-6 w-6 md:h-7 md:w-7 z-10 bg-base-100 absolute top-0 left-0' />

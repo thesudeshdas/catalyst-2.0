@@ -7,9 +7,7 @@ export default function PowstSkeleton() {
         <div className='skeleton h-6 w-24'></div>
       </div>
 
-      <div className='skeleton aspect-[4/3] relative group overflow-hidden cursor-pointer'>
-        {/* <div className='aspect-[4/3] w-full'></div> */}
-      </div>
+      <div className='skeleton aspect-[4/3] relative group overflow-hidden'></div>
 
       <div className='flex justify-between items-start gap-6'>
         <div className='skeleton h-6 w-48'></div>

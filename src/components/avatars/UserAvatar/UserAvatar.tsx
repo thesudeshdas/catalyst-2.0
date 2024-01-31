@@ -1,5 +1,5 @@
 // declare props types
-type IUserAvatarSizes = 'sm' | 'md' | 'lg' | 'xl';
+type IUserAvatarSizes = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 interface IUserAvatarProps {
   src: string;
@@ -29,6 +29,9 @@ export default function UserAvatar({
 
       case 'xl':
         return 'w-12';
+
+      case '2xl':
+        return 'w-16';
 
       default:
         return 'w-6';

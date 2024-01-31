@@ -23,7 +23,7 @@ export default {
           '--btn-focus-scale': '0.95', // scale transform of button when you focus on it
           '--border-btn': '1px', // border width of buttons
           '--tab-border': '1px', // border width of tabs
-          '--tab-radius': '0.5rem' // border radius of tabs
+          '--tab-radius': '0.375rem' // border radius of tabs
         },
         dark: {
           ...require('daisyui/src/theming/themes')['dark'],
@@ -35,7 +35,7 @@ export default {
           '--btn-focus-scale': '0.95', // scale transform of button when you focus on it
           '--border-btn': '1px', // border width of buttons
           '--tab-border': '1px', // border width of tabs
-          '--tab-radius': '0.5rem' // border radius of tabs
+          '--tab-radius': '0.375rem' // border radius of tabs
         }
       }
     ]
@@ -43,6 +43,11 @@ export default {
   theme: {
     transitionDuration: {
       DEFAULT: '300ms'
+    },
+    extend: {
+      fontSize: {
+        xxs: '11px'
+      }
     }
   }
 };
