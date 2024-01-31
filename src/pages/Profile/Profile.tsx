@@ -15,9 +15,13 @@ import {
 
 // import components
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
+
+// import tab panels
 import PortfolioTab from './Portfolio/Portfolio';
 import ProjectsTab from './Projects/Projects';
 import BlogsTab from './Blogs/Blogs';
+import WorkTab from './Work/Work';
+import AboutTab from './About/About';
 
 export default function Profile() {
   const [profileTab, setProfileTab] = useState<string>('projects');
@@ -79,11 +83,22 @@ export default function Profile() {
             </a>
           </div>
 
-          <div className='grid grid-cols-2 gap-4'>
-            <FiGithub className='h-5 w-5 text-base-content' />
-            <FiGitlab className='h-5 w-5 text-base-content' />
-            <FiLinkedin className='h-5 w-5 text-base-content' />
-            <FiTwitter className='h-5 w-5 text-base-content' />
+          <div className='grid grid-cols-2 gap-1'>
+            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
+              <FiGithub className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+            </button>
+
+            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
+              <FiGitlab className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+            </button>
+
+            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
+              <FiLinkedin className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+            </button>
+
+            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
+              <FiTwitter className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+            </button>
           </div>
         </div>
 
@@ -140,7 +155,7 @@ export default function Profile() {
             type='radio'
             name='profile_tabs'
             role='tab'
-            className='tab w-full'
+            className='tab'
             aria-label='Portfolio'
             checked={profileTab === 'portfolio'}
             onChange={() => handleProfileTabChange('portfolio')}
@@ -168,6 +183,28 @@ export default function Profile() {
             onChange={() => handleProfileTabChange('blogs')}
           />
           <BlogsTab />
+
+          <input
+            type='radio'
+            name='profile_tabs'
+            role='tab'
+            className='tab'
+            aria-label='Work'
+            checked={profileTab === 'work'}
+            onChange={() => handleProfileTabChange('work')}
+          />
+          <WorkTab />
+
+          <input
+            type='radio'
+            name='profile_tabs'
+            role='tab'
+            className='tab'
+            aria-label='About'
+            checked={profileTab === 'about'}
+            onChange={() => handleProfileTabChange('about')}
+          />
+          <AboutTab />
         </div>
       </div>
 

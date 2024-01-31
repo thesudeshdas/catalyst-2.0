@@ -16,32 +16,32 @@ export default function PortfolioTab() {
             animi.
           </p>
 
-          <div className='flex flex-wrap gap-3 w-full sm:w-52 flex-shrink-0'>
+          <div className='flex flex-wrap gap-3 w-full sm:w-fit sm:grid grid-cols-6 flex-shrink-0'>
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
 
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
 
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
             <img
               src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg`}
-              className='h-6 w-6 object-contain'
+              className='h-6 w-6 lg:h-8 lg:w-8 object-contain'
             />
           </div>
         </div>
