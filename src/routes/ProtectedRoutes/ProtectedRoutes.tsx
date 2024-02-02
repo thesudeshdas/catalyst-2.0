@@ -9,11 +9,13 @@ export default function ProtectedRoutes() {
   const accessToken = localStorage?.getItem('accessToken');
   const refreshToken = localStorage?.getItem('refreshToken');
 
+  console.log({ accessToken, refreshToken });
+
   if (
     !accessToken ||
     !refreshToken ||
-    isAccessTokenExpired(JSON.parse(accessToken)) ||
-    isRefreshTokenExpired(JSON.parse(refreshToken))
+    isAccessTokenExpired(accessToken) ||
+    isRefreshTokenExpired(refreshToken)
   ) {
     return (
       <Navigate

@@ -11,7 +11,7 @@ import { isAccessTokenExpired } from '../../../utils/isTokenExpired/isAccessToke
 export default function Login() {
   const accessToken = localStorage?.getItem('accessToken');
 
-  if (accessToken && !isAccessTokenExpired(JSON.parse(accessToken))) {
+  if (accessToken && !isAccessTokenExpired(accessToken)) {
     return (
       <Navigate
         to='/feed'

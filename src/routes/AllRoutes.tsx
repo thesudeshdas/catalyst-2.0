@@ -1,8 +1,8 @@
 // import rrd
 import { Route, Routes } from 'react-router-dom';
 
-// import components
-// import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
+// import protected routes
+import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
 
 // import layouts
 import AppLayout from '../layouts/AppLayout/AppLayout';
@@ -47,39 +47,39 @@ export function AllRoutes() {
         />
       </Route>
 
-      {/* <Route element={<ProtectedRoutes />}> */}
-      <Route element={<CreatePowstLayout />}>
-        <Route
-          path='/create/basic'
-          element={<CreatePowstBasic />}
-        />
+      <Route element={<ProtectedRoutes />}>
+        <Route element={<CreatePowstLayout />}>
+          <Route
+            path='/create/basic'
+            element={<CreatePowstBasic />}
+          />
 
-        <Route
-          path='/create/description'
-          element={<CreatePowstDescription />}
-        />
+          <Route
+            path='/create/description'
+            element={<CreatePowstDescription />}
+          />
 
-        <Route
-          path='/create/tech'
-          element={<CreatePowstTech />}
-        />
+          <Route
+            path='/create/tech'
+            element={<CreatePowstTech />}
+          />
 
-        <Route
-          path='/create/image'
-          element={<CreatePowstImage />}
-        />
+          <Route
+            path='/create/image'
+            element={<CreatePowstImage />}
+          />
 
-        <Route
-          path='/create/review'
-          element={<CreatePowstReview />}
-        />
+          <Route
+            path='/create/review'
+            element={<CreatePowstReview />}
+          />
 
-        <Route
-          path='/create/*'
-          element={<CreatePowstBasic />}
-        />
+          <Route
+            path='/create/*'
+            element={<CreatePowstBasic />}
+          />
+        </Route>
       </Route>
-      {/* </Route> */}
     </Routes>
   );
 }
