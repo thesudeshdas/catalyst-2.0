@@ -2,7 +2,7 @@ export const techIcons = [
   {
     name: 'adonisjs',
     tags: ['nodejs', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -21,7 +21,7 @@ export const techIcons = [
   {
     name: 'aftereffects',
     tags: ['video', 'editor'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -31,7 +31,7 @@ export const techIcons = [
   {
     name: 'amazonwebservices',
     tags: ['cloud', 'hosting', 'server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -46,7 +46,7 @@ export const techIcons = [
   {
     name: 'android',
     tags: ['os', 'mobile'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -56,7 +56,7 @@ export const techIcons = [
   {
     name: 'androidstudio',
     tags: ['application', 'editor', 'ide', 'android', 'mobile'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -66,7 +66,7 @@ export const techIcons = [
   {
     name: 'aarch64',
     tags: ['architecture', 'programming', 'language', 'ARM'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -76,7 +76,7 @@ export const techIcons = [
   {
     name: 'angularjs',
     tags: ['framework', 'javascript'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -86,7 +86,7 @@ export const techIcons = [
   {
     name: 'ansible',
     tags: ['automation', 'provisioning', 'deployment', 'continuous-delivery'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -96,7 +96,7 @@ export const techIcons = [
   {
     name: 'apache',
     tags: ['php'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -113,7 +113,7 @@ export const techIcons = [
   {
     name: 'apachekafka',
     tags: ['streaming', 'open-source'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -132,7 +132,7 @@ export const techIcons = [
   {
     name: 'appcelerator',
     tags: ['app', 'mobile'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -147,7 +147,7 @@ export const techIcons = [
   {
     name: 'apple',
     tags: ['brand', 'mobile'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -162,7 +162,7 @@ export const techIcons = [
   {
     name: 'appwrite',
     tags: ['cloud', 'platform', 'server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -181,7 +181,7 @@ export const techIcons = [
   {
     name: 'arduino',
     tags: ['microcontroller', 'hardware'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -191,7 +191,7 @@ export const techIcons = [
   {
     name: 'atom',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -210,7 +210,7 @@ export const techIcons = [
   {
     name: 'azure',
     tags: ['cloud', 'devops'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -220,7 +220,7 @@ export const techIcons = [
   {
     name: 'babel',
     tags: ['javascript', 'transpiler'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -235,7 +235,7 @@ export const techIcons = [
   {
     name: 'backbonejs',
     tags: ['javascript', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -245,7 +245,7 @@ export const techIcons = [
   {
     name: 'bamboo',
     tags: ['platform', 'integration', 'server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -264,7 +264,7 @@ export const techIcons = [
   {
     name: 'bash',
     tags: ['shell', 'command'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -274,7 +274,7 @@ export const techIcons = [
   {
     name: 'behance',
     tags: ['social', 'website'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -284,7 +284,7 @@ export const techIcons = [
   {
     name: 'bitbucket',
     tags: ['version-control'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -303,7 +303,7 @@ export const techIcons = [
   {
     name: 'bootstrap',
     tags: ['css', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -313,7 +313,7 @@ export const techIcons = [
   {
     name: 'bulma',
     tags: ['css', 'framework'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -323,7 +323,7 @@ export const techIcons = [
   {
     name: 'bower',
     tags: ['package', 'manager'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -340,7 +340,7 @@ export const techIcons = [
   {
     name: 'c',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
@@ -359,7 +359,7 @@ export const techIcons = [
   {
     name: 'cakephp',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -369,7 +369,7 @@ export const techIcons = [
   {
     name: 'canva',
     tags: ['design'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -384,7 +384,7 @@ export const techIcons = [
   {
     name: 'centos',
     tags: ['server', 'linux'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -394,7 +394,7 @@ export const techIcons = [
   {
     name: 'ceylon',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain']
     },
@@ -404,7 +404,7 @@ export const techIcons = [
   {
     name: 'chrome',
     tags: ['browser'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -414,7 +414,7 @@ export const techIcons = [
   {
     name: 'circleci',
     tags: ['integration', 'platform'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -424,7 +424,7 @@ export const techIcons = [
   {
     name: 'clojure',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'line'],
       font: ['line', 'plain']
     },
@@ -439,7 +439,7 @@ export const techIcons = [
   {
     name: 'cmake',
     tags: ['build'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -449,7 +449,7 @@ export const techIcons = [
   {
     name: 'clojurescript',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -459,7 +459,7 @@ export const techIcons = [
   {
     name: 'codecov',
     tags: ['platform', 'integration'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -469,7 +469,7 @@ export const techIcons = [
   {
     name: 'codeigniter',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -479,7 +479,7 @@ export const techIcons = [
   {
     name: 'codepen',
     tags: ['social', 'website', 'editor'],
-    versions: {
+    version: {
       svg: ['plain', 'original-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -494,7 +494,7 @@ export const techIcons = [
   {
     name: 'coffeescript',
     tags: ['javascript', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -513,7 +513,7 @@ export const techIcons = [
   {
     name: 'composer',
     tags: ['package', 'manager', 'php'],
-    versions: {
+    version: {
       svg: ['original', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -532,7 +532,7 @@ export const techIcons = [
   {
     name: 'confluence',
     tags: ['collaboration', 'documentation', 'wiki'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -551,7 +551,7 @@ export const techIcons = [
   {
     name: 'couchdb',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -561,7 +561,7 @@ export const techIcons = [
   {
     name: 'cplusplus',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
@@ -580,7 +580,7 @@ export const techIcons = [
   {
     name: 'csharp',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
@@ -599,7 +599,7 @@ export const techIcons = [
   {
     name: 'css3',
     tags: ['language', 'programming'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -609,7 +609,7 @@ export const techIcons = [
   {
     name: 'cucumber',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -619,7 +619,7 @@ export const techIcons = [
   {
     name: 'crystal',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -629,7 +629,7 @@ export const techIcons = [
   {
     name: 'd3js',
     tags: [],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -639,7 +639,7 @@ export const techIcons = [
   {
     name: 'dart',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -649,7 +649,7 @@ export const techIcons = [
   {
     name: 'debian',
     tags: ['os', 'server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -659,7 +659,7 @@ export const techIcons = [
   {
     name: 'denojs',
     tags: ['javascript', 'rust', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -678,7 +678,7 @@ export const techIcons = [
   {
     name: 'devicon',
     tags: ['iconset'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -695,7 +695,7 @@ export const techIcons = [
   {
     name: 'django',
     tags: [],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -705,7 +705,7 @@ export const techIcons = [
   {
     name: 'docker',
     tags: ['platform', 'deploy'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -715,7 +715,7 @@ export const techIcons = [
   {
     name: 'doctrine',
     tags: [],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -732,7 +732,7 @@ export const techIcons = [
   {
     name: 'dot-net',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -742,7 +742,7 @@ export const techIcons = [
   {
     name: 'dotnetcore',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -752,7 +752,7 @@ export const techIcons = [
   {
     name: 'drupal',
     tags: ['cms'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -762,7 +762,7 @@ export const techIcons = [
   {
     name: 'digitalocean',
     tags: ['cloud', 'hosting', 'database', 'storage'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -772,7 +772,7 @@ export const techIcons = [
   {
     name: 'discordjs',
     tags: ['wrapper', 'api_wrapper', 'nodejs'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -782,7 +782,7 @@ export const techIcons = [
   {
     name: 'electron',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -792,7 +792,7 @@ export const techIcons = [
   {
     name: 'eleventy',
     tags: ['ssg', 'static site generator'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -802,7 +802,7 @@ export const techIcons = [
   {
     name: 'elixir',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -812,7 +812,7 @@ export const techIcons = [
   {
     name: 'elm',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -822,7 +822,7 @@ export const techIcons = [
   {
     name: 'ember',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original-wordmark'],
       font: ['original-wordmark']
     },
@@ -837,7 +837,7 @@ export const techIcons = [
   {
     name: 'embeddedc',
     tags: ['language', 'programming'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -847,7 +847,7 @@ export const techIcons = [
   {
     name: 'erlang',
     tags: [],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -857,7 +857,7 @@ export const techIcons = [
   {
     name: 'eslint',
     tags: ['linter', 'javascript', 'code-quality', 'coding-style'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -876,7 +876,7 @@ export const techIcons = [
   {
     name: 'express',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -886,7 +886,7 @@ export const techIcons = [
   {
     name: 'facebook',
     tags: ['auth'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -901,7 +901,7 @@ export const techIcons = [
   {
     name: 'feathersjs',
     tags: ['framework', 'rest'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -911,7 +911,7 @@ export const techIcons = [
   {
     name: 'figma',
     tags: ['design'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -921,7 +921,7 @@ export const techIcons = [
   {
     name: 'filezilla',
     tags: ['ftp'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -931,7 +931,7 @@ export const techIcons = [
   {
     name: 'firebase',
     tags: ['auth', 'hosting', 'storage', 'cloud'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -941,7 +941,7 @@ export const techIcons = [
   {
     name: 'firefox',
     tags: ['browser'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -951,7 +951,7 @@ export const techIcons = [
   {
     name: 'flask',
     tags: ['python', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -970,7 +970,7 @@ export const techIcons = [
   {
     name: 'flutter',
     tags: ['framework', 'sdk'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -980,7 +980,7 @@ export const techIcons = [
   {
     name: 'foundation',
     tags: ['framework', 'css'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -990,7 +990,7 @@ export const techIcons = [
   {
     name: 'fsharp',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1000,7 +1000,7 @@ export const techIcons = [
   {
     name: 'gatling',
     tags: ['framework', 'testing'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1010,7 +1010,7 @@ export const techIcons = [
   {
     name: 'gatsby',
     tags: ['reactjs', 'framework'],
-    versions: {
+    version: {
       svg: ['plain', 'original', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1020,7 +1020,7 @@ export const techIcons = [
   {
     name: 'rect',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1030,7 +1030,7 @@ export const techIcons = [
   {
     name: 'gcc',
     tags: ['compiler', 'linux'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1040,7 +1040,7 @@ export const techIcons = [
   {
     name: 'gentoo',
     tags: ['linux', 'distribuition', 'desktop'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain-wordmark', 'plain']
     },
@@ -1050,7 +1050,7 @@ export const techIcons = [
   {
     name: 'gimp',
     tags: ['graphic'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain']
     },
@@ -1060,7 +1060,7 @@ export const techIcons = [
   {
     name: 'git',
     tags: ['version-control'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1070,7 +1070,7 @@ export const techIcons = [
   {
     name: 'github',
     tags: ['version-control'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1085,7 +1085,7 @@ export const techIcons = [
   {
     name: 'gitlab',
     tags: ['version-control'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1095,7 +1095,7 @@ export const techIcons = [
   {
     name: 'gitter',
     tags: ['social', 'chat'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1105,7 +1105,7 @@ export const techIcons = [
   {
     name: 'go',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'line'],
       font: ['original-wordmark', 'plain', 'line']
     },
@@ -1120,7 +1120,7 @@ export const techIcons = [
   {
     name: 'google',
     tags: ['auth'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1139,7 +1139,7 @@ export const techIcons = [
   {
     name: 'googlecloud',
     tags: ['google', 'cloud'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1149,7 +1149,7 @@ export const techIcons = [
   {
     name: 'gradle',
     tags: ['task-runner'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1166,7 +1166,7 @@ export const techIcons = [
       'visualization',
       'web-application'
     ],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1185,7 +1185,7 @@ export const techIcons = [
   {
     name: 'grails',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1195,7 +1195,7 @@ export const techIcons = [
   {
     name: 'graphql',
     tags: ['language', 'data', 'query'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1205,7 +1205,7 @@ export const techIcons = [
   {
     name: 'groovy',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1215,7 +1215,7 @@ export const techIcons = [
   {
     name: 'grunt',
     tags: ['task-runner', 'nodejs'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -1232,7 +1232,7 @@ export const techIcons = [
   {
     name: 'gulp',
     tags: ['task-runner', 'nodejs'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1242,7 +1242,7 @@ export const techIcons = [
   {
     name: 'godot',
     tags: ['game-engine', 'open-source'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1252,7 +1252,7 @@ export const techIcons = [
   {
     name: 'haskell',
     tags: ['language', 'functional'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1262,7 +1262,7 @@ export const techIcons = [
   {
     name: 'handlebars',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1272,7 +1272,7 @@ export const techIcons = [
   {
     name: 'haxe',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1282,7 +1282,7 @@ export const techIcons = [
   {
     name: 'heroku',
     tags: ['cloud'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: [
         'original',
@@ -1308,7 +1308,7 @@ export const techIcons = [
   {
     name: 'html5',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1318,7 +1318,7 @@ export const techIcons = [
   {
     name: 'hugo',
     tags: ['framework', 'ssg', 'static-site-generator', 'go', 'html', 'css'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1328,7 +1328,7 @@ export const techIcons = [
   {
     name: 'ie10',
     tags: ['browser'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -1343,7 +1343,7 @@ export const techIcons = [
   {
     name: 'ifttt',
     tags: ['automation', 'applets', 'programming'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -1358,7 +1358,7 @@ export const techIcons = [
   {
     name: 'illustrator',
     tags: ['editor', 'vector'],
-    versions: {
+    version: {
       svg: ['plain', 'line'],
       font: ['plain', 'line']
     },
@@ -1368,7 +1368,7 @@ export const techIcons = [
   {
     name: 'inkscape',
     tags: ['editor', 'vector'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1378,7 +1378,7 @@ export const techIcons = [
   {
     name: 'intellij',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1388,7 +1388,7 @@ export const techIcons = [
   {
     name: 'ionic',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1398,7 +1398,7 @@ export const techIcons = [
   {
     name: 'jamstack',
     tags: ['javascript', 'markup'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -1413,7 +1413,7 @@ export const techIcons = [
   {
     name: 'jasmine',
     tags: ['testing'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1423,7 +1423,7 @@ export const techIcons = [
   {
     name: 'java',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1433,7 +1433,7 @@ export const techIcons = [
   {
     name: 'javascript',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1443,7 +1443,7 @@ export const techIcons = [
   {
     name: 'jeet',
     tags: ['framework', 'css'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1453,7 +1453,7 @@ export const techIcons = [
   {
     name: 'jest',
     tags: ['testing', 'javascript'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1463,7 +1463,7 @@ export const techIcons = [
   {
     name: 'jenkins',
     tags: ['platform', 'integration', 'server'],
-    versions: {
+    version: {
       svg: ['line', 'original', 'plain'],
       font: ['line', 'plain']
     },
@@ -1473,7 +1473,7 @@ export const techIcons = [
   {
     name: 'jetbrains',
     tags: ['ide'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1483,7 +1483,7 @@ export const techIcons = [
   {
     name: 'jira',
     tags: ['platform', 'organize'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1493,7 +1493,7 @@ export const techIcons = [
   {
     name: 'jquery',
     tags: ['library', 'javascript'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1503,7 +1503,7 @@ export const techIcons = [
   {
     name: 'julia',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1513,7 +1513,7 @@ export const techIcons = [
   {
     name: 'jupyter',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1523,7 +1523,7 @@ export const techIcons = [
   {
     name: 'kaggle',
     tags: ['platform', 'auth', 'machine-learning'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1542,7 +1542,7 @@ export const techIcons = [
   {
     name: 'karma',
     tags: ['testing', 'test-runner'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1552,7 +1552,7 @@ export const techIcons = [
   {
     name: 'kotlin',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1562,7 +1562,7 @@ export const techIcons = [
   {
     name: 'knockout',
     tags: ['framework', 'javascript'],
-    versions: {
+    version: {
       svg: ['plain-wordmark'],
       font: ['plain-wordmark']
     },
@@ -1572,7 +1572,7 @@ export const techIcons = [
   {
     name: 'krakenjs',
     tags: ['nodejs', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1582,7 +1582,7 @@ export const techIcons = [
   {
     name: 'kubernetes',
     tags: ['container', 'deployment'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1592,7 +1592,7 @@ export const techIcons = [
   {
     name: 'labview',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1602,7 +1602,7 @@ export const techIcons = [
   {
     name: 'laravel',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1612,7 +1612,7 @@ export const techIcons = [
   {
     name: 'latex',
     tags: ['latex3', 'latex2e', 'markup', 'tex', 'typesetting-system'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -1627,7 +1627,7 @@ export const techIcons = [
   {
     name: 'less',
     tags: ['css', 'pre-processor'],
-    versions: {
+    version: {
       svg: ['plain-wordmark'],
       font: ['plain-wordmark']
     },
@@ -1637,7 +1637,7 @@ export const techIcons = [
   {
     name: 'linkedin',
     tags: ['social', 'auth'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1655,7 +1655,7 @@ export const techIcons = [
       'prototype-based',
       'functional'
     ],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1665,7 +1665,7 @@ export const techIcons = [
   {
     name: 'linux',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1675,7 +1675,7 @@ export const techIcons = [
   {
     name: 'materialui',
     tags: ['framework', 'design', 'ui'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1685,7 +1685,7 @@ export const techIcons = [
   {
     name: 'matlab',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'line']
     },
@@ -1695,7 +1695,7 @@ export const techIcons = [
   {
     name: 'magento',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'line'],
       font: ['original', 'original-wordmark', 'line']
     },
@@ -1705,7 +1705,7 @@ export const techIcons = [
   {
     name: 'markdown',
     tags: ['markup', 'language'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -1731,7 +1731,7 @@ export const techIcons = [
       'game',
       'animation'
     ],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1741,7 +1741,7 @@ export const techIcons = [
   {
     name: 'meteor',
     tags: ['javascript'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1751,7 +1751,7 @@ export const techIcons = [
   {
     name: 'minitab',
     tags: ['package', 'statistics'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1761,7 +1761,7 @@ export const techIcons = [
   {
     name: 'mocha',
     tags: ['testing'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1771,7 +1771,7 @@ export const techIcons = [
   {
     name: 'modx',
     tags: ['cms', 'php', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1781,7 +1781,7 @@ export const techIcons = [
   {
     name: 'mongodb',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1791,7 +1791,7 @@ export const techIcons = [
   {
     name: 'moodle',
     tags: ['platform'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1801,7 +1801,7 @@ export const techIcons = [
   {
     name: 'msdos',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['line']
     },
@@ -1811,7 +1811,7 @@ export const techIcons = [
   {
     name: 'mysql',
     tags: ['database', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1821,7 +1821,7 @@ export const techIcons = [
   {
     name: 'neo4j',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1831,7 +1831,7 @@ export const techIcons = [
   {
     name: 'nestjs',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1841,7 +1841,7 @@ export const techIcons = [
   {
     name: 'networkx',
     tags: ['graph', 'library', 'python'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -1851,7 +1851,7 @@ export const techIcons = [
   {
     name: 'nextjs',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'line', 'original-wordmark'],
       font: ['original', 'plain', 'line', 'original-wordmark', 'plain-wordmark']
     },
@@ -1870,7 +1870,7 @@ export const techIcons = [
   {
     name: 'nginx',
     tags: ['server'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original', 'original-wordmark', 'plain', 'plain-wordmark']
     },
@@ -1893,7 +1893,7 @@ export const techIcons = [
   {
     name: 'nixos',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1903,7 +1903,7 @@ export const techIcons = [
   {
     name: 'nodejs',
     tags: ['javascript', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1913,7 +1913,7 @@ export const techIcons = [
   {
     name: 'nodewebkit',
     tags: [],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -1930,7 +1930,7 @@ export const techIcons = [
   {
     name: 'npm',
     tags: ['package', 'manager'],
-    versions: {
+    version: {
       svg: ['original-wordmark'],
       font: ['original-wordmark']
     },
@@ -1940,7 +1940,7 @@ export const techIcons = [
   {
     name: 'nuget',
     tags: ['package', 'manager'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1950,7 +1950,7 @@ export const techIcons = [
   {
     name: 'numpy',
     tags: ['library', 'python'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1965,7 +1965,7 @@ export const techIcons = [
   {
     name: 'nuxtjs',
     tags: ['js', 'javascript', 'framework', 'frontend', 'vuejs'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1975,7 +1975,7 @@ export const techIcons = [
   {
     name: 'objectivec',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1985,7 +1985,7 @@ export const techIcons = [
   {
     name: 'opera',
     tags: ['browser'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1995,7 +1995,7 @@ export const techIcons = [
   {
     name: 'ocaml',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2005,7 +2005,7 @@ export const techIcons = [
   {
     name: 'openal',
     tags: ['library', 'audio', 'game', '3d'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2015,7 +2015,7 @@ export const techIcons = [
   {
     name: 'opengl',
     tags: ['library', 'graphics', 'game', '3d'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2025,7 +2025,7 @@ export const techIcons = [
   {
     name: 'opensuse',
     tags: ['linux', 'distribuition', 'desktop'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2035,7 +2035,7 @@ export const techIcons = [
   {
     name: 'oracle',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2050,7 +2050,7 @@ export const techIcons = [
   {
     name: 'pandas',
     tags: ['library', 'python'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2069,7 +2069,7 @@ export const techIcons = [
   {
     name: 'perl',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2079,7 +2079,7 @@ export const techIcons = [
   {
     name: 'phalcon',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2089,7 +2089,7 @@ export const techIcons = [
   {
     name: 'photoshop',
     tags: ['editor', 'graphic'],
-    versions: {
+    version: {
       svg: ['plain', 'line'],
       font: ['plain', 'line']
     },
@@ -2099,7 +2099,7 @@ export const techIcons = [
   {
     name: 'php',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2109,7 +2109,7 @@ export const techIcons = [
   {
     name: 'phpstorm',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2119,7 +2119,7 @@ export const techIcons = [
   {
     name: 'podman',
     tags: ['container', 'pods', 'docker'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2129,7 +2129,7 @@ export const techIcons = [
   {
     name: 'polygon',
     tags: ['ethereum', 'erc20', 'blockchain'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2139,7 +2139,7 @@ export const techIcons = [
   {
     name: 'postgresql',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2149,7 +2149,7 @@ export const techIcons = [
   {
     name: 'premierepro',
     tags: ['editor', 'video'],
-    versions: {
+    version: {
       svg: ['plain', 'original'],
       font: ['plain']
     },
@@ -2159,7 +2159,7 @@ export const techIcons = [
   {
     name: 'processing',
     tags: ['java', 'python', 'android', 'application', 'ide', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2169,7 +2169,7 @@ export const techIcons = [
   {
     name: 'protractor',
     tags: ['framework', 'javascript'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2179,7 +2179,7 @@ export const techIcons = [
   {
     name: 'putty',
     tags: ['ssh', 'server'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2189,7 +2189,7 @@ export const techIcons = [
   {
     name: 'pycharm',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2199,7 +2199,7 @@ export const techIcons = [
   {
     name: 'python',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2209,7 +2209,7 @@ export const techIcons = [
   {
     name: 'pytorch',
     tags: ['programming', 'framework', 'machine-learning', 'python'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -2224,7 +2224,7 @@ export const techIcons = [
   {
     name: 'raspberrypi',
     tags: ['arm', 'computer'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -2234,7 +2234,7 @@ export const techIcons = [
   {
     name: 'phoenix',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2244,7 +2244,7 @@ export const techIcons = [
   {
     name: 'qt',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2259,7 +2259,7 @@ export const techIcons = [
   {
     name: 'r',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['original', 'plain']
     },
@@ -2269,7 +2269,7 @@ export const techIcons = [
   {
     name: 'rails',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2279,7 +2279,7 @@ export const techIcons = [
   {
     name: 'react',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2298,7 +2298,7 @@ export const techIcons = [
   {
     name: 'redhat',
     tags: ['server', 'linux'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2308,7 +2308,7 @@ export const techIcons = [
   {
     name: 'redis',
     tags: ['server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2318,7 +2318,7 @@ export const techIcons = [
   {
     name: 'redux',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2333,7 +2333,7 @@ export const techIcons = [
   {
     name: 'rocksdb',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -2343,7 +2343,7 @@ export const techIcons = [
   {
     name: 'ruby',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2353,7 +2353,7 @@ export const techIcons = [
   {
     name: 'rubymine',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2363,7 +2363,7 @@ export const techIcons = [
   {
     name: 'rust',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -2373,7 +2373,7 @@ export const techIcons = [
   {
     name: 'safari',
     tags: ['browser'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -2390,7 +2390,7 @@ export const techIcons = [
   {
     name: 'salesforce',
     tags: ['platform', 'ecommerce'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2400,7 +2400,7 @@ export const techIcons = [
   {
     name: 'sdl',
     tags: ['library', 'cross-platform', 'multimedia', 'game'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2410,7 +2410,7 @@ export const techIcons = [
   {
     name: 'rstudio',
     tags: ['editor', 'package', 'statistics'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2420,7 +2420,7 @@ export const techIcons = [
   {
     name: 'sass',
     tags: ['pre-processor', 'css'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2435,7 +2435,7 @@ export const techIcons = [
   {
     name: 'scala',
     tags: ['programming', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2445,7 +2445,7 @@ export const techIcons = [
   {
     name: 'selenium',
     tags: ['webdrive', 'automation'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2460,7 +2460,7 @@ export const techIcons = [
   {
     name: 'sequelize',
     tags: ['database', 'language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2479,7 +2479,7 @@ export const techIcons = [
   {
     name: 'shopware',
     tags: ['cloud', 'platform'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2496,7 +2496,7 @@ export const techIcons = [
       'production-tool',
       'production-tracking'
     ],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain'],
       font: ['plain', 'original-wordmark']
     },
@@ -2511,7 +2511,7 @@ export const techIcons = [
   {
     name: 'sketch',
     tags: ['application'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -2521,7 +2521,7 @@ export const techIcons = [
   {
     name: 'slack',
     tags: ['chat'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2531,7 +2531,7 @@ export const techIcons = [
   {
     name: 'socketio',
     tags: ['library', 'networking', 'websockets'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2550,7 +2550,7 @@ export const techIcons = [
   {
     name: 'solidity',
     tags: ['programming', 'language', 'blockchain'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2560,7 +2560,7 @@ export const techIcons = [
   {
     name: 'sourcetree',
     tags: ['version-control'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2579,7 +2579,7 @@ export const techIcons = [
   {
     name: 'spring',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2589,7 +2589,7 @@ export const techIcons = [
   {
     name: 'spss',
     tags: ['package', 'statistics'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2599,7 +2599,7 @@ export const techIcons = [
   {
     name: 'sqlalchemy',
     tags: ['python', 'orm'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain'],
       font: ['plain', 'original-wordmark']
     },
@@ -2614,7 +2614,7 @@ export const techIcons = [
   {
     name: 'sqlite',
     tags: ['sql', 'database', 'db'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2624,7 +2624,7 @@ export const techIcons = [
   {
     name: 'subversion',
     tags: ['svn', 'version'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original']
     },
@@ -2639,7 +2639,7 @@ export const techIcons = [
   {
     name: 'microsoftsqlserver',
     tags: ['database'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2649,7 +2649,7 @@ export const techIcons = [
   {
     name: 'ssh',
     tags: ['security'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2668,7 +2668,7 @@ export const techIcons = [
   {
     name: 'stylus',
     tags: ['css', 'pre-processor'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2678,7 +2678,7 @@ export const techIcons = [
   {
     name: 'svelte',
     tags: ['javascript', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2688,7 +2688,7 @@ export const techIcons = [
   {
     name: 'swift',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2698,7 +2698,7 @@ export const techIcons = [
   {
     name: 'symfony',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2717,7 +2717,7 @@ export const techIcons = [
   {
     name: 'storybook',
     tags: ['framework', 'documentation', 'ui'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2727,7 +2727,7 @@ export const techIcons = [
   {
     name: 'tailwindcss',
     tags: ['css', 'framework'],
-    versions: {
+    version: {
       svg: ['original-wordmark', 'plain'],
       font: ['original-wordmark', 'plain']
     },
@@ -2737,7 +2737,7 @@ export const techIcons = [
   {
     name: 'tensorflow',
     tags: ['library', 'machine-learning', 'deep-learning'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
@@ -2747,7 +2747,7 @@ export const techIcons = [
   {
     name: 'terraform',
     tags: ['deployment', 'architecture', 'automation'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2757,7 +2757,7 @@ export const techIcons = [
   {
     name: 'threejs',
     tags: ['javascript', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2767,7 +2767,7 @@ export const techIcons = [
   {
     name: 'tomcat',
     tags: ['server'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -2777,7 +2777,7 @@ export const techIcons = [
   {
     name: 'tortoisegit',
     tags: ['git'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'line']
     },
@@ -2787,7 +2787,7 @@ export const techIcons = [
   {
     name: 'towergit',
     tags: ['git'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2797,7 +2797,7 @@ export const techIcons = [
   {
     name: 'travis',
     tags: ['platform', 'integration'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2807,7 +2807,7 @@ export const techIcons = [
   {
     name: 'thealgorithms',
     tags: ['organization', 'algorithms'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2817,7 +2817,7 @@ export const techIcons = [
   {
     name: 'trello',
     tags: ['platform', 'organize'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2827,7 +2827,7 @@ export const techIcons = [
   {
     name: 'twitter',
     tags: ['auth'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2842,7 +2842,7 @@ export const techIcons = [
   {
     name: 'typescript',
     tags: ['programming', 'transpiler'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2857,7 +2857,7 @@ export const techIcons = [
   {
     name: 'typo3',
     tags: ['cms', 'php'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2867,7 +2867,7 @@ export const techIcons = [
   {
     name: 'ubuntu',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2877,7 +2877,7 @@ export const techIcons = [
   {
     name: 'unity',
     tags: ['csharp', 'engine', 'game'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2887,7 +2887,7 @@ export const techIcons = [
   {
     name: 'unix',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -2897,7 +2897,7 @@ export const techIcons = [
   {
     name: 'unrealengine',
     tags: ['c++', 'engine', 'game'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2916,7 +2916,7 @@ export const techIcons = [
   {
     name: 'uwsgi',
     tags: ['hosting'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2926,7 +2926,7 @@ export const techIcons = [
   {
     name: 'vagrant',
     tags: ['platform'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2936,7 +2936,7 @@ export const techIcons = [
   {
     name: 'vim',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2946,7 +2946,7 @@ export const techIcons = [
   {
     name: 'visualstudio',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2956,7 +2956,7 @@ export const techIcons = [
   {
     name: 'vuejs',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: [
         'original',
         'original-wordmark',
@@ -2973,7 +2973,7 @@ export const techIcons = [
   {
     name: 'vuestorefront',
     tags: ['framework'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2983,7 +2983,7 @@ export const techIcons = [
   {
     name: 'vscode',
     tags: ['editor', 'ide'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2993,7 +2993,7 @@ export const techIcons = [
   {
     name: 'webflow',
     tags: ['cms', 'ecommerce'],
-    versions: {
+    version: {
       svg: ['original'],
       font: ['original']
     },
@@ -3003,7 +3003,7 @@ export const techIcons = [
   {
     name: 'weblate',
     tags: ['localization'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3013,7 +3013,7 @@ export const techIcons = [
   {
     name: 'webpack',
     tags: ['package', 'manager'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3023,7 +3023,7 @@ export const techIcons = [
   {
     name: 'webstorm',
     tags: ['editor'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3033,7 +3033,7 @@ export const techIcons = [
   {
     name: 'windows8',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3052,7 +3052,7 @@ export const techIcons = [
   {
     name: 'woocommerce',
     tags: ['ecommerce'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3062,7 +3062,7 @@ export const techIcons = [
   {
     name: 'wordpress',
     tags: ['cms'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3082,7 +3082,7 @@ export const techIcons = [
       'android',
       'windows'
     ],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3101,7 +3101,7 @@ export const techIcons = [
   {
     name: 'xcode',
     tags: ['application', 'editor', 'ide', 'ios', 'iphone', 'mobile', 'apple'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -3111,7 +3111,7 @@ export const techIcons = [
   {
     name: 'xd',
     tags: ['design', 'editor', 'ui'],
-    versions: {
+    version: {
       svg: ['plain', 'line'],
       font: ['plain', 'line']
     },
@@ -3121,7 +3121,7 @@ export const techIcons = [
   {
     name: 'yarn',
     tags: ['package', 'manager'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3131,7 +3131,7 @@ export const techIcons = [
   {
     name: 'yii',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3141,7 +3141,7 @@ export const techIcons = [
   {
     name: 'yunohost',
     tags: ['os'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -3151,7 +3151,7 @@ export const techIcons = [
   {
     name: 'zend',
     tags: ['php', 'framework'],
-    versions: {
+    version: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3161,7 +3161,7 @@ export const techIcons = [
   {
     name: 'zig',
     tags: ['language'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -3176,7 +3176,7 @@ export const techIcons = [
   {
     name: 'pytest',
     tags: ['python', 'framework', 'testing'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3186,7 +3186,7 @@ export const techIcons = [
   {
     name: 'opencv',
     tags: ['library', 'c/c++', 'computer-vision'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3196,7 +3196,7 @@ export const techIcons = [
   {
     name: 'fastapi',
     tags: ['python', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3206,7 +3206,7 @@ export const techIcons = [
   {
     name: 'k3s',
     tags: ['kubernetes', 'container', 'platform'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -3221,7 +3221,7 @@ export const techIcons = [
   {
     name: 'packer',
     tags: ['infrastructure', 'infrastructure-as-code', 'continuous-delivery'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3240,7 +3240,7 @@ export const techIcons = [
   {
     name: 'anaconda',
     tags: ['python', 'data-science'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3259,7 +3259,7 @@ export const techIcons = [
   {
     name: 'rspec',
     tags: ['ruby', 'framework', 'testing'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3278,7 +3278,7 @@ export const techIcons = [
   {
     name: 'argocd',
     tags: ['gitops', 'continuous-delivery'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3288,7 +3288,7 @@ export const techIcons = [
   {
     name: 'prometheus',
     tags: ['monitoring', 'observability', 'analysis'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3298,7 +3298,7 @@ export const techIcons = [
   {
     name: 'blender',
     tags: ['modelling', 'python', '3d', 'animation'],
-    versions: {
+    version: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3308,7 +3308,7 @@ export const techIcons = [
   {
     name: 'dropwizard',
     tags: ['java', 'framework'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -3318,7 +3318,7 @@ export const techIcons = [
   {
     name: 'vuetify',
     tags: ['css', 'framework', 'vuejs-library', 'material-design'],
-    versions: {
+    version: {
       svg: ['original', 'plain', 'line'],
       font: ['line', 'plain']
     },
@@ -3328,7 +3328,7 @@ export const techIcons = [
   {
     name: 'fedora',
     tags: ['linux', 'distribuition', 'desktop'],
-    versions: {
+    version: {
       svg: ['original', 'plain'],
       font: ['plain']
     },

@@ -42,7 +42,7 @@ export default function CreatePowstTechForm() {
   });
 
   const [selectedTech, setSelectedTech] = useState<
-    { name: string; versions: string }[]
+    { name: string; version: string }[]
   >(localPowst?.techStack || []);
 
   const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstTechForm> = (
@@ -58,7 +58,7 @@ export default function CreatePowstTechForm() {
     navigate('/create/image');
   };
 
-  const handleAddTech = (techToBeAdded: { name: string; versions: string }) => {
+  const handleAddTech = (techToBeAdded: { name: string; version: string }) => {
     !selectedTech?.find((tech) => tech.name === techToBeAdded.name)
       ? setSelectedTech((prevTech) => [...prevTech, techToBeAdded])
       : null;
@@ -93,7 +93,7 @@ export default function CreatePowstTechForm() {
               onClick={() => handleRemoveTech(icon.name)}
             >
               <img
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.versions}.svg`}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version}.svg`}
                 alt={icon.name}
                 className='h-8 w-8 object-contain'
                 key={icon.name}
@@ -117,13 +117,13 @@ export default function CreatePowstTechForm() {
                 onClick={() =>
                   handleAddTech({
                     name: icon.name,
-                    versions: icon.versions.svg[0]
+                    version: icon.version.svg[0]
                   })
                 }
                 type='button'
               >
                 <img
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.versions.svg[0]}.svg`}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version.svg[0]}.svg`}
                   alt={icon.name}
                   className='h-8 w-8'
                   key={icon.name}

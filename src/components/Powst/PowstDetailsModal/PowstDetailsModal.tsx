@@ -25,7 +25,7 @@ export default function PowstDetailsModal() {
         <div className='max-w-[800px] flex mx-auto pb-12'>
           <div className='flex-grow h-full '>
             <div className='w-full sticky top-0 p-4 bg-base-100 z-10'>
-              <h2 className='text-lg font-semibold mb-2'>
+              <h2 className='text-2xl font-semibold mb-2'>
                 An e commerce web app
               </h2>
 

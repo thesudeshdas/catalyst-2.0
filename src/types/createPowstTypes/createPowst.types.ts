@@ -29,5 +29,15 @@ export interface IPowst
     ICreatePowstTechForm,
     ICreatePowstImageForm {
   description: string;
-  techStack: { name: string; versions: string }[];
+  techStack: { name: string; version: string }[];
+}
+
+export interface ICreatePowstBody {
+  title: string;
+  description: string;
+  live?: string;
+  source?: string;
+  techStack: { name: string; version: string }[];
+  image: File;
+  imageAlt?: string;
 }
