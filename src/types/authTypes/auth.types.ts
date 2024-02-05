@@ -25,3 +25,12 @@ export interface IRegisterBody {
   email: string;
   password: string;
 }
+
+export interface IRefreshTokenBody {
+  refreshToken: string;
+}
+
+export interface IRefreshTokenResponse {
+  accessToken: string;
+  refreshToken: string;
+}
