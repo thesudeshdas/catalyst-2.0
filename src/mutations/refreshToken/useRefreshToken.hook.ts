@@ -13,9 +13,7 @@ import {
 const refreshTokenAPI = (
   req: IRefreshTokenBody
 ): Promise<IRefreshTokenResponse> =>
-  axiosClient
-    .post(`/auth/refresh`, { refreshToken: req })
-    .then((res) => res.data);
+  axiosClient.post(`/auth/refresh`, req).then((res) => res.data);
 
 export default function useRefreshToken({
   refreshToken
@@ -26,6 +24,8 @@ export default function useRefreshToken({
     queryKey: ['refreshToken', refreshToken],
     queryFn: () => refreshTokenAPI({ refreshToken }),
     onSuccess: (data) => {
+      console.log({ data });
+
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
     }
