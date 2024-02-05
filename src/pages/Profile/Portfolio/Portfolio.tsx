@@ -1,5 +1,5 @@
 // import components
-import Powst from '../../../components/Powst/Powst';
+// import Powst from '../../../components/Powst/Powst';
 
 export default function PortfolioTab() {
   return (
@@ -46,7 +46,7 @@ export default function PortfolioTab() {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <h4 className='font-medium text-lg mb-2'>Featured Projects</h4>
 
           <div className='relative overflow-auto h-52 sm:h-fit'>
@@ -80,7 +80,7 @@ export default function PortfolioTab() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </article>
     </div>
   );

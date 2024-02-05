@@ -40,7 +40,7 @@ export default function CreatePowstBasicForm() {
     resolver: zodResolver(createPowstBasicSchema),
     defaultValues: {
       live: localPowst?.live,
-      name: localPowst?.name,
+      title: localPowst?.title,
       source: localPowst?.source
     }
   });

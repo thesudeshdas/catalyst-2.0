@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 // import rrd
 import { BrowserRouter } from 'react-router-dom';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 
 // import snackbar
 import { SnackbarProvider, closeSnackbar } from 'notistack';
@@ -22,7 +22,8 @@ import './index.css';
 // import contexts
 import BlockerProvider from './contexts/BlockerContext/BlockerContext';
 
-const queryClient = new QueryClient();
+// import query client
+import { queryClient } from './config/queryClient.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

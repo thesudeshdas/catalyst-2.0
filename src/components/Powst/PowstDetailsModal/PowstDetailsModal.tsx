@@ -1,3 +1,6 @@
+// import react
+import { Dispatch, SetStateAction } from 'react';
+
 // import icons
 import {
   FiBookmark,
@@ -9,13 +12,43 @@ import {
 } from 'react-icons/fi';
 import { DiReact } from 'react-icons/di';
 
+// import client
+import { queryClient } from '../../../config/queryClient';
+
 // import components
 import CustomImage from '../../images/CustomImage/CustomImage';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
 import UserProfileDividerLink from '../../links/UserProfileDividerLink/UserProfileDividerLink';
 import Powst from '../Powst';
 
-export default function PowstDetailsModal() {
+// import types
+import { IPowst } from '../../../types/createPowstTypes/createPowst.types';
+
+// declare props types
+interface IPowstDetailsModalProps {
+  powstToBeShown?: string;
+  setPowstToBeShown: Dispatch<SetStateAction<string>>;
+}
+
+export default function PowstDetailsModal({
+  powstToBeShown,
+  setPowstToBeShown
+}: IPowstDetailsModalProps) {
+  const allPowsts = queryClient.getQueryData<IPowst[]>(['allPowsts']);
+
+  const { title, description, alt, image, live, source } =
+    allPowsts?.find((powst) => powst._id === powstToBeShown) || {};
+
+  const sameUserPowsts = allPowsts
+    ?.filter((item) => item._id !== powstToBeShown)
+    ?.slice(0, 3);
+
+  const handleClosePowstDetailsModal = () => {
+    setPowstToBeShown('');
+  };
+
+  console.log({ live, source });
+
   return (
     <dialog
       id='powst_details_modal'
@@ -25,9 +58,7 @@ export default function PowstDetailsModal() {
         <div className='max-w-[800px] flex mx-auto pb-12'>
           <div className='flex-grow h-full '>
             <div className='w-full sticky top-0 p-4 bg-base-100 z-10'>
-              <h2 className='text-2xl font-semibold mb-2'>
-                An e commerce web app
-              </h2>
+              <h2 className='text-2xl font-semibold mb-2'>{title}</h2>
 
               <UserAvatar
                 src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
@@ -43,20 +74,15 @@ export default function PowstDetailsModal() {
                 <CustomImage
                   imgSources={{
                     small: {
-                      alt: 'Random',
-                      src: 'https://picsum.photos/400/600'
+                      alt: alt ? alt : 'Random',
+                      src: image
                     }
                   }}
                   aspectRatio='aspect-[4/3]'
                 />
               </div>
 
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti sequi facere eligendi mollitia dolorem quo quis non
-                magnam! Eveniet reiciendis asperiores saepe blanditiis hic amet.
-                Ratione, temporibus dignissimos? Voluptatem, consequuntur.
-              </p>
+              <p>{description}</p>
 
               <div className='flex flex-col sm:flex-row gap-4 justify-between'>
                 <div className='flex flex-wrap'>
@@ -90,15 +116,33 @@ export default function PowstDetailsModal() {
                   <DiReact className='h-[1.5rem] w-[1.5rem]' />
                 </div>
 
-                <div className='flex w-full sm:w-auto gap-2 flex-shrink-0'>
-                  <button className='btn btn-primary btn-sm flex-grow'>
-                    Live Preview
-                  </button>
+                {(live || source) && (
+                  <div className='flex w-full sm:w-auto gap-2 flex-shrink-0'>
+                    {live && (
+                      <a
+                        href={live}
+                        target='_blank'
+                        rel='noreferrer noopener'
+                      >
+                        <button className='btn btn-primary btn-sm flex-grow'>
+                          Live Preview
+                        </button>
+                      </a>
+                    )}
 
-                  <button className='btn btn-outline btn-sm flex-grow'>
-                    Source Code
-                  </button>
-                </div>
+                    {source && (
+                      <a
+                        href={source}
+                        target='_blank'
+                        rel='noreferrer noopener'
+                      >
+                        <button className='btn btn-outline btn-sm flex-grow'>
+                          Source Code
+                        </button>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               <div className='flex flex-wrap gap-2 mb-12'>
@@ -138,17 +182,20 @@ export default function PowstDetailsModal() {
                 </div>
 
                 <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-                  <Powst sameUser />
-
-                  <Powst sameUser />
-
-                  <Powst sameUser />
+                  {sameUserPowsts?.map((powst) => (
+                    <Powst
+                      sameUser
+                      setPowstToBeShown={setPowstToBeShown}
+                      powstDetails={powst}
+                      key={powst._id}
+                    />
+                  ))}
                 </div>
               </div>
 
               <div className='divider'></div>
 
-              <div className='flex flex-col gap-4'>
+              {/* <div className='flex flex-col gap-4'>
                 <h4 className='font-semibold text-sm'>You might also like</h4>
 
                 <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
@@ -158,13 +205,16 @@ export default function PowstDetailsModal() {
 
                   <Powst />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
           <div className='w-12 flex flex-col h-fit items-center gap-2 pt-2 sticky top-0 p-4'>
             <form method='dialog'>
-              <button className='btn btn-sm btn-square btn-ghost'>
+              <button
+                className='btn btn-sm btn-square btn-ghost'
+                onClick={handleClosePowstDetailsModal}
+              >
                 <FiX className='h-[1.2rem] w-[1.2rem]' />
               </button>
             </form>
@@ -203,7 +253,7 @@ export default function PowstDetailsModal() {
         method='dialog'
         className='modal-backdrop bg-black opacity-70'
       >
-        <button>close</button>
+        <button onClick={handleClosePowstDetailsModal}>close</button>
       </form>
     </dialog>
   );

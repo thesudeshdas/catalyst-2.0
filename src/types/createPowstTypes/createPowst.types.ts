@@ -9,7 +9,7 @@ export interface ICreatePowstContext {
 }
 
 export interface ICreatePowstBasicForm {
-  name: string;
+  title: string;
   live?: string;
   source?: string;
 }
@@ -28,6 +28,7 @@ export interface IPowst
   extends ICreatePowstBasicForm,
     ICreatePowstTechForm,
     ICreatePowstImageForm {
+  _id?: string;
   description: string;
   techStack: { name: string; version: string }[];
 }

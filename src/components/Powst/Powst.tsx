@@ -5,12 +5,32 @@ import { FiHeart } from 'react-icons/fi';
 import CustomImage from '../images/CustomImage/CustomImage';
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
 
+// import types
+import { IPowst } from '../../types/createPowstTypes/createPowst.types';
+import { Dispatch, SetStateAction } from 'react';
+
 // declare props types
 interface IPowstProps {
   sameUser?: boolean;
+  powstDetails?: IPowst;
+  setPowstToBeShown: Dispatch<SetStateAction<string>>;
 }
 
-export default function Powst({ sameUser = false }: IPowstProps) {
+export default function Powst({
+  sameUser = false,
+  powstDetails,
+  setPowstToBeShown
+}: IPowstProps) {
+  const { description, title, alt, image, _id } = powstDetails || {};
+
+  const handleOpenPowstDetailsModal = () => {
+    (
+      document.getElementById('powst_details_modal') as HTMLDialogElement
+    )?.showModal();
+
+    setPowstToBeShown(_id || '');
+  };
+
   return (
     <div className='flex flex-col gap-2'>
       {!sameUser && (
@@ -27,18 +47,14 @@ export default function Powst({ sameUser = false }: IPowstProps) {
 
       <div
         className='aspect-[4/3] relative rounded-md group overflow-hidden cursor-pointer'
-        onClick={() =>
-          (
-            document.getElementById('powst_details_modal') as HTMLDialogElement
-          )?.showModal()
-        }
+        onClick={handleOpenPowstDetailsModal}
       >
         <div className='aspect-[4/3] w-full'>
           <CustomImage
             imgSources={{
               small: {
-                alt: 'Random',
-                src: 'https://picsum.photos/400/600'
+                alt: alt ? alt : 'Random',
+                src: image
               }
             }}
             aspectRatio='aspect-[4/3]'
@@ -49,10 +65,7 @@ export default function Powst({ sameUser = false }: IPowstProps) {
 
         <div className='w-full h-full absolute bottom-0 left-0 translate-y-full md:group-hover:translate-y-0 transition-transform duration-100'>
           <p className='absolute bottom-2 left-2 right-2 line-clamp-3 text-xs text-neutral-content font-medium'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem fugit,
-            excepturi magnam omnis animi rerum culpa blanditiis perferendis
-            praesentium perspiciatis veritatis illo, nisi explicabo eos quo
-            molestiae nulla enim minima.
+            {description}
           </p>
         </div>
       </div>
@@ -60,15 +73,9 @@ export default function Powst({ sameUser = false }: IPowstProps) {
       <div className='flex justify-between items-start gap-6'>
         <h2
           className='line-clamp-1 cursor-pointer'
-          onClick={() =>
-            (
-              document.getElementById(
-                'powst_details_modal'
-              ) as HTMLDialogElement
-            )?.showModal()
-          }
+          onClick={handleOpenPowstDetailsModal}
         >
-          E-commerce web app
+          {title}
         </h2>
 
         <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 hover:text-red-500 cursor-pointer transition-colors'>

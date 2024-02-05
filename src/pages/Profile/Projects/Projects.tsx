@@ -1,5 +1,5 @@
 // import components
-import Powst from '../../../components/Powst/Powst';
+// import Powst from '../../../components/Powst/Powst';
 
 export default function ProjectsTab() {
   return (
@@ -9,6 +9,7 @@ export default function ProjectsTab() {
     >
       <article className='flex flex-col gap-4 '>
         <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
+          {/* <Powst sameUser />
           <Powst sameUser />
           <Powst sameUser />
           <Powst sameUser />
@@ -16,8 +17,7 @@ export default function ProjectsTab() {
           <Powst sameUser />
           <Powst sameUser />
           <Powst sameUser />
-          <Powst sameUser />
-          <Powst sameUser />
+          <Powst sameUser /> */}
         </div>
       </article>
     </div>

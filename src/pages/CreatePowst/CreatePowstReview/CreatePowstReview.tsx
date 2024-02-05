@@ -8,12 +8,12 @@ import { useLocation } from 'react-router-dom';
 
 // import hook
 import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
+import useCreatePowstServer from '../../../mutations/createPowst/useCreatePowst.hook';
 
 // import components
 import UserAvatar from '../../../components/avatars/UserAvatar/UserAvatar';
 import CustomImage from '../../../components/images/CustomImage/CustomImage';
 import CreatePowstPreviousButton from '../../../components/forms/createPowst/CreatePowstPreviousButton/CreatePowstPreviousButton';
-import useCreatePowstServer from '../../../queries/createPowst/useCreatePowst.hook';
 
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
@@ -27,7 +27,7 @@ export default function CreatePowstReview() {
 
   const handleCreatePowst = () => {
     mutate({
-      title: localPowst?.name,
+      title: localPowst?.title,
       live: localPowst?.live,
       source: localPowst?.source,
       description: localPowst?.description,
@@ -77,7 +77,7 @@ export default function CreatePowstReview() {
       <div className='max-w-[800px] p-4 border textarea-bordered rounded-md w-full'>
         <div className='max-w-[800px] flex flex-col mx-auto pb-12'>
           <div className='w-full p-4 bg-base-100 '>
-            <h2 className='text-2xl font-semibold mb-2'>{localPowst?.name}</h2>
+            <h2 className='text-2xl font-semibold mb-2'>{localPowst?.title}</h2>
 
             <UserAvatar
               src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'

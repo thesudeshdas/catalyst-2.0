@@ -2,7 +2,7 @@
 import { z } from 'zod';
 
 export const createPowstBasicSchema = z.object({
-  name: z
+  title: z
     .string({
       required_error: 'Project name is required'
     })
