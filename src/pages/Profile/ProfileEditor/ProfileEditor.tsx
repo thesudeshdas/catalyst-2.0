@@ -1,5 +1,6 @@
 // import components
 import BasicModal from '../../../components/modals/editProfileModals/BasicModal/BasicModal';
+import SocialModal from '../../../components/modals/editProfileModals/SocialModal/SocialModal';
 
 export default function ProfileEditor() {
   return (
@@ -14,7 +15,7 @@ export default function ProfileEditor() {
         </li>
 
         <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          Socials
+          <SocialModal />
         </li>
 
         <li className='border textarea-bordered rounded-md grid place-items-center text-center'>

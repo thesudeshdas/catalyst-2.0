@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+// import react
+import { ReactNode } from 'react';
+
 // import react hook form
 import { UseControllerProps, useController } from 'react-hook-form';
 
@@ -12,6 +15,7 @@ interface ITextInputProps {
   placeholder?: string;
   tip?: string;
   required?: boolean;
+  leftIcon?: ReactNode;
 }
 
 export default function TextInput(
@@ -46,12 +50,20 @@ export default function TextInput(
         </div>
       )}
 
-      <input
-        {...field}
-        type='text'
-        placeholder={props.placeholder}
-        className='input input-bordered w-full'
-      />
+      <div className='join'>
+        {props.leftIcon && (
+          <div className='join-item btn btn-outline btn-ghost input-bordered'>
+            {props.leftIcon}
+          </div>
+        )}
+
+        <input
+          {...field}
+          type='text'
+          placeholder={props.placeholder}
+          className='join-item input input-bordered w-full focus:outline-none focus:border-primary'
+        />
+      </div>
 
       {error && (
         <div className='label'>

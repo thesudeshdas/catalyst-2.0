@@ -5,5 +5,19 @@ export interface IEditProfileBasicForm {
   location: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
-  headline?: string;
+  headline: string;
+}
+
+export interface IEditProfileSocialForm {
+  github: string;
+  gitlab: string;
+  twitter: string;
+  linkedIn: string;
+  medium: string;
+  hashnode: string;
+  devTo: string;
+  instagram: string;
+  dribbble: string;
+  behance: string;
+  youtube: string;
 }
