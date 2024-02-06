@@ -24,7 +24,7 @@ export default function AppNav() {
         className='drawer-toggle'
       />
 
-      <div className='flex-none md:hidden'>
+      <div className='flex-none lg:hidden'>
         <label
           htmlFor='mobile-sidebar'
           aria-label='open sidebar'
@@ -117,7 +117,7 @@ export default function AppNav() {
         </div>
       </div>
 
-      <div className='hidden md:flex items-center gap-2'>
+      <div className='hidden lg:flex items-center gap-2'>
         <Link
           to='/feed'
           className='flex items-center gap-2 relative overflow-hidden h-[1.5rem] md:h-[1.75rem] w-[1.5rem] md:w-[1.75rem] hover:w-[7.5rem] transition-all '

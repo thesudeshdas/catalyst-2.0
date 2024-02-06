@@ -21,12 +21,13 @@ import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTok
 // import components
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 
-// import tab panels
+// import page components
 import PortfolioTab from './Portfolio/Portfolio';
 import ProjectsTab from './Projects/Projects';
 import BlogsTab from './Blogs/Blogs';
 import WorkTab from './Work/Work';
 import AboutTab from './About/About';
+import ProfileEditor from './ProfileEditor/ProfileEditor';
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ export default function Profile() {
   };
 
   return (
-    <main className='flex gap-6'>
+    <main className='flex gap-6 items-start '>
       <div className='flex flex-col gap-6 w-full'>
         <div className='flex justify-between items-center'>
           <div className='flex gap-4 items-center'>
@@ -228,7 +229,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className='hidden lg:flex h-32 w-1/4 flex-shrink-0 border rounded-md input-bordered'></div>
+      <ProfileEditor />
     </main>
   );
 }
