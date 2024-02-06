@@ -8,7 +8,7 @@ import { useMutation } from 'react-query';
 import { useSnackbar } from 'notistack';
 
 // import axios
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 // import hooks
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
@@ -22,17 +22,8 @@ import {
   ILoginResponse
 } from '../../../../types/authTypes/auth.types';
 
-const loginApi = async (body: ILoginBody): Promise<ILoginResponse> => {
-  try {
-    const { data } = await axios.post('http://localhost:8000/auth/login', body);
-
-    return data;
-  } catch (error: unknown) {
-    const axiosError = error as AxiosError;
-
-    throw new Error(getErrorMessage(axiosError.response?.data));
-  }
-};
+const loginApi = (body: ILoginBody): Promise<ILoginResponse> =>
+  axios.post('http://localhost:8000/auth/login', body).then((res) => res.data);
 
 export function useLogin() {
   const { enqueueSnackbar } = useSnackbar();
@@ -44,7 +35,9 @@ export function useLogin() {
     ILoginResponse,
     Error,
     ILoginBody
-  >((body) => loginApi(body), {
+  >({
+    mutationKey: ['login'],
+    mutationFn: loginApi,
     onSuccess: (data) => {
       // storing the access token and refresh token in the local storage to persist the tokens
       localStorage.setItem('accessToken', data.accessToken);
@@ -55,13 +48,15 @@ export function useLogin() {
         type: 'LOGIN',
         payload: {
           accessToken: data.accessToken,
-          refreshToken: data.refreshToken
+          refreshToken: data.refreshToken,
+          email: data.email,
+          name: data.name,
+          userId: data.userId
         }
       });
 
       navigate('/feed');
     },
-
     onError: (error) => {
       enqueueSnackbar(getErrorMessage(error), {
         variant: 'error'

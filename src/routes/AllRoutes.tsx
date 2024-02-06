@@ -40,14 +40,16 @@ export function AllRoutes() {
           path='/feed'
           element={<Feed />}
         />
-
-        <Route
-          path='/profile'
-          element={<Profile />}
-        />
       </Route>
 
       <Route element={<ProtectedRoutes />}>
+        <Route element={<AppLayout />}>
+          <Route
+            path='/profile'
+            element={<Profile />}
+          />
+        </Route>
+
         <Route element={<CreatePowstLayout />}>
           <Route
             path='/create/basic'

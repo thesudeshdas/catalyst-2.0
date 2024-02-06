@@ -6,13 +6,16 @@ import PowstSkeleton from '../../components/Powst/PowstSkeleton';
 
 // import queries
 import { useGetAllPowsts } from '../../queries/getAllPowsts/useGetAllPowsts.hook';
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
 export default function Feed() {
   const { isLoading, data } = useGetAllPowsts();
 
+  const { state } = useAuthContext();
+
   const [powstToBeShown, setPowstToBeShown] = useState<string>('');
 
-  console.log({ powstToBeShown });
+  console.log({ state });
 
   return (
     <main className='flex flex-col'>

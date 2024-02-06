@@ -15,7 +15,10 @@ const refreshToken = localStorage?.getItem('refreshToken');
 
 const initialState: IAuthContextState = {
   refreshToken: refreshToken || '',
-  accessToken: accessToken || ''
+  accessToken: accessToken || '',
+  email: '',
+  name: '',
+  userId: ''
 };
 
 export const AuthContext = createContext<IAuthContext>({

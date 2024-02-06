@@ -1,9 +1,11 @@
 // import react
 import { useState } from 'react';
 
+// import rrd
+import { useNavigate } from 'react-router-dom';
+
 // import icons
 import {
-  FiCheck,
   FiGithub,
   FiGitlab,
   FiLink,
@@ -12,6 +14,9 @@ import {
   FiMapPin,
   FiTwitter
 } from 'react-icons/fi';
+
+// import utils
+import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
 // import components
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
@@ -24,10 +29,18 @@ import WorkTab from './Work/Work';
 import AboutTab from './About/About';
 
 export default function Profile() {
+  const navigate = useNavigate();
+
   const [profileTab, setProfileTab] = useState<string>('projects');
 
   const handleProfileTabChange = (tab: string) => {
     setProfileTab(tab);
+  };
+
+  const handleLogout = () => {
+    removeTokensFromLocalStorage();
+
+    navigate('/feed');
   };
 
   return (
@@ -51,8 +64,15 @@ export default function Profile() {
 
           {/* <button className='btn btn-sm btn-primary'>Follow</button> */}
 
-          <button className='btn btn-square btn-sm btn-primary btn-outline'>
+          {/* <button className='btn btn-square btn-sm btn-primary btn-outline'>
             <FiCheck />
+          </button> */}
+
+          <button
+            className='btn btn-sm btn-error btn-outline'
+            onClick={handleLogout}
+          >
+            Logout
           </button>
         </div>
 
@@ -214,3 +234,8 @@ export default function Profile() {
 }
 
 // IDEA @thesudeshdas => Show analytics on the bottom right like number of followers gained, powst engagement, etc
+
+// TODO @thesudeshdas => Create a logout component, a modal confirmation for logging out which should navigate to /feed on logging out
+
+// IDEA @thesudeshdas => The tags for the user should be auto generated, this will depend on the work experience and the project experience. Suppose,
+// someone has crated 2 react projects and 1 css, then react will be shown first, then css

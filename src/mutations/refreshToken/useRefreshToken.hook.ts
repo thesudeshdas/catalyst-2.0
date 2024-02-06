@@ -12,6 +12,7 @@ import {
   IRefreshTokenBody,
   IRefreshTokenResponse
 } from '../../types/authTypes/auth.types';
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
 const refreshTokenAPI = (
   req: IRefreshTokenBody
@@ -25,6 +26,8 @@ export default function useRefreshToken({
 }) {
   const navigate = useNavigate();
 
+  const { dispatch } = useAuthContext();
+
   return useQuery({
     queryKey: ['refreshToken', refreshToken],
     queryFn: () => refreshTokenAPI({ refreshToken }),
@@ -33,6 +36,14 @@ export default function useRefreshToken({
 
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
+
+      dispatch({
+        type: 'REFRESH_TOKEN',
+        payload: {
+          accessToken: data.accessToken,
+          refreshToken: data.refreshToken
+        }
+      });
     },
     onError: () => {
       navigate('/login');

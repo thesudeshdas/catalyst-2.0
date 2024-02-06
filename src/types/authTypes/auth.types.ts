@@ -3,10 +3,13 @@ import { Dispatch } from 'react';
 export interface IAuthContextState {
   accessToken?: string;
   refreshToken?: string;
+  name: string;
+  email: string;
+  userId: string;
 }
 
 export interface IAuthReducerActions {
-  type: 'LOGIN' | 'REGISTER' | 'REFRESH_TOKEN';
+  type: 'LOGIN' | 'REGISTER' | 'REFRESH_TOKEN' | 'LOGOUT';
   payload: Partial<IAuthContextState>;
 }
 
@@ -28,6 +31,9 @@ export interface ILoginBody {
 export interface ILoginResponse {
   accessToken: string;
   refreshToken: string;
+  name: string;
+  email: string;
+  userId: string;
 }
 
 export interface IRegisterForm {

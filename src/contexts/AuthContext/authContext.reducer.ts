@@ -8,13 +8,25 @@ export const authReducer = (
   state: IAuthContextState,
   action: IAuthReducerActions
 ): IAuthContextState => {
-  const {
-    payload,
-    type
-  }: { payload: Partial<IAuthContextState>; type: string } = action;
+  const { payload, type }: IAuthReducerActions = action;
 
   switch (type) {
     case 'LOGIN':
+      return {
+        ...state,
+        ...payload
+      };
+
+    case 'LOGOUT':
+      return {
+        accessToken: '',
+        refreshToken: '',
+        email: '',
+        name: '',
+        userId: ''
+      };
+
+    case 'REFRESH_TOKEN':
       return {
         ...state,
         accessToken: payload.accessToken,
