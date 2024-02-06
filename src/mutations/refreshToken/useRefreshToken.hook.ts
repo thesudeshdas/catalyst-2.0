@@ -1,6 +1,9 @@
 // import react-query
 import { useQuery } from 'react-query';
 
+// import rrd
+import { useNavigate } from 'react-router-dom';
+
 // import client
 import axiosClient from '../../config/axiosInstance';
 
@@ -20,6 +23,8 @@ export default function useRefreshToken({
 }: {
   refreshToken: string;
 }) {
+  const navigate = useNavigate();
+
   return useQuery({
     queryKey: ['refreshToken', refreshToken],
     queryFn: () => refreshTokenAPI({ refreshToken }),
@@ -28,6 +33,9 @@ export default function useRefreshToken({
 
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
+    },
+    onError: () => {
+      navigate('/login');
     }
   });
 }

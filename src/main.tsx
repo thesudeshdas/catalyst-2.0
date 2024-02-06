@@ -20,6 +20,7 @@ import { AllRoutes } from './routes/AllRoutes.tsx';
 import './index.css';
 
 // import contexts
+import AuthProvider from './contexts/AuthContext/AuthContext.tsx';
 import BlockerProvider from './contexts/BlockerContext/BlockerContext';
 
 // import query client
@@ -46,7 +47,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             horizontal: 'center'
           }}
         >
-          <BlockerProvider>{AllRoutes()}</BlockerProvider>
+          <AuthProvider>
+            <BlockerProvider>{AllRoutes()}</BlockerProvider>
+          </AuthProvider>
         </SnackbarProvider>
       </QueryClientProvider>
     </BrowserRouter>

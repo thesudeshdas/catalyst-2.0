@@ -1,3 +1,20 @@
+import { Dispatch } from 'react';
+
+export interface IAuthContextState {
+  accessToken?: string;
+  refreshToken?: string;
+}
+
+export interface IAuthReducerActions {
+  type: 'LOGIN' | 'REGISTER' | 'REFRESH_TOKEN';
+  payload: Partial<IAuthContextState>;
+}
+
+export interface IAuthContext {
+  state: IAuthContextState;
+  dispatch: Dispatch<IAuthReducerActions>;
+}
+
 export interface ILoginForm {
   email: string;
   password: string;

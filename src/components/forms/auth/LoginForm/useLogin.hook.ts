@@ -10,6 +10,9 @@ import { useSnackbar } from 'notistack';
 // import axios
 import axios, { AxiosError } from 'axios';
 
+// import hooks
+import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
+
 // import utils
 import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
 
@@ -35,14 +38,26 @@ export function useLogin() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
+  const { dispatch } = useAuthContext();
+
   const { mutate: loginMutation } = useMutation<
     ILoginResponse,
     Error,
     ILoginBody
   >((body) => loginApi(body), {
     onSuccess: (data) => {
+      // storing the access token and refresh token in the local storage to persist the tokens
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
+
+      // we are saving the access token and the refresh token in the context since we will be using this globally
+      dispatch({
+        type: 'LOGIN',
+        payload: {
+          accessToken: data.accessToken,
+          refreshToken: data.refreshToken
+        }
+      });
 
       navigate('/feed');
     },

@@ -3,14 +3,16 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 // import hooks
 import useRefreshToken from '../../mutations/refreshToken/useRefreshToken.hook';
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
 // import utils
 import { isAccessTokenExpired } from '../../utils/isTokenExpired/isAccessTokenExpired.utils';
 import { isRefreshTokenExpired } from '../../utils/isTokenExpired/isRefreshTokenExpired.utils';
 
 export default function ProtectedRoutes() {
-  const accessToken = localStorage?.getItem('accessToken');
-  const refreshToken = localStorage?.getItem('refreshToken');
+  const {
+    state: { accessToken, refreshToken }
+  } = useAuthContext();
 
   // if there is no refresh token or if the refresh token is expired, then redirect to login
   if (!refreshToken || isRefreshTokenExpired(refreshToken)) {
