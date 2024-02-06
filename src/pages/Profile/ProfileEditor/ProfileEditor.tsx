@@ -1,6 +1,8 @@
 // import components
-import BasicModal from '../../../components/modals/editProfileModals/BasicModal/BasicModal';
-import SocialModal from '../../../components/modals/editProfileModals/SocialModal/SocialModal';
+import EditProfileModal from '../../../components/modals/EditProfileModal/EditProfileModal';
+
+// import data
+import { profileEditorOptions } from './profileEditor.data';
 
 export default function ProfileEditor() {
   return (
@@ -10,33 +12,15 @@ export default function ProfileEditor() {
       </summary>
 
       <ul className='collapse-content grid grid-cols-2 gap-2 w-full'>
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          <BasicModal />
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          <SocialModal />
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          Projects
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          Blogs
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          Work
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          About
-        </li>
-
-        <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
-          Contact
-        </li>
+        {profileEditorOptions?.map((option) => (
+          <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
+            <EditProfileModal
+              heading={option.heading}
+              nameId={option.nameId}
+              form={option.form}
+            />
+          </li>
+        ))}
       </ul>
     </details>
   );
