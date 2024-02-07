@@ -1,9 +1,7 @@
-import { ReactNode } from 'react';
-
 // declare props types
 interface IEditProfileModalProps {
   nameId: string;
-  form: ReactNode;
+  form: Function;
   heading: string;
 }
 
@@ -26,7 +24,7 @@ export default function EditProfileModal({
         id={nameId}
         className='modal'
       >
-        <div className='modal-box'>{form}</div>
+        <div className='modal-box'>{form()}</div>
 
         <form
           method='dialog'

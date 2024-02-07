@@ -47,8 +47,6 @@ export default function PowstDetailsModal({
     setPowstToBeShown('');
   };
 
-  console.log({ live, source });
-
   return (
     <dialog
       id='powst_details_modal'

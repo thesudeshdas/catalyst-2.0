@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 
 // import react-query
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 
 // import snackbar
 import { useSnackbar } from 'notistack';

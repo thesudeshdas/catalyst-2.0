@@ -5,7 +5,11 @@ import ReactDOM from 'react-dom/client';
 // import rrd
 import { BrowserRouter } from 'react-router-dom';
 
-import { QueryClientProvider } from 'react-query';
+// import react-error-boundary
+import { ErrorBoundary } from 'react-error-boundary';
+
+// import react-query
+import { QueryClientProvider } from '@tanstack/react-query'
 
 // import snackbar
 import { SnackbarProvider, closeSnackbar } from 'notistack';
@@ -25,6 +29,9 @@ import BlockerProvider from './contexts/BlockerContext/BlockerContext';
 
 // import query client
 import { queryClient } from './config/queryClient.ts';
+
+// import components
+import GlobalErrorFallback from './globals/GlobalErrorFallback/GlobalErrorFallback.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -48,7 +55,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           }}
         >
           <AuthProvider>
-            <BlockerProvider>{AllRoutes()}</BlockerProvider>
+            <BlockerProvider>
+              <ErrorBoundary FallbackComponent={GlobalErrorFallback}>
+                {/* {AllRoutes()} */}
+
+                <AllRoutes />
+              </ErrorBoundary>
+            </BlockerProvider>
           </AuthProvider>
         </SnackbarProvider>
       </QueryClientProvider>

@@ -19,14 +19,14 @@ import { registerSchema } from './registerForm.schema';
 import { IRegisterForm } from '../../../../types/authTypes/auth.types';
 
 export default function RegisterForm() {
-  const register = useRegister();
+  const { mutate } = useRegister();
 
   const { control, handleSubmit, watch } = useForm<IRegisterForm>({
     resolver: zodResolver(registerSchema)
   });
 
   const onRegisterSubmit: SubmitHandler<IRegisterForm> = (data) => {
-    register(data);
+    mutate(data);
   };
 
   const watchAcceptTerms = watch('acceptTerms');

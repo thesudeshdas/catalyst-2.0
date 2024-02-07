@@ -1,3 +1,6 @@
+// import react
+import { useEffect } from 'react';
+
 // import rrd
 import { Navigate, Outlet } from 'react-router-dom';
 
@@ -10,6 +13,8 @@ import { isAccessTokenExpired } from '../../utils/isTokenExpired/isAccessTokenEx
 import { isRefreshTokenExpired } from '../../utils/isTokenExpired/isRefreshTokenExpired.utils';
 
 export default function ProtectedRoutes() {
+  const { dispatch } = useAuthContext();
+
   const {
     state: { accessToken, refreshToken }
   } = useAuthContext();
@@ -27,11 +32,35 @@ export default function ProtectedRoutes() {
   // else if there is no access token or if the access token is expired, we will call the API to refresh the access token, and then redirect to the endpoint the user wants to go to
   else if (!accessToken || isAccessTokenExpired(accessToken)) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data } = useRefreshToken({
+    const { data, isSuccess, isError } = useRefreshToken({
       refreshToken
     });
 
-    if (data) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      if (isSuccess) {
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
+
+        dispatch({
+          type: 'REFRESH_TOKEN',
+          payload: {
+            accessToken: data.accessToken,
+            refreshToken: data.refreshToken
+          }
+        });
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isSuccess]);
+
+    if (isError) {
+      return (
+        <Navigate
+          to='/login'
+          replace
+        />
+      );
+    } else if (isSuccess) {
       return <Outlet />;
     }
   }

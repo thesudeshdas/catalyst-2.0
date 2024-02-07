@@ -15,6 +15,9 @@ import {
   FiTwitter
 } from 'react-icons/fi';
 
+// import hooks
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
+
 // import utils
 import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
@@ -32,6 +35,8 @@ import ProfileEditor from './ProfileEditor/ProfileEditor';
 export default function Profile() {
   const navigate = useNavigate();
 
+  const { dispatch } = useAuthContext();
+
   const [profileTab, setProfileTab] = useState<string>('projects');
 
   const handleProfileTabChange = (tab: string) => {
@@ -39,13 +44,15 @@ export default function Profile() {
   };
 
   const handleLogout = () => {
+    dispatch({ type: 'LOGOUT', payload: {} });
+
     removeTokensFromLocalStorage();
 
     navigate('/feed');
   };
 
   return (
-    <main className='flex gap-6 items-start '>
+    <main className='flex gap-6 items-start flex-grow w-full'>
       <div className='flex flex-col gap-6 w-full'>
         <div className='flex justify-between items-center'>
           <div className='flex gap-4 items-center'>

@@ -13,7 +13,10 @@ export default function ProfileEditor() {
 
       <ul className='collapse-content grid grid-cols-2 gap-2 w-full'>
         {profileEditorOptions?.map((option) => (
-          <li className='border textarea-bordered rounded-md grid place-items-center text-center'>
+          <li
+            className='border textarea-bordered rounded-md grid place-items-center text-center'
+            key={option.nameId}
+          >
             <EditProfileModal
               heading={option.heading}
               nameId={option.nameId}

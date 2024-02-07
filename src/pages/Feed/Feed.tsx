@@ -1,24 +1,21 @@
-// import components
+// import react
 import { useState } from 'react';
+
+// import components
 import Powst from '../../components/Powst/Powst';
 import PowstDetailsModal from '../../components/Powst/PowstDetailsModal/PowstDetailsModal';
 import PowstSkeleton from '../../components/Powst/PowstSkeleton';
 
 // import queries
 import { useGetAllPowsts } from '../../queries/getAllPowsts/useGetAllPowsts.hook';
-import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
 export default function Feed() {
   const { isLoading, data } = useGetAllPowsts();
 
-  const { state } = useAuthContext();
-
   const [powstToBeShown, setPowstToBeShown] = useState<string>('');
 
-  console.log({ state });
-
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col flex-grow w-full'>
       <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
         {isLoading ? (
           <>
