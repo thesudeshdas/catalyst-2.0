@@ -15,7 +15,7 @@ import CreatePowstLayout from '../layouts/CreatePowstLayout/CreatePowstLayout';
 import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
 
 // import app pages
-const Profile = lazy(() => import('../pages/Profile/Profile'));
+// const Profile = lazy(() => import('../pages/Profile/Profile'));
 
 // import powst creation pages
 const CreatePowstBasic = lazy(
@@ -40,14 +40,14 @@ export default function AllProtectedRoutes() {
     <Routes>
       <Route element={<ProtectedRoutes />}>
         <Route element={<AppLayout />}>
-          <Route
+          {/* <Route
             path='/profile'
             element={
               <Suspense fallback={<GlobalSuspenseFallback />}>
                 <Profile />
               </Suspense>
             }
-          />
+          /> */}
         </Route>
 
         <Route element={<CreatePowstLayout />}>

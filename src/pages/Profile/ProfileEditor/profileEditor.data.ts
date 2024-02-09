@@ -1,5 +1,6 @@
 // import components
 import EditProfileBasicForm from '../../../components/forms/editProfile/EditProfileBasicForm/EditProfileBasicForm';
+import EditProfileProjectForm from '../../../components/forms/editProfile/EditProfileProjectForm/EditProfileProjectForm';
 import EditProfileSocialForm from '../../../components/forms/editProfile/EditProfileSocialForm/EditProfileSocialForm';
 
 export const profileEditorOptions: {
@@ -17,6 +18,11 @@ export const profileEditorOptions: {
     nameId: 'edit_profile_social_modal',
     heading: 'Socials',
     form: EditProfileSocialForm
+  },
+  {
+    nameId: 'edit_profile_projects_modal',
+    heading: 'Projects',
+    form: EditProfileProjectForm
   }
 ];
 

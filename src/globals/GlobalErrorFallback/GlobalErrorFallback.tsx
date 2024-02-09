@@ -21,6 +21,11 @@ export default function GlobalErrorFallback({
     resetBoundary();
   };
 
+  const handleResetWithReload = () => {
+    location.reload();
+    resetBoundary();
+  };
+
   return (
     <div
       role='alert'
@@ -37,6 +42,14 @@ export default function GlobalErrorFallback({
           onClick={handleResetErrorBoundary}
         >
           Go to home
+        </button>
+
+        <button
+          className='btn btn-primary'
+          type='button'
+          onClick={handleResetWithReload}
+        >
+          Reload
         </button>
       </div>
     </div>
