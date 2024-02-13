@@ -68,7 +68,7 @@ export default function CreatePowstBasicForm() {
     >
       <TextInput
         control={control}
-        name='name'
+        name='title'
         label='Name of the project'
         placeholder='The Amazing Project'
         required

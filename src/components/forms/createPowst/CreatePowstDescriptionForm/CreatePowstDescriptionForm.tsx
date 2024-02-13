@@ -102,6 +102,7 @@ export default function CreatePowstDescriptionForm() {
 
         <button
           className='btn btn-primary'
+          type='button'
           onClick={onCreatePowstNameSubmit}
         >
           Save and Next <FiChevronsRight className='h-6 w-6' />

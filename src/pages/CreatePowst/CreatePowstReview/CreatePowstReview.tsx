@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 // import hook
 import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 import useCreatePowstServer from '../../../mutations/createPowst/useCreatePowst.hook';
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 
 // import components
 import UserAvatar from '../../../components/avatars/UserAvatar/UserAvatar';
@@ -18,6 +19,7 @@ import CreatePowstPreviousButton from '../../../components/forms/createPowst/Cre
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
 
+  const { state } = useAuthContext();
   const { localPowst, setActiveStep } = useCreatePowst();
 
   const { mutate } = useCreatePowstServer();
@@ -33,7 +35,8 @@ export default function CreatePowstReview() {
       description: localPowst?.description,
       techStack: localPowst?.techStack,
       image: localPowst?.image,
-      imageAlt: localPowst?.alt
+      imageAlt: localPowst?.alt,
+      owner: state.userId
     });
   };
 

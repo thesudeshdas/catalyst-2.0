@@ -41,4 +41,5 @@ export interface ICreatePowstBody {
   techStack: { name: string; version: string }[];
   image: File;
   imageAlt?: string;
+  owner: string;
 }
