@@ -7,31 +7,28 @@ import { useMutation } from '@tanstack/react-query';
 // import snackbar
 import { useSnackbar } from 'notistack';
 
-// import axios
-import axios from 'axios';
+// import clients
+import axiosClient from '../../config/axiosInstance';
 
 // import hooks
-import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
 // import utils
-import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
+import { getErrorMessage } from '../../utils/getErrorMessage/getErrorMessage.utils';
 
 // import types
-import {
-  ILoginBody,
-  ILoginResponse
-} from '../../../../types/authTypes/auth.types';
+import { ILoginBody, ILoginResponse } from '../../types/authTypes/auth.types';
 
 const loginApi = (body: ILoginBody): Promise<ILoginResponse> =>
-  axios.post('http://localhost:8000/auth/login', body).then((res) => res.data);
+  axiosClient.post('auth/login', body).then((res) => res.data);
 
 export function useLogin() {
-  const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const { authDispatch } = useAuthContext();
 
-  const { mutate: loginMutation } = useMutation<
+  const { mutate: loginMutation, isPending: isLoginPending } = useMutation<
     ILoginResponse,
     Error,
     ILoginBody
@@ -65,5 +62,5 @@ export function useLogin() {
     }
   });
 
-  return loginMutation;
+  return { loginMutation, isLoginPending };
 }

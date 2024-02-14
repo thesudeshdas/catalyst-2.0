@@ -13,10 +13,9 @@ import { isAccessTokenExpired } from '../../utils/isTokenExpired/isAccessTokenEx
 import { isRefreshTokenExpired } from '../../utils/isTokenExpired/isRefreshTokenExpired.utils';
 
 export default function ProtectedRoutes() {
-  const { dispatch } = useAuthContext();
-
   const {
-    state: { accessToken, refreshToken }
+    authState: { accessToken, refreshToken },
+    authDispatch
   } = useAuthContext();
 
   // if there is no refresh token or if the refresh token is expired, then redirect to login
@@ -42,7 +41,7 @@ export default function ProtectedRoutes() {
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('refreshToken', data.refreshToken);
 
-        dispatch({
+        authDispatch({
           type: 'REFRESH_TOKEN',
           payload: {
             accessToken: data.accessToken,

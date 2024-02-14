@@ -19,7 +19,7 @@ import CreatePowstPreviousButton from '../../../components/forms/createPowst/Cre
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
 
-  const { state } = useAuthContext();
+  const { authState } = useAuthContext();
   const { localPowst, setActiveStep } = useCreatePowst();
 
   const { mutate } = useCreatePowstServer();
@@ -36,7 +36,7 @@ export default function CreatePowstReview() {
       techStack: localPowst?.techStack,
       image: localPowst?.image,
       imageAlt: localPowst?.alt,
-      owner: state.userId
+      owner: authState.userId
     });
   };
 

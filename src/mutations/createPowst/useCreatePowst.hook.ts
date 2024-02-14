@@ -33,10 +33,10 @@ const createPowst = (req: ICreatePowstBody): Promise<IPowst> =>
 
 export default function useCreatePowstServer() {
   const navigate = useNavigate();
-
   const { enqueueSnackbar } = useSnackbar();
 
   return useMutation({
+    mutationKey: ['createPowst'],
     mutationFn: createPowst,
     onSuccess: (data: IPowst) => {
       queryClient.setQueryData(

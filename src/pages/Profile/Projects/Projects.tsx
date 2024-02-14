@@ -13,7 +13,7 @@ export default function ProjectsTab() {
   const { authState } = useAuthContext();
   const { setPowstToBeShown } = useShowPowst();
 
-  const { data, isLoading } = useGetAllUserPowsts({ userId: authState.userId });
+  const { data, isPending } = useGetAllUserPowsts({ userId: authState.userId });
 
   return (
     <div
@@ -22,7 +22,7 @@ export default function ProjectsTab() {
     >
       <article className='flex flex-col gap-4 '>
         <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
-          {isLoading ? (
+          {isPending ? (
             <>
               <PowstSkeleton />
               <PowstSkeleton />
