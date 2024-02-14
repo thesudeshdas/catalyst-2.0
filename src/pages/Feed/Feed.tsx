@@ -1,18 +1,15 @@
-// import react
-import { useState } from 'react';
-
 // import components
 import Powst from '../../components/Powst/Powst';
-import PowstDetailsModal from '../../components/Powst/PowstDetailsModal/PowstDetailsModal';
 import PowstSkeleton from '../../components/Powst/PowstSkeleton';
 
 // import queries
 import { useGetAllPowsts } from '../../queries/getAllPowsts/useGetAllPowsts.hook';
+import useShowPowst from '../../hooks/useShowPowst/useShowPowst';
 
 export default function Feed() {
   const { isLoading, data } = useGetAllPowsts();
 
-  const [powstToBeShown, setPowstToBeShown] = useState<string>('');
+  const { setPowstToBeShown } = useShowPowst();
 
   return (
     <main className='flex flex-col flex-grow w-full'>
@@ -32,11 +29,6 @@ export default function Feed() {
             />
           ))
         )}
-
-        <PowstDetailsModal
-          powstToBeShown={powstToBeShown}
-          setPowstToBeShown={setPowstToBeShown}
-        />
       </div>
     </main>
   );

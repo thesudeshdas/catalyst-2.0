@@ -34,7 +34,7 @@ import ProfileEditor from './ProfileEditor/ProfileEditor';
 
 export default function Profile() {
   const navigate = useNavigate();
-  const { dispatch: authDispatch } = useAuthContext();
+  const { authDispatch } = useAuthContext();
 
   const [profileTab, setProfileTab] = useState<string>('projects');
 

@@ -29,7 +29,7 @@ export function useLogin() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
-  const { dispatch } = useAuthContext();
+  const { authDispatch } = useAuthContext();
 
   const { mutate: loginMutation } = useMutation<
     ILoginResponse,
@@ -42,9 +42,10 @@ export function useLogin() {
       // storing the access token and refresh token in the local storage to persist the tokens
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('userId', data.userId);
 
       // we are saving the access token and the refresh token in the context since we will be using this globally
-      dispatch({
+      authDispatch({
         type: 'LOGIN',
         payload: {
           accessToken: data.accessToken,

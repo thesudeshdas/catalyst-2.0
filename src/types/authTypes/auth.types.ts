@@ -14,8 +14,8 @@ export interface IAuthReducerActions {
 }
 
 export interface IAuthContext {
-  state: IAuthContextState;
-  dispatch: Dispatch<IAuthReducerActions>;
+  authState: IAuthContextState;
+  authDispatch: Dispatch<IAuthReducerActions>;
 }
 
 export interface ILoginForm {
@@ -56,4 +56,14 @@ export interface IRefreshTokenBody {
 export interface IRefreshTokenResponse {
   accessToken: string;
   refreshToken: string;
+}
+
+export interface IGetUserDetailsBody {
+  userId: string;
+}
+
+export interface IGetUserDetailsResponse {
+  name: string;
+  email: string;
+  userId: string;
 }
