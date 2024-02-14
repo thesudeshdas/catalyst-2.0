@@ -34,8 +34,7 @@ import ProfileEditor from './ProfileEditor/ProfileEditor';
 
 export default function Profile() {
   const navigate = useNavigate();
-
-  const { dispatch } = useAuthContext();
+  const { dispatch: authDispatch } = useAuthContext();
 
   const [profileTab, setProfileTab] = useState<string>('projects');
 
@@ -44,7 +43,7 @@ export default function Profile() {
   };
 
   const handleLogout = () => {
-    dispatch({ type: 'LOGOUT', payload: {} });
+    authDispatch({ type: 'LOGOUT', payload: {} });
 
     removeTokensFromLocalStorage();
 
