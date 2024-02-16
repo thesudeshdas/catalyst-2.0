@@ -20,6 +20,7 @@ const Register = lazy(() => import('../pages/Auth/Register/Register'));
 // import app pages
 const Feed = lazy(() => import('../pages/Feed/Feed'));
 const Profile = lazy(() => import('../pages/Profile/Profile'));
+const EditProfile = lazy(() => import('../pages/EditProfile/EditProfile'));
 
 export function AllRoutes() {
   return (
@@ -52,10 +53,19 @@ export function AllRoutes() {
         />
 
         <Route
-          path='/profile'
+          path='/:username'
           element={
             <Suspense fallback={<GlobalSuspenseFallback />}>
               <Profile />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path='/edit-profile'
+          element={
+            <Suspense fallback={<GlobalSuspenseFallback />}>
+              <EditProfile />
             </Suspense>
           }
         />

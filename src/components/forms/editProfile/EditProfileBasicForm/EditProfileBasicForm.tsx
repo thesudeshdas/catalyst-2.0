@@ -125,7 +125,7 @@ export default function EditProfileBasicForm() {
         }}
       />
 
-      <div className='flex flex-col gap-2 md:flex-row'>
+      <div className='flex flex-col gap-2 md:flex-row w-full'>
         <TextInput
           control={control}
           name='firstName'

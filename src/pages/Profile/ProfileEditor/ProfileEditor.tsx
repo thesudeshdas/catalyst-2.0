@@ -4,12 +4,24 @@ import EditProfileModal from '../../../components/modals/EditProfileModal/EditPr
 // import data
 import { profileEditorOptions } from './profileEditor.data';
 
-export default function ProfileEditor() {
+// declare prop types
+interface IProfileEditorProps {
+  alwaysOpen?: boolean;
+}
+
+export default function ProfileEditor({
+  alwaysOpen = false
+}: IProfileEditorProps) {
   return (
-    <details className='collapse collapse-arrow hidden lg:flex !w-1/4 flex-shrink-0 border textarea-bordered  rounded-md '>
-      <summary className='collapse-title text-lg font-medium'>
-        Profile Editor
-      </summary>
+    <div
+      tabIndex={0}
+      className={`collapse  ${
+        alwaysOpen ? 'collapse-open' : 'collapse-arrow'
+      } flex-shrink-0 border textarea-bordered rounded-md`}
+    >
+      <input type='checkbox' />
+
+      <div className='collapse-title text-lg font-medium'>Profile Editor</div>
 
       <ul className='collapse-content grid grid-cols-2 gap-2 w-full'>
         {profileEditorOptions?.map((option) => (
@@ -25,6 +37,6 @@ export default function ProfileEditor() {
           </li>
         ))}
       </ul>
-    </details>
+    </div>
   );
 }

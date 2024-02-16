@@ -34,9 +34,10 @@ import ProfileEditor from './ProfileEditor/ProfileEditor';
 
 export default function Profile() {
   const navigate = useNavigate();
+
   const { authDispatch } = useAuthContext();
 
-  const [profileTab, setProfileTab] = useState<string>('projects');
+  const [profileTab, setProfileTab] = useState<string>('portfolio');
 
   const handleProfileTabChange = (tab: string) => {
     setProfileTab(tab);
@@ -235,7 +236,9 @@ export default function Profile() {
         </div>
       </div>
 
-      <ProfileEditor />
+      <div className='hidden lg:block !w-1/4 min-w-[250px]'>
+        <ProfileEditor />
+      </div>
     </main>
   );
 }
@@ -246,3 +249,8 @@ export default function Profile() {
 
 // IDEA @thesudeshdas => The tags for the user should be auto generated, this will depend on the work experience and the project experience. Suppose,
 // someone has crated 2 react projects and 1 css, then react will be shown first, then css
+
+// TODO @thesudeshdas => Create hide above and below component which takes child and a width
+// like 'lg', 'md' and shows or hides the component
+
+// TODO @thesudeshdas => Create a component for the right side panel
