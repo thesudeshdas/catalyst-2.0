@@ -3,7 +3,8 @@ import { Dispatch } from 'react';
 export interface IAuthContextState {
   accessToken?: string;
   refreshToken?: string;
-  name: string;
+  firstName: string;
+  lastName?: string;
   email: string;
   userId: string;
 }
@@ -31,20 +32,23 @@ export interface ILoginBody {
 export interface ILoginResponse {
   accessToken: string;
   refreshToken: string;
-  name: string;
+  firstName: string;
+  lastName?: string;
   email: string;
   userId: string;
 }
 
 export interface IRegisterForm {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   acceptTerms: string;
 }
 
 export interface IRegisterBody {
-  name: string;
+  firstName: string;
+  lastName?: string;
   email: string;
   password: string;
 }
@@ -63,7 +67,8 @@ export interface IGetUserDetailsBody {
 }
 
 export interface IGetUserDetailsResponse {
-  name: string;
+  firstName: string;
+  lastName?: string;
   email: string;
   userId: string;
 }

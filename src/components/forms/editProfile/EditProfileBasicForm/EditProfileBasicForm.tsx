@@ -19,8 +19,7 @@ import { editProfileBasicSchema } from './editProfileBasicForm.schema';
 
 // import types
 import { IEditProfileBasicForm } from '../../../../types/profileTypes/profile.types';
-
-const imageMimeType = /image\/(png|jpg|jpeg)/i;
+import { imageMimeType } from '../../../../constants/image.constants';
 
 export default function EditProfileBasicForm() {
   const { control, clearErrors } = useForm<IEditProfileBasicForm>({
@@ -171,3 +170,5 @@ export default function EditProfileBasicForm() {
     </form>
   );
 }
+
+// TODO @thesudeshdas => remove all the alerts from the app

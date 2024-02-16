@@ -33,7 +33,7 @@ export default function AppNav() {
         </Link>
 
         <Link
-          to='/create'
+          to='/create/basic'
           className='flex items-center gap-2 relative overflow-hidden h-[1.5rem] md:h-[1.75rem] w-[1.5rem] md:w-[1.75rem] hover:w-[5.5rem] transition-all '
         >
           <LuPlusSquare className='h-5 w-5 md:h-6 md:w-6 z-10 bg-base-100 absolute top-0 left-0' />

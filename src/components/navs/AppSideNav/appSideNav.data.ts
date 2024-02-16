@@ -17,7 +17,7 @@ export const appSideNavLinks = [
     text: 'Portfolio'
   },
   {
-    link: '/create',
+    link: '/create/basic',
     icon: LuPlusSquare,
     text: 'Create'
   },

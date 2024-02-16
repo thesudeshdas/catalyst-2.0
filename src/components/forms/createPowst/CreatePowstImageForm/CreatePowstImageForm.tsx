@@ -26,8 +26,7 @@ import { createPowstImageSchema } from './createPowstImageForm.schema';
 // import types
 import { ICreatePowstImageForm } from '../../../../types/createPowstTypes/createPowst.types';
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
-
-const imageMimeType = /image\/(png|jpg|jpeg)/i;
+import { imageMimeType } from '../../../../constants/image.constants';
 
 export default function CreatePowstImageForm() {
   const navigate = useNavigate();

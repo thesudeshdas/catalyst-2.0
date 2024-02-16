@@ -36,12 +36,21 @@ export default function RegisterForm() {
       className='flex flex-col gap-6 md:items-start w-full'
       onSubmit={handleSubmit(onRegisterSubmit)}
     >
-      <TextInput
-        control={control}
-        name='name'
-        label='Name'
-        placeholder='Awesome Dev'
-      />
+      <div className='flex flex-col gap-2 md:flex-row w-full'>
+        <TextInput
+          control={control}
+          name='firstName'
+          label='First Name'
+          placeholder='Awesome'
+        />
+
+        <TextInput
+          control={control}
+          name='lastName'
+          label='Last Name (Optional)'
+          placeholder='Dev'
+        />
+      </div>
 
       <TextInput
         control={control}
