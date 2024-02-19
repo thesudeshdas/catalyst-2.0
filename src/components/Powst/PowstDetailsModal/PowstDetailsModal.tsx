@@ -13,7 +13,7 @@ import {
 import { DiReact } from 'react-icons/di';
 
 // import client
-import { queryClient } from '../../../config/queryClient';
+import queryClient from '../../../config/queryClient';
 
 // import components
 import CustomImage from '../../images/CustomImage/CustomImage';

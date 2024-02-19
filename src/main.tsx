@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // import react-query
-import { QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query';
 
 // import snackbar
 import { SnackbarProvider, closeSnackbar } from 'notistack';
@@ -28,10 +28,12 @@ import AuthProvider from './contexts/AuthContext/AuthContext.tsx';
 import BlockerProvider from './contexts/BlockerContext/BlockerContext';
 
 // import query client
-import { queryClient } from './config/queryClient.ts';
+import queryClient from './config/queryClient.ts';
 
 // import components
 import GlobalErrorFallback from './globals/GlobalErrorFallback/GlobalErrorFallback.tsx';
+
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -64,6 +66,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             </BlockerProvider>
           </AuthProvider>
         </SnackbarProvider>
+
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

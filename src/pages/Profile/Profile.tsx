@@ -31,11 +31,14 @@ import BlogsTab from './Blogs/Blogs';
 import WorkTab from './Work/Work';
 import AboutTab from './About/About';
 import ProfileEditor from './ProfileEditor/ProfileEditor';
+import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
 
 export default function Profile() {
   const navigate = useNavigate();
 
-  const { authDispatch } = useAuthContext();
+  const { authState, authDispatch } = useAuthContext();
+
+  const getUserDetailsQuery = useGetUserDetails({ userId: authState.userId });
 
   const [profileTab, setProfileTab] = useState<string>('portfolio');
 
@@ -51,6 +54,8 @@ export default function Profile() {
     navigate('/feed');
   };
 
+  console.log({ check: getUserDetailsQuery.data });
+
   return (
     <main className='flex gap-6 items-start flex-grow w-full'>
       <div className='flex flex-col gap-6 w-full'>
@@ -64,7 +69,10 @@ export default function Profile() {
             />
 
             <div>
-              <h2 className='font-semibold text-3xl lg:text-4xl'>Sudesh Das</h2>
+              <h2 className='font-semibold text-3xl lg:text-4xl'>
+                {getUserDetailsQuery.data?.firstName}{' '}
+                {getUserDetailsQuery.data?.lastName}
+              </h2>
 
               <h3>Fullstack Developer</h3>
             </div>

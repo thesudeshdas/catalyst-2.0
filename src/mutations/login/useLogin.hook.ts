@@ -47,8 +47,6 @@ export function useLogin() {
         payload: {
           accessToken: data.accessToken,
           refreshToken: data.refreshToken,
-          email: data.email,
-          name: data.name,
           userId: data.userId
         }
       });

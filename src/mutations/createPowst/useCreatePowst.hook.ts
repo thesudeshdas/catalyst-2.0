@@ -9,7 +9,7 @@ import { useSnackbar } from 'notistack';
 
 // import clients
 import axiosClient from '../../config/axiosInstance';
-import { queryClient } from '../../config/queryClient';
+import queryClient from '../../config/queryClient';
 
 // import utils
 import { objectToFormData } from '../../utils/jsonToFormData/jsonToFormData';

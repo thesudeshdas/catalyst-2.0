@@ -11,21 +11,20 @@ export const editProfileBasicSchema = z.object({
     .min(2, { message: 'First name must be at least 2 characters long' })
     .max(32, { message: 'First name must be less than 32 characters' }),
   lastName: z
-    .string({
-      required_error: 'Last name is required'
-    })
-    .min(2, { message: 'Last name must be at least 2 characters long' })
-    .max(32, { message: 'Last name must be less than 32 characters' }),
+    .string()
+    .max(32, { message: 'Last name must be less than 32 characters' })
+    .optional(),
   email: z
-    .string({
-      required_error: 'Email is required'
-    })
+    .string()
     .email('Email is not a valid email address')
     .min(2, { message: 'Email must be at least 2 characters long' })
-    .max(32, { message: 'Email must be less than 32 characters' }),
-  location: z.string({
-    required_error: 'Location is required'
-  }),
+    .max(32, { message: 'Email must be less than 32 characters' })
+    .optional(),
+  location: z
+    .string({
+      required_error: 'Location is required'
+    })
+    .optional(),
   headline: z.string().optional(),
   profilePic: z
     .any()
@@ -41,4 +40,5 @@ export const editProfileBasicSchema = z.object({
       (files) => ACCEPTED_IMAGE_TYPES.includes(files?.type),
       '.jpg, .jpeg, and .png files are accepted.'
     )
+    .optional()
 });

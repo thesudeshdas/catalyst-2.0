@@ -1,13 +1,14 @@
 // declare props types
 interface IEditProfileModalProps {
   nameId: string;
-  form: Function;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  form: any;
   heading: string;
 }
 
 export default function EditProfileModal({
   heading,
-  form,
+  form: Form,
   nameId
 }: IEditProfileModalProps) {
   return (
@@ -24,7 +25,9 @@ export default function EditProfileModal({
         id={nameId}
         className='modal'
       >
-        <div className='modal-box'>{form()}</div>
+        <div className='modal-box'>
+          <Form nameId={nameId} />
+        </div>
 
         <form
           method='dialog'

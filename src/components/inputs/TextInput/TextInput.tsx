@@ -16,6 +16,7 @@ interface ITextInputProps {
   tip?: string;
   required?: boolean;
   leftIcon?: ReactNode;
+  disabled?: boolean;
 }
 
 export default function TextInput(
@@ -62,6 +63,7 @@ export default function TextInput(
           type='text'
           placeholder={props.placeholder}
           className='join-item input input-bordered w-full focus:outline-none focus:border-primary'
+          disabled={props.disabled}
         />
       </div>
 

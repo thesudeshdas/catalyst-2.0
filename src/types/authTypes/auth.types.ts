@@ -61,14 +61,3 @@ export interface IRefreshTokenResponse {
   accessToken: string;
   refreshToken: string;
 }
-
-export interface IGetUserDetailsBody {
-  userId: string;
-}
-
-export interface IGetUserDetailsResponse {
-  firstName: string;
-  lastName?: string;
-  email: string;
-  userId: string;
-}
