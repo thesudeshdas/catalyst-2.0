@@ -19,7 +19,7 @@ export default function AboutTab() {
           </p>
 
           <section className='flex-shrink-0 flex flex-col sm:items-end'>
-            <h4 className='font-medium text-lg mb-2'>Connect with me</h4>
+            <h4 className='font-semibold text-xl mb-2'>Connect with me</h4>
 
             <ul className='sm:flex sm:flex-col grid grid-cols-2 gap-2 sm:items-end'>
               <li className='flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base'>

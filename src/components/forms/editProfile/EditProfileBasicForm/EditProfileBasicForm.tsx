@@ -42,7 +42,8 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         firstName: data?.firstName,
         lastName: data?.lastName,
         email: data?.email,
-        headline: data?.headline
+        headline: data?.headline,
+        location: data?.location
       }
     });
 
@@ -115,7 +116,8 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       firstName: data?.firstName,
       lastName: data?.lastName,
       email: data?.email,
-      headline: data?.headline
+      headline: data?.headline,
+      location: data?.location
     });
   }, [data]);
 
@@ -129,7 +131,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
   return (
     <form
-      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-auto'
+      className='flex flex-col gap-3 items-center w-full md:max-w-[800px] mx-auto overflow-auto'
       onSubmit={handleSubmit(onEditProfileBasicSubmit)}
     >
       <h3 className='font-bold text-lg'>Basic Details</h3>
@@ -204,6 +206,13 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         placeholder='techbro@winning.com'
         tip='Email can not be changed. Please contact the OG tech bro'
         disabled
+      />
+
+      <TextInput
+        control={control}
+        name='location'
+        label='Location'
+        placeholder='Bangalore, India'
       />
 
       <TextInput

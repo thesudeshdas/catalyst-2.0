@@ -6,13 +6,17 @@ export interface IUser {
   headline: string;
   _id: string;
   profilePic: string;
+  location: string;
 }
 
 export interface IUpdateUserDetailsBody {
-  userId: string;
   firstName: string;
   lastName: string;
+  userId: string;
   headline: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  profilePic: any;
+  location: string;
 }
 
 export interface IGetUserDetailsBody {

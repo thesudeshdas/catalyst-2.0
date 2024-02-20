@@ -18,11 +18,15 @@ import {
 // import hooks
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 
+// import queries & mutations
+import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
+
 // import utils
 import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
 // import components
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
+import ProfileSkeleton from './ProfileSkeleton';
 
 // import page components
 import PortfolioTab from './Portfolio/Portfolio';
@@ -31,14 +35,14 @@ import BlogsTab from './Blogs/Blogs';
 import WorkTab from './Work/Work';
 import AboutTab from './About/About';
 import ProfileEditor from './ProfileEditor/ProfileEditor';
-import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
 
 export default function Profile() {
   const navigate = useNavigate();
 
   const { authState, authDispatch } = useAuthContext();
 
-  const getUserDetailsQuery = useGetUserDetails({ userId: authState.userId });
+  const { data: userDetails, isPending: isUserDetailsPending } =
+    useGetUserDetails({ userId: authState.userId });
 
   const [profileTab, setProfileTab] = useState<string>('portfolio');
 
@@ -54,17 +58,15 @@ export default function Profile() {
     navigate('/feed');
   };
 
-  console.log({ check: getUserDetailsQuery.data });
-
-  return getUserDetailsQuery.isPending ? (
-    <p>Loading</p>
+  return isUserDetailsPending ? (
+    <ProfileSkeleton />
   ) : (
     <main className='flex gap-6 items-start flex-grow w-full'>
       <div className='flex flex-col gap-6 w-full'>
         <div className='flex justify-between items-center'>
           <div className='flex gap-4 items-center'>
             <UserAvatar
-              src={String(getUserDetailsQuery.data?.profilePic)}
+              src={String(userDetails?.profilePic)}
               name='Sudesh Das'
               variant='avatar'
               size='2xl'
@@ -72,11 +74,10 @@ export default function Profile() {
 
             <div>
               <h2 className='font-semibold text-3xl lg:text-4xl'>
-                {getUserDetailsQuery.data?.firstName}{' '}
-                {getUserDetailsQuery.data?.lastName}
+                {userDetails?.firstName} {userDetails?.lastName}
               </h2>
 
-              <h3>Fullstack Developer</h3>
+              <h3>{userDetails?.headline}</h3>
             </div>
           </div>
 
@@ -96,11 +97,13 @@ export default function Profile() {
 
         <div className='flex justify-between items-start'>
           <div className='flex flex-col gap-2'>
-            <div className='flex w-fit gap-2 items-center'>
-              <FiMapPin className='h-4 w-4' />
+            {userDetails?.location && (
+              <div className='flex w-fit gap-2 items-center'>
+                <FiMapPin className='h-4 w-4' />
 
-              <p className='text-xs lg:text-sm'>Bangalore, India</p>
-            </div>
+                <p className='text-xs lg:text-sm'>{userDetails?.location}</p>
+              </div>
+            )}
 
             <a
               href='https://www.thesudeshdas.com'
@@ -117,7 +120,7 @@ export default function Profile() {
             >
               <FiMail className='h-4 w-4' />
 
-              <p className='text-xs lg:text-sm'>sudeshkumardas7@gmail.com</p>
+              <p className='text-xs lg:text-sm'>{userDetails?.email}</p>
             </a>
           </div>
 

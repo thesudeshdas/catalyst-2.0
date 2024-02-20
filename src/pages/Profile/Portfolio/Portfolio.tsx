@@ -1,13 +1,31 @@
+// import hooks
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
+import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
+
+// import queries & mutations
+import { useGetAllUserPowsts } from '../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
+
 // import components
-// import Powst from '../../../components/Powst/Powst';
+import BlogPowst from '../../../components/BlogPowst/BlogPowst';
+import Powst from '../../../components/Powst/Powst';
+import PortfolioSkeleton from './PortfolioSkeleton';
 
 export default function PortfolioTab() {
+  const { authState } = useAuthContext();
+  const { setPowstToBeShown } = useShowPowst();
+
+  const { data, isPending } = useGetAllUserPowsts({ userId: authState.userId });
+
+  if (isPending) {
+    return <PortfolioSkeleton />;
+  }
+
   return (
     <div
       role='tabpanel'
       className='tab-content bg-base-100 rounded-box py-4'
     >
-      <article className='flex flex-col gap-4 '>
+      <article className='flex flex-col gap-8'>
         <div className='flex flex-col sm:flex-row gap-4 items-start justify-between'>
           <p className='text-sm lg:text-base sm:max-w-[600px]'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
@@ -46,41 +64,42 @@ export default function PortfolioTab() {
           </div>
         </div>
 
-        {/* <div>
-          <h4 className='font-medium text-lg mb-2'>Featured Projects</h4>
+        <div>
+          <h4 className='font-semibold text-xl mb-2'>Featured Projects</h4>
 
-          <div className='relative overflow-auto h-52 sm:h-fit'>
+          <article className='relative overflow-auto h-72 sm:h-fit'>
             <div className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
+              {data?.map((powst) => (
+                <div className='w-72 sm:w-auto'>
+                  <Powst
+                    powstDetails={powst}
+                    setPowstToBeShown={setPowstToBeShown}
+                    key={powst._id}
+                    sameUser
+                  />
+                </div>
+              ))}
             </div>
-          </div>
+          </article>
         </div>
 
         <div>
-          <h4 className='font-medium text-lg mb-2'>Featured Blogs</h4>
+          <h4 className='font-semibold text-xl mb-2'>Featured Blogs</h4>
 
           <div className='relative overflow-auto h-52 sm:h-fit'>
-            <div className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
-              <div className='w-52 sm:w-auto'>
-                <Powst sameUser />
-              </div>
-            </div>
+            <ul className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
+              <li className='w-72 sm:w-auto'>
+                <BlogPowst sameUser />
+              </li>
+              <li className='w-72 sm:w-auto'>
+                <BlogPowst sameUser />
+              </li>
+              <li className='w-72 sm:w-auto'>
+                <BlogPowst sameUser />
+              </li>
+            </ul>
           </div>
-        </div> */}
+        </div>
       </article>
     </div>
   );

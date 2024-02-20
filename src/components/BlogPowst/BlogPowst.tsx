@@ -25,7 +25,7 @@ export default function BlogPowst({ sameUser }: IBlogPowstProps) {
       )}
 
       <div className='aspect-[16/9] rounded-md border input-bordered cursor-pointer p-4 flex flex-col justify-between group-hover:bg-base-200'>
-        <h4 className='font-semibold text-2xl sm:text-xl md:text-2xl xl:text-3xl line-clamp-4'>
+        <h4 className='font-medium text-2xl sm:text-xl md:text-2xl xl:text-2xl line-clamp-4'>
           How to make better technical decisions and something else as well
         </h4>
 
