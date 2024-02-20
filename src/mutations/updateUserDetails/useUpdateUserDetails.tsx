@@ -1,12 +1,16 @@
 // import react-query
 import { useMutation } from '@tanstack/react-query';
 
+// import notistack
+import { useSnackbar } from 'notistack';
+
 // import clients
 import axiosClient from '../../config/axiosInstance';
 import queryClient from '../../config/queryClient';
 
 // import utils
 import sanitiseObject from '../../utils/sanitiseObject/sanitiseObject.utils';
+import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
 
 // import types
 import {
@@ -15,17 +19,16 @@ import {
 } from '../../types/userTypes/user.types';
 
 import * as apiKeys from '../../constants/apisKeys.constants';
-import { useSnackbar } from 'notistack';
 
 const updateUserDetails = async (
   req: Partial<IUpdateUserDetailsBody>
 ): Promise<Partial<IUser>> => {
   return axiosClient
-    .post(`/users/${req.userId}`, sanitiseObject(req), {
-      //   headers: {
-      //     'Content-Type': 'multipart/form-data',
-      //     Accept: 'multipart/form-data'
-      //   }
+    .post(`/users/${req.userId}`, objectToFormData(sanitiseObject(req)), {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Accept: 'multipart/form-data'
+      }
     })
     .then((res) => res.data);
 };

@@ -12,7 +12,7 @@ import axiosClient from '../../config/axiosInstance';
 import queryClient from '../../config/queryClient';
 
 // import utils
-import { objectToFormData } from '../../utils/jsonToFormData/jsonToFormData';
+import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
 import { getErrorMessage } from '../../utils/getErrorMessage/getErrorMessage.utils';
 
 // import types

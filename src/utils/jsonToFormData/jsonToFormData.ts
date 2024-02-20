@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function objectToFormData(obj: Record<string, any>): FormData {
+export default function objectToFormData(obj: Record<string, any>): FormData {
   const formData = new FormData();
 
   Object.entries(obj).forEach(([key, value]) => {

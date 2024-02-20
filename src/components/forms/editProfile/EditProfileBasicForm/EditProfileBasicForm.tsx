@@ -47,7 +47,9 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
     });
 
   const [file, setFile] = useState<File>();
-  const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>();
+  const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>(
+    String(data?.profilePic)
+  );
 
   const handleModalClose = () => {
     (document.getElementById(nameId) as HTMLDialogElement)?.close();
@@ -73,12 +75,13 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
     }
   };
 
-  const onEditProfileBasicSubmit: SubmitHandler<IEditProfileBasicForm> = (
+  const onEditProfileBasicSubmit: SubmitHandler<IEditProfileBasicForm> = async (
     data
   ) => {
-    updateUserDetailsMutation.mutate({ ...data, userId: authState.userId });
-
-    handleModalClose();
+    updateUserDetailsMutation.mutate({
+      ...data,
+      userId: authState.userId
+    });
   };
 
   // For handling the preview of the uploaded image
@@ -116,6 +119,14 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
     });
   }, [data]);
 
+  useEffect(() => {
+    if (updateUserDetailsMutation.isSuccess) {
+      handleModalClose();
+    }
+  }, [updateUserDetailsMutation.isSuccess]);
+
+  console.log({ data });
+
   return (
     <form
       className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-auto'
@@ -124,7 +135,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       <h3 className='font-bold text-lg'>Basic Details</h3>
 
       {fileDataURL ? (
-        <div className='aspect-[1/ 1] w-full max-w-[200px] bg-base-300 rounded-md overflow-hidden mask-squircle'>
+        <div className='aspect-[1/ 1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative  mask-squircle'>
           <CustomImage
             imgSources={{
               small: {
@@ -134,6 +145,11 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
             }}
             aspectRatio='aspect-[1/1]'
           />
+
+          <label
+            htmlFor='upload'
+            className='absolute cursor-pointer w-full h-full opacity-0'
+          ></label>
         </div>
       ) : (
         <div className='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative mask-squircle'>
@@ -202,15 +218,15 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
           className='btn btn-outline'
           type='button'
           onClick={handleModalClose}
+          disabled={updateUserDetailsMutation.isPending}
         >
           Cancel
         </button>
 
         <button
           type='submit'
-          className={`btn btn-primary ${
-            updateUserDetailsMutation.isPending ? 'btn-disabled' : ''
-          } `}
+          className='btn btn-primary'
+          disabled={updateUserDetailsMutation.isPending}
         >
           {updateUserDetailsMutation.isPending && (
             <span className='loading loading-spinner'></span>

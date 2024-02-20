@@ -19,22 +19,22 @@ export default function UserAvatar({
   const getAvatarSize = (size: IUserAvatarSizes) => {
     switch (size) {
       case 'sm':
-        return 'w-6';
+        return 'w-6 h-6';
 
       case 'md':
-        return 'w-8';
+        return 'w-8 h-8';
 
       case 'lg':
-        return 'w-10';
+        return 'w-10 h-10';
 
       case 'xl':
-        return 'w-12';
+        return 'w-12 h-12';
 
       case '2xl':
-        return 'w-16';
+        return 'w-16 h-16';
 
       default:
-        return 'w-6';
+        return 'w-6 h-6';
     }
   };
 
@@ -46,6 +46,7 @@ export default function UserAvatar({
         <img
           src={src}
           alt={name}
+          className='h-full w-full object-cover'
         />
       </div>
     );
@@ -60,6 +61,7 @@ export default function UserAvatar({
           <img
             src={src}
             alt={name}
+            className='h-full w-full object-cover'
           />
         </div>
 
@@ -77,6 +79,7 @@ export default function UserAvatar({
       <img
         src={src}
         alt={name}
+        className='h-full w-full object-cover'
       />
     </div>
   );

@@ -56,13 +56,15 @@ export default function Profile() {
 
   console.log({ check: getUserDetailsQuery.data });
 
-  return (
+  return getUserDetailsQuery.isPending ? (
+    <p>Loading</p>
+  ) : (
     <main className='flex gap-6 items-start flex-grow w-full'>
       <div className='flex flex-col gap-6 w-full'>
         <div className='flex justify-between items-center'>
           <div className='flex gap-4 items-center'>
             <UserAvatar
-              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+              src={String(getUserDetailsQuery.data?.profilePic)}
               name='Sudesh Das'
               variant='avatar'
               size='2xl'
@@ -262,3 +264,5 @@ export default function Profile() {
 // like 'lg', 'md' and shows or hides the component
 
 // TODO @thesudeshdas => Create a component for the right side panel
+
+// TODO @thesudeshdas => For the profile pic, have a fallback image

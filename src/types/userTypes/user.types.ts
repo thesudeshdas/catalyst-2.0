@@ -5,6 +5,7 @@ export interface IUser {
   userId: string;
   headline: string;
   _id: string;
+  profilePic: string;
 }
 
 export interface IUpdateUserDetailsBody {
