@@ -1,3 +1,17 @@
+export interface IUserSocials {
+  github: string;
+  gitlab: string;
+  twitter: string;
+  linkedIn: string;
+  medium: string;
+  hashnode: string;
+  devTo: string;
+  instagram: string;
+  dribbble: string;
+  behance: string;
+  youtube: string;
+}
+
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -7,16 +21,12 @@ export interface IUser {
   _id: string;
   profilePic: string;
   location: string;
+  socials: IUserSocials;
 }
 
-export interface IUpdateUserDetailsBody {
-  firstName: string;
-  lastName: string;
-  userId: string;
-  headline: string;
+export interface IUpdateUserDetailsBody extends IUser {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
-  location: string;
 }
 
 export interface IGetUserDetailsBody {

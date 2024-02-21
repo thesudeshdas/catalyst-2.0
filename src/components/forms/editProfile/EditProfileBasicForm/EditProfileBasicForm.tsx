@@ -15,6 +15,9 @@ import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 
+// import utils
+import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+
 // import components
 import TextInput from '../../../inputs/TextInput/TextInput';
 import CustomImage from '../../../images/CustomImage/CustomImage';
@@ -79,8 +82,10 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
   const onEditProfileBasicSubmit: SubmitHandler<IEditProfileBasicForm> = async (
     data
   ) => {
+    const sanitisedBasicDetails = sanitiseObject(data);
+
     updateUserDetailsMutation.mutate({
-      ...data,
+      ...sanitisedBasicDetails,
       userId: authState.userId
     });
   };

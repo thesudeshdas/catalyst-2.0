@@ -1,15 +1,15 @@
 import { z } from 'zod';
 
 export const editProfileSocialSchema = z.object({
-  github: z.string(),
-  gitlab: z.string(),
-  twitter: z.string(),
-  linkedIn: z.string(),
-  medium: z.string(),
-  hashnode: z.string(),
-  devTo: z.string(),
-  instagram: z.string(),
-  dribbble: z.string(),
-  behance: z.string(),
-  youtube: z.string()
+  github: z.string().optional(),
+  gitlab: z.string().optional(),
+  twitter: z.string().optional(),
+  linkedIn: z.string().optional(),
+  medium: z.string().optional(),
+  hashnode: z.string().optional(),
+  devTo: z.string().optional(),
+  instagram: z.string().optional(),
+  dribbble: z.string().optional(),
+  behance: z.string().optional(),
+  youtube: z.string().optional()
 });
