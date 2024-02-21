@@ -17,6 +17,7 @@ import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpd
 
 // import utils
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 
 // import components
 import TextInput from '../../../inputs/TextInput/TextInput';
@@ -54,10 +55,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
   const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>(
     String(data?.profilePic)
   );
-
-  const handleModalClose = () => {
-    (document.getElementById(nameId) as HTMLDialogElement)?.close();
-  };
 
   const handleImageUpload = (
     event: ChangeEvent<HTMLInputElement>,
@@ -128,7 +125,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
   useEffect(() => {
     if (updateUserDetailsMutation.isSuccess) {
-      handleModalClose();
+      handleCloseModal(nameId);
     }
   }, [updateUserDetailsMutation.isSuccess]);
 
@@ -231,7 +228,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={handleModalClose}
+          onClick={() => handleCloseModal(nameId)}
           disabled={updateUserDetailsMutation.isPending}
         >
           Cancel
