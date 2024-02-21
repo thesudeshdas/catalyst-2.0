@@ -65,8 +65,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
     const file = event?.target?.files?.[0];
 
-    console.log({ file });
-
     if (!file?.type.match(imageMimeType)) {
       alert('Image mime type is not valid');
       return;
@@ -101,8 +99,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         }
       };
       fileReader.readAsDataURL(file);
-
-      console.log({ fileReader });
     }
 
     return () => {
@@ -128,8 +124,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       handleCloseModal(nameId);
     }
   }, [updateUserDetailsMutation.isSuccess]);
-
-  console.log({ data });
 
   return (
     <form

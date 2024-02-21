@@ -29,7 +29,6 @@ export default function BlockerProvider({ children }: { children: ReactNode }) {
       navigate(navigationLink);
 
       if (executeFunction) {
-        console.log('executing');
         executeFunction();
       }
     }
@@ -45,8 +44,6 @@ export default function BlockerProvider({ children }: { children: ReactNode }) {
     setBlocked(false);
 
     if (executeFunction) {
-      console.log('exec');
-
       executeFunction();
     }
 

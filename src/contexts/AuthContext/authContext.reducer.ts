@@ -22,7 +22,8 @@ export const authReducer = (
         accessToken: '',
         refreshToken: '',
         email: '',
-        name: '',
+        firstName: '',
+        lastName: '',
         userId: ''
       };
 

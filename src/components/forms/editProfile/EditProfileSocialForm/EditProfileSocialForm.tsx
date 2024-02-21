@@ -102,8 +102,6 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     }
   }, [isUpdateUserDetailsSuccess]);
 
-  console.log({ isUpdateUserDetailsSuccess });
-
   return (
     <form
       className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-auto'

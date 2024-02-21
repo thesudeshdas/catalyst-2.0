@@ -48,8 +48,6 @@ export default function CreatePowstDescriptionForm() {
   };
 
   const onCreatePowstNameSubmit = () => {
-    console.log(ref.current?.getMarkdown());
-
     savePowstInLocal({
       description: ref.current?.getMarkdown()
     });
@@ -57,8 +55,6 @@ export default function CreatePowstDescriptionForm() {
     setActiveStep(2);
     navigate('/create/tech');
   };
-
-  console.log('from desc', { localPowst });
 
   return (
     <form
@@ -92,10 +88,6 @@ export default function CreatePowstDescriptionForm() {
           className='mdx_editor'
         />
       </div>
-
-      {/* <button onClick={() => console.log(ref.current?.getMarkdown())}>
-        Get markdown
-      </button> */}
 
       <div className='flex justify-between w-full'>
         <CreatePowstPreviousButton link='/create/basic' />

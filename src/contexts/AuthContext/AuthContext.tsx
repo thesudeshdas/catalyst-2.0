@@ -18,7 +18,8 @@ const initialState: IAuthContextState = {
   refreshToken: refreshToken || '',
   accessToken: accessToken || '',
   email: '',
-  name: '',
+  firstName: '',
+  lastName: '',
   userId: userId || ''
 };
 

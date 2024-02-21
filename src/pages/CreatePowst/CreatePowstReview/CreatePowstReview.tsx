@@ -59,8 +59,6 @@ export default function CreatePowstReview() {
         }
       };
       fileReader.readAsDataURL(file);
-
-      console.log({ fileReader });
     }
 
     return () => {
@@ -70,8 +68,6 @@ export default function CreatePowstReview() {
       }
     };
   }, [file]);
-
-  console.log('from review', localPowst);
 
   return (
     <main className='flex flex-col gap-4 items-center'>
@@ -108,8 +104,6 @@ export default function CreatePowstReview() {
             <div className='flex flex-col sm:flex-row gap-4 justify-between'>
               <div className='flex flex-wrap gap-3'>
                 {localPowst?.techStack.map((icon) => {
-                  console.log({ icon });
-
                   return (
                     <img
                       src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version}.svg`}

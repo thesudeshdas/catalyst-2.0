@@ -23,8 +23,6 @@ export default function EditProfile() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log({ check: window.innerWidth });
-
   return <ProfileEditor alwaysOpen />;
 }
 

@@ -45,11 +45,7 @@ export default function CreatePowstTechForm() {
     { name: string; version: string }[]
   >(localPowst?.techStack || []);
 
-  const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstTechForm> = (
-    data
-  ) => {
-    console.log({ data });
-
+  const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstTechForm> = () => {
     savePowstInLocal({
       techStack: selectedTech
     });
@@ -71,8 +67,6 @@ export default function CreatePowstTechForm() {
   };
 
   const watchSearch = watch('tech');
-
-  console.log({ watch: watch('tech'), selectedTech });
 
   return (
     <form

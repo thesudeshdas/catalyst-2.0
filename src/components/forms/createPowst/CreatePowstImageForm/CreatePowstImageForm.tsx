@@ -37,7 +37,6 @@ export default function CreatePowstImageForm() {
     control,
     handleSubmit,
     formState: { errors },
-    formState,
     clearErrors
   } = useForm<ICreatePowstImageForm>({
     resolver: zodResolver(createPowstImageSchema),
@@ -58,8 +57,6 @@ export default function CreatePowstImageForm() {
 
     const file = event?.target?.files?.[0];
 
-    console.log({ file });
-
     if (!file?.type.match(imageMimeType)) {
       alert('Image mime type is not valid');
       return;
@@ -72,11 +69,6 @@ export default function CreatePowstImageForm() {
   const onCreatePowstImageSubmit: SubmitHandler<ICreatePowstImageForm> = (
     data
   ) => {
-    // const formData = new FormData();
-    // formData.append('files', data?.image?.[0]);
-
-    console.log({ data });
-
     savePowstInLocal({ image: data?.image });
 
     setActiveStep(4);
@@ -97,8 +89,6 @@ export default function CreatePowstImageForm() {
         }
       };
       fileReader.readAsDataURL(file);
-
-      console.log({ fileReader });
     }
 
     return () => {
@@ -108,8 +98,6 @@ export default function CreatePowstImageForm() {
       }
     };
   }, [file]);
-
-  console.log('from image', { localPowst, formState });
 
   return (
     <form

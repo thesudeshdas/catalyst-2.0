@@ -36,15 +36,11 @@ export default function CreatePowstLayout() {
   };
 
   const clearPowstInLocal = () => {
-    console.log('executed');
-
     setLocalPowst({ description: '' });
     localStorage.removeItem('localPowst');
   };
 
   useEffect(() => {
-    console.log('set hua na?', localPowst);
-
     localStorage.setItem(
       'localPowst',
       JSON.stringify({ ...localPowst, image: undefined })
