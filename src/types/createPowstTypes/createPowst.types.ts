@@ -28,9 +28,10 @@ export interface IPowst
   extends ICreatePowstBasicForm,
     ICreatePowstTechForm,
     ICreatePowstImageForm {
-  _id?: string;
+  _id: string;
   description: string;
   techStack: { name: string; version: string }[];
+  owner: string;
 }
 
 export interface ICreatePowstBody {

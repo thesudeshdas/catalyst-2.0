@@ -11,7 +11,7 @@ import { IGetUserDetailsBody, IUser } from '../../types/userTypes/user.types';
 import * as apiKeys from '../../constants/apisKeys.constants';
 
 const getUserDetails = (req: IGetUserDetailsBody): Promise<Partial<IUser>> =>
-  axiosClient(`/users/profile/${req.userId}`).then((res) => res.data);
+  axiosClient(`/users/${req.userId}`).then((res) => res.data);
 
 export default function useGetUserDetails({ userId }: IGetUserDetailsBody) {
   return useQuery({

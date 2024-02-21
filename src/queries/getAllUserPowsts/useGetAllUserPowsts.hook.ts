@@ -6,10 +6,10 @@ import axiosClient from '../../config/axiosInstance';
 
 // import types
 import { IGetAllUserPowstsBody } from '../../types/powstTypes/powst.types';
-import { IPowst } from '../../types/createPowstTypes/createPowst.types';
+import { IUserPowst } from '../../types/userTypes/user.types';
 
-const getAllUserPowsts = (req: IGetAllUserPowstsBody): Promise<IPowst[]> =>
-  axiosClient.get(`/powst/user/${req.userId}`).then((res) => res.data);
+const getAllUserPowsts = (req: IGetAllUserPowstsBody): Promise<IUserPowst[]> =>
+  axiosClient.get(`/users/${req.userId}/powsts`).then((res) => res.data.powsts);
 
 export function useGetAllUserPowsts({ userId }: IGetAllUserPowstsBody) {
   return useQuery({

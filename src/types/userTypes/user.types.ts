@@ -1,3 +1,5 @@
+import { IPowst } from '../createPowstTypes/createPowst.types';
+
 export interface IUserSocials {
   github: string;
   gitlab: string;
@@ -22,13 +24,28 @@ export interface IUser {
   profilePic: string;
   location: string;
   socials: IUserSocials;
+  powsts: { powst: Partial<IPowst> }[];
 }
 
-export interface IUpdateUserDetailsBody extends IUser {
+export interface IUpdateUserDetailsBody {
+  firstName: string;
+  lastName: string;
+  email: string;
+  userId: string;
+  headline: string;
+  _id: string;
+  location: string;
+  socials: IUserSocials;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
+  powsts: { powst: string }[];
 }
 
 export interface IGetUserDetailsBody {
   userId: string;
+}
+
+export interface IUserPowst {
+  powst: IPowst;
+  starred: boolean;
 }

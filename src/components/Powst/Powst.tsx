@@ -12,7 +12,7 @@ import { Dispatch, SetStateAction } from 'react';
 // declare props types
 interface IPowstProps {
   sameUser?: boolean;
-  powstDetails?: IPowst;
+  powstDetails?: Partial<IPowst>;
   setPowstToBeShown: Dispatch<SetStateAction<string>>;
 }
 

@@ -3,7 +3,7 @@ import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
 
 // import queries & mutations
-import { useGetAllUserPowsts } from '../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
+import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
 
 // import components
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
@@ -14,9 +14,10 @@ export default function PortfolioTab() {
   const { authState } = useAuthContext();
   const { setPowstToBeShown } = useShowPowst();
 
-  const { data, isPending } = useGetAllUserPowsts({ userId: authState.userId });
+  const { data: userDetails, isPending: isUserDetailsPending } =
+    useGetUserDetails({ userId: authState.userId });
 
-  if (isPending) {
+  if (isUserDetailsPending) {
     return <PortfolioSkeleton />;
   }
 
@@ -69,12 +70,12 @@ export default function PortfolioTab() {
 
           <article className='relative overflow-auto h-72 sm:h-fit'>
             <div className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
-              {data?.map((powst) => (
+              {userDetails?.powsts?.map((item) => (
                 <div className='w-72 sm:w-auto'>
                   <Powst
-                    powstDetails={powst}
+                    powstDetails={item.powst}
                     setPowstToBeShown={setPowstToBeShown}
-                    key={powst._id}
+                    key={item.powst._id}
                     sameUser
                   />
                 </div>

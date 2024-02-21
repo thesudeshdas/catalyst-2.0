@@ -26,11 +26,11 @@ export default function ProjectsTab() {
     >
       <article className='flex flex-col gap-4 '>
         <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
-          {data?.map((powst) => (
+          {data?.map((item) => (
             <Powst
-              powstDetails={powst}
+              powstDetails={item.powst}
               setPowstToBeShown={setPowstToBeShown}
-              key={powst._id}
+              key={item.powst._id}
               sameUser
             />
           ))}
