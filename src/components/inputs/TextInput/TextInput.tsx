@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import react
 import { ReactNode } from 'react';
-
-// import react hook form
-import { UseControllerProps, useController } from 'react-hook-form';
-
-// import icons
+import { useController, UseControllerProps } from 'react-hook-form';
 import { FiInfo } from 'react-icons/fi';
 
 // declare props types

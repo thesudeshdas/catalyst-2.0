@@ -1,8 +1,5 @@
-// import rrd
-import { Link } from 'react-router-dom';
-
-// import icons
 import { FiChevronLeft } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 // declare props types
 interface ICreatePowstPreviousButtonProps {

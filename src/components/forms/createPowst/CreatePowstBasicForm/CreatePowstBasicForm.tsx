@@ -1,30 +1,15 @@
-// import react
 import { useEffect } from 'react';
-
-// import rrd
-import { useNavigate } from 'react-router-dom';
-
-// import icons
-import { FiChevronsRight } from 'react-icons/fi';
-
-// import react hook form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
+import { FiChevronsRight } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
+import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
-// import schema
 import { createPowstBasicSchema } from './createPowstBasicForm.schema';
-
-// import types
-import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstBasicForm() {
   const navigate = useNavigate();
@@ -59,7 +44,7 @@ export default function CreatePowstBasicForm() {
     if (isDirty) {
       setBlocked(true);
     }
-  }, [isDirty, localPowst]);
+  }, [isDirty, localPowst, setBlocked]);
 
   return (
     <form

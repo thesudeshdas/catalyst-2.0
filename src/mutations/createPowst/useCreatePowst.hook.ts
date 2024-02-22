@@ -1,25 +1,15 @@
-// import rrd
 import { useNavigate } from 'react-router-dom';
-
-// import react-query
 import { useMutation } from '@tanstack/react-query';
-
-// import notistack
 import { useSnackbar } from 'notistack';
 
-// import clients
 import axiosClient from '../../config/axiosInstance';
 import queryClient from '../../config/queryClient';
-
-// import utils
-import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
-import { getErrorMessage } from '../../utils/getErrorMessage/getErrorMessage.utils';
-
-// import types
 import {
   ICreatePowstBody,
   IPowst
 } from '../../types/createPowstTypes/createPowst.types';
+import { getErrorMessage } from '../../utils/getErrorMessage/getErrorMessage.utils';
+import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
 
 const createPowst = (req: ICreatePowstBody): Promise<IPowst> =>
   axiosClient

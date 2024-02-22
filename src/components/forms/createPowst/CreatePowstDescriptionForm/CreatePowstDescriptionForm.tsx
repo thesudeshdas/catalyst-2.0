@@ -1,36 +1,27 @@
-// import react
 import { useRef, useState } from 'react';
-
-// import rrd
-import { useNavigate } from 'react-router-dom';
-
-// import icons
 import { FiChevronsRight } from 'react-icons/fi';
-
-// import react mdx editor
+import { useNavigate } from 'react-router-dom';
 import {
   BlockTypeSelect,
   BoldItalicUnderlineToggles,
   CodeToggle,
   CreateLink,
-  MDXEditor,
-  MDXEditorMethods,
-  UndoRedo,
   headingsPlugin,
   linkDialogPlugin,
   linkPlugin,
   listsPlugin,
+  MDXEditor,
+  MDXEditorMethods,
   quotePlugin,
   thematicBreakPlugin,
-  toolbarPlugin
+  toolbarPlugin,
+  UndoRedo
 } from '@mdxeditor/editor';
-import '@mdxeditor/editor/style.css';
 
-// import hooks
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
+
+import '@mdxeditor/editor/style.css';
 
 export default function CreatePowstDescriptionForm() {
   const navigate = useNavigate();

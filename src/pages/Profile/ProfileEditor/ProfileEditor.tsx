@@ -1,10 +1,7 @@
-// import components
 import EditProfileModal from '../../../components/modals/EditProfileModal/EditProfileModal';
 
-// import data
 import { profileEditorOptions } from './profileEditor.data';
 
-// declare prop types
 interface IProfileEditorProps {
   alwaysOpen?: boolean;
 }

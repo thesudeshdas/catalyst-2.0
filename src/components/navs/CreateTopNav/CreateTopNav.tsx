@@ -1,10 +1,6 @@
-// import icons
 import { FiChevronLeft } from 'react-icons/fi';
 
-// import hooks
 import useBlocker from '../../../contexts/BlockerContext/blockerContext.hook';
-
-// import components
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';
 
 export default function CreateTopNav({

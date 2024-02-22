@@ -1,7 +1,4 @@
-// import react
 import { useEffect, useState } from 'react';
-
-// import icons
 import { LuMoon, LuSun } from 'react-icons/lu';
 
 export default function ThemeToggle() {

@@ -1,10 +1,6 @@
-// import react-query
 import { useQuery } from '@tanstack/react-query';
 
-// import clients
 import axiosClient from '../../config/axiosInstance';
-
-// import types
 import { IGetAllUserPowstsBody } from '../../types/powstTypes/powst.types';
 import { IUserPowst } from '../../types/userTypes/user.types';
 

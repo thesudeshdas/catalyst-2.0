@@ -1,16 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import react
 import { useState } from 'react';
-
-// import rrd
-import { Link } from 'react-router-dom';
-
-// import react-hook-form
-import { UseControllerProps, useController } from 'react-hook-form';
-
-// import icons
+import { useController, UseControllerProps } from 'react-hook-form';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function PasswordInput(
   props: { label?: string } & UseControllerProps<any>

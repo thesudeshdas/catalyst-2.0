@@ -1,7 +1,5 @@
-// import react
 import { useEffect } from 'react';
-
-// import icons
+import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   SiBehance,
   SiDevdotto,
@@ -15,31 +13,18 @@ import {
   SiTwitter,
   SiYoutube
 } from 'react-icons/si';
-
-// import react-hook-form
-import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
-import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
-
-// import utils
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
-import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
-
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
-
-// import schema
-import { editProfileSocialSchema } from './editProfileSocialForm.schema';
-
-// import types
+import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileSocialForm } from '../../../../types/profileTypes/profile.types';
 import { IUserSocials } from '../../../../types/userTypes/user.types';
+import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
+import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import TextInput from '../../../inputs/TextInput/TextInput';
+
+import { editProfileSocialSchema } from './editProfileSocialForm.schema';
 
 export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
   const { authState } = useAuthContext();
@@ -94,13 +79,13 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
       behance: userDetails?.socials?.behance,
       youtube: userDetails?.socials?.youtube
     });
-  }, [userDetails]);
+  }, [reset, userDetails]);
 
   useEffect(() => {
     if (isUpdateUserDetailsSuccess) {
       handleCloseModal(nameId);
     }
-  }, [isUpdateUserDetailsSuccess]);
+  }, [isUpdateUserDetailsSuccess, nameId]);
 
   return (
     <form

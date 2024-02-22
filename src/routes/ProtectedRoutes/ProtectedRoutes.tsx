@@ -1,14 +1,8 @@
-// import react
 import { useEffect } from 'react';
-
-// import rrd
 import { Navigate, Outlet } from 'react-router-dom';
 
-// import hooks
-import useRefreshToken from '../../mutations/refreshToken/useRefreshToken.hook';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
-
-// import utils
+import useRefreshToken from '../../mutations/refreshToken/useRefreshToken.hook';
 import { isAccessTokenExpired } from '../../utils/isTokenExpired/isAccessTokenExpired.utils';
 import { isRefreshTokenExpired } from '../../utils/isTokenExpired/isRefreshTokenExpired.utils';
 

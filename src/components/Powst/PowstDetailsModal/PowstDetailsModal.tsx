@@ -1,7 +1,5 @@
-// import react
 import { Dispatch, SetStateAction } from 'react';
-
-// import icons
+import { DiReact } from 'react-icons/di';
 import {
   FiBookmark,
   FiHeart,
@@ -10,19 +8,13 @@ import {
   FiShare2,
   FiX
 } from 'react-icons/fi';
-import { DiReact } from 'react-icons/di';
 
-// import client
 import queryClient from '../../../config/queryClient';
-
-// import components
-import CustomImage from '../../images/CustomImage/CustomImage';
+import { IPowst } from '../../../types/createPowstTypes/createPowst.types';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
+import CustomImage from '../../images/CustomImage/CustomImage';
 import UserProfileDividerLink from '../../links/UserProfileDividerLink/UserProfileDividerLink';
 import Powst from '../Powst';
-
-// import types
-import { IPowst } from '../../../types/createPowstTypes/createPowst.types';
 
 // declare props types
 interface IPowstDetailsModalProps {

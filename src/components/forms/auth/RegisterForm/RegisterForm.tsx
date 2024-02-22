@@ -1,22 +1,13 @@
-// import react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
-import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
-import CheckboxInput from '../../../inputs/CheckboxInput/CheckboxInput';
-
-// import hooks
-import { useRegister } from './useRegister.hook';
-
-// import schema
-import { registerSchema } from './registerForm.schema';
-
-// import types
 import { IRegisterForm } from '../../../../types/authTypes/auth.types';
+import CheckboxInput from '../../../inputs/CheckboxInput/CheckboxInput';
+import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import TextInput from '../../../inputs/TextInput/TextInput';
+
+import { registerSchema } from './registerForm.schema';
+import { useRegister } from './useRegister.hook';
 
 export default function RegisterForm() {
   const { mutate } = useRegister();

@@ -1,12 +1,6 @@
-// import react-query
 import { useQuery } from '@tanstack/react-query';
 
-// import rrd
-
-// import client
 import axiosClient from '../../config/axiosInstance';
-
-// import types
 import {
   IRefreshTokenBody,
   IRefreshTokenResponse

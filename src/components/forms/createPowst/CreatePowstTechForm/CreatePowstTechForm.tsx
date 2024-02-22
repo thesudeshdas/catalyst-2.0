@@ -1,33 +1,16 @@
-// import react
 import { useState } from 'react';
-
-// import rrd
-import { useNavigate } from 'react-router-dom';
-
-// import icons
-import { FiChevronsRight, FiInfo } from 'react-icons/fi';
-
-// import react hook form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
+import { FiChevronsRight, FiInfo } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
+import { techIcons } from '../../../../assets/resources/techStack.icons';
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
+import { ICreatePowstTechForm } from '../../../../types/createPowstTypes/createPowst.types';
 import TextInput from '../../../inputs/TextInput/TextInput';
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
-// import schema
 import { createPowstTechSchema } from './createPowstTechForm.schema';
-
-// import types
-import { ICreatePowstTechForm } from '../../../../types/createPowstTypes/createPowst.types';
-
-// import assets
-import { techIcons } from '../../../../assets/resources/techStack.icons';
 
 export default function CreatePowstTechForm() {
   const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();

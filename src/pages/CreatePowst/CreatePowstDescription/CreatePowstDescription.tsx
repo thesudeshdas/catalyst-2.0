@@ -1,14 +1,8 @@
-// import react
 import { useEffect } from 'react';
-
-// import rrd
 import { useLocation } from 'react-router-dom';
 
-// import hook
-import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
 import CreatePowstDescriptionForm from '../../../components/forms/createPowst/CreatePowstDescriptionForm/CreatePowstDescriptionForm';
+import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 
 export default function CreatePowstDescription() {
   const { pathname } = useLocation();

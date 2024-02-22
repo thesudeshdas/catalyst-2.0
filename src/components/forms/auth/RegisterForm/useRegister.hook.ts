@@ -1,20 +1,12 @@
-// import rrd
 import { useNavigate } from 'react-router-dom';
-
-// import react-query
-
-// import snackbar
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { useSnackbar } from 'notistack';
 
-// import axios
-import axios from 'axios';
+axios;
 
-// import utils
-import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
-
-// import types
 import { IRegisterBody } from '../../../../types/authTypes/auth.types';
-import { useMutation } from '@tanstack/react-query';
+import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
 
 interface RegisteredUser {
   name: string;

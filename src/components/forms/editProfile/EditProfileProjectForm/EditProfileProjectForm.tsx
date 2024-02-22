@@ -1,29 +1,15 @@
-// import react
 import { useCallback, useEffect, useState } from 'react';
-
-// import helper
-import update from 'immutability-helper';
-
-// import react-dnd
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import update from 'immutability-helper';
 
-// import hooks
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
-
-// import utils
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
-
-// import queries and mutations
 import { useGetAllUserPowsts } from '../../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
-
-// import components
-import DragCard from '../../../drag/DragCard';
-
-// import types
 import { IDragItem } from '../../../../types/dragTypes/drag.types';
 import { IUserPowst } from '../../../../types/userTypes/user.types';
+import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
+import DragCard from '../../../drag/DragCard';
 
 export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
   const { authState } = useAuthContext();
@@ -63,7 +49,7 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
         />
       );
     },
-    []
+    [moveCard]
   );
 
   const handleSaveReorder = () => {
@@ -96,7 +82,7 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
     if (isUpdateUserDetailsSuccess) {
       handleCloseModal(nameId);
     }
-  }, [isUpdateUserDetailsSuccess]);
+  }, [isUpdateUserDetailsSuccess, nameId]);
 
   return (
     <form className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-auto'>

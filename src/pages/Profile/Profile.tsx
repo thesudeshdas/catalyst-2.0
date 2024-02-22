@@ -1,10 +1,4 @@
-// import react
 import { useState } from 'react';
-
-// import rrd
-import { useNavigate } from 'react-router-dom';
-
-// import icons
 import {
   FiGithub,
   FiGitlab,
@@ -14,27 +8,20 @@ import {
   FiMapPin,
   FiTwitter
 } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
-// import hooks
+import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
-
-// import queries & mutations
 import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
-
-// import utils
 import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
-// import components
-import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
-import ProfileSkeleton from './ProfileSkeleton';
-
-// import page components
-import PortfolioTab from './Portfolio/Portfolio';
-import ProjectsTab from './Projects/Projects';
-import BlogsTab from './Blogs/Blogs';
-import WorkTab from './Work/Work';
 import AboutTab from './About/About';
+import BlogsTab from './Blogs/Blogs';
+import PortfolioTab from './Portfolio/Portfolio';
 import ProfileEditor from './ProfileEditor/ProfileEditor';
+import ProjectsTab from './Projects/Projects';
+import WorkTab from './Work/Work';
+import ProfileSkeleton from './ProfileSkeleton';
 
 export default function Profile() {
   const navigate = useNavigate();

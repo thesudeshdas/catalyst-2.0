@@ -1,14 +1,11 @@
-// import react
-import { ReactNode, createContext, useReducer } from 'react';
+import { createContext, ReactNode, useReducer } from 'react';
 
-// import reducer
-import { authReducer } from './authContext.reducer';
-
-// import types
 import {
   IAuthContext,
   IAuthContextState
 } from '../../types/authTypes/auth.types';
+
+import { authReducer } from './authContext.reducer';
 
 const accessToken = localStorage?.getItem('accessToken');
 const refreshToken = localStorage?.getItem('refreshToken');

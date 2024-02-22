@@ -1,4 +1,3 @@
-// import components
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
 
 export default function BlogsTab() {

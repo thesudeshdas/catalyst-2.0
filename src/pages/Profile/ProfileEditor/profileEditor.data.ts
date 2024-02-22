@@ -1,4 +1,3 @@
-// import components
 import EditProfileBasicForm from '../../../components/forms/editProfile/EditProfileBasicForm/EditProfileBasicForm';
 import EditProfileProjectForm from '../../../components/forms/editProfile/EditProfileProjectForm/EditProfileProjectForm';
 import EditProfileSocialForm from '../../../components/forms/editProfile/EditProfileSocialForm/EditProfileSocialForm';

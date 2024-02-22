@@ -1,12 +1,9 @@
-// import rrd
+import { LuMenu } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
-// import icons
-import { LuMenu } from 'react-icons/lu';
-
-// import data
-import { appSideNavLinks } from './appSideNav.data';
 import { socialsList } from '../../../data/socials/socials.data';
+
+import { appSideNavLinks } from './appSideNav.data';
 
 export default function AppSideNav() {
   return (

@@ -1,39 +1,19 @@
-// import react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-// import rrd
-import { BrowserRouter } from 'react-router-dom';
-
-// import react-error-boundary
 import { ErrorBoundary } from 'react-error-boundary';
-
-// import react-query
-import { QueryClientProvider } from '@tanstack/react-query';
-
-// import snackbar
-import { SnackbarProvider, closeSnackbar } from 'notistack';
-
-// import icons
 import { FiX } from 'react-icons/fi';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { closeSnackbar, SnackbarProvider } from 'notistack';
 
-// import routes
-import { AllRoutes } from './routes/AllRoutes.tsx';
-
-// import styles
-import './index.css';
-
-// import contexts
+import queryClient from './config/queryClient.ts';
 import AuthProvider from './contexts/AuthContext/AuthContext.tsx';
 import BlockerProvider from './contexts/BlockerContext/BlockerContext';
-
-// import query client
-import queryClient from './config/queryClient.ts';
-
-// import components
 import GlobalErrorFallback from './globals/GlobalErrorFallback/GlobalErrorFallback.tsx';
+import { AllRoutes } from './routes/AllRoutes.tsx';
 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

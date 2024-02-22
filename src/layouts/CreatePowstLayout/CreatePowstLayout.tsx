@@ -1,17 +1,9 @@
-// import react
 import { useEffect, useState } from 'react';
-
-// import rrd
 import { Outlet } from 'react-router-dom';
 
-// import hooks
-import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
-
-// import components
-import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
 import BlockerModal from '../../components/modals/BlockerModal/BlockerModal';
-
-// import types
+import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
+import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
 import { IPowst } from '../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstLayout() {

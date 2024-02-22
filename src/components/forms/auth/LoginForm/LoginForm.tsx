@@ -1,21 +1,12 @@
-// import react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
-import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
-
-// import hooks
 import { useLogin } from '../../../../mutations/login/useLogin.hook';
-
-// import schema
-import { loginSchema } from './loginForm.schema';
-
-// import types
 import { ILoginForm } from '../../../../types/authTypes/auth.types';
+import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import TextInput from '../../../inputs/TextInput/TextInput';
+
+import { loginSchema } from './loginForm.schema';
 
 export default function LoginForm() {
   const { loginMutation, isLoginPending } = useLogin();

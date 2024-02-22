@@ -1,35 +1,18 @@
-// import react
 import { useEffect } from 'react';
-
-// import icons
-import { FiPlus } from 'react-icons/fi';
-
-// import react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
+import { FiPlus } from 'react-icons/fi';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
-import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
-
-// import utils
-import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
+import { IEditProfileBasicForm } from '../../../../types/profileTypes/profile.types';
 import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
-
-// import components
+import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
-// import schema
 import { editProfileBasicSchema } from './editProfileBasicForm.schema';
-
-// import constants
-
-// import types
-import { IEditProfileBasicForm } from '../../../../types/profileTypes/profile.types';
-import ImageInput from '../../../inputs/ImageInput/ImageInput';
 
 export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
   const updateUserDetailsMutation = useUpdateUserDetails();
@@ -69,13 +52,13 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       headline: data?.headline,
       location: data?.location
     });
-  }, [data]);
+  }, [data, reset]);
 
   useEffect(() => {
     if (updateUserDetailsMutation.isSuccess) {
       handleCloseModal(nameId);
     }
-  }, [updateUserDetailsMutation.isSuccess]);
+  }, [nameId, updateUserDetailsMutation.isSuccess]);
 
   return (
     <form

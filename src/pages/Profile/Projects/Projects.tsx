@@ -1,12 +1,8 @@
-// import hooks
+import Powst from '../../../components/Powst/Powst';
 import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
-
-// import queries
 import { useGetAllUserPowsts } from '../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
 
-// import components
-import Powst from '../../../components/Powst/Powst';
 import ProjectsSkeleton from './ProjectsSkeleton';
 
 export default function ProjectsTab() {

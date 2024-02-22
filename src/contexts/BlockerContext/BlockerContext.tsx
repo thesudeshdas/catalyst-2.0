@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useState } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { IBlockerContext } from '../../types/blockerTypes/blocker.types';
 
 export const BlockerContext = createContext<IBlockerContext>({

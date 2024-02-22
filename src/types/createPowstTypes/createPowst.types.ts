@@ -1,4 +1,3 @@
-// import react
 import { Dispatch, SetStateAction } from 'react';
 
 export interface ICreatePowstContext {

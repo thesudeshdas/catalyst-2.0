@@ -1,10 +1,7 @@
-// import components
 import Powst from '../../components/Powst/Powst';
 import PowstSkeleton from '../../components/Powst/PowstSkeleton';
-
-// import queries
-import { useGetAllPowsts } from '../../queries/getAllPowsts/useGetAllPowsts.hook';
 import useShowPowst from '../../hooks/useShowPowst/useShowPowst';
+import { useGetAllPowsts } from '../../queries/getAllPowsts/useGetAllPowsts.hook';
 
 export default function Feed() {
   const { isPending, data } = useGetAllPowsts();

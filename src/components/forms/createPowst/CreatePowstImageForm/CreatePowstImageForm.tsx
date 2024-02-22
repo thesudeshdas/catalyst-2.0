@@ -1,28 +1,15 @@
-// import
-import { useNavigate } from 'react-router-dom';
-
-// import icons
-import { FiChevronsRight, FiInfo, FiPlus } from 'react-icons/fi';
-
-// import react hook form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
+import { FiChevronsRight, FiInfo, FiPlus } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
-
-// import schema
-import { createPowstImageSchema } from './createPowstImageForm.schema';
-
-// import types
 import { ICreatePowstImageForm } from '../../../../types/createPowstTypes/createPowst.types';
-import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
+import TextInput from '../../../inputs/TextInput/TextInput';
+import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
+
+import { createPowstImageSchema } from './createPowstImageForm.schema';
 
 export default function CreatePowstImageForm() {
   const navigate = useNavigate();

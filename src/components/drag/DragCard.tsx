@@ -1,14 +1,8 @@
-// import react
 import { useRef } from 'react';
-
-// import react-dnd
 import { useDrag, useDrop } from 'react-dnd';
+import { LuGripVertical, LuTrash } from 'react-icons/lu';
 import type { Identifier, XYCoord } from 'dnd-core';
 
-// import icons
-import { LuGripVertical, LuTrash } from 'react-icons/lu';
-
-// import types
 import { IDropItem } from '../../types/dragTypes/drag.types';
 
 interface IDragCardProps {

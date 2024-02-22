@@ -1,7 +1,5 @@
-// import icons
 import { SiMedium } from 'react-icons/si';
 
-// import components
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
 
 // declare props types

@@ -1,20 +1,12 @@
-// import react
 import { useEffect, useState } from 'react';
-
-// import rrd
 import { useLocation } from 'react-router-dom';
 
-// import icons
-
-// import hook
+import UserAvatar from '../../../components/avatars/UserAvatar/UserAvatar';
+import CreatePowstPreviousButton from '../../../components/forms/createPowst/CreatePowstPreviousButton/CreatePowstPreviousButton';
+import CustomImage from '../../../components/images/CustomImage/CustomImage';
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 import useCreatePowstServer from '../../../mutations/createPowst/useCreatePowst.hook';
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
-
-// import components
-import UserAvatar from '../../../components/avatars/UserAvatar/UserAvatar';
-import CustomImage from '../../../components/images/CustomImage/CustomImage';
-import CreatePowstPreviousButton from '../../../components/forms/createPowst/CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 export default function CreatePowstReview() {
   const { pathname } = useLocation();

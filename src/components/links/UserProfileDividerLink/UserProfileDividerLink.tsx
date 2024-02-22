@@ -1,7 +1,5 @@
-// import rrd
 import { Link } from 'react-router-dom';
 
-// import components
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
 
 export default function UserProfileDividerLink() {

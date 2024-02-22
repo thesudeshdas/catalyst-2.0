@@ -1,5 +1,5 @@
-// import react
 import { ReactElement, useEffect, useRef, useState } from 'react';
+
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';
 
 // props type
@@ -37,7 +37,7 @@ export default function AuthPageLayout({
     ) {
       setAltSelection(imgSources.large.alt);
     }
-  }, []);
+  }, [imgSources.large, imgSources.small.alt]);
 
   return (
     <main className='h-screen flex'>

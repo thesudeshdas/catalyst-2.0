@@ -1,7 +1,8 @@
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 import { Controller } from 'react-hook-form';
-import CustomImage from '../../images/CustomImage/CustomImage';
+
 import { imageMimeType } from '../../../constants/image.constants';
+import CustomImage from '../../images/CustomImage/CustomImage';
 
 interface IImageInputProps {
   name: string;

@@ -1,13 +1,9 @@
-// import hooks
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
-import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
-
-// import queries & mutations
-import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
-
-// import components
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
 import Powst from '../../../components/Powst/Powst';
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
+import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
+import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
+
 import PortfolioSkeleton from './PortfolioSkeleton';
 
 export default function PortfolioTab() {

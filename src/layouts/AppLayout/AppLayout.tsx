@@ -1,10 +1,6 @@
-// import react
 import { useState } from 'react';
-
-// import rrd
 import { Outlet } from 'react-router-dom';
 
-// import components
 import AppNav from '../../components/navs/AppNav/AppNav';
 import PowstDetailsModal from '../../components/Powst/PowstDetailsModal/PowstDetailsModal';
 

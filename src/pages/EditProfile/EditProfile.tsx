@@ -1,10 +1,6 @@
-// import react
 import { useEffect } from 'react';
-
-// import rrd
 import { useNavigate } from 'react-router-dom';
 
-// import components
 import ProfileEditor from '../Profile/ProfileEditor/ProfileEditor';
 
 export default function EditProfile() {
@@ -21,7 +17,7 @@ export default function EditProfile() {
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [navigate]);
 
   return <ProfileEditor alwaysOpen />;
 }

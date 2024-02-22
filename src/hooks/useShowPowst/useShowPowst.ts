@@ -1,7 +1,4 @@
-// import react
 import { Dispatch, SetStateAction } from 'react';
-
-// import rrd
 import { useOutletContext } from 'react-router-dom';
 
 interface IAppLayoutContext {

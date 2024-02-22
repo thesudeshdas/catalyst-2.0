@@ -1,14 +1,8 @@
-// import react-query
 import { useQuery } from '@tanstack/react-query';
 
-// import clients
 import axiosClient from '../../config/axiosInstance';
-
-// import types
-import { IGetUserDetailsBody, IUser } from '../../types/userTypes/user.types';
-
-// import keys
 import * as apiKeys from '../../constants/apisKeys.constants';
+import { IGetUserDetailsBody, IUser } from '../../types/userTypes/user.types';
 
 const getUserDetails = (req: IGetUserDetailsBody): Promise<Partial<IUser>> =>
   axiosClient(`/users/${req.userId}`).then((res) => res.data);

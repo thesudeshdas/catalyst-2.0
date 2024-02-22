@@ -1,10 +1,6 @@
-// import rrd
+import { useErrorBoundary } from 'react-error-boundary';
 import { useNavigate } from 'react-router-dom';
 
-// import react-error-boundary
-import { useErrorBoundary } from 'react-error-boundary';
-
-// declare prop types
 interface IGlobalErrorFallbackProps {
   error: Error;
 }

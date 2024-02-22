@@ -1,13 +1,9 @@
-// import icons
+import { Dispatch, SetStateAction } from 'react';
 import { FiHeart } from 'react-icons/fi';
 
-// import components
-import CustomImage from '../images/CustomImage/CustomImage';
-import UserAvatar from '../avatars/UserAvatar/UserAvatar';
-
-// import types
 import { IPowst } from '../../types/createPowstTypes/createPowst.types';
-import { Dispatch, SetStateAction } from 'react';
+import UserAvatar from '../avatars/UserAvatar/UserAvatar';
+import CustomImage from '../images/CustomImage/CustomImage';
 
 // declare props types
 interface IPowstProps {

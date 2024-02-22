@@ -1,11 +1,7 @@
-// import rrd
 import { Link, Navigate } from 'react-router-dom';
 
-// import components
-import AuthPageLayout from '../../../components/pageLayout/AuthPageLayout/AuthPageLayout';
 import RegisterForm from '../../../components/forms/auth/RegisterForm/RegisterForm';
-
-// import utils
+import AuthPageLayout from '../../../components/pageLayout/AuthPageLayout/AuthPageLayout';
 import { isAccessTokenExpired } from '../../../utils/isTokenExpired/isAccessTokenExpired.utils';
 
 export default function Register() {

@@ -1,10 +1,6 @@
-// import rrd
+import { LuBriefcase, LuCompass, LuPlusSquare, LuSearch } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
-// import icons
-import { LuBriefcase, LuCompass, LuPlusSquare, LuSearch } from 'react-icons/lu';
-
-// import components
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';
 import AppSideNav from '../AppSideNav/AppSideNav';
 

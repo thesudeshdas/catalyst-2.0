@@ -1,23 +1,12 @@
-// import react
-import { Suspense, lazy } from 'react';
-
-// import rrd
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-// import fallbacks
 import GlobalSuspenseFallback from '../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
-
-// import layouts
 import AppLayout from '../layouts/AppLayout/AppLayout';
 import CreatePowstLayout from '../layouts/CreatePowstLayout/CreatePowstLayout';
 
-// import protected routes
 import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
 
-// import app pages
-// const Profile = lazy(() => import('../pages/Profile/Profile'));
-
-// import powst creation pages
 const CreatePowstBasic = lazy(
   () => import('../pages/CreatePowst/CreatePowstBasic/CreatePowstBasic')
 );

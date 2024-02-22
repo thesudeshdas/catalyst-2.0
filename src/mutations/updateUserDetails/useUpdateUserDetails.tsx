@@ -1,24 +1,15 @@
-// import react-query
 import { useMutation } from '@tanstack/react-query';
-
-// import notistack
 import { useSnackbar } from 'notistack';
 
-// import clients
 import axiosClient from '../../config/axiosInstance';
 import queryClient from '../../config/queryClient';
-
-// import utils
-import sanitiseObject from '../../utils/sanitiseObject/sanitiseObject.utils';
-import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
-
-// import types
+import * as apiKeys from '../../constants/apisKeys.constants';
 import {
   IUpdateUserDetailsBody,
   IUser
 } from '../../types/userTypes/user.types';
-
-import * as apiKeys from '../../constants/apisKeys.constants';
+import objectToFormData from '../../utils/jsonToFormData/jsonToFormData';
+import sanitiseObject from '../../utils/sanitiseObject/sanitiseObject.utils';
 
 const updateUserDetails = async (
   req: Partial<IUpdateUserDetailsBody>
