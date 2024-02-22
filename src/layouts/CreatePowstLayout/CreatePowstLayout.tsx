@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import BlockerModal from '../../components/modals/BlockerModal/BlockerModal';
 import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
 import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
+import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import { IPowst } from '../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstLayout() {
@@ -11,6 +12,7 @@ export default function CreatePowstLayout() {
 
   const { blocked, showBlockerModal, cancelNavigation, discardAndNavigate } =
     useBlocker();
+  useDocumentTitle('Catalyst | Create Powst');
 
   const localPowstFromStorage: string =
     localStorage?.getItem('localPowst') || '';

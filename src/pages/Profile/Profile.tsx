@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FiGithub,
   FiGitlab,
@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
+import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
 import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
@@ -26,6 +27,7 @@ import ProfileSkeleton from './ProfileSkeleton';
 export default function Profile() {
   const navigate = useNavigate();
 
+  const { setDocumentTitle } = useDocumentTitle('Catalyst | Profile');
   const { authState, authDispatch } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
@@ -44,6 +46,12 @@ export default function Profile() {
 
     navigate('/feed');
   };
+
+  useEffect(() => {
+    setDocumentTitle(
+      `Catalyst | ${userDetails?.firstName} ${userDetails?.lastName}`
+    );
+  }, [setDocumentTitle, userDetails]);
 
   return isUserDetailsPending ? (
     <ProfileSkeleton />

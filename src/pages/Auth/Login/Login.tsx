@@ -2,10 +2,13 @@ import { Link, Navigate } from 'react-router-dom';
 
 import LoginForm from '../../../components/forms/auth/LoginForm/LoginForm';
 import AuthPageLayout from '../../../components/pageLayout/AuthPageLayout/AuthPageLayout';
+import useDocumentTitle from '../../../hooks/useDocumentTitle/useDocumentTitle';
 import { isAccessTokenExpired } from '../../../utils/isTokenExpired/isAccessTokenExpired.utils';
 
 export default function Login() {
   const accessToken = localStorage?.getItem('accessToken');
+
+  useDocumentTitle('Catalyst | Login');
 
   if (accessToken && !isAccessTokenExpired(accessToken)) {
     return (

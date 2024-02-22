@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import ProfileEditor from '../Profile/ProfileEditor/ProfileEditor';
 
 export default function EditProfile() {
   const navigate = useNavigate();
+
+  useDocumentTitle('Catalyst | Edit Profile');
 
   useEffect(() => {
     const handleResize = () => {

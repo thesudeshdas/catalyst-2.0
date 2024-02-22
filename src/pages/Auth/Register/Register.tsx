@@ -2,10 +2,13 @@ import { Link, Navigate } from 'react-router-dom';
 
 import RegisterForm from '../../../components/forms/auth/RegisterForm/RegisterForm';
 import AuthPageLayout from '../../../components/pageLayout/AuthPageLayout/AuthPageLayout';
+import useDocumentTitle from '../../../hooks/useDocumentTitle/useDocumentTitle';
 import { isAccessTokenExpired } from '../../../utils/isTokenExpired/isAccessTokenExpired.utils';
 
 export default function Register() {
   const accessToken = localStorage?.getItem('accessToken');
+
+  useDocumentTitle('Catalyst | Register');
 
   if (accessToken && !isAccessTokenExpired(accessToken)) {
     return (
