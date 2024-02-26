@@ -17,7 +17,14 @@ export interface IEditProfileSocialForm {
   hashnode: string;
   devTo: string;
   instagram: string;
+  figma: string;
   dribbble: string;
   behance: string;
   youtube: string;
+  wellfound: string;
+  freelancer: string;
+  upwork: string;
+  fiverr: string;
+  producthunt: string;
+  portfolio: string;
 }

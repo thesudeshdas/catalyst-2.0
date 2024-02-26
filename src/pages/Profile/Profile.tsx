@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
-import {
-  FiGithub,
-  FiGitlab,
-  FiLink,
-  FiLinkedin,
-  FiMail,
-  FiMapPin,
-  FiTwitter
-} from 'react-icons/fi';
+import { FiInfo, FiLink, FiMail, FiMapPin } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
+import socialIconsList from '../../assets/icons/socialIcons';
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
@@ -52,6 +45,28 @@ export default function Profile() {
       `Catalyst | ${userDetails?.firstName} ${userDetails?.lastName}`
     );
   }, [setDocumentTitle, userDetails]);
+
+  const renderedSocialIcons = userDetails?.socials
+    ?.filter((social) => social.name !== 'portfolio')
+    .map((social) => {
+      const { name, link } = social;
+
+      const { icon: Icon } = socialIconsList.find(
+        (item) => item.name === name
+      ) || { icon: FiInfo };
+
+      return (
+        <a
+          key={name}
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'
+        >
+          <Icon className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+        </a>
+      );
+    });
 
   return isUserDetailsPending ? (
     <ProfileSkeleton />
@@ -119,22 +134,8 @@ export default function Profile() {
             </a>
           </div>
 
-          <div className='grid grid-cols-2 gap-1'>
-            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
-              <FiGithub className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
-            </button>
-
-            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
-              <FiGitlab className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
-            </button>
-
-            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
-              <FiLinkedin className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
-            </button>
-
-            <button className='btn btn-square btn-ghost btn-sm hover:bg-inherit group'>
-              <FiTwitter className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
-            </button>
+          <div className='grid grid-cols-6 gap-1 rtl-grid'>
+            {renderedSocialIcons}
           </div>
         </div>
 

@@ -120,3 +120,11 @@ h6 {
   margin-inline-start: 40px;
   margin-inline-end: 40px;
 }
+
+.modal-box {
+  max-width: 36rem;
+}
+
+.rtl-grid {
+  direction: rtl;
+}

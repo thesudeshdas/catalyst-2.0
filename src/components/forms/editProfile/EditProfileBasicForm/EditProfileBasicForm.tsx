@@ -62,7 +62,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
   return (
     <form
-      className='flex flex-col gap-3 items-center w-full md:max-w-[800px] mx-auto overflow-auto'
+      className='flex flex-col gap-3 items-center mx-auto overflow-hidden'
       onSubmit={handleSubmit(onEditProfileBasicSubmit)}
     >
       <h3 className='font-bold text-lg'>Basic Details</h3>
@@ -85,34 +85,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
           </div>
         }
       />
-
-      {/* {fileDataURL ? (
-        <div className='aspect-[1/ 1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative  mask-squircle'>
-          <CustomImage
-            imgSources={{
-              small: {
-                alt: 'User uploaded',
-                src: String(fileDataURL)
-              }
-            }}
-            aspectRatio='aspect-[1/1]'
-          />
-
-          <label
-            htmlFor='upload'
-            className='absolute cursor-pointer w-full h-full opacity-0'
-          ></label>
-        </div>
-      ) : (
-        <div className='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative mask-squircle'>
-          <FiPlus className='w-16 h-16' />
-
-          <label
-            htmlFor='upload'
-            className='absolute cursor-pointer w-full h-full opacity-0'
-          ></label>
-        </div>
-      )}*/}
 
       <div className='flex flex-col gap-2 md:flex-row w-full'>
         <TextInput

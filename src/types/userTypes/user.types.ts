@@ -1,17 +1,8 @@
 import { IPowst } from '../createPowstTypes/createPowst.types';
 
 export interface IUserSocials {
-  github: string;
-  gitlab: string;
-  twitter: string;
-  linkedIn: string;
-  medium: string;
-  hashnode: string;
-  devTo: string;
-  instagram: string;
-  dribbble: string;
-  behance: string;
-  youtube: string;
+  name: string;
+  link: string;
 }
 
 export interface IUser {
@@ -23,7 +14,7 @@ export interface IUser {
   _id: string;
   profilePic: string;
   location: string;
-  socials: IUserSocials;
+  socials: IUserSocials[];
   powsts: { powst: Partial<IPowst> }[];
 }
 
@@ -35,7 +26,7 @@ export interface IUpdateUserDetailsBody {
   headline: string;
   _id: string;
   location: string;
-  socials: IUserSocials;
+  socials: IUserSocials[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
   powsts: { powst: string }[];

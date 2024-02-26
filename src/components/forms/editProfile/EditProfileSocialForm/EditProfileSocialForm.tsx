@@ -1,20 +1,8 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import {
-  SiBehance,
-  SiDevdotto,
-  SiDribbble,
-  SiGithub,
-  SiGitlab,
-  SiHashnode,
-  SiInstagram,
-  SiLinkedin,
-  SiMedium,
-  SiTwitter,
-  SiYoutube
-} from 'react-icons/si';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import socialIconsList from '../../../../assets/icons/socialIcons';
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
@@ -37,21 +25,15 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     isSuccess: isUpdateUserDetailsSuccess
   } = useUpdateUserDetails();
 
-  const { control, reset, handleSubmit } = useForm<IEditProfileSocialForm>({
+  const { control, handleSubmit } = useForm<IEditProfileSocialForm>({
     resolver: zodResolver(editProfileSocialSchema),
-    defaultValues: {
-      github: userDetails?.socials?.github,
-      gitlab: userDetails?.socials?.gitlab,
-      twitter: userDetails?.socials?.twitter,
-      linkedIn: userDetails?.socials?.linkedIn,
-      medium: userDetails?.socials?.medium,
-      hashnode: userDetails?.socials?.hashnode,
-      devTo: userDetails?.socials?.devTo,
-      instagram: userDetails?.socials?.instagram,
-      dribbble: userDetails?.socials?.dribbble,
-      behance: userDetails?.socials?.behance,
-      youtube: userDetails?.socials?.youtube
-    }
+    defaultValues: userDetails?.socials?.reduce(
+      (acc: Record<string, string>, { name, link }) => {
+        acc[name] = link;
+        return acc;
+      },
+      {}
+    )
   });
 
   const onEditProfileSocialSubmit: SubmitHandler<
@@ -59,27 +41,18 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
   > = async (data) => {
     const sanitisedSocials: IUserSocials = sanitiseObject(data);
 
+    const sanitisedSocialsArray = Object.entries(sanitisedSocials).map(
+      ([key, value]) => ({
+        name: key,
+        link: value
+      })
+    );
+
     updateUserDetailsMutation({
-      socials: sanitisedSocials,
+      socials: sanitisedSocialsArray,
       userId: authState.userId
     });
   };
-
-  useEffect(() => {
-    reset({
-      github: userDetails?.socials?.github,
-      gitlab: userDetails?.socials?.gitlab,
-      twitter: userDetails?.socials?.twitter,
-      linkedIn: userDetails?.socials?.linkedIn,
-      medium: userDetails?.socials?.medium,
-      hashnode: userDetails?.socials?.hashnode,
-      devTo: userDetails?.socials?.devTo,
-      instagram: userDetails?.socials?.instagram,
-      dribbble: userDetails?.socials?.dribbble,
-      behance: userDetails?.socials?.behance,
-      youtube: userDetails?.socials?.youtube
-    });
-  }, [reset, userDetails]);
 
   useEffect(() => {
     if (isUpdateUserDetailsSuccess) {
@@ -89,110 +62,25 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
 
   return (
     <form
-      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-auto'
+      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto overflow-'
       onSubmit={handleSubmit(onEditProfileSocialSubmit)}
     >
       <h3 className='font-bold text-lg'>Social Links</h3>
 
-      <ul className='w-full flex flex-col gap-3'>
-        <li>
-          <TextInput
-            control={control}
-            name='github'
-            placeholder='github.com/techbro'
-            leftIcon={<SiGithub className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='gitlab'
-            placeholder='gitlab.com/techbro'
-            leftIcon={<SiGitlab className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='twitter'
-            placeholder='twitter.com/techbro'
-            leftIcon={<SiTwitter className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='linkedIn'
-            placeholder='linkedin.com/techbro'
-            leftIcon={<SiLinkedin className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='medium'
-            placeholder='techbro.medium.com'
-            leftIcon={<SiMedium className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='hashnode'
-            placeholder='hashnode.com/@techbro'
-            leftIcon={<SiHashnode className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='devTo'
-            placeholder='dev.to/techbro'
-            leftIcon={<SiDevdotto className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='instagram'
-            placeholder='instagram.com/techbro'
-            leftIcon={<SiInstagram className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='youtube'
-            placeholder='youtube.com/techbro'
-            leftIcon={<SiYoutube className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='dribbble'
-            placeholder='dribbble.com/techbro'
-            leftIcon={<SiDribbble className='h-5 w-5' />}
-          />
-        </li>
-
-        <li>
-          <TextInput
-            control={control}
-            name='behance'
-            placeholder='behance.net/techbro'
-            leftIcon={<SiBehance className='h-5 w-5' />}
-          />
-        </li>
+      <ul className='w-full grid grid-cols-1 md:grid-cols-2  gap-3'>
+        {socialIconsList?.map((social) => (
+          <li
+            key={social.name}
+            className='w-full'
+          >
+            <TextInput
+              control={control}
+              name={social.name}
+              placeholder={social.example}
+              leftIcon={<social.icon className='h-4.5 w-4.5' />}
+            />
+          </li>
+        ))}
       </ul>
 
       <div className='flex gap-2'>
@@ -206,7 +94,6 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
         </button>
 
         <button
-          type='submit'
           className='btn btn-primary'
           disabled={isUpdateUserDetailsPending}
         >
@@ -219,3 +106,5 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
+
+// TODO @thesudeshdas => The cancel and save button should be a different component

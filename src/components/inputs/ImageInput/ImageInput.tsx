@@ -77,8 +77,6 @@ export default function ImageInput({
     };
   }, [file]);
 
-  console.log({ file });
-
   return (
     <>
       {fileDataURL ? (

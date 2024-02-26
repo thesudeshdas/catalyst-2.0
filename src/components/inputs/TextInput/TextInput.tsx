@@ -48,7 +48,7 @@ export default function TextInput(
 
       <div className='join'>
         {props.leftIcon && (
-          <div className='join-item btn btn-outline btn-ghost input-bordered'>
+          <div className='join-item btn btn-outline btn-ghost input-bordered p-3'>
             {props.leftIcon}
           </div>
         )}
@@ -57,7 +57,7 @@ export default function TextInput(
           {...field}
           type='text'
           placeholder={props.placeholder}
-          className='join-item input input-bordered w-full focus:outline-none focus:border-primary'
+          className='join-item input input-bordered w-full focus:outline-none focus:border-primary text-sm'
           disabled={props.disabled}
         />
       </div>
