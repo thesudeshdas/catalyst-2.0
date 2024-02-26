@@ -16,6 +16,7 @@ export interface IUser {
   location: string;
   socials: IUserSocials[];
   powsts: { powst: Partial<IPowst> }[];
+  bio: string;
 }
 
 export interface IUpdateUserDetailsBody {
@@ -30,6 +31,7 @@ export interface IUpdateUserDetailsBody {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
   powsts: { powst: string }[];
+  bio: string;
 }
 
 export interface IGetUserDetailsBody {

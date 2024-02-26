@@ -28,3 +28,9 @@ export interface IEditProfileSocialForm {
   producthunt: string;
   portfolio: string;
 }
+
+export interface IEditProfileAboutForm {
+  bio: string;
+  // description: string;
+  // specialisation: string[];
+}

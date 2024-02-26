@@ -15,21 +15,25 @@ import TextInput from '../../../inputs/TextInput/TextInput';
 import { editProfileBasicSchema } from './editProfileBasicForm.schema';
 
 export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
-  const updateUserDetailsMutation = useUpdateUserDetails();
-
   const { authState } = useAuthContext();
 
-  const { data } = useGetUserDetails({ userId: authState.userId });
+  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+
+  const {
+    mutate: updateUserDetailsMutation,
+    isPending: isUpdateUserDetailsPending,
+    isSuccess: isUpdateUserDetailsSuccess
+  } = useUpdateUserDetails();
 
   const { control, clearErrors, reset, setError, handleSubmit } =
     useForm<IEditProfileBasicForm>({
       resolver: zodResolver(editProfileBasicSchema),
       defaultValues: {
-        firstName: data?.firstName,
-        lastName: data?.lastName,
-        email: data?.email,
-        headline: data?.headline,
-        location: data?.location
+        firstName: userDetails?.firstName,
+        lastName: userDetails?.lastName,
+        email: userDetails?.email,
+        headline: userDetails?.headline,
+        location: userDetails?.location
       }
     });
 
@@ -38,7 +42,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
   ) => {
     const sanitisedBasicDetails = sanitiseObject(data);
 
-    updateUserDetailsMutation.mutate({
+    updateUserDetailsMutation({
       ...sanitisedBasicDetails,
       userId: authState.userId
     });
@@ -46,23 +50,23 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
   useEffect(() => {
     reset({
-      firstName: data?.firstName,
-      lastName: data?.lastName,
-      email: data?.email,
-      headline: data?.headline,
-      location: data?.location
+      firstName: userDetails?.firstName,
+      lastName: userDetails?.lastName,
+      email: userDetails?.email,
+      headline: userDetails?.headline,
+      location: userDetails?.location
     });
-  }, [data, reset]);
+  }, [userDetails, reset]);
 
   useEffect(() => {
-    if (updateUserDetailsMutation.isSuccess) {
+    if (isUpdateUserDetailsSuccess) {
       handleCloseModal(nameId);
     }
-  }, [nameId, updateUserDetailsMutation.isSuccess]);
+  }, [nameId, isUpdateUserDetailsSuccess]);
 
   return (
     <form
-      className='flex flex-col gap-3 items-center mx-auto overflow-hidden'
+      className='flex flex-col gap-3 items-center mx-auto'
       onSubmit={handleSubmit(onEditProfileBasicSubmit)}
     >
       <h3 className='font-bold text-lg'>Basic Details</h3>
@@ -71,7 +75,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         name='profilePic'
         control={control}
         clearErrors={clearErrors}
-        defaultPicture={String(data?.profilePic)}
+        defaultPicture={String(userDetails?.profilePic)}
         setError={setError}
         previewClasses='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative mask-squircle'
         adderComponent={
@@ -131,7 +135,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
           className='btn btn-outline'
           type='button'
           onClick={() => handleCloseModal(nameId)}
-          disabled={updateUserDetailsMutation.isPending}
+          disabled={isUpdateUserDetailsPending}
         >
           Cancel
         </button>
@@ -139,9 +143,9 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         <button
           type='submit'
           className='btn btn-primary'
-          disabled={updateUserDetailsMutation.isPending}
+          disabled={isUpdateUserDetailsPending}
         >
-          {updateUserDetailsMutation.isPending && (
+          {isUpdateUserDetailsPending && (
             <span className='loading loading-spinner'></span>
           )}
           Save

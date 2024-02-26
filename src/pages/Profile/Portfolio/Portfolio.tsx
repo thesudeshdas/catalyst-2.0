@@ -25,10 +25,7 @@ export default function PortfolioTab() {
       <article className='flex flex-col gap-8'>
         <div className='flex flex-col sm:flex-row gap-4 items-start justify-between'>
           <p className='text-sm lg:text-base sm:max-w-[600px]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            beatae ipsa animi illo, aut ratione qui id possimus quae ipsam est
-            tempora reprehenderit excepturi quidem eaque quod inventore! Ut,
-            animi.
+            {userDetails?.bio}
           </p>
 
           <div className='flex flex-wrap gap-3 w-full sm:w-fit sm:grid grid-cols-6 flex-shrink-0'>

@@ -25,7 +25,7 @@ export default function EditProfileModal({
         id={nameId}
         className='modal'
       >
-        <div className='modal-box'>
+        <div className='modal-box overflow-x-hidden'>
           <Form nameId={nameId} />
         </div>
 
