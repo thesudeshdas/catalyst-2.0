@@ -105,7 +105,7 @@ export default function Profile() {
           </button>
         </div>
 
-        <div className='flex justify-between items-start'>
+        <div className='flex justify-between items-start flex-col gap-4 sm:flex-row'>
           <div className='flex flex-col gap-2'>
             {userDetails?.location && (
               <div className='flex w-fit gap-2 items-center'>
@@ -115,18 +115,34 @@ export default function Profile() {
               </div>
             )}
 
-            <a
-              href='https://www.thesudeshdas.com'
-              className='flex w-fit gap-2 items-center'
-            >
-              <FiLink className='h-4 w-4' />
+            {userDetails?.socials?.find(
+              (social) => social.name === 'portfolio'
+            ) && (
+              <a
+                href={
+                  userDetails?.socials?.find(
+                    (social) => social.name === 'portfolio'
+                  )?.link
+                }
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex w-fit gap-2 items-center hover:text-primary'
+              >
+                <FiLink className='h-4 w-4' />
 
-              <p className='text-xs lg:text-sm'>thesudeshdas.com</p>
-            </a>
+                <p className='text-xs lg:text-sm'>
+                  {
+                    userDetails?.socials?.find(
+                      (social) => social.name === 'portfolio'
+                    )?.link
+                  }
+                </p>
+              </a>
+            )}
 
             <a
               href='mailto:sudeshkumardas7@gmail.com'
-              className='flex w-fit gap-2 items-center'
+              className='flex w-fit gap-2 items-center hover:text-primary'
             >
               <FiMail className='h-4 w-4' />
 
@@ -134,7 +150,7 @@ export default function Profile() {
             </a>
           </div>
 
-          <div className='grid grid-cols-6 gap-1 rtl-grid'>
+          <div className='flex flex-wrap sm:justify-end md:max-w-[200px]'>
             {renderedSocialIcons}
           </div>
         </div>

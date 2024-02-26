@@ -26,7 +26,6 @@ export const profileEditorOptions: {
 ];
 
 // TODO @thesudeshdas => to be added
-// projects
 // blogs
 // work
 // about
