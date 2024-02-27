@@ -1,11 +1,9 @@
-import { Dispatch, SetStateAction } from 'react';
-
 import { profileEditorOptions } from './profileEditor.data';
 
 interface IProfileEditorProps {
   alwaysOpen?: boolean;
-  activeProfile?: string;
-  setActiveProfile?: Dispatch<SetStateAction<string>>;
+  activeProfile: string;
+  setActiveProfile: (formName: string) => void;
 }
 
 export default function ProfileEditor({
@@ -28,7 +26,7 @@ export default function ProfileEditor({
         {profileEditorOptions?.map((option) => (
           <li
             className={`border-2 textarea-bordered rounded-md grid place-items-center text-center ${
-              option.nameId === activeProfile
+              option.heading.toLowerCase() === activeProfile
                 ? 'border-primary text-primary font-bold transition-all'
                 : ''
             } `}
@@ -36,11 +34,7 @@ export default function ProfileEditor({
           >
             <button
               className='w-full p-4'
-              onClick={() => {
-                if (setActiveProfile) {
-                  setActiveProfile(option.nameId as string);
-                }
-              }}
+              onClick={() => setActiveProfile(option.heading.toLowerCase())}
             >
               {option.heading}
             </button>

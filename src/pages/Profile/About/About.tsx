@@ -1,6 +1,13 @@
 import { SiGithub, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
 
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
+import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
+
 export default function AboutTab() {
+  const { authState } = useAuthContext();
+
+  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+
   return (
     <div
       role='tabpanel'
@@ -9,13 +16,7 @@ export default function AboutTab() {
       <article className='flex flex-col gap-4 '>
         <div className='flex flex-col sm:flex-row justify-between gap-8'>
           <p className='text-sm lg:text-base sm:max-w-[600px]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-            beatae ipsa animi illo, aut ratione qui id possimus quae ipsam est
-            tempora reprehenderit excepturi quidem eaque quod inventore! Ut,
-            animi. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Dolore odit, eum debitis at accusamus temporibus similique id qui
-            quas ducimus quae unde porro necessitatibus ex tenetur voluptatum
-            perferendis incidunt dolorem?
+            {userDetails?.description}
           </p>
 
           <section className='flex-shrink-0 flex flex-col sm:items-end'>

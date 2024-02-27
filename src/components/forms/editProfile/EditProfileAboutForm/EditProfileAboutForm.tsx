@@ -1,8 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  BlockTypeSelect,
+  BoldItalicUnderlineToggles,
+  CodeToggle,
+  CreateLink,
+  headingsPlugin,
+  linkDialogPlugin,
+  linkPlugin,
+  listsPlugin,
+  markdownShortcutPlugin,
+  MDXEditor,
+  MDXEditorMethods,
+  quotePlugin,
+  thematicBreakPlugin,
+  toolbarPlugin,
+  UndoRedo
+} from '@mdxeditor/editor';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
+import GlobalSuspenseFallback from '../../../../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileAboutForm } from '../../../../types/profileTypes/profile.types';
@@ -12,10 +30,13 @@ import TextArea from '../../../inputs/TextArea/TextArea';
 
 import { editProfileBasicSchema } from './editProfileAboutForm.schema';
 
+import '@mdxeditor/editor/style.css';
+
 export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
   const { authState } = useAuthContext();
 
-  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+  const { data: userDetails, isPending: isUserDetailsPending } =
+    useGetUserDetails({ userId: authState.userId });
 
   const {
     mutate: updateUserDetailsMutation,
@@ -30,6 +51,16 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     }
   });
 
+  const ref = useRef<MDXEditorMethods>(null);
+
+  const [markdownInEditor, setMarkdownInEditor] = useState<string>(
+    userDetails?.description || ''
+  );
+
+  const handleMarkdownChange = (markdownText: string) => {
+    setMarkdownInEditor(markdownText);
+  };
+
   const onEditProfileAboutSubmit: SubmitHandler<IEditProfileAboutForm> = async (
     data
   ) => {
@@ -37,6 +68,7 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
 
     updateUserDetailsMutation({
       ...sanitisedBasicDetails,
+      description: markdownInEditor,
       userId: authState.userId
     });
   };
@@ -45,6 +77,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     reset({
       bio: userDetails?.bio
     });
+
+    if (userDetails?.description) {
+      setMarkdownInEditor(userDetails?.description || '');
+    }
   }, [userDetails, reset]);
 
   useEffect(() => {
@@ -52,6 +88,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
       handleCloseModal(nameId);
     }
   }, [nameId, isUpdateUserDetailsSuccess]);
+
+  if (isUserDetailsPending) {
+    return <GlobalSuspenseFallback />;
+  }
 
   return (
     <form
@@ -69,6 +109,35 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         tip='Short bio acts like a seller copy for you'
         noResize
       />
+
+      <div className=' w-full border rounded-md min-h-48'>
+        <MDXEditor
+          markdown={markdownInEditor}
+          plugins={[
+            headingsPlugin(),
+            listsPlugin(),
+            quotePlugin(),
+            thematicBreakPlugin(),
+            linkPlugin(),
+            linkDialogPlugin(),
+            toolbarPlugin({
+              toolbarContents: () => (
+                <>
+                  <UndoRedo />
+                  <BoldItalicUnderlineToggles />
+                  <BlockTypeSelect />
+                  <CodeToggle />
+                  <CreateLink />
+                </>
+              )
+            }),
+            markdownShortcutPlugin()
+          ]}
+          ref={ref}
+          onChange={handleMarkdownChange}
+          className='mdx_editor'
+        />
+      </div>
 
       <div className='flex gap-2'>
         <button

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { LuChevronLeft } from 'react-icons/lu';
+import { useSearchParams } from 'react-router-dom';
 
 import EditProfileAboutForm from '../../components/forms/editProfile/EditProfileAboutForm/EditProfileAboutForm';
 import EditProfileBasicForm from '../../components/forms/editProfile/EditProfileBasicForm/EditProfileBasicForm';
@@ -12,30 +13,37 @@ import ProfileEditor from '../Profile/ProfileEditor/ProfileEditor';
 export default function EditProfile() {
   useDocumentTitle('Catalyst | Edit Profile');
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const { blockedNavigation } = useBlocker();
 
   const [activeProfile, setActiveProfile] = useState<string>(
-    'edit_profile_basic_form'
+    searchParams.get('form') || 'basic'
   );
   const [profileEditorOpen, setProfileEditorOpen] = useState<boolean>(false);
 
   const renderEditProfileForm = () => {
     switch (activeProfile) {
-      case 'edit_profile_basic_form':
-        return <EditProfileBasicForm nameId='edit_profile_basic_form' />;
+      case 'basic':
+        return <EditProfileBasicForm nameId='basic' />;
 
-      case 'edit_profile_social_form':
-        return <EditProfileSocialForm nameId='edit_profile_social_form' />;
+      case 'socials':
+        return <EditProfileSocialForm nameId='socials' />;
 
-      case 'edit_profile_projects_form':
-        return <EditProfileProjectForm nameId='edit_profile_projects_form' />;
+      case 'projects':
+        return <EditProfileProjectForm nameId='projects' />;
 
-      case 'edit_profile_about_form':
-        return <EditProfileAboutForm nameId='edit_profile_about_form' />;
+      case 'about':
+        return <EditProfileAboutForm nameId='about' />;
 
       default:
-        return <EditProfileBasicForm nameId='edit_profile_basic_form' />;
+        return <EditProfileBasicForm nameId='basic' />;
     }
+  };
+
+  const handleActiveForm = (formName: string) => {
+    setActiveProfile(formName);
+    setSearchParams({ ...searchParams, form: formName });
   };
 
   useEffect(() => {
@@ -67,7 +75,7 @@ export default function EditProfile() {
       <div className='w-full flex flex-col sm:flex-row-reverse gap-6 sm:overflow-hidden sm:max-h-[83vh] '>
         <div className='sticky top-12 z-10 flex-shrink-0 sm:!w-1/4 min-w-[250px]'>
           <ProfileEditor
-            setActiveProfile={setActiveProfile}
+            setActiveProfile={handleActiveForm}
             activeProfile={activeProfile}
             alwaysOpen={profileEditorOpen}
           />

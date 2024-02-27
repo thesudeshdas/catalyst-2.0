@@ -104,7 +104,7 @@ export default function Profile() {
             Logout
           </button>
 
-          <Link to='/edit-profile'>
+          <Link to='/edit-profile?form=basic'>
             <button className='btn btn-sm btn-outline'>
               <LuFileSignature />
               Edit

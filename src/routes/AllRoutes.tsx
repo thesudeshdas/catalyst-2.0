@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import GlobalSuspenseFallback from '../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import AppLayout from '../layouts/AppLayout/AppLayout';
+import EditProfile from '../pages/EditProfile/EditProfile';
 
 import AllProtectedRoutes from './AllProtectedRoutes';
 
@@ -10,11 +11,12 @@ const Login = lazy(() => import('../pages/Auth/Login/Login'));
 const Register = lazy(() => import('../pages/Auth/Register/Register'));
 const Feed = lazy(() => import('../pages/Feed/Feed'));
 const Profile = lazy(() => import('../pages/Profile/Profile'));
-const EditProfile = lazy(() => import('../pages/EditProfile/EditProfile'));
 
 export function AllRoutes() {
   return (
     <Routes>
+      {AllProtectedRoutes()}
+
       <Route
         path='/login'
         element={
@@ -50,21 +52,7 @@ export function AllRoutes() {
             </Suspense>
           }
         />
-
-        <Route
-          path='/edit-profile'
-          element={
-            <Suspense fallback={<GlobalSuspenseFallback />}>
-              <EditProfile />
-            </Suspense>
-          }
-        />
       </Route>
-
-      <Route
-        path='/*'
-        element={<AllProtectedRoutes />}
-      />
     </Routes>
   );
 }

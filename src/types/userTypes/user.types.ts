@@ -17,6 +17,7 @@ export interface IUser {
   socials: IUserSocials[];
   powsts: { powst: Partial<IPowst> }[];
   bio: string;
+  description: string;
 }
 
 export interface IUpdateUserDetailsBody {
@@ -32,6 +33,7 @@ export interface IUpdateUserDetailsBody {
   profilePic: any;
   powsts: { powst: string }[];
   bio: string;
+  description: string;
 }
 
 export interface IGetUserDetailsBody {
