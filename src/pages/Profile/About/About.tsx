@@ -1,5 +1,7 @@
-import { SiGithub, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { FiInfo } from 'react-icons/fi';
+import ReactMarkdown from 'react-markdown';
 
+import socialIconsList from '../../../assets/icons/socialIcons';
 import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
 
@@ -8,43 +10,48 @@ export default function AboutTab() {
 
   const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
 
+  const renderedSocialIcons = userDetails?.socials
+    ?.filter((social) => social.name !== 'portfolio')
+    .map(({ name, link }) => {
+      const { icon: Icon } = socialIconsList.find(
+        (item) => item.name === name
+      ) || { icon: FiInfo };
+
+      return (
+        <li key={name}>
+          <a
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:bg-inherit group hover:text-primary flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base font-normal'
+          >
+            <Icon className='h-5 w-5 text-base-content group-hover:text-primary transition-colors' />
+
+            {link}
+          </a>
+        </li>
+      );
+    });
+
   return (
     <div
       role='tabpanel'
-      className='tab-content bg-base-100 rounded-box py-4'
+      className='tab-content bg-base-100 rounded-box py-4 '
     >
-      <article className='flex flex-col gap-4 '>
-        <div className='flex flex-col sm:flex-row justify-between gap-8'>
-          <p className='text-sm lg:text-base sm:max-w-[600px]'>
-            {userDetails?.description}
-          </p>
-
-          <section className='flex-shrink-0 flex flex-col sm:items-end'>
-            <h4 className='font-semibold text-xl mb-2'>Connect with me</h4>
-
-            <ul className='sm:flex sm:flex-col grid grid-cols-2 gap-2 sm:items-end'>
-              <li className='flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base'>
-                <SiGithub />
-                thesudeshdassdfsd
-              </li>
-
-              <li className='flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base'>
-                <SiLinkedin />
-                thesudeshdassdfsdf d
-              </li>
-
-              <li className='flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base'>
-                <SiInstagram />
-                thesudeshdasfsdfdsf
-              </li>
-
-              <li className='flex sm:flex-row-reverse gap-2 items-center text-sm lg:text-base'>
-                <SiTwitter />
-                thesudeshdas
-              </li>
-            </ul>
-          </section>
+      <article className='flex flex-col sm:flex-row justify-between gap-8'>
+        <div className='w-full sm:max-w-[1000px] sm:max-h-[calc(100vh-13rem)] overflow-auto no-scrollbar'>
+          <div className='mdx_editor'>
+            <ReactMarkdown children={userDetails?.description} />
+          </div>
         </div>
+
+        <section className='flex-shrink-0 flex flex-col sm:items-end  sticky top-0'>
+          <h4 className='font-semibold text-xl mb-2'>Connect with me</h4>
+
+          <ul className='sm:flex sm:flex-col grid grid-cols-2 gap-3 sm:items-end'>
+            {renderedSocialIcons}
+          </ul>
+        </section>
       </article>
     </div>
   );
