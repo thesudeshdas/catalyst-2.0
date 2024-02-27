@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LuChevronLeft } from 'react-icons/lu';
 
 import EditProfileAboutForm from '../../components/forms/editProfile/EditProfileAboutForm/EditProfileAboutForm';
@@ -17,6 +17,7 @@ export default function EditProfile() {
   const [activeProfile, setActiveProfile] = useState<string>(
     'edit_profile_basic_form'
   );
+  const [profileEditorOpen, setProfileEditorOpen] = useState<boolean>(false);
 
   const renderEditProfileForm = () => {
     switch (activeProfile) {
@@ -37,6 +38,21 @@ export default function EditProfile() {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setProfileEditorOpen(true);
+      } else {
+        setProfileEditorOpen(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <main className='w-full'>
       <button
@@ -53,6 +69,7 @@ export default function EditProfile() {
           <ProfileEditor
             setActiveProfile={setActiveProfile}
             activeProfile={activeProfile}
+            alwaysOpen={profileEditorOpen}
           />
         </div>
 
