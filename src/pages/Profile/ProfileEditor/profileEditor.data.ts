@@ -10,22 +10,22 @@ export const profileEditorOptions: {
   heading: string;
 }[] = [
   {
-    nameId: 'edit_profile_basic_modal',
+    nameId: 'edit_profile_basic_form',
     heading: 'Basic',
     form: EditProfileBasicForm
   },
   {
-    nameId: 'edit_profile_social_modal',
+    nameId: 'edit_profile_social_form',
     heading: 'Socials',
     form: EditProfileSocialForm
   },
   {
-    nameId: 'edit_profile_projects_modal',
+    nameId: 'edit_profile_projects_form',
     heading: 'Projects',
     form: EditProfileProjectForm
   },
   {
-    nameId: 'edit_profile_about_modal',
+    nameId: 'edit_profile_about_form',
     heading: 'About',
     form: EditProfileAboutForm
   }

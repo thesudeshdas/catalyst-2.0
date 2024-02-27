@@ -1,20 +1,24 @@
-import EditProfileModal from '../../../components/modals/EditProfileModal/EditProfileModal';
+import { Dispatch, SetStateAction } from 'react';
 
 import { profileEditorOptions } from './profileEditor.data';
 
 interface IProfileEditorProps {
   alwaysOpen?: boolean;
+  activeProfile?: string;
+  setActiveProfile?: Dispatch<SetStateAction<string>>;
 }
 
 export default function ProfileEditor({
-  alwaysOpen = false
+  alwaysOpen = false,
+  activeProfile,
+  setActiveProfile
 }: IProfileEditorProps) {
   return (
     <div
       tabIndex={0}
-      className={`collapse  ${
+      className={`collapse ${
         alwaysOpen ? 'collapse-open' : 'collapse-arrow'
-      } flex-shrink-0 border textarea-bordered rounded-md`}
+      } flex-shrink-0 border textarea-bordered rounded-md bg-base-100`}
     >
       <input type='checkbox' />
 
@@ -23,14 +27,23 @@ export default function ProfileEditor({
       <ul className='collapse-content grid grid-cols-2 gap-2 w-full'>
         {profileEditorOptions?.map((option) => (
           <li
-            className='border textarea-bordered rounded-md grid place-items-center text-center'
+            className={`border-2 textarea-bordered rounded-md grid place-items-center text-center ${
+              option.nameId === activeProfile
+                ? 'border-primary text-primary font-bold transition-all'
+                : ''
+            } `}
             key={option.nameId}
           >
-            <EditProfileModal
-              heading={option.heading}
-              nameId={option.nameId}
-              form={option.form}
-            />
+            <button
+              className='w-full p-4'
+              onClick={() => {
+                if (setActiveProfile) {
+                  setActiveProfile(option.nameId as string);
+                }
+              }}
+            >
+              {option.heading}
+            </button>
           </li>
         ))}
       </ul>

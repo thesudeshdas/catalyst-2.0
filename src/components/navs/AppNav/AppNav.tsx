@@ -6,7 +6,7 @@ import AppSideNav from '../AppSideNav/AppSideNav';
 
 export default function AppNav() {
   return (
-    <nav className='pr-2 md:p-2 lg:p-4 flex items-center gap-2 sticky top-0 z-10 bg-base-100'>
+    <nav className='pr-2 md:p-2 lg:p-4 flex items-center gap-2 sticky top-0 z-50 bg-base-100'>
       <AppSideNav />
 
       <div className='hidden lg:flex items-center gap-2'>

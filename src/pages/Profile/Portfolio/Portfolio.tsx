@@ -62,7 +62,7 @@ export default function PortfolioTab() {
           <h4 className='font-semibold text-xl mb-2'>Featured Projects</h4>
 
           <article className='relative overflow-auto h-72 sm:h-fit'>
-            <div className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
+            <div className='absolute sm:static flex sm:grid grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6'>
               {userDetails?.powsts?.map((item) => (
                 <div
                   className='w-72 sm:w-auto'
@@ -84,7 +84,7 @@ export default function PortfolioTab() {
           <h4 className='font-semibold text-xl mb-2'>Featured Blogs</h4>
 
           <div className='relative overflow-auto h-52 sm:h-fit'>
-            <ul className='absolute sm:static flex sm:grid grid-cols-3 gap-4 sm:gap-6'>
+            <ul className='absolute sm:static flex sm:grid grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6'>
               <li className='w-72 sm:w-auto'>
                 <BlogPowst sameUser />
               </li>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FiInfo, FiLink, FiMail, FiMapPin } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { LuFileSignature } from 'react-icons/lu';
+import { Link, useNavigate } from 'react-router-dom';
 
 import socialIconsList from '../../assets/icons/socialIcons';
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
@@ -12,7 +13,6 @@ import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTok
 import AboutTab from './About/About';
 import BlogsTab from './Blogs/Blogs';
 import PortfolioTab from './Portfolio/Portfolio';
-import ProfileEditor from './ProfileEditor/ProfileEditor';
 import ProjectsTab from './Projects/Projects';
 import WorkTab from './Work/Work';
 import ProfileSkeleton from './ProfileSkeleton';
@@ -103,6 +103,13 @@ export default function Profile() {
           >
             Logout
           </button>
+
+          <Link to='/edit-profile'>
+            <button className='btn btn-sm btn-outline'>
+              <LuFileSignature />
+              Edit
+            </button>
+          </Link>
         </div>
 
         <div className='flex justify-between items-start flex-col gap-4 sm:flex-row'>
@@ -259,10 +266,6 @@ export default function Profile() {
           />
           <AboutTab />
         </div>
-      </div>
-
-      <div className='hidden lg:block !w-1/4 min-w-[250px]'>
-        <ProfileEditor />
       </div>
     </main>
   );

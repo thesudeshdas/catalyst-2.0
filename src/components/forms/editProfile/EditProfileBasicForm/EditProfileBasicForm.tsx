@@ -4,6 +4,7 @@ import { FiPlus } from 'react-icons/fi';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
+import GlobalSuspenseFallback from '../../../../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileBasicForm } from '../../../../types/profileTypes/profile.types';
@@ -17,7 +18,8 @@ import { editProfileBasicSchema } from './editProfileBasicForm.schema';
 export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
   const { authState } = useAuthContext();
 
-  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+  const { data: userDetails, isPending: isUserDetailsPending } =
+    useGetUserDetails({ userId: authState.userId });
 
   const {
     mutate: updateUserDetailsMutation,
@@ -63,6 +65,10 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       handleCloseModal(nameId);
     }
   }, [nameId, isUpdateUserDetailsSuccess]);
+
+  if (isUserDetailsPending) {
+    return <GlobalSuspenseFallback />;
+  }
 
   return (
     <form
@@ -162,3 +168,5 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 // Question @thesudeshdas => how do I close the modal after the data is edited? I can send the entire function or just send the id,
 
 // TODO @thesudeshdas => Cancel should also reset the form
+
+// TODO @thesudeshdas => Create a skeleton loading for the forms
