@@ -26,6 +26,7 @@ import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDeta
 import { IEditProfileAboutForm } from '../../../../types/profileTypes/profile.types';
 import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import TextArea from '../../../inputs/TextArea/TextArea';
 
 import { editProfileBasicSchema } from './editProfileAboutForm.schema';
@@ -57,6 +58,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     userDetails?.description || ''
   );
 
+  const [pills, setPills] = useState<string[]>(
+    userDetails?.specialisation || []
+  );
+
   const handleMarkdownChange = (markdownText: string) => {
     setMarkdownInEditor(markdownText);
   };
@@ -64,11 +69,14 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
   const onEditProfileAboutSubmit: SubmitHandler<IEditProfileAboutForm> = async (
     data
   ) => {
-    const sanitisedBasicDetails = sanitiseObject(data);
+    const sanitisedBody = sanitiseObject({
+      bio: data?.bio,
+      description: markdownInEditor,
+      specialisation: pills
+    });
 
     updateUserDetailsMutation({
-      ...sanitisedBasicDetails,
-      description: markdownInEditor,
+      ...sanitisedBody,
       userId: authState.userId
     });
   };
@@ -79,7 +87,11 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     });
 
     if (userDetails?.description) {
-      setMarkdownInEditor(userDetails?.description || '');
+      setMarkdownInEditor(userDetails?.description);
+    }
+
+    if (userDetails?.specialisation) {
+      setPills(userDetails?.specialisation);
     }
   }, [userDetails, reset]);
 
@@ -139,6 +151,12 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         />
       </div>
 
+      <PillsInput
+        label='Specialisation'
+        pillsFromForm={pills}
+        setPillsInForm={setPills}
+      />
+
       <div className='flex gap-2'>
         <button
           className='btn btn-outline'
@@ -150,9 +168,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         </button>
 
         <button
-          type='submit'
+          type='button'
           className='btn btn-primary'
           disabled={isUpdateUserDetailsPending}
+          // onClick={handleSubmit(onEditProfileAboutSubmit)}
         >
           {isUpdateUserDetailsPending && (
             <span className='loading loading-spinner'></span>

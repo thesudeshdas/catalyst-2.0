@@ -18,6 +18,7 @@ export interface IUser {
   powsts: { powst: Partial<IPowst> }[];
   bio: string;
   description: string;
+  specialisation: string[];
 }
 
 export interface IUpdateUserDetailsBody {
@@ -34,6 +35,7 @@ export interface IUpdateUserDetailsBody {
   powsts: { powst: string }[];
   bio: string;
   description: string;
+  specialisation: string[];
 }
 
 export interface IGetUserDetailsBody {

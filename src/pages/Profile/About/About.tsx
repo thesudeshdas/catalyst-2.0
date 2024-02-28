@@ -45,13 +45,30 @@ export default function AboutTab() {
           </div>
         </div>
 
-        <section className='flex-shrink-0 flex flex-col sm:items-end  sticky top-0'>
-          <h4 className='font-semibold text-xl mb-2'>Connect with me</h4>
+        <div className='flex-shrink-0 flex-grow-0 sticky top-0 sm:w-[250px]'>
+          <section className='flex flex-col sm:items-end'>
+            <h4 className='font-semibold text-xl mb-2'>Connect with me</h4>
 
-          <ul className='sm:flex sm:flex-col grid grid-cols-2 gap-3 sm:items-end'>
-            {renderedSocialIcons}
-          </ul>
-        </section>
+            <ul className='sm:flex sm:flex-col grid grid-cols-2 gap-3 sm:items-end'>
+              {renderedSocialIcons}
+            </ul>
+          </section>
+
+          <section className='flex flex-col sm:items-end mt-4'>
+            <h4 className='font-semibold text-xl mb-2'>Specialisation</h4>
+
+            <ul className='flex flex-wrap sm:justify-end gap-3  w-full'>
+              {userDetails?.specialisation?.map((pill, index) => (
+                <div
+                  key={`pill_${index}_${pill}`}
+                  className='badge cursor-pointer badge-outline'
+                >
+                  {pill}
+                </div>
+              ))}
+            </ul>
+          </section>
+        </div>
       </article>
     </div>
   );
