@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FiInfo, FiLink, FiMail, FiMapPin } from 'react-icons/fi';
 import { LuFileSignature } from 'react-icons/lu';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
 import socialIconsList from '../../assets/icons/socialIcons';
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
@@ -16,16 +16,21 @@ import ProfileSkeleton from './ProfileSkeleton';
 export default function Profile() {
   const navigate = useNavigate();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const { setDocumentTitle } = useDocumentTitle('Catalyst | Profile');
   const { authState, authDispatch } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
     useGetUserDetails({ userId: authState.userId });
 
-  const [profileTab, setProfileTab] = useState<string>('portfolio');
+  const [profileTab, setProfileTab] = useState<string>(
+    searchParams?.get('tab') || 'portfolio'
+  );
 
   const handleProfileTabChange = (tab: string) => {
     setProfileTab(tab);
+    setSearchParams({ tab });
   };
 
   const handleLogout = () => {
@@ -97,7 +102,14 @@ export default function Profile() {
           Logout
         </button>
 
-        <Link to='/edit-profile?form=basic'>
+        {/* The logic written here is to send the user to the relevant form depending
+          on the tab they currently are. For example, if the user is in about tab, they will
+          go directly to the edit about form  */}
+        <Link
+          to={`/edit-profile?form=${
+            searchParams?.get('tab') === 'about' ? 'about' : 'basic'
+          }`}
+        >
           <button className='btn btn-sm btn-outline'>
             <LuFileSignature />
             Edit
@@ -150,9 +162,11 @@ export default function Profile() {
           </a>
         </div>
 
-        <div className='flex flex-wrap sm:justify-end md:max-w-[200px]'>
-          {renderedSocialIcons}
-        </div>
+        {searchParams?.get('tab') !== 'about' && (
+          <div className='flex flex-wrap sm:justify-end md:max-w-[200px]'>
+            {renderedSocialIcons}
+          </div>
+        )}
       </div>
 
       <div
