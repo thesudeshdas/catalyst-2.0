@@ -85,15 +85,15 @@ export default function PortfolioTab() {
 
           <div className='relative overflow-auto h-52 sm:h-fit'>
             <ul className='absolute sm:static flex sm:grid grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6'>
-              <li className='w-72 sm:w-auto'>
-                <BlogPowst sameUser />
-              </li>
-              <li className='w-72 sm:w-auto'>
-                <BlogPowst sameUser />
-              </li>
-              <li className='w-72 sm:w-auto'>
-                <BlogPowst sameUser />
-              </li>
+              {userDetails?.blogs?.slice(0, 3)?.map((item) => (
+                <li className='w-72 sm:w-auto'>
+                  <BlogPowst
+                    sameUser
+                    blogDetails={item.blog}
+                    key={item.blog._id}
+                  />
+                </li>
+              ))}
             </ul>
           </div>
         </div>
