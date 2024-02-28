@@ -168,10 +168,9 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         </button>
 
         <button
-          type='button'
+          type='submit'
           className='btn btn-primary'
           disabled={isUpdateUserDetailsPending}
-          // onClick={handleSubmit(onEditProfileAboutSubmit)}
         >
           {isUpdateUserDetailsPending && (
             <span className='loading loading-spinner'></span>

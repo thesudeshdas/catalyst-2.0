@@ -1,5 +1,6 @@
 import { FiInfo } from 'react-icons/fi';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 import socialIconsList from '../../../assets/icons/socialIcons';
 import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
@@ -41,7 +42,12 @@ export default function AboutTab() {
       <article className='flex flex-col sm:flex-row justify-between gap-8'>
         <div className='w-full sm:max-w-[1000px] sm:max-h-[calc(100vh-13rem)] overflow-auto no-scrollbar'>
           <div className='mdx_editor'>
-            <ReactMarkdown children={userDetails?.description} />
+            <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
+              className='line-break'
+            >
+              {userDetails?.description?.replace(/&#x20;&#x20;/g, '<br />')}
+            </ReactMarkdown>
           </div>
         </div>
 
