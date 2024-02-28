@@ -179,7 +179,7 @@ export default function Profile() {
               type='radio'
               name='profile_tabs'
               role='tab'
-              className='tab sticky top-0 bg-base-100 w-full'
+              className='tab sticky top-0 bg-base-100 w-full z-20'
               aria-label={tab.label}
               checked={profileTab === tab.name}
               onChange={() => handleProfileTabChange(tab.name)}
