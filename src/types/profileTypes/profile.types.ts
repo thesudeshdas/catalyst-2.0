@@ -1,3 +1,5 @@
+import { IBlogPlatform } from '../blogTypes/blog.types';
+
 export interface IEditProfileBasicForm {
   firstName: string;
   lastName: string;
@@ -33,4 +35,11 @@ export interface IEditProfileAboutForm {
   bio: string;
   // description: string; // ? comes from the mdx editor
   // specialisation: string[]; // ? comes from the useState array of strings
+}
+
+export interface IEditBlogForm {
+  title: string;
+  link: string;
+  platform: IBlogPlatform;
+  // date: string;
 }

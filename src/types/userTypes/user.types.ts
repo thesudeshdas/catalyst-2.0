@@ -1,3 +1,4 @@
+import { IBlog } from '../blogTypes/blog.types';
 import { IPowst } from '../createPowstTypes/createPowst.types';
 
 export interface IUserSocials {
@@ -16,6 +17,7 @@ export interface IUser {
   location: string;
   socials: IUserSocials[];
   powsts: { powst: Partial<IPowst> }[];
+  blogs: { blog: Partial<IBlog> }[];
   bio: string;
   description: string;
   specialisation: string[];
@@ -33,6 +35,7 @@ export interface IUpdateUserDetailsBody {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   profilePic: any;
   powsts: { powst: string }[];
+  blogs: { blog: string }[];
   bio: string;
   description: string;
   specialisation: string[];
@@ -44,5 +47,10 @@ export interface IGetUserDetailsBody {
 
 export interface IUserPowst {
   powst: IPowst;
+  starred: boolean;
+}
+
+export interface IUserBlog {
+  blog: IBlog;
   starred: boolean;
 }

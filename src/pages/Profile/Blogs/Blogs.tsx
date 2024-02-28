@@ -1,6 +1,21 @@
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
+import EditBlogModal from '../../../components/modals/EditBlogModal/EditBlogModal';
+import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
+import { useGetAllUserBlogs } from '../../../queries/getAllUserBlogs/useGetAllUserBlogs.hook';
+
+import BlogsSkeleton from './BlogsSkeleton';
 
 export default function BlogsTab() {
+  const { authState } = useAuthContext();
+
+  const { data: userBlogs, isPending: isUserBlogsPending } = useGetAllUserBlogs(
+    { userId: authState.userId }
+  );
+
+  if (isUserBlogsPending) {
+    return <BlogsSkeleton />;
+  }
+
   return (
     <div
       role='tabpanel'
@@ -8,15 +23,15 @@ export default function BlogsTab() {
     >
       <article className='flex flex-col gap-4 '>
         <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
-          <BlogPowst sameUser />
+          {userBlogs?.map((blog) => (
+            <BlogPowst
+              key={blog.blog._id}
+              blogDetails={blog.blog}
+              sameUser
+            />
+          ))}
+
+          <EditBlogModal />
         </div>
       </article>
     </div>

@@ -2,3 +2,8 @@ export const userDetails = {
   UPDATE_USER_DETAILS: 'UPDATE_USER_DETAILS',
   GET_USER_DETAILS: 'GET_USER_DETAILS'
 } as const;
+
+export const blogs = {
+  GET_USER_BLOGS: 'GET_USER_BLOGS',
+  CREATE_USER_BLOG: 'CREATE_USER_BLOG'
+};
