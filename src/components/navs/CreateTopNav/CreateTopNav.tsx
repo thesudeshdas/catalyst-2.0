@@ -1,4 +1,4 @@
-import { FiChevronLeft } from 'react-icons/fi';
+import { LuChevronLeft } from 'react-icons/lu';
 
 import useBlocker from '../../../contexts/BlockerContext/blockerContext.hook';
 import ThemeToggle from '../../ThemeToggle/ThemeToggle';
@@ -16,7 +16,7 @@ export default function CreateTopNav({
         className='flex items-center flex-grow'
         onClick={() => blockedNavigation('/feed', clearPowstInLocal)}
       >
-        <FiChevronLeft className='h-6 w-6 md:h-7 md:w-7 z-10' />
+        <LuChevronLeft className='h-6 w-6 md:h-7 md:w-7 z-10' />
 
         <p className='text-xs font-semibold'>Take me back</p>
       </button>

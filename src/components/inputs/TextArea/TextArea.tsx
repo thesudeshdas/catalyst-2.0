@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import { useController, UseControllerProps } from 'react-hook-form';
-import { FiInfo } from 'react-icons/fi';
+import { LuInfo } from 'react-icons/lu';
 
 // declare props types
 interface ITextInputProps {
@@ -52,7 +52,7 @@ export default function TextArea(
               className='tooltip tooltip-right cursor-pointer'
               data-tip={props.tip}
             >
-              <FiInfo className='h-3 w-3' />
+              <LuInfo className='h-3 w-3' />
             </div>
           )}
         </div>

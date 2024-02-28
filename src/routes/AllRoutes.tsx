@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import GlobalSuspenseFallback from '../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import AppLayout from '../layouts/AppLayout/AppLayout';
-import EditProfile from '../pages/EditProfile/EditProfile';
 
 import AllProtectedRoutes from './AllProtectedRoutes';
 

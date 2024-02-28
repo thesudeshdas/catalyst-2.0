@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FiChevronsRight, FiInfo, FiPlus } from 'react-icons/fi';
+import { LuChevronsRight, LuInfo, LuPlus } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -52,7 +52,7 @@ export default function CreatePowstImageForm() {
         previewClasses='aspect-[4/3] w-full max-w-[400px] bg-base-300 rounded-md flex flex-col items-center justify-center relative overflow-hidden'
         adderComponent={
           <div className='aspect-[4/3] w-full max-w-[400px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative'>
-            <FiPlus className='w-16 h-16' />
+            <LuPlus className='w-16 h-16' />
 
             <p className='text-sm'>Upload an image</p>
 
@@ -95,7 +95,7 @@ export default function CreatePowstImageForm() {
             className='btn btn-primary'
             // disabled={!file}
           >
-            Save and Next <FiChevronsRight className='h-6 w-6' />
+            Save and Next <LuChevronsRight className='h-6 w-6' />
           </button>
 
           {/* {!file && ( */}
@@ -103,7 +103,7 @@ export default function CreatePowstImageForm() {
             className='tooltip tooltip-right cursor-pointer'
             data-tip='You need to upload an image'
           >
-            <FiInfo className='h-5 w-5' />
+            <LuInfo className='h-5 w-5' />
           </div>
           {/* )} */}
         </div>

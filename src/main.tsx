@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
-import { FiX } from 'react-icons/fi';
+import { LuX } from 'react-icons/lu';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               className='btn btn-ghost btn-square'
               onClick={() => closeSnackbar(snackbarId)}
             >
-              <FiX />
+              <LuX />
             </button>
           )}
           autoHideDuration={3000}

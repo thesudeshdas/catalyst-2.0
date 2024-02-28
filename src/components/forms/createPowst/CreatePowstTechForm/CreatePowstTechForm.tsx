@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FiChevronsRight, FiInfo } from 'react-icons/fi';
+import { LuChevronsRight, LuInfo } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -118,7 +118,7 @@ export default function CreatePowstTechForm() {
             className='btn btn-primary'
             disabled={selectedTech?.length === 0}
           >
-            Save and Next <FiChevronsRight className='h-6 w-6' />
+            Save and Next <LuChevronsRight className='h-6 w-6' />
           </button>
 
           {selectedTech?.length === 0 && (
@@ -126,7 +126,7 @@ export default function CreatePowstTechForm() {
               className='tooltip tooltip-right cursor-pointer'
               data-tip='You need to add at least one tech'
             >
-              <FiInfo className='h-5 w-5' />
+              <LuInfo className='h-5 w-5' />
             </div>
           )}
         </div>

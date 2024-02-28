@@ -1,4 +1,4 @@
-import { FiChevronLeft } from 'react-icons/fi';
+import { LuChevronLeft } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 // declare props types
@@ -12,7 +12,7 @@ export default function CreatePowstPreviousButton({
   return (
     <Link to={link}>
       <button className='btn btn-ghost pl-0'>
-        <FiChevronLeft className='h-6 w-6' /> Previous
+        <LuChevronLeft className='h-6 w-6' /> Previous
       </button>
     </Link>
   );

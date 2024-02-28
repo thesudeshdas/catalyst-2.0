@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction } from 'react';
 import { DiReact } from 'react-icons/di';
 import {
-  FiBookmark,
-  FiHeart,
-  FiInfo,
-  FiMessageSquare,
-  FiShare2,
-  FiX
-} from 'react-icons/fi';
+  LuBookmark,
+  LuHeart,
+  LuInfo,
+  LuMessageSquare,
+  LuShare2,
+  LuX
+} from 'react-icons/lu';
 
 import queryClient from '../../../config/queryClient';
 import { IPowst } from '../../../types/createPowstTypes/createPowst.types';
@@ -205,7 +205,7 @@ export default function PowstDetailsModal({
                 className='btn btn-sm btn-square btn-ghost'
                 onClick={handleClosePowstDetailsModal}
               >
-                <FiX className='h-[1.2rem] w-[1.2rem]' />
+                <LuX className='h-[1.2rem] w-[1.2rem]' />
               </button>
             </form>
 
@@ -217,23 +217,23 @@ export default function PowstDetailsModal({
             </button>
 
             <button className='btn btn-sm btn-square btn-ghost'>
-              <FiMessageSquare className='h-[1.2rem] w-[1.2rem]' />
+              <LuMessageSquare className='h-[1.2rem] w-[1.2rem]' />
             </button>
 
             <button className='btn btn-sm btn-square btn-ghost'>
-              <FiShare2 className='h-[1.2rem] w-[1.2rem]' />
+              <LuShare2 className='h-[1.2rem] w-[1.2rem]' />
             </button>
 
             <button className='btn btn-sm btn-square btn-ghost'>
-              <FiInfo className='h-[1.2rem] w-[1.2rem]' />
+              <LuInfo className='h-[1.2rem] w-[1.2rem]' />
             </button>
 
             <button className='btn btn-sm btn-square btn-ghost'>
-              <FiBookmark className='h-[1.2rem] w-[1.2rem]' />
+              <LuBookmark className='h-[1.2rem] w-[1.2rem]' />
             </button>
 
             <button className='btn btn-sm btn-square btn-ghost hover:bg-transparent hover:text-error'>
-              <FiHeart className='h-[1.2rem] w-[1.2rem]' />
+              <LuHeart className='h-[1.2rem] w-[1.2rem]' />
             </button>
           </div>
         </div>

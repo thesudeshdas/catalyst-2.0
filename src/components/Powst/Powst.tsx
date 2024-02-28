@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { FiHeart } from 'react-icons/fi';
+import { LuHeart } from 'react-icons/lu';
 
 import { IPowst } from '../../types/createPowstTypes/createPowst.types';
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
@@ -75,7 +75,7 @@ export default function Powst({
         </h2>
 
         <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 hover:text-red-500 cursor-pointer transition-colors'>
-          <FiHeart />
+          <LuHeart />
 
           <p className='text-sm'>50k</p>
         </div>

@@ -1,4 +1,4 @@
-import { FiInfo } from 'react-icons/fi';
+import { LuInfo } from 'react-icons/lu';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 
@@ -16,7 +16,7 @@ export default function AboutTab() {
     .map(({ name, link }) => {
       const { icon: Icon } = socialIconsList.find(
         (item) => item.name === name
-      ) || { icon: FiInfo };
+      ) || { icon: LuInfo };
 
       return (
         <li key={name}>

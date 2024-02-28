@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiInfo, FiLink, FiMail, FiMapPin } from 'react-icons/fi';
+import { LuInfo, LuLink, LuMail, LuMapPin } from 'react-icons/lu';
 import { LuFileSignature } from 'react-icons/lu';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -52,7 +52,7 @@ export default function Profile() {
     .map(({ name, link }) => {
       const { icon: Icon } = socialIconsList.find(
         (item) => item.name === name
-      ) || { icon: FiInfo };
+      ) || { icon: LuInfo };
 
       return (
         <a
@@ -79,7 +79,6 @@ export default function Profile() {
             variant='avatar'
             size='2xl'
           />
-
           <div>
             <h2 className='font-semibold text-3xl lg:text-4xl'>
               {userDetails?.firstName} {userDetails?.lastName}
@@ -92,7 +91,7 @@ export default function Profile() {
         {/* <button className='btn btn-sm btn-primary'>Follow</button> */}
 
         {/* <button className='btn btn-square btn-sm btn-primary btn-outline'>
-            <FiCheck />
+            <LuCheck />
           </button> */}
 
         <button
@@ -121,7 +120,7 @@ export default function Profile() {
         <div className='flex flex-col gap-2'>
           {userDetails?.location && (
             <div className='flex w-fit gap-2 items-center'>
-              <FiMapPin className='h-4 w-4' />
+              <LuMapPin className='h-4 w-4' />
 
               <p className='text-xs lg:text-sm'>{userDetails?.location}</p>
             </div>
@@ -140,7 +139,7 @@ export default function Profile() {
               rel='noopener noreferrer'
               className='flex w-fit gap-2 items-center hover:text-primary'
             >
-              <FiLink className='h-4 w-4' />
+              <LuLink className='h-4 w-4' />
 
               <p className='text-xs lg:text-sm'>
                 {
@@ -156,7 +155,7 @@ export default function Profile() {
             href='mailto:sudeshkumardas7@gmail.com'
             className='flex w-fit gap-2 items-center hover:text-primary'
           >
-            <FiMail className='h-4 w-4' />
+            <LuMail className='h-4 w-4' />
 
             <p className='text-xs lg:text-sm'>{userDetails?.email}</p>
           </a>

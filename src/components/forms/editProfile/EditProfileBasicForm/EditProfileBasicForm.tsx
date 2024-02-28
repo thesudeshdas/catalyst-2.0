@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FiPlus } from 'react-icons/fi';
+import { LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
@@ -86,7 +86,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         previewClasses='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative mask-squircle'
         adderComponent={
           <div className='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative mask-squircle'>
-            <FiPlus className='w-16 h-16' />
+            <LuPlus className='w-16 h-16' />
 
             <label
               htmlFor='upload'

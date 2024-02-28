@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useController, UseControllerProps } from 'react-hook-form';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { LuEye, LuEyeOff } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 export default function PasswordInput(
@@ -44,7 +44,7 @@ export default function PasswordInput(
           className='btn btn-outline input-bordered join-item'
           onClick={toggleShowPassword}
         >
-          {showPassword ? <FiEyeOff /> : <FiEye />}
+          {showPassword ? <LuEyeOff /> : <LuEye />}
         </button>
       </div>
 

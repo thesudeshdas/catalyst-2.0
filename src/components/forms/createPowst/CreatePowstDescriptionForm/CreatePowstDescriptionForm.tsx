@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { FiChevronsRight } from 'react-icons/fi';
+import { LuChevronsRight } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import {
   BlockTypeSelect,
@@ -88,7 +88,7 @@ export default function CreatePowstDescriptionForm() {
           type='button'
           onClick={onCreatePowstNameSubmit}
         >
-          Save and Next <FiChevronsRight className='h-6 w-6' />
+          Save and Next <LuChevronsRight className='h-6 w-6' />
         </button>
       </div>
     </form>
