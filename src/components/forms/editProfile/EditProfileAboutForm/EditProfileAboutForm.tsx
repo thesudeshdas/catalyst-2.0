@@ -155,6 +155,8 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         label='Specialisation'
         pillsFromForm={pills}
         setPillsInForm={setPills}
+        tip='You can add upto 10 items'
+        max={10}
       />
 
       <div className='flex gap-2'>

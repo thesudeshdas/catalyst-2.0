@@ -13,6 +13,7 @@ interface IPillsInputProps {
   label?: string;
   required?: boolean;
   tip?: string;
+  max?: number;
 }
 
 export default function PillsInput({
@@ -20,10 +21,10 @@ export default function PillsInput({
   setPillsInForm,
   label,
   required = false,
-  tip
+  tip,
+  max = 10
 }: IPillsInputProps) {
   const [text, setText] = useState<string>('');
-  // const [pills, setPillsInForm] = useState<string[]>([]);
 
   const handleTextTyped = (event: ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
@@ -67,12 +68,14 @@ export default function PillsInput({
 
       <label
         htmlFor='badgeInput'
-        className='border w-full min-h-12 p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary'
+        className={`border w-full min-h-12 p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary ${
+          pillsFromForm.length === max ? 'input-disabled' : ''
+        }`}
       >
         {pillsFromForm?.map((pill, index) => (
           <div
             key={`pill_${index}_${pill}`}
-            className='badge cursor-pointer badge-outline badge-primary'
+            className='badge cursor-pointer badge-outline badge-primary bg-base-100'
             onClick={() => handleRemovePill(pill)}
           >
             {pill}
@@ -85,11 +88,14 @@ export default function PillsInput({
           className={`focus:outline-none focus:border-primary text-sm ${Math.max(
             text.length,
             5
-          )}ch w-fit`}
+          )}ch w-fit ${
+            pillsFromForm.length === max ? 'input-disabled' : ''
+          } bg-inherit`}
           onKeyUp={handleCommaTyped}
           size={Math.max(text.length, 5)}
           id='badgeInput'
           value={text}
+          disabled={pillsFromForm.length === max}
         />
       </label>
     </div>
