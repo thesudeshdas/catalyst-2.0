@@ -3,13 +3,10 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 
 import socialIconsList from '../../../assets/icons/socialIcons';
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
 
-export default function AboutTab() {
-  const { authState } = useAuthContext();
-
-  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+export default function AboutTab({ userName }: { userName: string }) {
+  const { data: userDetails } = useGetUserDetails({ userId: userName });
 
   const renderedSocialIcons = userDetails?.socials
     ?.filter((social) => social.name !== 'portfolio')

@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { LuInfo, LuLink, LuMail, LuMapPin } from 'react-icons/lu';
 import { LuFileSignature } from 'react-icons/lu';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams
+} from 'react-router-dom';
 
 import socialIconsList from '../../assets/icons/socialIcons';
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
@@ -15,6 +20,7 @@ import ProfileSkeleton from './ProfileSkeleton';
 
 export default function Profile() {
   const navigate = useNavigate();
+  const { username } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -22,7 +28,9 @@ export default function Profile() {
   const { authState, authDispatch } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
-    useGetUserDetails({ userId: authState.userId });
+    useGetUserDetails({
+      userId: username && username !== 'profile' ? username : authState.userId
+    });
 
   const [profileTab, setProfileTab] = useState<string>(
     searchParams?.get('tab') || 'portfolio'
@@ -184,7 +192,11 @@ export default function Profile() {
               onChange={() => handleProfileTabChange(tab.name)}
             />
 
-            <tab.panel />
+            <tab.panel
+              userName={
+                username && username !== 'profile' ? username : authState.userId
+              }
+            />
           </>
         ))}
       </div>

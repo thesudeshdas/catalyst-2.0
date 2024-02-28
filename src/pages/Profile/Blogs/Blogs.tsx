@@ -1,15 +1,12 @@
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
 import EditBlogModal from '../../../components/modals/EditBlogModal/EditBlogModal';
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import { useGetAllUserBlogs } from '../../../queries/getAllUserBlogs/useGetAllUserBlogs.hook';
 
 import BlogsSkeleton from './BlogsSkeleton';
 
-export default function BlogsTab() {
-  const { authState } = useAuthContext();
-
+export default function BlogsTab({ userName }: { userName: string }) {
   const { data: userBlogs, isPending: isUserBlogsPending } = useGetAllUserBlogs(
-    { userId: authState.userId }
+    { userId: userName }
   );
 
   if (isUserBlogsPending) {

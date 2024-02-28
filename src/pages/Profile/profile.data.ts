@@ -7,7 +7,7 @@ import WorkTab from './Work/Work';
 export const profileTabsList: {
   name: string;
   label: string;
-  panel: () => JSX.Element;
+  panel: ({ userName }: { userName: string }) => JSX.Element;
 }[] = [
   {
     name: 'portfolio',

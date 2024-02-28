@@ -2,17 +2,15 @@ import { LuPlus } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 import Powst from '../../../components/Powst/Powst';
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
 import { useGetAllUserPowsts } from '../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
 
 import ProjectsSkeleton from './ProjectsSkeleton';
 
-export default function ProjectsTab() {
-  const { authState } = useAuthContext();
+export default function ProjectsTab({ userName }: { userName: string }) {
   const { setPowstToBeShown } = useShowPowst();
 
-  const { data, isPending } = useGetAllUserPowsts({ userId: authState.userId });
+  const { data, isPending } = useGetAllUserPowsts({ userId: userName });
 
   if (isPending) {
     return <ProjectsSkeleton />;

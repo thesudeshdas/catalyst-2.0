@@ -1,17 +1,15 @@
 import BlogPowst from '../../../components/BlogPowst/BlogPowst';
 import Powst from '../../../components/Powst/Powst';
-import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useShowPowst from '../../../hooks/useShowPowst/useShowPowst';
 import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
 
 import PortfolioSkeleton from './PortfolioSkeleton';
 
-export default function PortfolioTab() {
-  const { authState } = useAuthContext();
+export default function PortfolioTab({ userName }: { userName: string }) {
   const { setPowstToBeShown } = useShowPowst();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
-    useGetUserDetails({ userId: authState.userId });
+    useGetUserDetails({ userId: userName });
 
   if (isUserDetailsPending) {
     return <PortfolioSkeleton />;
