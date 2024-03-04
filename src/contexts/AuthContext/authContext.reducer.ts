@@ -23,7 +23,8 @@ export const authReducer = (
         email: '',
         firstName: '',
         lastName: '',
-        userId: ''
+        userId: '',
+        username: ''
       };
 
     case 'REFRESH_TOKEN':

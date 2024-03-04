@@ -10,6 +10,7 @@ import { authReducer } from './authContext.reducer';
 const accessToken = localStorage?.getItem('accessToken');
 const refreshToken = localStorage?.getItem('refreshToken');
 const userId = localStorage?.getItem('userId');
+const username = localStorage?.getItem('username');
 
 const initialState: IAuthContextState = {
   refreshToken: refreshToken || '',
@@ -17,6 +18,7 @@ const initialState: IAuthContextState = {
   email: '',
   firstName: '',
   lastName: '',
+  username: username || '',
   userId: userId || ''
 };
 

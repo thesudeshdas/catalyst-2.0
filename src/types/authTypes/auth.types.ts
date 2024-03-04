@@ -7,6 +7,7 @@ export interface IAuthContextState {
   lastName?: string;
   email: string;
   userId: string;
+  username: string;
 }
 
 export interface IAuthReducerActions {
@@ -36,6 +37,7 @@ export interface ILoginResponse {
   lastName?: string;
   email: string;
   userId: string;
+  username: string;
 }
 
 export interface IRegisterForm {

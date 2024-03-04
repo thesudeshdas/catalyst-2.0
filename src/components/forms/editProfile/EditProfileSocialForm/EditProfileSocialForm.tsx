@@ -17,7 +17,9 @@ import { editProfileSocialSchema } from './editProfileSocialForm.schema';
 export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
   const { authState } = useAuthContext();
 
-  const { data: userDetails } = useGetUserDetails({ userId: authState.userId });
+  const { data: userDetails } = useGetUserDetails({
+    userId: authState.username
+  });
 
   const {
     mutate: updateUserDetailsMutation,

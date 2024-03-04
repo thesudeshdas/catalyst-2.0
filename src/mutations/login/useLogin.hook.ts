@@ -28,6 +28,7 @@ export function useLogin() {
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
       localStorage.setItem('userId', data.userId);
+      localStorage.setItem('username', data.username);
 
       // we are saving the access token and the refresh token in the context since we will be using this globally
       authDispatch({
@@ -35,7 +36,8 @@ export function useLogin() {
         payload: {
           accessToken: data.accessToken,
           refreshToken: data.refreshToken,
-          userId: data.userId
+          userId: data.userId,
+          username: data?.username
         }
       });
 

@@ -29,7 +29,7 @@ export default function Profile() {
 
   const { data: userDetails, isPending: isUserDetailsPending } =
     useGetUserDetails({
-      userId: username && username !== 'profile' ? username : authState.userId
+      userId: username && username !== 'profile' ? username : authState.username
     });
 
   const [profileTab, setProfileTab] = useState<string>(
@@ -194,7 +194,9 @@ export default function Profile() {
 
             <tab.panel
               username={
-                username && username !== 'profile' ? username : authState.userId
+                username && username !== 'profile'
+                  ? username
+                  : authState.username
               }
             />
           </>
