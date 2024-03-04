@@ -1,5 +1,5 @@
 import { IBlog } from '../blogTypes/blog.types';
-import { IPowst } from '../createPowstTypes/createPowst.types';
+import { IPowst } from '../powstTypes/powst.types';
 
 export interface IUserSocials {
   name: string;

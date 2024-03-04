@@ -1,14 +1,14 @@
 import { Dispatch, SetStateAction } from 'react';
 import { LuHeart } from 'react-icons/lu';
 
-import { IPowst } from '../../types/createPowstTypes/createPowst.types';
+import { IPowst } from '../../types/powstTypes/powst.types';
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
 import CustomImage from '../images/CustomImage/CustomImage';
 
 // declare props types
 interface IPowstProps {
   sameUser?: boolean;
-  powstDetails?: Partial<IPowst>;
+  powstDetails: Partial<IPowst>;
   setPowstToBeShown: Dispatch<SetStateAction<string>>;
 }
 
@@ -17,7 +17,8 @@ export default function Powst({
   powstDetails,
   setPowstToBeShown
 }: IPowstProps) {
-  const { description, title, alt, image, _id } = powstDetails || {};
+  const { description, title, imageAlt, image, _id, owner } =
+    powstDetails || {};
 
   const handleOpenPowstDetailsModal = () => {
     (
@@ -29,16 +30,13 @@ export default function Powst({
 
   return (
     <div className='flex flex-col gap-2'>
-      {!sameUser && (
-        <div className='flex justify-between items-center'>
-          <div className='flex gap-2 items-center'>
-            <UserAvatar
-              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-              name='Sudesh Das'
-              variant='profile'
-            />
-          </div>
-        </div>
+      {!sameUser && owner?.profilePic && (
+        <UserAvatar
+          src={owner?.profilePic}
+          name={`${owner?.firstName} ${owner?.lastName}`}
+          variant='profile'
+          username={owner?.username || 'no-username-found'}
+        />
       )}
 
       <div
@@ -46,15 +44,17 @@ export default function Powst({
         onClick={handleOpenPowstDetailsModal}
       >
         <div className='aspect-[4/3] w-full'>
-          <CustomImage
-            imgSources={{
-              small: {
-                alt: alt ? alt : 'Random',
-                src: image
-              }
-            }}
-            aspectRatio='aspect-[4/3]'
-          />
+          {image && (
+            <CustomImage
+              imgSources={{
+                small: {
+                  alt: imageAlt ? imageAlt : 'Random',
+                  src: image
+                }
+              }}
+              aspectRatio='aspect-[4/3]'
+            />
+          )}
         </div>
 
         <div className='absolute bottom-0 w-full h-full bg-black opacity-0 group-hover:opacity-80 transition-opacity'></div>
@@ -83,3 +83,5 @@ export default function Powst({
     </div>
   );
 }
+
+// TODO @thesudeshdas => Create a fallback for powst image

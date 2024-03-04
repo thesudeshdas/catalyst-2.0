@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react';
-import { DiReact } from 'react-icons/di';
 import {
   LuBookmark,
   LuHeart,
@@ -10,10 +9,9 @@ import {
 } from 'react-icons/lu';
 
 import queryClient from '../../../config/queryClient';
-import { IPowst } from '../../../types/createPowstTypes/createPowst.types';
+import { IPowst } from '../../../types/powstTypes/powst.types';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
 import CustomImage from '../../images/CustomImage/CustomImage';
-import UserProfileDividerLink from '../../links/UserProfileDividerLink/UserProfileDividerLink';
 import Powst from '../Powst';
 
 // declare props types
@@ -28,8 +26,16 @@ export default function PowstDetailsModal({
 }: IPowstDetailsModalProps) {
   const allPowsts = queryClient.getQueryData<IPowst[]>(['allPowsts']);
 
-  const { title, description, alt, image, live, source } =
-    allPowsts?.find((powst) => powst._id === powstToBeShown) || {};
+  const {
+    title,
+    description,
+    imageAlt,
+    image,
+    live,
+    source,
+    owner,
+    techStack
+  } = allPowsts?.find((powst) => powst._id === powstToBeShown) || {};
 
   const sameUserPowsts = allPowsts
     ?.filter((item) => item._id !== powstToBeShown)
@@ -44,66 +50,51 @@ export default function PowstDetailsModal({
       id='powst_details_modal'
       className='modal'
     >
-      <div className='modal-box rounded-md max-w-[1000px] p-0'>
-        <div className='max-w-[800px] flex mx-auto pb-12'>
+      <div className='modal-box rounded-md !max-w-[800px] p-0'>
+        <div className='flex mx-auto pb-12'>
           <div className='flex-grow h-full '>
             <div className='w-full sticky top-0 p-4 bg-base-100 z-10'>
               <h2 className='text-2xl font-semibold mb-2'>{title}</h2>
 
-              <UserAvatar
-                src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-                name='Sudesh Das'
-                variant='profile'
-                size='md'
-                followAction
-              />
+              {owner?.profilePic && (
+                <UserAvatar
+                  src={owner.profilePic}
+                  name={`${owner.firstName} ${owner.lastName}`}
+                  username={owner?.username || 'no-username-found'}
+                  variant='profile'
+                  size='md'
+                  followAction
+                />
+              )}
             </div>
 
             <div className='p-4 pt-0 pr-0 flex flex-col gap-4 bg-red'>
-              <div className='aspect-[4/3] w-full rounded-md mx-auto overflow-hidden'>
-                <CustomImage
-                  imgSources={{
-                    small: {
-                      alt: alt ? alt : 'Random',
-                      src: image
-                    }
-                  }}
-                  aspectRatio='aspect-[4/3]'
-                />
-              </div>
+              {image && (
+                <div className='aspect-[4/3] w-full rounded-md mx-auto overflow-hidden'>
+                  <CustomImage
+                    imgSources={{
+                      small: {
+                        alt: imageAlt ? imageAlt : 'Random',
+                        src: image
+                      }
+                    }}
+                    aspectRatio='aspect-[4/3]'
+                  />
+                </div>
+              )}
 
               <p>{description}</p>
 
               <div className='flex flex-col sm:flex-row gap-4 justify-between'>
-                <div className='flex flex-wrap'>
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
-                  <DiReact className='h-[1.5rem] w-[1.5rem]' />
+                <div className='flex flex-wrap gap-3'>
+                  {techStack?.map((icon) => (
+                    <img
+                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version}.svg`}
+                      alt={icon.name}
+                      className='h-6 w-6'
+                      key={icon.name}
+                    />
+                  ))}
                 </div>
 
                 {(live || source) && (
@@ -162,11 +153,22 @@ export default function PowstDetailsModal({
                 </div>
               </div>
 
-              <UserProfileDividerLink />
+              {owner?.profilePic && (
+                <UserAvatar
+                  src={owner.profilePic}
+                  name={`${owner.firstName} ${owner.lastName}`}
+                  variant='divider'
+                  size='xl'
+                  followAction
+                  username={owner?.username || 'no-username-found'}
+                />
+              )}
 
               <div className='flex flex-col gap-4'>
                 <div className='flex justify-between items-center'>
-                  <h4 className='font-semibold text-sm'>More by Sudesh Das</h4>
+                  <h4 className='font-semibold text-sm'>
+                    More by {owner?.firstName} {owner?.lastName}
+                  </h4>
 
                   <button className='btn btn-link btn-xs'>View Profile</button>
                 </div>
@@ -209,12 +211,15 @@ export default function PowstDetailsModal({
               </button>
             </form>
 
-            <button className='btn btn-sm btn-square btn-ghost hover:bg-transparent'>
-              <UserAvatar
-                src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-                name='Sudesh Das'
-              />
-            </button>
+            {owner?.profilePic && (
+              <button className='btn btn-sm btn-square btn-ghost hover:bg-transparent'>
+                <UserAvatar
+                  src={owner?.profilePic}
+                  name={`${owner?.firstName} ${owner?.lastName}`}
+                  username={owner?.username || 'no-username-found'}
+                />
+              </button>
+            )}
 
             <button className='btn btn-sm btn-square btn-ghost'>
               <LuMessageSquare className='h-[1.2rem] w-[1.2rem]' />

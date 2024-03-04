@@ -18,6 +18,7 @@ export default function ProfileSkeleton() {
             <li className='skeleton h-6 w-36 sm:w-48 md:w-56'></li>
             <li className='skeleton h-6 w-36 sm:w-48 md:w-56'></li>
             <li className='skeleton h-6 w-36 sm:w-48 md:w-56'></li>
+            <li className='skeleton h-6 w-36 sm:w-48 md:w-56'></li>
           </ul>
 
           <ul className='grid grid-cols-2 gap-2'>
@@ -40,6 +41,7 @@ export default function ProfileSkeleton() {
         <ul className='flex gap-4 w-full justify-between'>
           <li className='skeleton aspect-[4/3] w-full'></li>
           <li className='skeleton aspect-[4/3] w-full hidden sm:block'></li>
+          <li className='skeleton aspect-[4/3] w-full hidden md:block'></li>
           <li className='skeleton aspect-[4/3] w-full hidden md:block'></li>
         </ul>
 

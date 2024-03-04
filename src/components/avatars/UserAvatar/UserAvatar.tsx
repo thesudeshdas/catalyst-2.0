@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 // declare props types
 type IUserAvatarSizes = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
@@ -5,8 +7,10 @@ interface IUserAvatarProps {
   src: string;
   name: string;
   size?: IUserAvatarSizes;
-  variant?: 'avatar' | 'profile';
+  variant?: 'avatar' | 'profile' | 'divider';
   followAction?: boolean;
+  username: string;
+  noRedirect?: boolean;
 }
 
 export default function UserAvatar({
@@ -14,8 +18,12 @@ export default function UserAvatar({
   name,
   size = 'sm',
   variant = 'avatar',
-  followAction = false
+  followAction = false,
+  username,
+  noRedirect = false
 }: IUserAvatarProps) {
+  const navigate = useNavigate();
+
   const getAvatarSize = (size: IUserAvatarSizes) => {
     switch (size) {
       case 'sm':
@@ -38,10 +46,17 @@ export default function UserAvatar({
     }
   };
 
+  const handleGoToProfile = () => {
+    navigate(`/${username}`);
+  };
+
   if (variant === 'avatar') {
     return (
       <div
-        className={`${getAvatarSize(size)} mask mask-squircle flex-shrink-0`}
+        className={`${getAvatarSize(size)} mask mask-squircle ${
+          noRedirect ? '' : ' cursor-pointer'
+        } flex-shrink-0`}
+        onClick={noRedirect ? undefined : handleGoToProfile}
       >
         <img
           src={src}
@@ -54,9 +69,14 @@ export default function UserAvatar({
 
   if (variant === 'profile') {
     return (
-      <div className='flex items-center gap-2'>
+      <div
+        className={`flex items-center gap-2 ${
+          noRedirect ? '' : ' cursor-pointer'
+        }`}
+        onClick={noRedirect ? undefined : handleGoToProfile}
+      >
         <div
-          className={`${getAvatarSize(size)} mask mask-squircle flex-shrink-0`}
+          className={`${getAvatarSize(size)} mask mask-squircle  flex-shrink-0`}
         >
           <img
             src={src}
@@ -74,8 +94,40 @@ export default function UserAvatar({
     );
   }
 
+  if (variant === 'divider') {
+    return (
+      <div className='divider'>
+        <div
+          className='flex flex-col items-center gap-1 group'
+          onClick={noRedirect ? undefined : handleGoToProfile}
+        >
+          <div
+            className={`${getAvatarSize(size)} mask mask-squircle ${
+              noRedirect ? '' : ' cursor-pointer'
+            } flex-shrink-0`}
+          >
+            <img
+              src={src}
+              alt={name}
+              className='h-full w-full object-cover'
+            />
+          </div>
+
+          <h3 className='font-medium group-hover:text-primary transition-colors'>
+            {name}
+          </h3>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={`${getAvatarSize(size)} mask mask-squircle flex-shrink-0`}>
+    <div
+      className={`${getAvatarSize(size)} mask mask-squircle ${
+        noRedirect ? '' : ' cursor-pointer'
+      } flex-shrink-0`}
+      onClick={noRedirect ? undefined : handleGoToProfile}
+    >
       <img
         src={src}
         alt={name}

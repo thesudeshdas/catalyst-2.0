@@ -2,9 +2,9 @@ import { Dispatch, SetStateAction } from 'react';
 
 export interface ICreatePowstContext {
   setActiveStep: Dispatch<SetStateAction<number>>;
-  savePowstInLocal: Dispatch<SetStateAction<Partial<IPowst>>>;
+  savePowstInLocal: Dispatch<SetStateAction<Partial<ICreatePowst>>>;
   clearPowstInLocal: () => void;
-  localPowst: IPowst;
+  localPowst: ICreatePowst;
 }
 
 export interface ICreatePowstBasicForm {
@@ -23,7 +23,7 @@ export interface ICreatePowstImageForm {
   image?: any;
 }
 
-export interface IPowst
+export interface ICreatePowst
   extends ICreatePowstBasicForm,
     ICreatePowstTechForm,
     ICreatePowstImageForm {

@@ -5,7 +5,7 @@ import BlockerModal from '../../components/modals/BlockerModal/BlockerModal';
 import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
 import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
-import { IPowst } from '../../types/createPowstTypes/createPowst.types';
+import { ICreatePowst } from '../../types/createPowstTypes/createPowst.types';
 
 export default function CreatePowstLayout() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -17,7 +17,7 @@ export default function CreatePowstLayout() {
   const localPowstFromStorage: string =
     localStorage?.getItem('localPowst') || '';
 
-  const [localPowst, setLocalPowst] = useState<Partial<IPowst>>(
+  const [localPowst, setLocalPowst] = useState<Partial<ICreatePowst>>(
     localPowstFromStorage
       ? JSON.parse(localPowstFromStorage)
       : {
@@ -25,7 +25,7 @@ export default function CreatePowstLayout() {
         }
   );
 
-  const savePowstInLocal = (data: Partial<IPowst>) => {
+  const savePowstInLocal = (data: Partial<ICreatePowst>) => {
     setLocalPowst((prevLocalPowst) => ({ ...prevLocalPowst, ...data }));
   };
 

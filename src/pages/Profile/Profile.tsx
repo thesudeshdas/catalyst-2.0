@@ -81,12 +81,17 @@ export default function Profile() {
     <main className='flex-grow flex flex-col gap-6 w-full'>
       <div className='flex justify-between items-center'>
         <div className='flex gap-4 items-center'>
-          <UserAvatar
-            src={String(userDetails?.profilePic)}
-            name='Sudesh Das'
-            variant='avatar'
-            size='2xl'
-          />
+          {userDetails?.profilePic && (
+            <UserAvatar
+              src={userDetails?.profilePic}
+              name={`${userDetails?.firstName} ${userDetails?.lastName}`}
+              variant='avatar'
+              size='2xl'
+              username={'no-username-found'}
+              noRedirect
+            />
+          )}
+
           <div>
             <h2 className='font-semibold text-3xl lg:text-4xl'>
               {userDetails?.firstName} {userDetails?.lastName}

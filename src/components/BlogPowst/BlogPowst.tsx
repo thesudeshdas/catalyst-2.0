@@ -36,6 +36,7 @@ export default function BlogPowst({ sameUser, blogDetails }: IBlogPowstProps) {
               src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
               name='Sudesh Das'
               variant='profile'
+              username={'no-username-found'}
             />
           </div>
         </div>

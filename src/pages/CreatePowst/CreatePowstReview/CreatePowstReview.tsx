@@ -75,6 +75,8 @@ export default function CreatePowstReview() {
               name='Sudesh Das'
               variant='profile'
               size='md'
+              username={'no-username-found'}
+              noRedirect
             />
           </div>
 
@@ -162,8 +164,6 @@ export default function CreatePowstReview() {
                 #default
               </div>
             </div>
-
-            {/* <UserProfileDividerLink /> */}
           </div>
         </div>
       </div>
@@ -181,3 +181,5 @@ export default function CreatePowstReview() {
     </main>
   );
 }
+
+// TODO @thesudeshdas => sanitise the create powst body to not send the undefined
