@@ -5,8 +5,8 @@ import rehypeRaw from 'rehype-raw';
 import socialIconsList from '../../../assets/icons/socialIcons';
 import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
 
-export default function AboutTab({ userName }: { userName: string }) {
-  const { data: userDetails } = useGetUserDetails({ userId: userName });
+export default function AboutTab({ username }: { username: string }) {
+  const { data: userDetails } = useGetUserDetails({ userId: username });
 
   const renderedSocialIcons = userDetails?.socials
     ?.filter((social) => social.name !== 'portfolio')

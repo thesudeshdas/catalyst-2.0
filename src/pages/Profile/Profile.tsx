@@ -193,7 +193,7 @@ export default function Profile() {
             />
 
             <tab.panel
-              userName={
+              username={
                 username && username !== 'profile' ? username : authState.userId
               }
             />

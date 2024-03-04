@@ -13,6 +13,7 @@ import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.util
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
+import UsernameInput from './UsernameInput/UsernameInput';
 import { editProfileBasicSchema } from './editProfileBasicForm.schema';
 
 export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
@@ -36,6 +37,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         email: userDetails?.email,
         headline: userDetails?.headline,
         location: userDetails?.location
+        // username: userDetails?.username
       }
     });
 
@@ -55,6 +57,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       firstName: userDetails?.firstName,
       lastName: userDetails?.lastName,
       email: userDetails?.email,
+      // username: userDetails?.username,
       headline: userDetails?.headline,
       location: userDetails?.location
     });
@@ -81,7 +84,9 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         name='profilePic'
         control={control}
         clearErrors={clearErrors}
-        defaultPicture={String(userDetails?.profilePic)}
+        defaultPicture={
+          userDetails?.profilePic ? userDetails?.profilePic : undefined
+        }
         setError={setError}
         previewClasses='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative mask-squircle'
         adderComponent={
@@ -112,6 +117,12 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
           placeholder='Bro'
         />
       </div>
+
+      <UsernameInput
+        control={control}
+        name='username'
+        placeholder={userDetails?.username}
+      />
 
       <TextInput
         control={control}

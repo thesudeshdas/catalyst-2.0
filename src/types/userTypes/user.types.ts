@@ -10,6 +10,7 @@ export interface IUser {
   firstName: string;
   lastName: string;
   email: string;
+  username: string;
   userId: string;
   headline: string;
   _id: string;
@@ -27,6 +28,7 @@ export interface IUpdateUserDetailsBody {
   firstName: string;
   lastName: string;
   email: string;
+  username: string;
   userId: string;
   headline: string;
   _id: string;

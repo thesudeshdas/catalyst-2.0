@@ -36,6 +36,15 @@ export default function useUpdateUserDetails() {
         data
       );
 
+      queryClient.setQueryData(
+        [apiKeys.userDetails.GET_USERNAME_AVAILABILITY, data.username],
+        (data: { success: boolean; message: string }) => ({
+          ...data,
+          message: undefined,
+          success: undefined
+        })
+      );
+
       enqueueSnackbar('User details updated', { variant: 'success' });
     }
   });
