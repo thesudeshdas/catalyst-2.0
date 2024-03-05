@@ -48,6 +48,10 @@ export default {
     extend: {
       fontSize: {
         xxs: '11px'
+      },
+      gridTemplateColumns: {
+        timeline: 'auto 1fr',
+        'timeline-sm': '80px auto 1fr'
       }
     }
   }
