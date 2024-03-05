@@ -1,32 +1,23 @@
-// import react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
-import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import { IRegisterForm } from '../../../../types/authTypes/auth.types';
 import CheckboxInput from '../../../inputs/CheckboxInput/CheckboxInput';
+import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import TextInput from '../../../inputs/TextInput/TextInput';
 
-// import hooks
+import { registerSchema } from './registerForm.schema';
 import { useRegister } from './useRegister.hook';
 
-// import schema
-import { registerSchema } from './registerForm.schema';
-
-// import types
-import { IRegisterForm } from '../../../../types/authTypes/auth.types';
-
 export default function RegisterForm() {
-  const register = useRegister();
+  const { mutate } = useRegister();
 
   const { control, handleSubmit, watch } = useForm<IRegisterForm>({
     resolver: zodResolver(registerSchema)
   });
 
   const onRegisterSubmit: SubmitHandler<IRegisterForm> = (data) => {
-    register(data);
+    mutate(data);
   };
 
   const watchAcceptTerms = watch('acceptTerms');
@@ -36,12 +27,21 @@ export default function RegisterForm() {
       className='flex flex-col gap-6 md:items-start w-full'
       onSubmit={handleSubmit(onRegisterSubmit)}
     >
-      <TextInput
-        control={control}
-        name='name'
-        label='Name'
-        placeholder='Awesome Dev'
-      />
+      <div className='flex flex-col gap-2 md:flex-row w-full'>
+        <TextInput
+          control={control}
+          name='firstName'
+          label='First Name'
+          placeholder='Awesome'
+        />
+
+        <TextInput
+          control={control}
+          name='lastName'
+          label='Last Name (Optional)'
+          placeholder='Dev'
+        />
+      </div>
 
       <TextInput
         control={control}

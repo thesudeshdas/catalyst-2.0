@@ -1,20 +1,12 @@
-// import rrd
 import { useNavigate } from 'react-router-dom';
-
-// import react-query
-import { useMutation } from 'react-query';
-
-// import snackbar
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import { useSnackbar } from 'notistack';
 
-// import axios
-import axios, { AxiosError } from 'axios';
+axios;
 
-// import utils
-import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
-
-// import types
 import { IRegisterBody } from '../../../../types/authTypes/auth.types';
+import { getErrorMessage } from '../../../../utils/getErrorMessage/getErrorMessage.utils';
 
 interface RegisteredUser {
   name: string;
@@ -24,38 +16,16 @@ interface RegisteredUser {
   refreshToken: string;
 }
 
-const registerApi = async (body: IRegisterBody): Promise<RegisteredUser> => {
-  try {
-    const { data } = await axios.post(
-      'http://localhost:8000/auth/register',
-      body
-    );
-
-    const sanitisedData: RegisteredUser = {
-      _id: data._id,
-      email: data.email,
-      name: data.name,
-      accessToken: data.accessToken,
-      refreshToken: data.refreshToken
-    };
-
-    return sanitisedData;
-  } catch (error: unknown) {
-    const axiosError = error as AxiosError;
-
-    throw new Error(getErrorMessage(axiosError.response?.data));
-  }
-};
+const registerApi = async (body: IRegisterBody): Promise<RegisteredUser> =>
+  await axios.post('http://localhost:8000/auth/register', body);
 
 export function useRegister() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
-  const { mutate: registerMutation } = useMutation<
-    RegisteredUser,
-    Error,
-    IRegisterBody
-  >((body) => registerApi(body), {
+  return useMutation({
+    mutationKey: ['register'],
+    mutationFn: registerApi,
     onSuccess: (data) => {
       localStorage.setItem('accessToken', JSON.stringify(data.accessToken));
       localStorage.setItem('refreshToken', JSON.stringify(data.refreshToken));
@@ -69,6 +39,4 @@ export function useRegister() {
       });
     }
   });
-
-  return registerMutation;
 }

@@ -1,16 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import react
 import { useState } from 'react';
-
-// import rrd
+import { useController, UseControllerProps } from 'react-hook-form';
+import { LuEye, LuEyeOff } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
-
-// import react-hook-form
-import { UseControllerProps, useController } from 'react-hook-form';
-
-// import icons
-import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function PasswordInput(
   props: { label?: string } & UseControllerProps<any>
@@ -51,7 +44,7 @@ export default function PasswordInput(
           className='btn btn-outline input-bordered join-item'
           onClick={toggleShowPassword}
         >
-          {showPassword ? <FiEyeOff /> : <FiEye />}
+          {showPassword ? <LuEyeOff /> : <LuEye />}
         </button>
       </div>
 

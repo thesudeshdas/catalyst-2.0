@@ -1,73 +1,57 @@
-// import rrd
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-// import components
-// import ProtectedRoutes from './ProtectedRoutes/ProtectedRoutes';
-
-// import layouts
+import GlobalSuspenseFallback from '../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import AppLayout from '../layouts/AppLayout/AppLayout';
-import CreatePowstLayout from '../layouts/CreatePowstLayout/CreatePowstLayout';
 
-// import auth pages
-import Login from '../pages/auth/Login/Login';
-import Register from '../pages/auth/Register/Register';
+import AllProtectedRoutes from './AllProtectedRoutes';
 
-// import app pages
-import Feed from '../pages/Feed/Feed';
-
-// import powst creation pages
-import CreatePowstBasic from '../pages/CreatePowst/CreatePowstBasic/CreatePowstBasic';
-import CreatePowstDescription from '../pages/CreatePowst/CreatePowstDescription/CreatePowstDescription';
-import CreatePowstTech from '../pages/CreatePowst/CreatePowstTech/CreatePowstTech';
-import CreatePowstImage from '../pages/CreatePowst/CreatePowstImage/CreatePowstImage';
+const Login = lazy(() => import('../pages/Auth/Login/Login'));
+const Register = lazy(() => import('../pages/Auth/Register/Register'));
+const Feed = lazy(() => import('../pages/Feed/Feed'));
+const Profile = lazy(() => import('../pages/Profile/Profile'));
 
 export function AllRoutes() {
   return (
     <Routes>
+      {AllProtectedRoutes()}
+
       <Route
         path='/login'
-        element={<Login />}
+        element={
+          <Suspense fallback={<GlobalSuspenseFallback />}>
+            <Login />
+          </Suspense>
+        }
       />
       <Route
         path='/register'
-        element={<Register />}
+        element={
+          <Suspense fallback={<GlobalSuspenseFallback />}>
+            <Register />
+          </Suspense>
+        }
       />
 
-      {/* <Route element={<ProtectedRoutes />}> */}
       <Route element={<AppLayout />}>
         <Route
           path='/feed'
-          element={<Feed />}
+          element={
+            <Suspense fallback={<GlobalSuspenseFallback />}>
+              <Feed />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path='/:username'
+          element={
+            <Suspense fallback={<GlobalSuspenseFallback />}>
+              <Profile />
+            </Suspense>
+          }
         />
       </Route>
-
-      <Route element={<CreatePowstLayout />}>
-        <Route
-          path='/create/basic'
-          element={<CreatePowstBasic />}
-        />
-
-        <Route
-          path='/create/description'
-          element={<CreatePowstDescription />}
-        />
-
-        <Route
-          path='/create/tech'
-          element={<CreatePowstTech />}
-        />
-
-        <Route
-          path='/create/image'
-          element={<CreatePowstImage />}
-        />
-
-        <Route
-          path='/create/*'
-          element={<CreatePowstBasic />}
-        />
-      </Route>
-      {/* </Route> */}
     </Routes>
   );
 }

@@ -1,31 +1,22 @@
-// import react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import components
-import TextInput from '../../../inputs/TextInput/TextInput';
+import { useLogin } from '../../../../mutations/login/useLogin.hook';
+import { ILoginForm } from '../../../../types/authTypes/auth.types';
 import PasswordInput from '../../../inputs/PasswordInput/PasswordInput';
+import TextInput from '../../../inputs/TextInput/TextInput';
 
-// import hooks
-import { useLogin } from './useLogin.hook';
-
-// import schema
 import { loginSchema } from './loginForm.schema';
 
-// import types
-import { ILoginForm } from '../../../../types/authTypes/auth.types';
-
 export default function LoginForm() {
-  const login = useLogin();
+  const { loginMutation, isLoginPending } = useLogin();
 
   const { control, handleSubmit } = useForm<ILoginForm>({
     resolver: zodResolver(loginSchema)
   });
 
   const onLoginSubmit: SubmitHandler<ILoginForm> = (data) => {
-    login(data);
+    loginMutation(data);
   };
 
   return (
@@ -46,7 +37,12 @@ export default function LoginForm() {
         label='Password'
       />
 
-      <button className='btn btn-primary'>Log In</button>
+      <button
+        className={`btn btn-primary ${isLoginPending ? 'btn-disabled' : ''}`}
+      >
+        {isLoginPending && <span className='loading loading-spinner'></span>}
+        Log In
+      </button>
     </form>
   );
 }

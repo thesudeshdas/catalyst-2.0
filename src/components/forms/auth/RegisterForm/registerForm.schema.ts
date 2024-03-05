@@ -1,19 +1,24 @@
 import { z } from 'zod';
 
 export const registerSchema = z.object({
-  name: z
+  firstName: z
     .string({
-      required_error: 'Name is required'
+      required_error: 'First name is required'
     })
-    .min(2, { message: 'Name must be at least 2 characters long' })
-    .max(32, { message: 'Name must be less than 32 characters long' }),
+    .min(2, { message: 'First name must be at least 2 characters long' })
+    .max(32, { message: 'First name must be less than 32 characters' }),
+  lastName: z
+    .string()
+    .min(2, { message: 'Last name must be at least 2 characters long' })
+    .max(32, { message: 'Last name must be less than 32 characters' })
+    .optional(),
   email: z
     .string({
       required_error: 'Email is required'
     })
     .email('Email is not a valid email address')
-    .min(2, { message: 'Email must be at least 3 characters long' })
-    .max(32, { message: 'Email must be less than 320 characters long' }),
+    .min(2, { message: 'Email must be at least 2 characters long' })
+    .max(32, { message: 'Email must be less than 32 characters' }),
   password: z
     .string({
       required_error: 'Password is required'

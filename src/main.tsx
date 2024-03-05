@@ -1,25 +1,19 @@
-// import react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-// import rrd
+import { ErrorBoundary } from 'react-error-boundary';
+import { LuX } from 'react-icons/lu';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { closeSnackbar, SnackbarProvider } from 'notistack';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
-
-// import snackbar
-import { SnackbarProvider, closeSnackbar } from 'notistack';
-
-// import icons
-import { FiX } from 'react-icons/fi';
-
-// import routes
+import queryClient from './config/queryClient.ts';
+import AuthProvider from './contexts/AuthContext/AuthContext.tsx';
+import BlockerProvider from './contexts/BlockerContext/BlockerContext';
+import GlobalErrorFallback from './globals/GlobalErrorFallback/GlobalErrorFallback.tsx';
 import { AllRoutes } from './routes/AllRoutes.tsx';
 
-// import styles
 import './index.css';
-
-const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -32,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               className='btn btn-ghost btn-square'
               onClick={() => closeSnackbar(snackbarId)}
             >
-              <FiX />
+              <LuX />
             </button>
           )}
           autoHideDuration={3000}
@@ -42,8 +36,18 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             horizontal: 'center'
           }}
         >
-          {AllRoutes()}
+          <AuthProvider>
+            <BlockerProvider>
+              <ErrorBoundary FallbackComponent={GlobalErrorFallback}>
+                {/* {AllRoutes()} */}
+
+                <AllRoutes />
+              </ErrorBoundary>
+            </BlockerProvider>
+          </AuthProvider>
         </SnackbarProvider>
+
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

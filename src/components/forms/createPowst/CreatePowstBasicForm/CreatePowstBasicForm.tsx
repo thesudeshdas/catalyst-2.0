@@ -1,41 +1,50 @@
-// import rrd
-import { useNavigate } from 'react-router-dom';
-
-// import react hook form
+import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-
-// import zod
+import { LuChevronsRight } from 'react-icons/lu';
+import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// import hooks
+import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
-
-// import components
+import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
-// import schema
 import { createPowstBasicSchema } from './createPowstBasicForm.schema';
 
-// import types
-import { ICreatePowstBasicForm } from '../../../../types/createPowstTypes/createPowst.types';
-
 export default function CreatePowstBasicForm() {
-  const { setActiveStep } = useCreatePowst();
-
   const navigate = useNavigate();
 
-  const { control, handleSubmit } = useForm<ICreatePowstBasicForm>({
-    resolver: zodResolver(createPowstBasicSchema)
+  const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
+  const { setBlocked } = useBlocker();
+
+  const {
+    control,
+    handleSubmit,
+    formState: { isDirty, isValid }
+  } = useForm<ICreatePowstBasicForm>({
+    resolver: zodResolver(createPowstBasicSchema),
+    defaultValues: {
+      live: localPowst?.live,
+      title: localPowst?.title,
+      source: localPowst?.source
+    }
   });
 
   const onCreatePowstNameSubmit: SubmitHandler<ICreatePowstBasicForm> = (
     data
   ) => {
-    console.log({ data });
+    savePowstInLocal(data);
+
     setActiveStep(1);
 
     navigate('/create/description');
   };
+
+  useEffect(() => {
+    if (isDirty) {
+      setBlocked(true);
+    }
+  }, [isDirty, localPowst, setBlocked]);
 
   return (
     <form
@@ -44,10 +53,9 @@ export default function CreatePowstBasicForm() {
     >
       <TextInput
         control={control}
-        name='name'
+        name='title'
         label='Name of the project'
         placeholder='The Amazing Project'
-        tip='We recommend providing the name of the app you have built'
         required
       />
 
@@ -65,7 +73,12 @@ export default function CreatePowstBasicForm() {
         placeholder='www.theamazingproject.com'
       />
 
-      <button className='btn btn-primary'>Save and Next</button>
+      <button
+        className='btn btn-primary self-end'
+        disabled={!isValid}
+      >
+        Save and Next <LuChevronsRight className='h-6 w-6' />
+      </button>
     </form>
   );
 }

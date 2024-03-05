@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import react hook form
-import { UseControllerProps, useController } from 'react-hook-form';
-
-// import icons
-import { FiInfo } from 'react-icons/fi';
+import { ReactNode } from 'react';
+import { useController, UseControllerProps } from 'react-hook-form';
+import { LuInfo } from 'react-icons/lu';
 
 // declare props types
 interface ITextInputProps {
@@ -12,6 +10,8 @@ interface ITextInputProps {
   placeholder?: string;
   tip?: string;
   required?: boolean;
+  leftIcon?: ReactNode;
+  disabled?: boolean;
 }
 
 export default function TextInput(
@@ -27,9 +27,10 @@ export default function TextInput(
       {(props.label || props.tip) && (
         <div className='flex items-center'>
           {props.label && (
-            <div className='label'>
-              <span className='label-text'>
-                {props.label} {props.required && '*'}
+            <div className='label gap-1'>
+              <span className='label-text'>{props.label}</span>
+              <span className='label-text text-error'>
+                {props.required && '*'}
               </span>
             </div>
           )}
@@ -39,18 +40,27 @@ export default function TextInput(
               className='tooltip tooltip-right cursor-pointer'
               data-tip={props.tip}
             >
-              <FiInfo className='h-[0.8rem] w-[0.8rem]' />
+              <LuInfo className='h-3 w-3' />
             </div>
           )}
         </div>
       )}
 
-      <input
-        {...field}
-        type='text'
-        placeholder={props.placeholder}
-        className='input input-bordered w-full'
-      />
+      <div className='join'>
+        {props.leftIcon && (
+          <div className='join-item btn btn-outline btn-ghost input-bordered p-3'>
+            {props.leftIcon}
+          </div>
+        )}
+
+        <input
+          {...field}
+          type='text'
+          placeholder={props.placeholder}
+          className='join-item input input-bordered w-full focus:outline-none focus:border-primary text-sm'
+          disabled={props.disabled}
+        />
+      </div>
 
       {error && (
         <div className='label'>

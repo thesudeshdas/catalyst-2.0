@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import react
 import { ChangeEvent, ReactElement, useState } from 'react';
-
-// import react-hook-form
-import { UseControllerProps, useController } from 'react-hook-form';
+import { useController, UseControllerProps } from 'react-hook-form';
 
 export default function CheckboxInput(
   props: {
