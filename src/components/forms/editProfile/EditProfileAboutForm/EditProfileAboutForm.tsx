@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   BlockTypeSelect,
@@ -51,15 +51,19 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
       bio: userDetails?.bio
     }
   });
+  const { fields, append, remove } = useFieldArray<
+    IEditProfileAboutForm,
+    'specialisation',
+    'id'
+  >({
+    control,
+    name: 'specialisation'
+  });
 
   const ref = useRef<MDXEditorMethods>(null);
 
   const [markdownInEditor, setMarkdownInEditor] = useState<string>(
     userDetails?.description || ''
-  );
-
-  const [pills, setPills] = useState<string[]>(
-    userDetails?.specialisation || []
   );
 
   const handleMarkdownChange = (markdownText: string) => {
@@ -72,7 +76,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     const sanitisedBody = sanitiseObject({
       bio: data?.bio,
       description: markdownInEditor,
-      specialisation: pills
+      specialisation: data?.specialisation?.reduce(
+        (acc: string[], cur: { text: string }) => [...acc, cur.text],
+        []
+      )
     });
 
     updateUserDetailsMutation({
@@ -83,15 +90,15 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
 
   useEffect(() => {
     reset({
-      bio: userDetails?.bio
+      bio: userDetails?.bio,
+      specialisation: userDetails?.specialisation?.reduce(
+        (acc: { text: string }[], cur: string) => [...acc, { text: cur }],
+        []
+      )
     });
 
     if (userDetails?.description) {
       setMarkdownInEditor(userDetails?.description);
-    }
-
-    if (userDetails?.specialisation) {
-      setPills(userDetails?.specialisation);
     }
   }, [userDetails, reset]);
 
@@ -152,9 +159,10 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
       </div>
 
       <PillsInput
+        fields={fields}
+        append={append}
+        remove={remove}
         label='Specialisation'
-        pillsFromForm={pills}
-        setPillsInForm={setPills}
         tip='You can add upto 10 items'
         max={10}
       />

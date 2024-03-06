@@ -1,28 +1,26 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  KeyboardEvent,
-  SetStateAction,
-  useState
-} from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { UseFieldArrayRemove } from 'react-hook-form';
 import { LuInfo } from 'react-icons/lu';
 
 interface IPillsInputProps {
-  pillsFromForm: string[];
-  setPillsInForm: Dispatch<SetStateAction<string[]>>;
   label?: string;
   required?: boolean;
   tip?: string;
   max?: number;
+  fields: any;
+  append: any;
+  remove: UseFieldArrayRemove;
 }
 
 export default function PillsInput({
-  pillsFromForm,
-  setPillsInForm,
   label,
   required = false,
   tip,
-  max = 10
+  max = 10,
+  fields,
+  append,
+  remove
 }: IPillsInputProps) {
   const [text, setText] = useState<string>('');
 
@@ -32,17 +30,16 @@ export default function PillsInput({
 
   const handleCommaTyped = (key: KeyboardEvent<HTMLInputElement>) => {
     if (key.key === ',' && text !== '' && /[^,]/.test(text)) {
-      const newPill = (
-        text.endsWith(',') ? '#' + text.slice(0, -1) : '#' + text
-      ).trim();
-      setPillsInForm((prevPills) => [...prevPills, newPill]);
+      const newPill = text.endsWith(',')
+        ? '#' + text.trim().slice(0, -1)
+        : '#' + text.trim();
+
+      append({ text: newPill });
       setText('');
     }
   };
 
-  const handleRemovePill = (pill: string) => {
-    setPillsInForm((prevPills) => prevPills.filter((item) => item !== pill));
-  };
+  const handleRemovePill = (index: number) => remove(index);
 
   return (
     <div className='form-control w-full'>
@@ -69,16 +66,16 @@ export default function PillsInput({
       <label
         htmlFor='badgeInput'
         className={`border w-full min-h-[3rem] p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary ${
-          pillsFromForm.length === max ? 'input-disabled' : ''
+          fields.length === max ? 'input-disabled' : ''
         }`}
       >
-        {pillsFromForm?.map((pill, index) => (
+        {fields?.map((pill: { text: string }, index: number) => (
           <div
             key={`pill_${index}_${pill}`}
             className='badge cursor-pointer badge-outline badge-primary bg-base-100'
-            onClick={() => handleRemovePill(pill)}
+            onClick={() => handleRemovePill(index)}
           >
-            {pill}
+            {pill.text}
           </div>
         ))}
 
@@ -89,13 +86,13 @@ export default function PillsInput({
             text.length,
             5
           )}ch w-fit ${
-            pillsFromForm.length === max ? 'input-disabled' : ''
+            fields.length === max ? 'input-disabled' : ''
           } bg-inherit`}
           onKeyUp={handleCommaTyped}
           size={Math.max(text.length, 5)}
           id='badgeInput'
           value={text}
-          disabled={pillsFromForm.length === max}
+          disabled={fields.length === max}
         />
       </label>
     </div>

@@ -44,8 +44,6 @@ export default function EditProfile() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log({ activeProfile });
-
   const renderEditProfileForm = () => {
     switch (activeProfile) {
       case 'basic':

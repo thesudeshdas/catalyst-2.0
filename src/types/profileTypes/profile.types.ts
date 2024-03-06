@@ -35,7 +35,7 @@ export interface IEditProfileSocialForm {
 export interface IEditProfileAboutForm {
   bio: string;
   // description: string; // ? comes from the mdx editor
-  // specialisation: string[]; // ? comes from the useState array of strings
+  specialisation: { text: string }[]; // ? comes from the useState array of strings
 }
 
 export interface IEditBlogForm {

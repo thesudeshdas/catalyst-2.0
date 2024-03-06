@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { LuChevronLeft, LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -39,8 +39,14 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
     useForm<IEditWorkForm>({
       resolver: zodResolver(editWorkSchema)
     });
-
-  const [keywords, setKeywords] = useState<string[]>([]);
+  const { fields, append, remove } = useFieldArray<
+    IEditWorkForm,
+    'keywords',
+    'id'
+  >({
+    control,
+    name: 'keywords'
+  });
 
   const ref = useRef<MDXEditorMethods>(null);
 
@@ -140,17 +146,10 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
       />
 
       <PillsInput
+        fields={fields}
+        append={append}
+        remove={remove}
         label='Keywords'
-        pillsFromForm={keywords}
-        setPillsInForm={setKeywords}
-        tip='You can add upto 10 items'
-        max={10}
-      />
-
-      <PillsInput
-        label='Tech Stack'
-        pillsFromForm={keywords}
-        setPillsInForm={setKeywords}
         tip='You can add upto 10 items'
         max={10}
       />
@@ -194,7 +193,7 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         </button>
 
         <button
-          type='button'
+          type='submit'
           className='btn btn-primary'
           //   disabled={isUpdateUserDetailsPending}
         >
