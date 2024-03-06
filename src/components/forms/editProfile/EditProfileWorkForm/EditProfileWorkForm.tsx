@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { LuPlus } from 'react-icons/lu';
 import update from 'immutability-helper';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
@@ -8,10 +9,15 @@ import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpd
 import { useGetAllUserPowsts } from '../../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
 import { IDragItem } from '../../../../types/dragTypes/drag.types';
 import { IUserPowst } from '../../../../types/userTypes/user.types';
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import DragCard from '../../../drag/DragCard';
 
-export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
+interface IEditProfileWorkFormProps {
+  setActiveProfile: (formName: string) => void;
+}
+
+export default function EditProfileWorkForm({
+  setActiveProfile
+}: IEditProfileWorkFormProps) {
   const { authState } = useAuthContext();
 
   const { data: allUsersPowsts } = useGetAllUserPowsts({
@@ -20,8 +26,7 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
 
   const {
     mutate: updateUserDetailsMutation,
-    isPending: isUpdateUserDetailsPending,
-    isSuccess: isUpdateUserDetailsSuccess
+    isPending: isUpdateUserDetailsPending
   } = useUpdateUserDetails();
 
   const [cards, setCards] = useState<IDragItem[]>([]);
@@ -78,15 +83,19 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
     }
   }, [allUsersPowsts]);
 
-  useEffect(() => {
-    if (isUpdateUserDetailsSuccess) {
-      handleCloseModal(nameId);
-    }
-  }, [isUpdateUserDetailsSuccess, nameId]);
-
   return (
     <form className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto'>
-      <h3 className='font-bold text-lg'>Projects</h3>
+      <div className='w-full flex justify-between items-center'>
+        <h3 className='font-bold text-lg'>Edit Work Experience</h3>
+
+        <button
+          className='btn btn-neutral btn-sm'
+          onClick={() => setActiveProfile('work-new')}
+        >
+          <LuPlus className='h-4 w-4' />
+          Add Work
+        </button>
+      </div>
 
       <DndProvider backend={HTML5Backend}>
         <ul className='w-full'>
@@ -98,7 +107,6 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={() => handleCloseModal(nameId)}
           // disabled={isUpdateUserDetailsPending}
         >
           Cancel
@@ -119,5 +127,3 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => Create a react query mutation for updating the order of the projects

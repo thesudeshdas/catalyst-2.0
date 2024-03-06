@@ -64,7 +64,7 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
 
   return (
     <form
-      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto'
+      className='flex flex-col gap-6 items-center w-full mx-auto'
       onSubmit={handleSubmit(onEditProfileSocialSubmit)}
     >
       <h3 className='font-bold text-lg'>Social Links</h3>

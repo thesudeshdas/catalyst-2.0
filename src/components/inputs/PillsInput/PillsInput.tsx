@@ -68,7 +68,7 @@ export default function PillsInput({
 
       <label
         htmlFor='badgeInput'
-        className={`border w-full min-h-12 p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary ${
+        className={`border w-full min-h-[3rem] p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary ${
           pillsFromForm.length === max ? 'input-disabled' : ''
         }`}
       >
@@ -101,3 +101,7 @@ export default function PillsInput({
     </div>
   );
 }
+
+// FIX @thesudeshdas => Needs to use a unique id otherwise can not be used twice in one form
+
+// TODO @thesudeshdas => Placeholder for the input by default

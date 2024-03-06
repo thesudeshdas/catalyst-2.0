@@ -6,6 +6,8 @@ import EditProfileAboutForm from '../../components/forms/editProfile/EditProfile
 import EditProfileBasicForm from '../../components/forms/editProfile/EditProfileBasicForm/EditProfileBasicForm';
 import EditProfileProjectForm from '../../components/forms/editProfile/EditProfileProjectForm/EditProfileProjectForm';
 import EditProfileSocialForm from '../../components/forms/editProfile/EditProfileSocialForm/EditProfileSocialForm';
+import EditProfileWorkForm from '../../components/forms/editProfile/EditProfileWorkForm/EditProfileWorkForm';
+import EditWorkForm from '../../components/forms/editWork/EditWorkForm/EditWorkForm';
 import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import ProfileEditor from '../Profile/ProfileEditor/ProfileEditor';
@@ -21,25 +23,6 @@ export default function EditProfile() {
     searchParams.get('form') || 'basic'
   );
   const [profileEditorOpen, setProfileEditorOpen] = useState<boolean>(false);
-
-  const renderEditProfileForm = () => {
-    switch (activeProfile) {
-      case 'basic':
-        return <EditProfileBasicForm nameId='basic' />;
-
-      case 'socials':
-        return <EditProfileSocialForm nameId='socials' />;
-
-      case 'projects':
-        return <EditProfileProjectForm nameId='projects' />;
-
-      case 'about':
-        return <EditProfileAboutForm nameId='about' />;
-
-      default:
-        return <EditProfileBasicForm nameId='basic' />;
-    }
-  };
 
   const handleActiveForm = (formName: string) => {
     setActiveProfile(formName);
@@ -61,6 +44,33 @@ export default function EditProfile() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  console.log({ activeProfile });
+
+  const renderEditProfileForm = () => {
+    switch (activeProfile) {
+      case 'basic':
+        return <EditProfileBasicForm nameId='basic' />;
+
+      case 'socials':
+        return <EditProfileSocialForm nameId='socials' />;
+
+      case 'projects':
+        return <EditProfileProjectForm nameId='projects' />;
+
+      case 'work':
+        return <EditProfileWorkForm setActiveProfile={handleActiveForm} />;
+
+      case 'work-new':
+        return <EditWorkForm setActiveProfile={handleActiveForm} />;
+
+      case 'about':
+        return <EditProfileAboutForm nameId='about' />;
+
+      default:
+        return <EditProfileBasicForm nameId='basic' />;
+    }
+  };
+
   return (
     <main className='w-full'>
       <button
@@ -72,7 +82,7 @@ export default function EditProfile() {
         <p className='text-xs font-semibold'>Back to profile</p>
       </button>
 
-      <div className='w-full flex flex-col sm:flex-row-reverse gap-6 sm:overflow-hidden sm:max-h-[83vh] '>
+      <div className='w-full flex flex-col sm:flex-row-reverse gap-6 sm:overflow-hidden sm:max-h-[78vh] '>
         <div className='sticky top-12 z-10 flex-shrink-0 sm:!w-1/4 min-w-[250px]'>
           <ProfileEditor
             setActiveProfile={handleActiveForm}

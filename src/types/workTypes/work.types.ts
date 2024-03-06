@@ -12,4 +12,4 @@ export interface IWork {
   description?: string;
 }
 
-// IDEA @thesudeshdas => Create a page giving credits to icon libraries, packages, maintainers, etc
+export interface IEditWorkForm extends IWork {}
