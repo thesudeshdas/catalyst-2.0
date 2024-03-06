@@ -32,7 +32,7 @@ export const techIcons = [
     name: 'amazonwebservices',
     tags: ['cloud', 'hosting', 'server'],
     version: {
-      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      svg: ['original-wordmark', 'original', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
     color: '#F7A80D',
@@ -480,7 +480,7 @@ export const techIcons = [
     name: 'codepen',
     tags: ['social', 'website', 'editor'],
     version: {
-      svg: ['plain', 'original-wordmark'],
+      svg: ['original', 'plain', 'original-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#231F20',
@@ -1001,7 +1001,7 @@ export const techIcons = [
     name: 'gatling',
     tags: ['framework', 'testing'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#E77500',
@@ -1011,7 +1011,7 @@ export const techIcons = [
     name: 'gatsby',
     tags: ['reactjs', 'framework'],
     version: {
-      svg: ['plain', 'original', 'original-wordmark', 'plain-wordmark'],
+      svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#64328B',
@@ -1150,7 +1150,7 @@ export const techIcons = [
     name: 'gradle',
     tags: ['task-runner'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#02303a',
@@ -1414,7 +1414,7 @@ export const techIcons = [
     name: 'jasmine',
     tags: ['testing'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#8a4182',
@@ -1603,7 +1603,7 @@ export const techIcons = [
     name: 'laravel',
     tags: ['php', 'framework'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#fd4f31',
@@ -1832,7 +1832,7 @@ export const techIcons = [
     name: 'nestjs',
     tags: ['framework'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#DF234F',
@@ -2364,7 +2364,7 @@ export const techIcons = [
     name: 'rust',
     tags: ['programming', 'language'],
     version: {
-      svg: ['plain'],
+      svg: ['original', 'plain'],
       font: ['plain']
     },
     color: '#000000',
@@ -2728,7 +2728,7 @@ export const techIcons = [
     name: 'tailwindcss',
     tags: ['css', 'framework'],
     version: {
-      svg: ['original-wordmark', 'plain'],
+      svg: ['original', 'original-wordmark', 'plain'],
       font: ['original-wordmark', 'plain']
     },
     color: '#2298BD',
@@ -3152,7 +3152,7 @@ export const techIcons = [
     name: 'zend',
     tags: ['php', 'framework'],
     version: {
-      svg: ['plain', 'plain-wordmark'],
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
     color: '#68b604',

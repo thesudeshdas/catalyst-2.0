@@ -25,6 +25,7 @@ import { IEditWorkForm } from '../../../../types/workTypes/work.types';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import SelectInput from '../../../inputs/SelectInput/SelectInput';
+import TechInput from '../../../inputs/TechInput/TechInput';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
 import { editWorkSchema } from './editWorkForm.schema';
@@ -37,15 +38,25 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
   const { control, clearErrors, setError, handleSubmit } =
     useForm<IEditWorkForm>({
-      resolver: zodResolver(editWorkSchema)
+      resolver: zodResolver(editWorkSchema),
+      defaultValues: {}
     });
-  const { fields, append, remove } = useFieldArray<
-    IEditWorkForm,
-    'keywords',
-    'id'
-  >({
+  const {
+    fields: keywordsFields,
+    append: appendKeywords,
+    remove: removeKeywords
+  } = useFieldArray<IEditWorkForm, 'keywords', 'id'>({
     control,
     name: 'keywords'
+  });
+
+  const {
+    fields: techStackFields,
+    append: appendTechStack,
+    remove: removeTechStack
+  } = useFieldArray<IEditWorkForm, 'techStack', 'id'>({
+    control,
+    name: 'techStack'
   });
 
   const ref = useRef<MDXEditorMethods>(null);
@@ -146,12 +157,19 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
       />
 
       <PillsInput
-        fields={fields}
-        append={append}
-        remove={remove}
+        fields={keywordsFields}
+        append={appendKeywords}
+        remove={removeKeywords}
         label='Keywords'
         tip='You can add upto 10 items'
         max={10}
+      />
+
+      <TechInput
+        fields={techStackFields}
+        append={appendTechStack}
+        remove={removeTechStack}
+        label='Technologies used'
       />
 
       <div className=' w-full border rounded-md min-h-48'>
