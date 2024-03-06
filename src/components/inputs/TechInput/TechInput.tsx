@@ -117,11 +117,11 @@ export default function TechInput({
                       (item: { name: string }) => item.name === tech.name
                     )}
                     onClick={() =>
-                      handleAddTech(tech.name, tech.version.svg[0])
+                      handleAddTech(tech.name, tech.versions.svg[0])
                     }
                   >
                     <img
-                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.name}/${tech.name}-${tech.version.svg[0]}.svg`}
+                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.name}/${tech.name}-${tech.versions.svg[0]}.svg`}
                       alt={tech.name}
                       className='h-8 w-8 object-contain'
                       key={tech.name}

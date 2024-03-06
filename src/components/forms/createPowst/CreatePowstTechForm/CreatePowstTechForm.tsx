@@ -94,13 +94,13 @@ export default function CreatePowstTechForm() {
                 onClick={() =>
                   handleAddTech({
                     name: icon.name,
-                    version: icon.version.svg[0]
+                    version: icon.versions.svg[0]
                   })
                 }
                 type='button'
               >
                 <img
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version.svg[0]}.svg`}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.versions.svg[0]}.svg`}
                   alt={icon.name}
                   className='h-8 w-8'
                   key={icon.name}
