@@ -113,6 +113,11 @@ h6 {
   margin-inline-end: 40px;
 }
 
+/* ? => This increases the minimum height of the markdown editor */
+.mdx_editor [class^='_contentEditable'] {
+  min-height: 400px;
+}
+
 .modal-box {
   max-width: 36rem;
 }
@@ -131,8 +136,4 @@ h6 {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-}
-
-.line-break {
-  /* white-space: pre-wrap; */
 }

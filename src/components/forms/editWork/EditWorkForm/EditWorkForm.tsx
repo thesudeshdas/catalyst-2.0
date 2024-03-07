@@ -1,28 +1,11 @@
-import { useRef, useState } from 'react';
 import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { LuChevronLeft, LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  BlockTypeSelect,
-  BoldItalicUnderlineToggles,
-  CodeToggle,
-  CreateLink,
-  headingsPlugin,
-  linkDialogPlugin,
-  linkPlugin,
-  listsPlugin,
-  markdownShortcutPlugin,
-  MDXEditor,
-  MDXEditorMethods,
-  quotePlugin,
-  thematicBreakPlugin,
-  toolbarPlugin,
-  UndoRedo
-} from '@mdxeditor/editor';
 
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import { IEditWorkForm } from '../../../../types/workTypes/work.types';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
+import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import SelectInput from '../../../inputs/SelectInput/SelectInput';
 import TechInput from '../../../inputs/TechInput/TechInput';
@@ -36,7 +19,7 @@ interface IEditWorkFormProps {
 export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
   const { blockedNavigation } = useBlocker();
 
-  const { control, clearErrors, setError, handleSubmit } =
+  const { control, clearErrors, setError, handleSubmit, watch } =
     useForm<IEditWorkForm>({
       resolver: zodResolver(editWorkSchema),
       defaultValues: {}
@@ -59,14 +42,6 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
     name: 'techStack'
   });
 
-  const ref = useRef<MDXEditorMethods>(null);
-
-  const [markdownInEditor, setMarkdownInEditor] = useState<string>('');
-
-  const handleMarkdownChange = (markdownText: string) => {
-    setMarkdownInEditor(markdownText);
-  };
-
   const handleGoBackToAllWork = () => {
     setActiveProfile('work');
     blockedNavigation('/edit-profile?form=work');
@@ -75,6 +50,8 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
   const onEditWorkSubmit: SubmitHandler<IEditWorkForm> = async (data) => {
     console.log({ data });
   };
+
+  console.log({ watch: watch('description') });
 
   return (
     <form
@@ -172,34 +149,11 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         label='Technologies used'
       />
 
-      <div className=' w-full border rounded-md min-h-48'>
-        <MDXEditor
-          markdown={markdownInEditor}
-          plugins={[
-            headingsPlugin(),
-            listsPlugin(),
-            quotePlugin(),
-            thematicBreakPlugin(),
-            linkPlugin(),
-            linkDialogPlugin(),
-            toolbarPlugin({
-              toolbarContents: () => (
-                <>
-                  <UndoRedo />
-                  <BoldItalicUnderlineToggles />
-                  <BlockTypeSelect />
-                  <CodeToggle />
-                  <CreateLink />
-                </>
-              )
-            }),
-            markdownShortcutPlugin()
-          ]}
-          ref={ref}
-          onChange={handleMarkdownChange}
-          className='mdx_editor'
-        />
-      </div>
+      <MarkdownInput
+        control={control}
+        name='description'
+        label='Description'
+      />
 
       <div className='flex gap-2'>
         <button
