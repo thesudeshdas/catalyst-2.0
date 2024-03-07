@@ -13,6 +13,10 @@ export interface ICreatePowstBasicForm {
   source?: string;
 }
 
+export interface ICreatePowstDescriptionForm {
+  description: string;
+}
+
 export interface ICreatePowstTechForm {
   tech: string;
 }

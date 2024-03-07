@@ -1,23 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  BlockTypeSelect,
-  BoldItalicUnderlineToggles,
-  CodeToggle,
-  CreateLink,
-  headingsPlugin,
-  linkDialogPlugin,
-  linkPlugin,
-  listsPlugin,
-  markdownShortcutPlugin,
-  MDXEditor,
-  MDXEditorMethods,
-  quotePlugin,
-  thematicBreakPlugin,
-  toolbarPlugin,
-  UndoRedo
-} from '@mdxeditor/editor';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import GlobalSuspenseFallback from '../../../../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
@@ -26,6 +9,7 @@ import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDeta
 import { IEditProfileAboutForm } from '../../../../types/profileTypes/profile.types';
 import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
+import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import TextArea from '../../../inputs/TextArea/TextArea';
 
@@ -48,7 +32,8 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
   const { control, handleSubmit, reset } = useForm<IEditProfileAboutForm>({
     resolver: zodResolver(editProfileBasicSchema),
     defaultValues: {
-      bio: userDetails?.bio
+      bio: userDetails?.bio,
+      description: userDetails?.description
     }
   });
   const { fields, append, remove } = useFieldArray<
@@ -60,22 +45,12 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     name: 'specialisation'
   });
 
-  const ref = useRef<MDXEditorMethods>(null);
-
-  const [markdownInEditor, setMarkdownInEditor] = useState<string>(
-    userDetails?.description || ''
-  );
-
-  const handleMarkdownChange = (markdownText: string) => {
-    setMarkdownInEditor(markdownText);
-  };
-
   const onEditProfileAboutSubmit: SubmitHandler<IEditProfileAboutForm> = async (
     data
   ) => {
     const sanitisedBody = sanitiseObject({
       bio: data?.bio,
-      description: markdownInEditor,
+      description: data?.description,
       specialisation: data?.specialisation?.reduce(
         (acc: string[], cur: { text: string }) => [...acc, cur.text],
         []
@@ -94,12 +69,9 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
       specialisation: userDetails?.specialisation?.reduce(
         (acc: { text: string }[], cur: string) => [...acc, { text: cur }],
         []
-      )
+      ),
+      description: userDetails?.description
     });
-
-    if (userDetails?.description) {
-      setMarkdownInEditor(userDetails?.description);
-    }
   }, [userDetails, reset]);
 
   useEffect(() => {
@@ -129,34 +101,11 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         noResize
       />
 
-      <div className=' w-full border rounded-md min-h-48'>
-        <MDXEditor
-          markdown={markdownInEditor}
-          plugins={[
-            headingsPlugin(),
-            listsPlugin(),
-            quotePlugin(),
-            thematicBreakPlugin(),
-            linkPlugin(),
-            linkDialogPlugin(),
-            toolbarPlugin({
-              toolbarContents: () => (
-                <>
-                  <UndoRedo />
-                  <BoldItalicUnderlineToggles />
-                  <BlockTypeSelect />
-                  <CodeToggle />
-                  <CreateLink />
-                </>
-              )
-            }),
-            markdownShortcutPlugin()
-          ]}
-          ref={ref}
-          onChange={handleMarkdownChange}
-          className='mdx_editor'
-        />
-      </div>
+      <MarkdownInput
+        control={control}
+        name='description'
+        label='Description'
+      />
 
       <PillsInput
         fields={fields}

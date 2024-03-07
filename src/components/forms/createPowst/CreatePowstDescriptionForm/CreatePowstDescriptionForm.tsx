@@ -1,25 +1,14 @@
-import { useRef, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { LuChevronsRight } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
-import {
-  BlockTypeSelect,
-  BoldItalicUnderlineToggles,
-  CodeToggle,
-  CreateLink,
-  headingsPlugin,
-  linkDialogPlugin,
-  linkPlugin,
-  listsPlugin,
-  MDXEditor,
-  MDXEditorMethods,
-  quotePlugin,
-  thematicBreakPlugin,
-  toolbarPlugin,
-  UndoRedo
-} from '@mdxeditor/editor';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
+import { ICreatePowstDescriptionForm } from '../../../../types/createPowstTypes/createPowst.types';
+import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
+
+import { createPowstDescriptionSchema } from './createPowstDescription.schema';
 
 import '@mdxeditor/editor/style.css';
 
@@ -28,19 +17,18 @@ export default function CreatePowstDescriptionForm() {
 
   const { localPowst, savePowstInLocal, setActiveStep } = useCreatePowst();
 
-  const ref = useRef<MDXEditorMethods>(null);
+  const { control, handleSubmit } = useForm<ICreatePowstDescriptionForm>({
+    resolver: zodResolver(createPowstDescriptionSchema),
+    defaultValues: {
+      description: localPowst?.description
+    }
+  });
 
-  const [markdownInEditor, setMarkdownInEditor] = useState<string>(
-    localPowst?.description
-  );
-
-  const handleMarkdownChange = (markdownText: string) => {
-    setMarkdownInEditor(markdownText);
-  };
-
-  const onCreatePowstNameSubmit = () => {
+  const onCreatePowstDescriptionSubmit: SubmitHandler<
+    ICreatePowstDescriptionForm
+  > = (data) => {
     savePowstInLocal({
-      description: ref.current?.getMarkdown()
+      description: data.description
     });
 
     setActiveStep(2);
@@ -51,42 +39,20 @@ export default function CreatePowstDescriptionForm() {
     <form
       noValidate
       className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto'
+      onSubmit={handleSubmit(onCreatePowstDescriptionSubmit)}
     >
-      <div className=' w-full border rounded-md'>
-        <MDXEditor
-          markdown={markdownInEditor}
-          plugins={[
-            headingsPlugin(),
-            quotePlugin(),
-            listsPlugin(),
-            thematicBreakPlugin(),
-            linkPlugin(),
-            linkDialogPlugin(),
-            toolbarPlugin({
-              toolbarContents: () => (
-                <>
-                  <UndoRedo />
-                  <BoldItalicUnderlineToggles />
-                  <BlockTypeSelect />
-                  <CodeToggle />
-                  <CreateLink />
-                </>
-              )
-            })
-          ]}
-          ref={ref}
-          onChange={handleMarkdownChange}
-          className='mdx_editor'
-        />
-      </div>
+      <MarkdownInput
+        control={control}
+        name='description'
+        label='Description'
+      />
 
       <div className='flex justify-between w-full'>
         <CreatePowstPreviousButton link='/create/basic' />
 
         <button
+          type='submit'
           className='btn btn-primary'
-          type='button'
-          onClick={onCreatePowstNameSubmit}
         >
           Save and Next <LuChevronsRight className='h-6 w-6' />
         </button>
@@ -94,7 +60,3 @@ export default function CreatePowstDescriptionForm() {
     </form>
   );
 }
-
-// TODO => Know issues
-// 1. TailwindCSS is resetting most of the default styling, so, we need to change everything on our own
-// 2. The buttons are a nuisance, need to find a way to change them
