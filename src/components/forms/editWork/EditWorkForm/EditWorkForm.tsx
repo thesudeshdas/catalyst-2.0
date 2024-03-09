@@ -105,41 +105,34 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         />
       </div>
 
-      <TextInput
-        control={control}
-        name='designation'
-        label='Designation'
-        placeholder='Bangalore, India'
-        required
-      />
+      <div className='flex flex-col gap-2 md:flex-row w-full'>
+        <TextInput
+          control={control}
+          name='designation'
+          label='Designation'
+          placeholder='Fullstack Developer'
+          required
+        />
 
-      <SelectInput
-        control={control}
-        name='workType'
-        options={[
-          { label: 'Full Time', value: 'full_time' },
-          { label: 'Part Time', value: 'part_time' },
-          { label: 'Internship', value: 'internship' },
-          { label: 'Freelance', value: 'freelance' }
-        ]}
-        label='Type of work'
-        required
-      />
+        <SelectInput
+          control={control}
+          name='workType'
+          options={[
+            { label: 'Full Time', value: 'full_time' },
+            { label: 'Part Time', value: 'part_time' },
+            { label: 'Internship', value: 'internship' },
+            { label: 'Freelance', value: 'freelance' }
+          ]}
+          label='Type of work'
+          required
+        />
+      </div>
 
       <TextInput
         control={control}
         name='location'
         label='Location'
         placeholder='Bangalore, India'
-      />
-
-      <PillsInput
-        fields={keywordsFields}
-        append={appendKeywords}
-        remove={removeKeywords}
-        label='Keywords'
-        tip='You can add upto 10 items'
-        max={10}
       />
 
       <TechInput
@@ -153,6 +146,15 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         control={control}
         name='description'
         label='Description'
+      />
+
+      <PillsInput
+        fields={keywordsFields}
+        append={appendKeywords}
+        remove={removeKeywords}
+        label='Keywords'
+        tip='You can add upto 10 items'
+        max={10}
       />
 
       <div className='flex gap-2'>

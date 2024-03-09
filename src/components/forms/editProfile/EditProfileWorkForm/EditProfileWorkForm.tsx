@@ -84,7 +84,7 @@ export default function EditProfileWorkForm({
   }, [allUsersPowsts]);
 
   return (
-    <form className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto'>
+    <form className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto no-scrollbar'>
       <div className='w-full flex justify-between items-center'>
         <h3 className='font-bold text-lg'>Edit Work Experience</h3>
 
