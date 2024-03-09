@@ -1,9 +1,10 @@
 import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
-import { LuChevronLeft, LuPlus } from 'react-icons/lu';
+import { LuArrowRight, LuChevronLeft, LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import { IEditWorkForm } from '../../../../types/workTypes/work.types';
+import DateInput from '../../../inputs/DateInput/DateInput';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
@@ -19,7 +20,7 @@ interface IEditWorkFormProps {
 export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
   const { blockedNavigation } = useBlocker();
 
-  const { control, clearErrors, setError, handleSubmit, watch } =
+  const { control, clearErrors, setError, handleSubmit } =
     useForm<IEditWorkForm>({
       resolver: zodResolver(editWorkSchema),
       defaultValues: {}
@@ -51,8 +52,6 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
     console.log({ data });
   };
 
-  console.log({ watch: watch('description') });
-
   return (
     <form
       className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto'
@@ -70,39 +69,43 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
       <h3 className='font-bold text-lg'>Add Work Experience</h3>
 
-      <ImageInput
-        name='companyLogo'
-        control={control}
-        clearErrors={clearErrors}
-        setError={setError}
-        previewClasses='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative mask-squircle'
-        adderComponent={
-          <div className='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative mask-squircle'>
-            <LuPlus className='w-16 h-16' />
+      <div className='w-full flex flex-col md:flex-row gap-4'>
+        <div className='flex-shrink-0 md:w-1/3 grid place-items-center'>
+          <ImageInput
+            name='companyLogo'
+            control={control}
+            clearErrors={clearErrors}
+            setError={setError}
+            previewClasses='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center relative mask-squircle'
+            adderComponent={
+              <div className='aspect-[1/1] w-full max-w-[200px] bg-base-300 rounded-md flex flex-col items-center justify-center gap-2 relative mask-squircle text-xs text-center'>
+                <LuPlus className='w-16 h-16' />
+                Upload <br /> Organisation Logo
+                <label
+                  htmlFor='upload'
+                  className='absolute cursor-pointer w-full h-full opacity-0'
+                ></label>
+              </div>
+            }
+          />
+        </div>
 
-            <label
-              htmlFor='upload'
-              className='absolute cursor-pointer w-full h-full opacity-0'
-            ></label>
-          </div>
-        }
-      />
+        <div className='flex flex-col gap-2 w-full'>
+          <TextInput
+            control={control}
+            name='company'
+            label='Organisation'
+            placeholder='The Tech Company'
+            required
+          />
 
-      <div className='flex flex-col gap-2 md:flex-row w-full'>
-        <TextInput
-          control={control}
-          name='company'
-          label='Organisation'
-          placeholder='The Tech Company'
-          required
-        />
-
-        <TextInput
-          control={control}
-          name='companyWebsite'
-          label='Website'
-          placeholder='www.thetechcompany.com'
-        />
+          <TextInput
+            control={control}
+            name='companyWebsite'
+            label='Website'
+            placeholder='www.thetechcompany.com'
+          />
+        </div>
       </div>
 
       <div className='flex flex-col gap-2 md:flex-row w-full'>
@@ -124,6 +127,27 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
             { label: 'Freelance', value: 'freelance' }
           ]}
           label='Type of work'
+          required
+        />
+      </div>
+
+      <div className='flex flex-col gap-2 md:flex-row w-full'>
+        <DateInput
+          control={control}
+          name='startDate'
+          label='Start Date'
+          required
+        />
+
+        <LuArrowRight className='h-4 w-4 flex-shrink-0 translate-y-14 hidden md:block' />
+
+        <DateInput
+          control={control}
+          name='endDate'
+          label='End Date'
+          defaultValue={{ month: 'July', year: '2002' }}
+          isPresent
+          isPresentLabel='I am currently working here'
           required
         />
       </div>
@@ -186,3 +210,5 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 // TODO @thesudeshdas => Create a tech stack input. The input should wait for the user to show option as dropdown. The added ones should be shown on top of the input
 
 // TODO @thesudeshdas => Create a markdown input. The input should take the name of the field and update its value
+
+// TODO @thesudeshdas => Schema validation for this form

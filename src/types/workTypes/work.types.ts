@@ -1,9 +1,11 @@
+import { ICustomDate } from '../global/global.types';
+
 export interface IWork {
   company: string;
   companyLogo: string;
   companyWebsite: string;
-  startDate: Date;
-  endDate: Date | 'Present';
+  startDate: ICustomDate;
+  endDate: ICustomDate;
   designation: string;
   workType: 'Full time' | 'Part time' | 'Internship' | 'Freelance';
   location: string;
@@ -16,8 +18,8 @@ export interface IEditWorkForm {
   company: string;
   companyLogo: string;
   companyWebsite: string;
-  startDate: Date;
-  endDate: Date | 'Present';
+  startDate: ICustomDate;
+  endDate: ICustomDate;
   designation: string;
   workType: 'Full time' | 'Part time' | 'Internship' | 'Freelance';
   location: string;
