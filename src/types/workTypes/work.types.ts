@@ -27,3 +27,19 @@ export interface IEditWorkForm {
   keywords: { text: string }[];
   description?: string;
 }
+
+export interface ICreateWorkBody {
+  company: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  companyLogo: any;
+  companyWebsite: string;
+  startDate: ICustomDate;
+  endDate: ICustomDate;
+  designation: string;
+  workType: 'Full time' | 'Part time' | 'Internship' | 'Freelance';
+  location: string;
+  techStack: { name: string; version: string }[];
+  keywords: { text: string }[];
+  description: string;
+  owner: string;
+}

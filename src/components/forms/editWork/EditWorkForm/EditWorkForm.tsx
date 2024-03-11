@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   SubmitErrorHandler,
   SubmitHandler,
@@ -7,8 +8,11 @@ import {
 import { LuArrowRight, LuChevronLeft, LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
+import useCreateWork from '../../../../mutations/createWork/useCreateWork.mutation';
 import { IEditWorkForm } from '../../../../types/workTypes/work.types';
+import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import DateInput from '../../../inputs/DateInput/DateInput';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import LocationInput from '../../../inputs/LocationInput/LocationInput';
@@ -26,7 +30,9 @@ interface IEditWorkFormProps {
 export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
   const { blockedNavigation } = useBlocker();
 
-  const { control, clearErrors, setError, handleSubmit } =
+  const { authState } = useAuthContext();
+
+  const { control, clearErrors, setError, handleSubmit, reset } =
     useForm<IEditWorkForm>({
       resolver: zodResolver(editWorkSchema),
       defaultValues: {}
@@ -49,6 +55,12 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
     name: 'techStack'
   });
 
+  const {
+    mutate: mutateCreateWork,
+    isPending: isCreateWorkPending,
+    isSuccess: isCreateWorkSuccess
+  } = useCreateWork();
+
   const handleGoBackToAllWork = () => {
     setActiveProfile('work');
     blockedNavigation('/edit-profile?form=work');
@@ -56,33 +68,33 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
   const onEditWorkSubmit: SubmitHandler<IEditWorkForm> = async (data) => {
     // check validation
-    if (data?.startDate && data?.endDate) {
-      if (
-        data?.startDate?.month === undefined ||
-        data?.startDate?.year === undefined ||
-        data?.startDate?.month === 'Select Month' ||
-        data?.startDate?.year === 'Select Year'
-      ) {
-        setError('startDate', {
-          type: 'manual',
-          message: 'Please enter a valid start date'
-        });
-      }
-
-      if (
-        data?.endDate?.month === undefined ||
-        data?.endDate?.year === undefined ||
-        data?.endDate?.month === 'Select Month' ||
-        data?.endDate?.year === 'Select Year'
-      ) {
-        setError('endDate', {
-          type: 'manual',
-          message: 'Please enter a valid end date'
-        });
-      }
-
-      return;
+    if (
+      data?.startDate?.month === undefined ||
+      data?.startDate?.year === undefined ||
+      data?.startDate?.month === 'Select Month' ||
+      data?.startDate?.year === 'Select Year'
+    ) {
+      return setError('startDate', {
+        type: 'manual',
+        message: 'Please enter a valid start date'
+      });
     }
+
+    if (
+      data?.endDate?.month === undefined ||
+      data?.endDate?.year === undefined ||
+      data?.endDate?.month === 'Select Month' ||
+      data?.endDate?.year === 'Select Year'
+    ) {
+      return setError('endDate', {
+        type: 'manual',
+        message: 'Please enter a valid end date'
+      });
+    }
+
+    const sanitisedBody = sanitiseObject(data);
+
+    mutateCreateWork({ ...sanitisedBody, owner: authState.userId });
   };
 
   const onSubmitError: SubmitErrorHandler<IEditWorkForm> = (errors) => {
@@ -112,6 +124,12 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
     return;
   };
+
+  useEffect(() => {
+    if (isCreateWorkSuccess) {
+      reset();
+    }
+  }, [isCreateWorkSuccess, reset]);
 
   return (
     <form
@@ -182,10 +200,10 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
           control={control}
           name='workType'
           options={[
-            { label: 'Full Time', value: 'full_time' },
-            { label: 'Part Time', value: 'part_time' },
-            { label: 'Internship', value: 'internship' },
-            { label: 'Freelance', value: 'freelance' }
+            { label: 'Full Time', value: 'Full Time' },
+            { label: 'Part Time', value: 'Part Time' },
+            { label: 'Internship', value: 'Internship' },
+            { label: 'Freelance', value: 'Freelance' }
           ]}
           label='Type of work'
           required
@@ -249,6 +267,7 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
           className='btn btn-outline'
           type='button'
           onClick={handleGoBackToAllWork}
+          disabled={isCreateWorkPending}
         >
           Cancel
         </button>
@@ -256,11 +275,11 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         <button
           type='submit'
           className='btn btn-primary'
-          //   disabled={isUpdateUserDetailsPending}
+          disabled={isCreateWorkPending}
         >
-          {/* {isUpdateUserDetailsPending && (
+          {isCreateWorkPending && (
             <span className='loading loading-spinner'></span>
-          )} */}
+          )}
           Save
         </button>
       </div>
@@ -277,3 +296,5 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 // TODO @thesudeshdas => Schema validation for this form
 
 // TODO @thesudeshdas => Create a location input with option for remote
+
+// TODO @thesudeshdas => Check if the form is correctly reset after the work is added

@@ -8,3 +8,7 @@ export const blogs = {
   GET_USER_BLOGS: 'GET_USER_BLOGS',
   CREATE_USER_BLOG: 'CREATE_USER_BLOG'
 };
+
+export const work = {
+  CREATE_WORK: 'CREATE_WORK'
+};
