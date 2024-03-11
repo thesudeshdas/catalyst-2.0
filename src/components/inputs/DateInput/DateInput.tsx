@@ -37,8 +37,6 @@ export default function DateInput(
     setSelectedYear(event.target.value);
 
   const handlePresentToggle = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log({ check: event.target.checked });
-
     if (event.target.checked) {
       setSelectedMonth('Present');
       setSelectedYear('Present');
@@ -52,13 +50,6 @@ export default function DateInput(
   useEffect(() => {
     field.onChange({ month: selectedMonth, year: selectedYear });
   }, [selectedMonth, selectedYear]);
-
-  console.log({
-    selectedMonth,
-    selectedYear,
-    default: props?.defaultValue,
-    disabled
-  });
 
   return (
     <div className='form-control w-full'>

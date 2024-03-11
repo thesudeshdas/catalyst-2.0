@@ -39,8 +39,6 @@ export default function TechInput({
 
   const handleRemoveTech = (index: number) => remove(index);
 
-  console.log({ fields });
-
   return (
     <div className='form-control w-full'>
       {(label || tip) && (

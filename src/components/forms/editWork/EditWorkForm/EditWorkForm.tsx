@@ -1,9 +1,15 @@
-import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
+import {
+  SubmitErrorHandler,
+  SubmitHandler,
+  useFieldArray,
+  useForm
+} from 'react-hook-form';
 import { LuArrowRight, LuChevronLeft, LuPlus } from 'react-icons/lu';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import { IEditWorkForm } from '../../../../types/workTypes/work.types';
+import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import DateInput from '../../../inputs/DateInput/DateInput';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
@@ -50,12 +56,73 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
   const onEditWorkSubmit: SubmitHandler<IEditWorkForm> = async (data) => {
     console.log({ data });
+
+    // check validation
+    if (data?.startDate && data?.endDate) {
+      if (
+        data?.startDate?.month === undefined ||
+        data?.startDate?.year === undefined ||
+        data?.startDate?.month === 'Select Month' ||
+        data?.startDate?.year === 'Select Year'
+      ) {
+        setError('startDate', {
+          type: 'manual',
+          message: 'Please enter a valid start date'
+        });
+      }
+
+      if (
+        data?.endDate?.month === undefined ||
+        data?.endDate?.year === undefined ||
+        data?.endDate?.month === 'Select Month' ||
+        data?.endDate?.year === 'Select Year'
+      ) {
+        setError('endDate', {
+          type: 'manual',
+          message: 'Please enter a valid end date'
+        });
+      }
+
+      return;
+    }
+
+    const sanitisedBody = sanitiseObject(data);
+
+    console.log({ data, sanitisedBody });
+  };
+
+  const onSubmitError: SubmitErrorHandler<IEditWorkForm> = (errors) => {
+    if (
+      errors?.startDate?.month !== undefined ||
+      errors?.startDate?.year !== undefined ||
+      errors?.startDate?.month === 'Select Month' ||
+      errors?.startDate?.year === 'Select Year'
+    ) {
+      setError('startDate', {
+        type: 'manual',
+        message: 'Please enter a valid start date'
+      });
+    }
+
+    if (
+      errors?.endDate?.month !== undefined ||
+      errors?.endDate?.year !== undefined ||
+      errors?.endDate?.month === 'Select Month' ||
+      errors?.endDate?.year === 'Select Year'
+    ) {
+      setError('endDate', {
+        type: 'manual',
+        message: 'Please enter a valid end date'
+      });
+    }
+
+    return;
   };
 
   return (
     <form
       className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto'
-      onSubmit={handleSubmit(onEditWorkSubmit)}
+      onSubmit={handleSubmit(onEditWorkSubmit, onSubmitError)}
     >
       <button
         type='button'
@@ -212,3 +279,5 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 // TODO @thesudeshdas => Create a markdown input. The input should take the name of the field and update its value
 
 // TODO @thesudeshdas => Schema validation for this form
+
+// TODO @thesudeshdas => Create a location input with option for remote

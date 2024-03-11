@@ -32,8 +32,6 @@ interface IMarkdownInputProps {
 export default function MarkdownInput(
   props: IMarkdownInputProps & UseControllerProps<any>
 ) {
-  console.log({ props });
-
   const {
     field,
     fieldState: { error }
