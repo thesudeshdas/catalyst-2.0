@@ -9,9 +9,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import { IEditWorkForm } from '../../../../types/workTypes/work.types';
-import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import DateInput from '../../../inputs/DateInput/DateInput';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
+import LocationInput from '../../../inputs/LocationInput/LocationInput';
 import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import SelectInput from '../../../inputs/SelectInput/SelectInput';
@@ -55,8 +55,6 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
   };
 
   const onEditWorkSubmit: SubmitHandler<IEditWorkForm> = async (data) => {
-    console.log({ data });
-
     // check validation
     if (data?.startDate && data?.endDate) {
       if (
@@ -85,10 +83,6 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
 
       return;
     }
-
-    const sanitisedBody = sanitiseObject(data);
-
-    console.log({ data, sanitisedBody });
   };
 
   const onSubmitError: SubmitErrorHandler<IEditWorkForm> = (errors) => {
@@ -219,11 +213,13 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         />
       </div>
 
-      <TextInput
+      <LocationInput
         control={control}
         name='location'
         label='Location'
         placeholder='Bangalore, India'
+        isRemote
+        isRemoteLabel='Working remotely'
       />
 
       <TechInput

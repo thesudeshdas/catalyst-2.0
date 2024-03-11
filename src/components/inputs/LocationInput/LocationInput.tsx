@@ -1,28 +1,35 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { ReactNode } from 'react';
+import { ChangeEvent, ReactNode } from 'react';
 import { useController, UseControllerProps } from 'react-hook-form';
 import { LuInfo } from 'react-icons/lu';
 
 // declare props types
-interface ISelectInputProps {
+interface ILocationInputProps {
   label?: string;
   placeholder?: string;
   tip?: string;
   required?: boolean;
   leftIcon?: ReactNode;
   disabled?: boolean;
-  options: { value: string; label: string }[];
-  defaultValue?: string;
+  isRemote?: boolean;
+  isRemoteLabel?: string;
 }
 
-export default function SelectInput(
-  props: ISelectInputProps & UseControllerProps<any>
+export default function LocationInput(
+  props: ILocationInputProps & UseControllerProps<any>
 ) {
   const {
     field,
     fieldState: { error }
   } = useController(props);
+
+  const handleRemoteToggled = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      return field.onChange('Remote');
+    }
+    return field.onChange('');
+  };
 
   return (
     <label className='form-control w-full'>
@@ -55,23 +62,25 @@ export default function SelectInput(
           </div>
         )}
 
-        <select
-          className='select select-bordered join-item w-full focus:outline-none focus:border-primary text-sm'
-          defaultValue={props?.defaultValue}
+        <input
           {...field}
-        >
-          <option value={'Select'}>Select</option>
-
-          {props?.options.map(({ label, value }) => (
-            <option
-              key={value}
-              value={value}
-            >
-              {label}
-            </option>
-          ))}
-        </select>
+          type='text'
+          placeholder={props.placeholder}
+          className='join-item input input-bordered w-full focus:outline-none focus:border-primary text-sm'
+          disabled={props.disabled || field.value === 'Remote'}
+        />
       </div>
+
+      {props?.isRemote && (
+        <label className='label cursor-pointer gap-2 justify-start text-sm'>
+          <input
+            type='checkbox'
+            className='checkbox checkbox-primary checkbox-xs'
+            onChange={handleRemoteToggled}
+          />
+          {props?.isRemoteLabel}
+        </label>
+      )}
 
       {error && (
         <div className='label'>
@@ -83,5 +92,3 @@ export default function SelectInput(
     </label>
   );
 }
-
-// TODO @thesudeshdas => Create a custom dropdown for the option. The default one's ugly AF
