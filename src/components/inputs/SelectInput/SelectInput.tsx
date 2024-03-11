@@ -83,5 +83,3 @@ export default function SelectInput(
     </label>
   );
 }
-
-// TODO @thesudeshdas => Create a custom dropdown for the option. The default one's ugly AF

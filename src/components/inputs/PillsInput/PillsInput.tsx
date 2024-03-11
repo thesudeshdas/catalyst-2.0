@@ -98,7 +98,3 @@ export default function PillsInput({
     </div>
   );
 }
-
-// FIX @thesudeshdas => Needs to use a unique id otherwise can not be used twice in one form
-
-// TODO @thesudeshdas => Placeholder for the input by default

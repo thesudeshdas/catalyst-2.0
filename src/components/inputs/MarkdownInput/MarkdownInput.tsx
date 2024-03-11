@@ -116,8 +116,3 @@ export default function MarkdownInput(
     </div>
   );
 }
-
-// TODO => Known issues
-// 1. TailwindCSS is resetting most of the default styling, so, we need to change everything on our own
-// 2. The buttons are a nuisance, need to find a way to change them
-// 3. The dark theme for this is messed up. They have their own styling for dark mode, figure it out how to implement that

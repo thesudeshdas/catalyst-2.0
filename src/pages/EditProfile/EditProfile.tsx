@@ -96,5 +96,3 @@ export default function EditProfile() {
     </main>
   );
 }
-
-// TODO @thesudeshdas => Check the navigate on large screens

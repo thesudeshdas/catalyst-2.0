@@ -96,7 +96,7 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         name='bio'
         label='Short bio'
         placeholder='This will be one of the fist things that everyone will read about you. Keep it crisp and clear'
-        maxLength={250} // TODO @thesudeshdas => Change this to 250 later
+        maxLength={250}
         tip='Short bio acts like a seller copy for you'
         noResize
       />
@@ -140,11 +140,3 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => remove all the alerts from the app
-
-// TODO @thesudeshdas => show the save button only when the user changes the input
-
-// Question @thesudeshdas => how do I close the modal after the data is edited? I can send the entire function or just send the id,
-
-// TODO @thesudeshdas => Cancel should also reset the form

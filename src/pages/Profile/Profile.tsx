@@ -211,20 +211,6 @@ export default function Profile() {
   );
 }
 
-// IDEA @thesudeshdas => Show analytics on the bottom right like number of followers gained, powst engagement, etc
-
-// TODO @thesudeshdas => Create a logout component, a modal confirmation for logging out which should navigate to /feed on logging out
-
-// IDEA @thesudeshdas => The tags for the user should be auto generated, this will depend on the work experience and the project experience. Suppose,
-// someone has crated 2 react projects and 1 css, then react will be shown first, then css
-
-// TODO @thesudeshdas => Create hide above and below component which takes child and a width
-// like 'lg', 'md' and shows or hides the component
-
-// TODO @thesudeshdas => Create a component for the right side panel
-
-// TODO @thesudeshdas => For the profile pic, have a fallback image
-
 // <div className='flex gap-3 flex-wrap'>
 //   <div className='badge badge-outline h-fit px-1.5 flex gap-1.5 textarea-bordered text-xxs'>
 //     <img

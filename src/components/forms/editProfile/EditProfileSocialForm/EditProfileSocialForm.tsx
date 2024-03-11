@@ -108,5 +108,3 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => The cancel and save button should be a different component

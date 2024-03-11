@@ -83,5 +83,3 @@ export default function Powst({
     </div>
   );
 }
-
-// TODO @thesudeshdas => Create a fallback for powst image

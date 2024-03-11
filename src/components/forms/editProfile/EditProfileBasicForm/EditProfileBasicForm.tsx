@@ -171,13 +171,3 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => remove all the alerts from the app
-
-// TODO @thesudeshdas => show the save button only when the user changes the input
-
-// Question @thesudeshdas => how do I close the modal after the data is edited? I can send the entire function or just send the id,
-
-// TODO @thesudeshdas => Cancel should also reset the form
-
-// TODO @thesudeshdas => Create a skeleton loading for the forms

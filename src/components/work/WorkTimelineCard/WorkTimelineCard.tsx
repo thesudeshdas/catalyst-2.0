@@ -107,11 +107,3 @@ export default function WorkTimelineCard({
     </li>
   );
 }
-
-// TODO @thesudeshdas => the company logo, tech stack & description is not showing
-
-// TODO @thesudeshdas => External link click to take to the company website
-
-// TODO @thesudeshdas => Calculate teh total time in the organisation. Ref - 1y, 1m
-
-// TODO @thesudeshdas => To be rendered in the UI = location, website and type of work

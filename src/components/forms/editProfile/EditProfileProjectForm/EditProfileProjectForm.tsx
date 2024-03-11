@@ -119,5 +119,3 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => Create a react query mutation for updating the order of the projects

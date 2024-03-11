@@ -30,5 +30,3 @@ export default function WorkTab({ username }: { username: string }) {
     </div>
   );
 }
-
-// TODO @thesudeshdas => Skeleton for work tab

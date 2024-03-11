@@ -286,15 +286,3 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
     </form>
   );
 }
-
-// IDEA @thesudeshdas => Create a page giving credits to icon libraries, packages, maintainers, etc
-
-// TODO @thesudeshdas => Create a tech stack input. The input should wait for the user to show option as dropdown. The added ones should be shown on top of the input
-
-// TODO @thesudeshdas => Create a markdown input. The input should take the name of the field and update its value
-
-// TODO @thesudeshdas => Schema validation for this form
-
-// TODO @thesudeshdas => Create a location input with option for remote
-
-// TODO @thesudeshdas => Check if the form is correctly reset after the work is added

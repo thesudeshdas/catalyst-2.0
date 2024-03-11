@@ -135,9 +135,3 @@ export default function TechInput({
     </div>
   );
 }
-
-// FIX @thesudeshdas => Needs to use a unique id otherwise can not be used twice in one form
-
-// TODO @thesudeshdas => Placeholder for the input by default
-
-// TODO @thesudeshdas => Create a fuzzy search and show the text that matches the search as highlighted

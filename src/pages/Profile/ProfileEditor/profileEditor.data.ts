@@ -36,8 +36,3 @@ export const profileEditorOptions: {
     form: EditProfileAboutForm
   }
 ];
-
-// TODO @thesudeshdas => to be added
-// blogs
-// about
-// contact

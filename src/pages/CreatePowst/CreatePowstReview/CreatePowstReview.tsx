@@ -181,5 +181,3 @@ export default function CreatePowstReview() {
     </main>
   );
 }
-
-// TODO @thesudeshdas => sanitise the create powst body to not send the undefined
