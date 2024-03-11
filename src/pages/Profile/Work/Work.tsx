@@ -1,10 +1,10 @@
 import { LuPlus } from 'react-icons/lu';
 
 import WorkTimelineCard from '../../../components/work/WorkTimelineCard/WorkTimelineCard';
-import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
+import { useGetAllUserWorks } from '../../../queries/getAllUserWorks/useGetAllUserWorks.hook';
 
 export default function WorkTab({ username }: { username: string }) {
-  const { data: userDetails } = useGetUserDetails({ userId: username });
+  const { data: workData } = useGetAllUserWorks({ userId: username });
 
   return (
     <div
@@ -19,14 +19,16 @@ export default function WorkTab({ username }: { username: string }) {
         </div>
 
         <ul className='timeline timeline-vertical timeline-snap-icon'>
-          <WorkTimelineCard
-            workDetails={{
-              description: userDetails?.description,
-              keywords: ['react']
-            }}
-          />
+          {workData?.map((work) => (
+            <WorkTimelineCard
+              key={work.work?._id}
+              workDetails={work?.work}
+            />
+          ))}
         </ul>
       </article>
     </div>
   );
 }
+
+// TODO @thesudeshdas => Skeleton for work tab

@@ -64,12 +64,12 @@ export default function PortfolioTab({ username }: { username: string }) {
               {userDetails?.powsts?.map((item) => (
                 <div
                   className='w-72 sm:w-auto'
-                  key={item.powst._id}
+                  key={item.powst?._id}
                 >
                   <Powst
                     powstDetails={item.powst}
                     setPowstToBeShown={setPowstToBeShown}
-                    key={item.powst._id}
+                    key={item.powst?._id}
                     sameUser
                   />
                 </div>
@@ -88,7 +88,7 @@ export default function PortfolioTab({ username }: { username: string }) {
                   <BlogPowst
                     sameUser
                     blogDetails={item.blog}
-                    key={item.blog._id}
+                    key={item.blog?._id}
                   />
                 </li>
               ))}

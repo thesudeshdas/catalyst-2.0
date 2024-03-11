@@ -1,6 +1,7 @@
 import { ICustomDate } from '../global/global.types';
 
 export interface IWork {
+  _id: string;
   company: string;
   companyLogo: string;
   companyWebsite: string;
@@ -42,4 +43,8 @@ export interface ICreateWorkBody {
   keywords: { text: string }[];
   description: string;
   owner: string;
+}
+
+export interface IGetAllUserWorksBody {
+  userId: string;
 }

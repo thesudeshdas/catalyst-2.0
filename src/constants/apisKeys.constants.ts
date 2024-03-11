@@ -10,5 +10,6 @@ export const blogs = {
 };
 
 export const work = {
-  CREATE_WORK: 'CREATE_WORK'
+  CREATE_WORK: 'CREATE_WORK',
+  GET_USER_WORKS: 'GET_USER_WORKS'
 };
