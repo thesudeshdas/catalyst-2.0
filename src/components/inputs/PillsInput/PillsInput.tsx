@@ -12,6 +12,7 @@ interface IPillsInputProps {
   append: any;
   remove: UseFieldArrayRemove;
   htmlId: string;
+  placeholder?: string;
 }
 
 export default function PillsInput({
@@ -21,7 +22,9 @@ export default function PillsInput({
   max = 10,
   fields,
   append,
-  remove, htmlId
+  remove,
+  htmlId,
+  placeholder
 }: IPillsInputProps) {
   const [text, setText] = useState<string>('');
 
@@ -94,6 +97,7 @@ export default function PillsInput({
           id={htmlId}
           value={text}
           disabled={fields.length === max}
+          placeholder={placeholder}
         />
       </label>
     </div>
