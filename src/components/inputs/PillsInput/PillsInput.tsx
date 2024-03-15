@@ -11,6 +11,7 @@ interface IPillsInputProps {
   fields: any;
   append: any;
   remove: UseFieldArrayRemove;
+  htmlId: string;
 }
 
 export default function PillsInput({
@@ -20,7 +21,7 @@ export default function PillsInput({
   max = 10,
   fields,
   append,
-  remove
+  remove, htmlId
 }: IPillsInputProps) {
   const [text, setText] = useState<string>('');
 
@@ -90,7 +91,7 @@ export default function PillsInput({
           } bg-inherit`}
           onKeyUp={handleCommaTyped}
           size={Math.max(text.length, 5)}
-          id='badgeInput'
+          id={htmlId}
           value={text}
           disabled={fields.length === max}
         />

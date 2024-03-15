@@ -257,6 +257,7 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         append={appendTechStack}
         remove={removeTechStack}
         label='Technologies used'
+        htmlId='edit_work_tech_stack'
       />
 
       <MarkdownInput
@@ -272,6 +273,7 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
         label='Keywords'
         tip='You can add upto 10 items'
         max={10}
+        htmlId='edit_work_keywords'
       />
 
       <div className='flex gap-2'>

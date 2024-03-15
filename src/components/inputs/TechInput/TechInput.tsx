@@ -14,6 +14,7 @@ interface ITechInputProps {
   fields: any;
   append: any;
   remove: UseFieldArrayRemove;
+  htmlId: string;
 }
 
 export default function TechInput({
@@ -24,7 +25,8 @@ export default function TechInput({
   placeholder,
   fields,
   append,
-  remove
+  remove,
+  htmlId
 }: ITechInputProps) {
   const [text, setText] = useState<string>('');
 
@@ -89,7 +91,7 @@ export default function TechInput({
           type='text'
           onChange={handleTextTyped}
           className='input input-bordered w-full focus:outline-none focus:border-primary text-sm'
-          id='techInput'
+          id={htmlId}
           value={text}
           disabled={fields.length === max}
           placeholder={placeholder}

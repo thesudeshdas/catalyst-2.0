@@ -114,6 +114,7 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         label='Specialisation'
         tip='You can add upto 10 items'
         max={10}
+        htmlId='edit_profile_about_specialisation'
       />
 
       <div className='flex gap-2'>
