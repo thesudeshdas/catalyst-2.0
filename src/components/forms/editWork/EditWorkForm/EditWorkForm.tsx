@@ -11,7 +11,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useBlocker from '../../../../contexts/BlockerContext/blockerContext.hook';
 import useCreateWork from '../../../../mutations/createWork/useCreateWork.mutation';
-import { IEditWorkForm } from '../../../../types/workTypes/work.types';
+import {
+  ICreateWorkBody,
+  IEditWorkForm
+} from '../../../../types/workTypes/work.types';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import DateInput from '../../../inputs/DateInput/DateInput';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
@@ -92,9 +95,19 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
       });
     }
 
-    const sanitisedBody = sanitiseObject(data);
+    const sanitisedBody: ICreateWorkBody = sanitiseObject({
+      ...data,
+      keywords: data?.keywords?.reduce(
+        (acc: string[], cur: { text: string }) => [...acc, cur.text],
+        []
+      )
+    });
 
-    mutateCreateWork({ ...sanitisedBody, owner: authState.userId });
+    mutateCreateWork({
+      ...sanitisedBody,
+      companyLogo: data?.companyLogo,
+      owner: authState.userId
+    });
   };
 
   const onSubmitError: SubmitErrorHandler<IEditWorkForm> = (errors) => {
@@ -224,7 +237,6 @@ export default function EditWorkForm({ setActiveProfile }: IEditWorkFormProps) {
           control={control}
           name='endDate'
           label='End Date'
-          defaultValue={{ month: 'July', year: '2002' }}
           isPresent
           isPresentLabel='I am currently working here'
           required

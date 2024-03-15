@@ -40,7 +40,7 @@ export interface ICreateWorkBody {
   workType: 'Full time' | 'Part time' | 'Internship' | 'Freelance';
   location: string;
   techStack: { name: string; version: string }[];
-  keywords: { text: string }[];
+  keywords: string[];
   description: string;
   owner: string;
 }

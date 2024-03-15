@@ -6,9 +6,9 @@ import update from 'immutability-helper';
 
 import useAuthContext from '../../../../contexts/AuthContext/authContext.hook';
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
-import { useGetAllUserPowsts } from '../../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
+import { useGetAllUserWorks } from '../../../../queries/getAllUserWorks/useGetAllUserWorks.hook';
 import { IDragItem } from '../../../../types/dragTypes/drag.types';
-import { IUserPowst } from '../../../../types/userTypes/user.types';
+import { IUserWork } from '../../../../types/userTypes/user.types';
 import DragCard from '../../../drag/DragCard';
 
 interface IEditProfileWorkFormProps {
@@ -20,7 +20,7 @@ export default function EditProfileWorkForm({
 }: IEditProfileWorkFormProps) {
   const { authState } = useAuthContext();
 
-  const { data: allUsersPowsts } = useGetAllUserPowsts({
+  const { data: allUserWorks } = useGetAllUserWorks({
     userId: authState.username
   });
 
@@ -70,18 +70,18 @@ export default function EditProfileWorkForm({
   };
 
   useEffect(() => {
-    if (allUsersPowsts && allUsersPowsts.length > 0) {
-      const dataToBePut: IDragItem[] = allUsersPowsts?.reduce(
-        (acc: IDragItem[], cur: IUserPowst): IDragItem[] => [
+    if (allUserWorks && allUserWorks.length > 0) {
+      const dataToBePut: IDragItem[] = allUserWorks?.reduce(
+        (acc: IDragItem[], cur: IUserWork): IDragItem[] => [
           ...acc,
-          { id: cur.powst._id, text: cur.powst.title }
+          { id: cur.work._id, text: cur.work.designation }
         ],
         []
       );
 
       setCards(dataToBePut);
     }
-  }, [allUsersPowsts]);
+  }, [allUserWorks]);
 
   return (
     <form className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto no-scrollbar'>

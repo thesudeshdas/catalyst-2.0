@@ -45,6 +45,7 @@ export const editWorkSchema = z.object({
     .min(2, { message: 'Type of work must be at least 2 characters long' })
     .max(32, { message: 'Type of work must be less than 32 characters' }),
   location: z.string().optional(),
+  description: z.string().optional(),
   companyLogo: z
     .any()
     .refine((files) => files?.length > 0 || files, 'Company logo is required.')
@@ -56,5 +57,9 @@ export const editWorkSchema = z.object({
       (files) => ACCEPTED_IMAGE_TYPES.includes(files?.type),
       '.jpg, .jpeg, and .png files are accepted.'
     )
-    .optional()
+    .optional(),
+  techStack: z
+    .array(z.object({ name: z.string(), version: z.string() }))
+    .optional(),
+  keywords: z.array(z.object({ text: z.string() })).optional()
 });
