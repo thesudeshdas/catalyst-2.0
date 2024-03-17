@@ -7,6 +7,8 @@ import CustomImage from '../../../components/images/CustomImage/CustomImage';
 import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 import useCreatePowstServer from '../../../mutations/createPowst/useCreatePowst.hook';
+import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
+import sanitiseObject from '../../../utils/sanitiseObject/sanitiseObject.utils';
 
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
@@ -16,18 +18,26 @@ export default function CreatePowstReview() {
 
   const { mutate } = useCreatePowstServer();
 
+  const { data: userDetails } = useGetUserDetails({
+    userId: authState.username
+  });
+
   const [file] = useState<File>(localPowst?.image);
   const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>();
 
   const handleCreatePowst = () => {
-    mutate({
+    const body = {
       title: localPowst?.title,
       live: localPowst?.live,
       source: localPowst?.source,
       description: localPowst?.description,
       techStack: localPowst?.techStack,
+      imageAlt: localPowst?.alt
+    };
+
+    mutate({
+      ...sanitiseObject(body),
       image: localPowst?.image,
-      imageAlt: localPowst?.alt,
       owner: authState.userId
     });
   };
@@ -70,14 +80,16 @@ export default function CreatePowstReview() {
           <div className='w-full p-4 bg-base-100 '>
             <h2 className='text-2xl font-semibold mb-2'>{localPowst?.title}</h2>
 
-            <UserAvatar
-              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-              name='Sudesh Das'
-              variant='profile'
-              size='md'
-              username={'no-username-found'}
-              noRedirect
-            />
+            {userDetails?.profilePic && (
+              <UserAvatar
+                src={userDetails?.profilePic}
+                name={`${userDetails?.firstName} ${userDetails?.lastName}`}
+                variant='profile'
+                size='md'
+                username={'no-username-found'}
+                noRedirect
+              />
+            )}
           </div>
 
           <div className='flex flex-col gap-4 bg-red'>
@@ -97,7 +109,7 @@ export default function CreatePowstReview() {
 
             <div className='flex flex-col sm:flex-row gap-4 justify-between'>
               <div className='flex flex-wrap gap-3'>
-                {localPowst?.techStack.map((icon) => {
+                {localPowst?.techStack?.map((icon) => {
                   return (
                     <img
                       src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version}.svg`}
