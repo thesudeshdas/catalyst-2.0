@@ -68,7 +68,7 @@ export default function PillsInput({
       )}
 
       <label
-        htmlFor='badgeInput'
+        htmlFor={htmlId}
         className={`border w-full min-h-[3rem] p-2 flex gap-2 items-center flex-wrap input input-bordered h-fit focus-within:outline-none focus-within:border-primary ${
           fields.length === max ? 'input-disabled' : ''
         }`}

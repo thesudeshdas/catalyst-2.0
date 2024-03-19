@@ -84,7 +84,7 @@ export default function TechInput({
       </ul>
 
       <label
-        htmlFor='techInput'
+        htmlFor={htmlId}
         className='form-control w-full overflow-hidden'
       >
         <input

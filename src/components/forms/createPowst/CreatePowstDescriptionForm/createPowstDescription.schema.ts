@@ -5,5 +5,6 @@ export const createPowstDescriptionSchema = z.object({
     .string({
       required_error: 'Description is required'
     })
-    .min(20, { message: 'Description must be at least 20 characters long' })
+    .min(20, { message: 'Description must be at least 20 characters long' }),
+  keywords: z.array(z.object({ text: z.string() }))
 });

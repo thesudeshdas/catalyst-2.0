@@ -16,7 +16,7 @@ export default function CreatePowstImage() {
   }, [pathname, setActiveStep]);
 
   return (
-    <main className='flex flex-col gap-4'>
+    <main className='flex flex-col gap-4 overflow-x-hidden'>
       <h2 className='text-center font-bold text-xl'>Upload Image</h2>
 
       <CreatePowstImageForm />

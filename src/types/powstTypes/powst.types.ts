@@ -11,6 +11,7 @@ export interface IPowst {
   techStack: { name: string; version: string }[];
   image: string;
   imageAlt?: string;
+  keywords?: string[];
   owner: {
     _id: string;
     firstName: string;

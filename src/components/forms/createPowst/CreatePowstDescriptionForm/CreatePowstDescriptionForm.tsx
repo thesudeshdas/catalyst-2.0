@@ -1,4 +1,4 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useFieldArray, useForm } from 'react-hook-form';
 import { LuChevronsRight } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import useCreatePowst from '../../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 import { ICreatePowstDescriptionForm } from '../../../../types/createPowstTypes/createPowst.types';
 import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
+import PillsInput from '../../../inputs/PillsInput/PillsInput';
 import CreatePowstPreviousButton from '../CreatePowstPreviousButton/CreatePowstPreviousButton';
 
 import { createPowstDescriptionSchema } from './createPowstDescription.schema';
@@ -24,11 +25,21 @@ export default function CreatePowstDescriptionForm() {
     }
   });
 
+  const {
+    fields: keywordsFields,
+    append: appendKeywords,
+    remove: removeKeywords
+  } = useFieldArray<ICreatePowstDescriptionForm, 'keywords', 'id'>({
+    control,
+    name: 'keywords'
+  });
+
   const onCreatePowstDescriptionSubmit: SubmitHandler<
     ICreatePowstDescriptionForm
   > = (data) => {
     savePowstInLocal({
-      description: data.description
+      description: data.description,
+      keywords: data.keywords
     });
 
     setActiveStep(2);
@@ -45,6 +56,17 @@ export default function CreatePowstDescriptionForm() {
         control={control}
         name='description'
         label='Description'
+      />
+
+      <PillsInput
+        fields={keywordsFields}
+        append={appendKeywords}
+        remove={removeKeywords}
+        label='Keywords'
+        tip='You can add upto 10 keywords. Keywords help you rank the creation higher than your peer'
+        max={10}
+        htmlId='create_powst_keywords'
+        placeholder='ReactJS, CSS'
       />
 
       <div className='flex justify-between w-full'>

@@ -36,7 +36,11 @@ export default function CreatePowstReview() {
       source: localPowst?.source,
       description: localPowst?.description,
       techStack: localPowst?.techStack,
-      imageAlt: localPowst?.alt
+      imageAlt: localPowst?.alt,
+      keywords: localPowst?.keywords.reduce(
+        (acc: string[], cur: { text: string }) => [...acc, cur.text],
+        []
+      )
     };
 
     mutateCreatePowst({
@@ -160,32 +164,18 @@ export default function CreatePowstReview() {
               )}
             </div>
 
-            <div className='flex flex-wrap gap-2 mb-12'>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
+            {localPowst?.keywords?.length > 0 && (
+              <div className='flex flex-wrap gap-2 mb-12'>
+                {localPowst?.keywords?.map((keyword, index) => (
+                  <div
+                    key={`pill_${index}_${keyword?.text}`}
+                    className='badge cursor-pointer badge-outline'
+                  >
+                    {keyword?.text}
+                  </div>
+                ))}
               </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
