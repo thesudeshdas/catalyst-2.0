@@ -14,9 +14,13 @@ export default function CreatePowstReview() {
   const { pathname } = useLocation();
 
   const { authState } = useAuthContext();
-  const { localPowst, setActiveStep } = useCreatePowst();
+  const { localPowst, setActiveStep, clearPowstInLocal } = useCreatePowst();
 
-  const { mutate } = useCreatePowstServer();
+  const {
+    mutate: mutateCreatePowst,
+    isPending: isCreatePowstPending,
+    isSuccess: isCreatePowstSuccess
+  } = useCreatePowstServer();
 
   const { data: userDetails } = useGetUserDetails({
     userId: authState.username
@@ -35,7 +39,7 @@ export default function CreatePowstReview() {
       imageAlt: localPowst?.alt
     };
 
-    mutate({
+    mutateCreatePowst({
       ...sanitiseObject(body),
       image: localPowst?.image,
       owner: authState.userId
@@ -70,6 +74,12 @@ export default function CreatePowstReview() {
       }
     };
   }, [file]);
+
+  useEffect(() => {
+    if (isCreatePowstSuccess) {
+      clearPowstInLocal();
+    }
+  }, [clearPowstInLocal, isCreatePowstSuccess]);
 
   return (
     <main className='flex flex-col gap-4 items-center'>
@@ -181,12 +191,19 @@ export default function CreatePowstReview() {
       </div>
 
       <div className='flex justify-between w-full max-w-[800px]'>
-        <CreatePowstPreviousButton link='/create/image' />
+        <CreatePowstPreviousButton
+          link='/create/image'
+          disabled={isCreatePowstPending}
+        />
 
         <button
           className='btn btn-primary'
           onClick={handleCreatePowst}
+          disabled={isCreatePowstPending}
         >
+          {isCreatePowstPending && (
+            <span className='loading loading-spinner'></span>
+          )}
           Create
         </button>
       </div>

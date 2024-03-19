@@ -21,7 +21,8 @@ export default function CreatePowstImageForm() {
     handleSubmit,
     formState: { errors },
     clearErrors,
-    setError
+    setError,
+    watch
   } = useForm<ICreatePowstImageForm>({
     resolver: zodResolver(createPowstImageSchema),
     defaultValues: {
@@ -37,6 +38,8 @@ export default function CreatePowstImageForm() {
     setActiveStep(4);
     navigate('/create/review');
   };
+
+  const watchImage = watch('image');
 
   return (
     <form
@@ -76,7 +79,7 @@ export default function CreatePowstImageForm() {
         control={control}
         name='alt'
         label='Image alt attribute'
-        placeholder='A screenshot of charts'
+        placeholder='What is the image about?'
         tip='We recommend providing the alt for the image you upload'
       />
 
@@ -93,19 +96,19 @@ export default function CreatePowstImageForm() {
         <div className='flex items-center gap-2'>
           <button
             className='btn btn-primary'
-            // disabled={!file}
+            disabled={!watchImage}
           >
             Save and Next <LuChevronsRight className='h-6 w-6' />
           </button>
 
-          {/* {!file && ( */}
-          <div
-            className='tooltip tooltip-right cursor-pointer'
-            data-tip='You need to upload an image'
-          >
-            <LuInfo className='h-5 w-5' />
-          </div>
-          {/* )} */}
+          {!watchImage && (
+            <div
+              className='tooltip tooltip-right cursor-pointer'
+              data-tip='You need to upload an image'
+            >
+              <LuInfo className='h-5 w-5' />
+            </div>
+          )}
         </div>
       </div>
     </form>
