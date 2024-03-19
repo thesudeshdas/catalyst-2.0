@@ -7,7 +7,6 @@ import GlobalSuspenseFallback from '../../../../globals/GlobalSuspenseFallback/G
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileAboutForm } from '../../../../types/profileTypes/profile.types';
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import MarkdownInput from '../../../inputs/MarkdownInput/MarkdownInput';
 import PillsInput from '../../../inputs/PillsInput/PillsInput';
@@ -17,7 +16,7 @@ import { editProfileBasicSchema } from './editProfileAboutForm.schema';
 
 import '@mdxeditor/editor/style.css';
 
-export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
+export default function EditProfileAboutForm() {
   const { authState } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
@@ -25,8 +24,7 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
 
   const {
     mutate: updateUserDetailsMutation,
-    isPending: isUpdateUserDetailsPending,
-    isSuccess: isUpdateUserDetailsSuccess
+    isPending: isUpdateUserDetailsPending
   } = useUpdateUserDetails();
 
   const { control, handleSubmit, reset } = useForm<IEditProfileAboutForm>({
@@ -74,12 +72,6 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
     });
   }, [userDetails, reset]);
 
-  useEffect(() => {
-    if (isUpdateUserDetailsSuccess) {
-      handleCloseModal(nameId);
-    }
-  }, [nameId, isUpdateUserDetailsSuccess]);
-
   if (isUserDetailsPending) {
     return <GlobalSuspenseFallback />;
   }
@@ -122,7 +114,6 @@ export default function EditProfileAboutForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={() => handleCloseModal(nameId)}
           disabled={isUpdateUserDetailsPending}
         >
           Cancel

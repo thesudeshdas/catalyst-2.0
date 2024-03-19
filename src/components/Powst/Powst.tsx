@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { LuHeart } from 'react-icons/lu';
 
 import { IPowst } from '../../types/powstTypes/powst.types';
+import handleOpenModal from '../../utils/openModal/openModal.utils';
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
 import CustomImage from '../images/CustomImage/CustomImage';
 
@@ -21,9 +22,7 @@ export default function Powst({
     powstDetails || {};
 
   const handleOpenPowstDetailsModal = () => {
-    (
-      document.getElementById('powst_details_modal') as HTMLDialogElement
-    )?.showModal();
+    handleOpenModal('powst_details_modal');
 
     setPowstToBeShown(_id || '');
   };

@@ -6,6 +6,7 @@ import CreateTopNav from '../../components/navs/CreateTopNav/CreateTopNav';
 import useBlocker from '../../contexts/BlockerContext/blockerContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import { ICreatePowst } from '../../types/createPowstTypes/createPowst.types';
+import handleOpenModal from '../../utils/openModal/openModal.utils';
 
 export default function CreatePowstLayout() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -43,9 +44,7 @@ export default function CreatePowstLayout() {
 
   useEffect(() => {
     if (blocked && showBlockerModal) {
-      (
-        document.getElementById('blocker_navigation_modal') as HTMLDialogElement
-      )?.showModal();
+      handleOpenModal('blocker_navigation_modal');
     }
   }, [blocked, showBlockerModal]);
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import handleCloseModal from '../../utils/closeModal/closeModal.utils';
 import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
+import handleOpenModal from '../../utils/openModal/openModal.utils';
 
 export default function Logout() {
   const navigate = useNavigate();
@@ -21,11 +22,7 @@ export default function Logout() {
     <>
       <button
         className='btn btn-sm btn-error btn-outline'
-        onClick={() =>
-          (
-            document.getElementById('logout_modal') as HTMLDialogElement
-          )?.showModal()
-        }
+        onClick={() => handleOpenModal('logout_modal')}
       >
         Logout
       </button>

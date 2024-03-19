@@ -8,7 +8,6 @@ import GlobalSuspenseFallback from '../../../../globals/GlobalSuspenseFallback/G
 import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpdateUserDetails';
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileBasicForm } from '../../../../types/profileTypes/profile.types';
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import ImageInput from '../../../inputs/ImageInput/ImageInput';
 import TextInput from '../../../inputs/TextInput/TextInput';
@@ -16,7 +15,7 @@ import TextInput from '../../../inputs/TextInput/TextInput';
 import UsernameInput from './UsernameInput/UsernameInput';
 import { editProfileBasicSchema } from './editProfileBasicForm.schema';
 
-export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
+export default function EditProfileBasicForm() {
   const { authState } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
@@ -24,8 +23,7 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
 
   const {
     mutate: updateUserDetailsMutation,
-    isPending: isUpdateUserDetailsPending,
-    isSuccess: isUpdateUserDetailsSuccess
+    isPending: isUpdateUserDetailsPending
   } = useUpdateUserDetails();
 
   const { control, clearErrors, reset, setError, handleSubmit } =
@@ -62,12 +60,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
       location: userDetails?.location
     });
   }, [userDetails, reset]);
-
-  useEffect(() => {
-    if (isUpdateUserDetailsSuccess) {
-      handleCloseModal(nameId);
-    }
-  }, [nameId, isUpdateUserDetailsSuccess]);
 
   if (isUserDetailsPending) {
     return <GlobalSuspenseFallback />;
@@ -151,7 +143,6 @@ export default function EditProfileBasicForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={() => handleCloseModal(nameId)}
           disabled={isUpdateUserDetailsPending}
         >
           Cancel

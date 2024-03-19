@@ -47,13 +47,13 @@ export default function EditProfile() {
   const renderEditProfileForm = () => {
     switch (activeProfile) {
       case 'basic':
-        return <EditProfileBasicForm nameId='basic' />;
+        return <EditProfileBasicForm />;
 
       case 'socials':
-        return <EditProfileSocialForm nameId='socials' />;
+        return <EditProfileSocialForm />;
 
       case 'projects':
-        return <EditProfileProjectForm nameId='projects' />;
+        return <EditProfileProjectForm />;
 
       case 'work':
         return <EditProfileWorkForm setActiveProfile={handleActiveForm} />;
@@ -62,10 +62,10 @@ export default function EditProfile() {
         return <EditWorkForm setActiveProfile={handleActiveForm} />;
 
       case 'about':
-        return <EditProfileAboutForm nameId='about' />;
+        return <EditProfileAboutForm />;
 
       default:
-        return <EditProfileBasicForm nameId='basic' />;
+        return <EditProfileBasicForm />;
     }
   };
 

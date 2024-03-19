@@ -8,10 +8,9 @@ import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpd
 import { useGetAllUserPowsts } from '../../../../queries/getAllUserPowsts/useGetAllUserPowsts.hook';
 import { IDragItem } from '../../../../types/dragTypes/drag.types';
 import { IUserPowst } from '../../../../types/userTypes/user.types';
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import DragCard from '../../../drag/DragCard';
 
-export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
+export default function EditProfileProjectForm() {
   const { authState } = useAuthContext();
 
   const { data: allUsersPowsts } = useGetAllUserPowsts({
@@ -20,8 +19,7 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
 
   const {
     mutate: updateUserDetailsMutation,
-    isPending: isUpdateUserDetailsPending,
-    isSuccess: isUpdateUserDetailsSuccess
+    isPending: isUpdateUserDetailsPending
   } = useUpdateUserDetails();
 
   const [cards, setCards] = useState<IDragItem[]>([]);
@@ -78,12 +76,6 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
     }
   }, [allUsersPowsts]);
 
-  useEffect(() => {
-    if (isUpdateUserDetailsSuccess) {
-      handleCloseModal(nameId);
-    }
-  }, [isUpdateUserDetailsSuccess, nameId]);
-
   return (
     <form className='flex flex-col gap-6 items-center w-full mx-auto overflow-auto'>
       <h3 className='font-bold text-lg'>Projects</h3>
@@ -98,8 +90,7 @@ export default function EditProfileProjectForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={() => handleCloseModal(nameId)}
-          // disabled={isUpdateUserDetailsPending}
+          disabled={isUpdateUserDetailsPending}
         >
           Cancel
         </button>
