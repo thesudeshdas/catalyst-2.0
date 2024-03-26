@@ -136,4 +136,8 @@ h6 {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .font-small-caps {
+    font-variant-caps: small-caps;
+  }
 }

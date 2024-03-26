@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import GlobalSuspenseFallback from '../globals/GlobalSuspenseFallback/GlobalSuspenseFallback';
 import AppLayout from '../layouts/AppLayout/AppLayout';
+import Home from '../pages/Home/Home';
 
 import AllProtectedRoutes from './AllProtectedRoutes';
 
@@ -17,6 +18,11 @@ export function AllRoutes() {
       {AllProtectedRoutes()}
 
       <Route
+        path='/'
+        element={<Home />}
+      />
+
+      <Route
         path='/login'
         element={
           <Suspense fallback={<GlobalSuspenseFallback />}>
@@ -24,6 +30,7 @@ export function AllRoutes() {
           </Suspense>
         }
       />
+
       <Route
         path='/register'
         element={
