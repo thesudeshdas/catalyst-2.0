@@ -9,6 +9,7 @@ import {
 } from 'react-icons/lu';
 
 import queryClient from '../../../config/queryClient';
+import * as apiKeys from '../../../constants/apisKeys.constants';
 import { IPowst } from '../../../types/powstTypes/powst.types';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
 import CustomImage from '../../images/CustomImage/CustomImage';
@@ -24,7 +25,9 @@ export default function PowstDetailsModal({
   powstToBeShown,
   setPowstToBeShown
 }: IPowstDetailsModalProps) {
-  const allPowsts = queryClient.getQueryData<IPowst[]>(['allPowsts']);
+  const allPowsts = queryClient.getQueryData<IPowst[]>([
+    apiKeys.powst.GET_ALL_POWSTS
+  ]);
 
   const {
     title,

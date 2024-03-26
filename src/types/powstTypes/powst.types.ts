@@ -20,4 +20,11 @@ export interface IPowst {
     username?: string;
     profilePic?: string;
   };
+  noOfLikes: number;
+  likedBy: string[];
+}
+
+export interface ILikePowstBody {
+  powstId: string;
+  userId: string;
 }

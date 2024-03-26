@@ -13,3 +13,9 @@ export const work = {
   CREATE_WORK: 'CREATE_WORK',
   GET_USER_WORKS: 'GET_USER_WORKS'
 };
+
+export const powst = {
+  GET_ALL_POWSTS: 'GET_ALL_POWSTS',
+  LIKE_POWST: 'LIKE_POWST',
+  UNLIKE_POWST: 'UNLIKE_POWST'
+};

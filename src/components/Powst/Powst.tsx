@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
 import { LuHeart } from 'react-icons/lu';
 
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
+import useLikes from '../../hooks/useLikes/useLikes.hook';
 import { IPowst } from '../../types/powstTypes/powst.types';
 import handleOpenModal from '../../utils/openModal/openModal.utils';
 import UserAvatar from '../avatars/UserAvatar/UserAvatar';
@@ -18,8 +20,24 @@ export default function Powst({
   powstDetails,
   setPowstToBeShown
 }: IPowstProps) {
-  const { description, title, imageAlt, image, _id, owner } =
-    powstDetails || {};
+  const {
+    description,
+    title,
+    imageAlt,
+    image,
+    _id,
+    owner,
+    noOfLikes,
+    likedBy
+  } = powstDetails || {};
+
+  const { authState } = useAuthContext();
+
+  const { handleLikePowst, handleUnlikePowst, hasUserLiked } = useLikes({
+    powstId: _id ?? '',
+    userId: authState.userId,
+    likedBy
+  });
 
   const handleOpenPowstDetailsModal = () => {
     handleOpenModal('powst_details_modal');
@@ -73,11 +91,32 @@ export default function Powst({
           {title}
         </h2>
 
-        <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 hover:text-red-500 cursor-pointer transition-colors'>
-          <LuHeart />
+        {likedBy && hasUserLiked() ? (
+          <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 text-red-500 hover:text-base-content cursor-pointer transition-colors group'>
+            <button
+              className='btn btn-ghost btn-sm p-0 hover:bg-inherit min-h-0 h-fit'
+              onClick={handleUnlikePowst}
+            >
+              <LuHeart
+                fill='red'
+                className='group-hover:fill-none'
+              />
 
-          <p className='text-sm'>50k</p>
-        </div>
+              <p>{noOfLikes}</p>
+            </button>
+          </div>
+        ) : (
+          <div className='flex flex-shrink-0 gap-2 items-center mt-0.5 hover:text-red-500 cursor-pointer transition-colors'>
+            <button
+              className='btn btn-ghost btn-sm p-0 hover:bg-inherit min-h-0 h-fit'
+              onClick={handleLikePowst}
+            >
+              <LuHeart />
+
+              <p>{noOfLikes}</p>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
