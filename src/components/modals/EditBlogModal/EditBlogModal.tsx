@@ -1,5 +1,6 @@
 import { LuPlus } from 'react-icons/lu';
 
+import handleOpenModal from '../../../utils/openModal/openModal.utils';
 import EditBlogForm from '../../forms/createBlog/CreateBlogForm/EditBlogForm';
 
 export default function EditBlogModal() {
@@ -7,11 +8,7 @@ export default function EditBlogModal() {
     <>
       <button
         className='aspect-[4/3] w-full bg-base-300 flex flex-col items-center justify-center rounded-md cursor-pointer'
-        onClick={() =>
-          (
-            document.getElementById('edit_blog_modal') as HTMLDialogElement
-          )?.showModal()
-        }
+        onClick={() => handleOpenModal('edit_blog_modal')}
       >
         <LuPlus className='w-16 h-16' />
 

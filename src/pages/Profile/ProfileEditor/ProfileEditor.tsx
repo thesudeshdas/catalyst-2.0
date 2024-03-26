@@ -26,7 +26,7 @@ export default function ProfileEditor({
         {profileEditorOptions?.map((option) => (
           <li
             className={`border-2 textarea-bordered rounded-md grid place-items-center text-center ${
-              option.heading.toLowerCase() === activeProfile
+              activeProfile.includes(option.heading.toLowerCase())
                 ? 'border-primary text-primary font-bold transition-all'
                 : ''
             } `}

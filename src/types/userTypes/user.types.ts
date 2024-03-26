@@ -1,5 +1,6 @@
 import { IBlog } from '../blogTypes/blog.types';
 import { IPowst } from '../powstTypes/powst.types';
+import { IWork } from '../workTypes/work.types';
 
 export interface IUserSocials {
   name: string;
@@ -54,5 +55,10 @@ export interface IUserPowst {
 
 export interface IUserBlog {
   blog: IBlog;
+  starred: boolean;
+}
+
+export interface IUserWork {
+  work: IWork;
   starred: boolean;
 }

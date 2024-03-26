@@ -1,8 +1,61 @@
 export const techIcons = [
   {
+    name: 'threedsmax',
+    altnames: ['Autodesk 3ds Max', '3dsmax'],
+    tags: [
+      '3d',
+      'programming',
+      'vfx',
+      'graphic',
+      'graphics',
+      'game',
+      'animation'
+    ],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#37a5cc',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'aarch64',
+    altnames: ['arm64'],
+    tags: ['architecture', 'programming', 'language', 'ARM'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#16358C',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
     name: 'adonisjs',
+    altnames: ['adonis'],
     tags: ['nodejs', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -20,8 +73,9 @@ export const techIcons = [
   },
   {
     name: 'aftereffects',
+    altnames: ['adobeaftereffects', 'ae'],
     tags: ['video', 'editor'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -29,24 +83,96 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'amazonwebservices',
-    tags: ['cloud', 'hosting', 'server'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain-wordmark'],
-      font: ['original', 'plain-wordmark']
+    name: 'akka',
+    altnames: ['akka-framework'],
+    tags: ['framework', 'java', 'scala', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#F7A80D',
+    color: '#15a9ce',
+    aliases: []
+  },
+  {
+    name: 'algolia',
+    altnames: [],
+    tags: ['algorithms', 'api', 'documentation', 'tool'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#003dff',
+    aliases: []
+  },
+  {
+    name: 'alpinejs',
+    altnames: ['Alpine'],
+    tags: ['framework', 'javascript'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#2d3441',
     aliases: [
       {
         base: 'original',
         alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'amazonwebservices',
+    altnames: ['aws'],
+    tags: ['cloud', 'hosting', 'server'],
+    versions: {
+      svg: ['original-wordmark', 'plain-wordmark', 'line-wordmark'],
+      font: ['plain-wordmark', 'line-wordmark']
+    },
+    color: '#f90',
+    aliases: [
+      {
+        base: 'original-wordmark',
+        alias: 'original'
+      },
+      {
+        base: 'plain-wordmark',
+        alias: 'plain'
+      },
+      {
+        base: 'line-wordmark',
+        alias: 'line'
+      }
+    ]
+  },
+  {
+    name: 'anaconda',
+    altnames: [],
+    tags: ['python', 'data-science'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#3eb049',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
       }
     ]
   },
   {
     name: 'android',
+    altnames: [],
     tags: ['os', 'mobile'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -55,8 +181,9 @@ export const techIcons = [
   },
   {
     name: 'androidstudio',
-    tags: ['application', 'editor', 'ide', 'android', 'mobile'],
-    version: {
+    altnames: [],
+    tags: ['application', 'editor', 'jetbrains', 'ide', 'android', 'mobile'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -64,19 +191,21 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'aarch64',
-    tags: ['architecture', 'programming', 'language', 'ARM'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
+    name: 'angular',
+    altnames: [],
+    tags: ['framework', 'javascript'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#16358C',
+    color: '#FFFFFF',
     aliases: []
   },
   {
     name: 'angularjs',
+    altnames: [],
     tags: ['framework', 'javascript'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -84,9 +213,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'angularmaterial',
+    altnames: [],
+    tags: ['framework', 'javascript'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#ffa726',
+    aliases: []
+  },
+  {
     name: 'ansible',
+    altnames: [],
     tags: ['automation', 'provisioning', 'deployment', 'continuous-delivery'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -94,9 +235,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'antdesign',
+    altnames: [],
+    tags: ['reactjs', 'design', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#0073bb',
+    aliases: []
+  },
+  {
     name: 'apache',
+    altnames: ['The Apache Software Foundation'],
     tags: ['php'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -107,13 +260,25 @@ export const techIcons = [
       ],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#303284',
+    color: '#cb2533',
+    aliases: []
+  },
+  {
+    name: 'apacheairflow',
+    altnames: ['Airflow'],
+    tags: ['platform', 'pipeline', 'orchestrator', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#017cee',
     aliases: []
   },
   {
     name: 'apachekafka',
+    altnames: [],
     tags: ['streaming', 'open-source'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -130,9 +295,37 @@ export const techIcons = [
     ]
   },
   {
+    name: 'apachespark',
+    altnames: [],
+    tags: ['data-processing', 'data-science', 'machine-learning'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#e15919',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'apl',
+    altnames: ['A Programming Language'],
+    tags: ['programming', 'language', 'open-source', 'cross-platform'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#24a148',
+    aliases: []
+  },
+  {
     name: 'appcelerator',
+    altnames: [],
     tags: ['app', 'mobile'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -146,8 +339,9 @@ export const techIcons = [
   },
   {
     name: 'apple',
+    altnames: [],
     tags: ['brand', 'mobile'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -161,8 +355,9 @@ export const techIcons = [
   },
   {
     name: 'appwrite',
+    altnames: [],
     tags: ['cloud', 'platform', 'server'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -179,9 +374,21 @@ export const techIcons = [
     ]
   },
   {
+    name: 'archlinux',
+    altnames: [],
+    tags: ['linux', 'distribuition', 'desktop'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#1791cf',
+    aliases: []
+  },
+  {
     name: 'arduino',
+    altnames: [],
     tags: ['microcontroller', 'hardware'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -189,9 +396,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'argocd',
+    altnames: [],
+    tags: ['gitops', 'continuous-delivery'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#ef7b4d',
+    aliases: []
+  },
+  {
+    name: 'astro',
+    altnames: [],
+    tags: ['static site generator', 'framework', 'web-development'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#ff5d01',
+    aliases: []
+  },
+  {
     name: 'atom',
+    altnames: [],
     tags: ['editor'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -208,9 +438,41 @@ export const techIcons = [
     ]
   },
   {
+    name: 'awk',
+    altnames: ['the awk programming language'],
+    tags: ['programming', 'language', 'unix'],
+    versions: {
+      svg: ['original-wordmark', 'plain-wordmark'],
+      font: ['plain-wordmark']
+    },
+    color: '#0a094d',
+    aliases: [
+      {
+        base: 'original-wordmark',
+        alias: 'original'
+      },
+      {
+        base: 'plain-wordmark',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'axios',
+    altnames: [],
+    tags: ['http', 'promise', 'nodejs'],
+    versions: {
+      svg: ['plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#5a29e4',
+    aliases: []
+  },
+  {
     name: 'azure',
+    altnames: ['microsoftazure'],
     tags: ['cloud', 'devops'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -218,9 +480,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'azuredevops',
+    altnames: ['azure-devops'],
+    tags: ['azure', 'devops', 'cloud', 'version control', 'vcs'],
+    versions: {
+      svg: ['original'],
+      font: ['plain']
+    },
+    color: '#0078d4',
+    aliases: []
+  },
+  {
+    name: 'azuresqldatabase',
+    altnames: ['azure-sql-database'],
+    tags: ['azure', 'database', 'tool', 'sql'],
+    versions: {
+      svg: ['original'],
+      font: ['plain']
+    },
+    color: '#005ba1',
+    aliases: []
+  },
+  {
     name: 'babel',
+    altnames: ['babeljs'],
     tags: ['javascript', 'transpiler'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -234,8 +519,9 @@ export const techIcons = [
   },
   {
     name: 'backbonejs',
+    altnames: [],
     tags: ['javascript', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -243,9 +529,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'ballerina',
+    altnames: ['bal'],
+    tags: ['java', 'cloud', 'server', 'networking'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#46C0BC',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'bamboo',
+    altnames: ['atlassianbamboo'],
     tags: ['platform', 'integration', 'server'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -263,8 +570,9 @@ export const techIcons = [
   },
   {
     name: 'bash',
-    tags: ['shell', 'command'],
-    version: {
+    altnames: ['bourneagainshell'],
+    tags: ['shell', 'command', 'scripting'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -272,9 +580,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'beats',
+    altnames: [],
+    tags: ['elastic', 'data-transfer'],
+    versions: {
+      svg: ['original'],
+      font: ['plain']
+    },
+    color: '#07c',
+    aliases: []
+  },
+  {
     name: 'behance',
+    altnames: [],
     tags: ['social', 'website'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -283,8 +603,9 @@ export const techIcons = [
   },
   {
     name: 'bitbucket',
+    altnames: ['atlassianbitbucket'],
     tags: ['version-control'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -301,29 +622,48 @@ export const techIcons = [
     ]
   },
   {
-    name: 'bootstrap',
-    tags: ['css', 'framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'blazor',
+    altnames: [],
+    tags: ['dotnet', '.net', 'framework', 'design', 'ui'],
+    versions: {
+      svg: ['original', 'line'],
+      font: ['original', 'line']
     },
-    color: '#59407f',
+    color: '#5c2d91',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'blender',
+    altnames: [],
+    tags: ['modelling', 'python', '3d', 'animation'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#DC7B2E',
     aliases: []
   },
   {
-    name: 'bulma',
-    tags: ['css', 'framework'],
-    version: {
-      svg: ['plain'],
-      font: ['plain']
+    name: 'bootstrap',
+    altnames: [],
+    tags: ['css', 'framework', 'html', 'javascript', 'library'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#00d1b2',
+    color: '#712cf9',
     aliases: []
   },
   {
     name: 'bower',
+    altnames: [],
     tags: ['package', 'manager'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -338,9 +678,50 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'browserstack',
+    altnames: [],
+    tags: ['website', 'app', 'testing', 'tool'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#0070f0',
+    aliases: []
+  },
+  {
+    name: 'bulma',
+    altnames: ['bulmacss'],
+    tags: ['css', 'framework'],
+    versions: {
+      svg: ['plain'],
+      font: ['plain']
+    },
+    color: '#00d1b2',
+    aliases: []
+  },
+  {
+    name: 'bun',
+    altnames: [],
+    tags: ['javascript', 'zig', 'language'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#FBF0DF',
+    aliases: []
+  },
+  {
     name: 'c',
+    altnames: [],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
@@ -357,9 +738,21 @@ export const techIcons = [
     ]
   },
   {
+    name: 'cairo',
+    altnames: ['cairographics'],
+    tags: ['graphic', 'library', 'c', 'open-source'],
+    versions: {
+      svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f39914',
+    aliases: []
+  },
+  {
     name: 'cakephp',
+    altnames: [],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -368,8 +761,9 @@ export const techIcons = [
   },
   {
     name: 'canva',
+    altnames: [],
     tags: ['design'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -382,9 +776,48 @@ export const techIcons = [
     ]
   },
   {
+    name: 'capacitor',
+    altnames: ['capacitorjs'],
+    tags: ['javascript', 'js', 'ionic', 'framework', 'universal'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#53B9FF',
+    aliases: []
+  },
+  {
+    name: 'carbon',
+    altnames: ['Carbon Language'],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'cassandra',
+    altnames: ['Apache Cassandra'],
+    tags: ['nosql', 'database', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#1185b0',
+    aliases: []
+  },
+  {
     name: 'centos',
+    altnames: [],
     tags: ['server', 'linux'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -393,18 +826,20 @@ export const techIcons = [
   },
   {
     name: 'ceylon',
+    altnames: ['eclipseceylon', 'ceylonlang'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain']
+      font: ['plain', 'plain-wordmark']
     },
     color: '#AB710A',
     aliases: []
   },
   {
     name: 'chrome',
+    altnames: ['googlechrome'],
     tags: ['browser'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -413,8 +848,9 @@ export const techIcons = [
   },
   {
     name: 'circleci',
+    altnames: [],
     tags: ['integration', 'platform'],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -422,9 +858,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'clarity',
+    altnames: ['clarity-lang'],
+    tags: ['programming', 'language', 'blockchain'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#13171a',
+    aliases: []
+  },
+  {
+    name: 'clion',
+    altnames: [],
+    tags: ['jetbrains', 'editor', 'c', 'c++', 'cpp', 'cplusplus'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#21d789',
+    aliases: []
+  },
+  {
     name: 'clojure',
-    tags: ['language'],
-    version: {
+    altnames: [],
+    tags: ['language', 'jvm'],
+    versions: {
       svg: ['original', 'line'],
       font: ['line', 'plain']
     },
@@ -437,19 +896,10 @@ export const techIcons = [
     ]
   },
   {
-    name: 'cmake',
-    tags: ['build'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#0e8a16',
-    aliases: []
-  },
-  {
     name: 'clojurescript',
+    altnames: [],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -457,9 +907,54 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'codecov',
+    name: 'cloudflare',
+    altnames: [],
+    tags: ['web', 'cdn', 'dns', 'proxy', 'security'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#F38020',
+    aliases: []
+  },
+  {
+    name: 'cloudflareworkers',
+    altnames: ['Cloudflare Workers'],
+    tags: ['platform', 'serverless', 'deploy', 'performance', 'javascript'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#ea9344',
+    aliases: []
+  },
+  {
+    name: 'cmake',
+    altnames: [],
+    tags: ['build'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#0e8a16',
+    aliases: []
+  },
+  {
+    name: 'codeac',
+    altnames: ['codeacio'],
     tags: ['platform', 'integration'],
-    version: {
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#005096',
+    aliases: []
+  },
+  {
+    name: 'codecov',
+    altnames: [],
+    tags: ['platform', 'integration'],
+    versions: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -468,8 +963,9 @@ export const techIcons = [
   },
   {
     name: 'codeigniter',
+    altnames: [],
     tags: ['php', 'framework'],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -478,23 +974,29 @@ export const techIcons = [
   },
   {
     name: 'codepen',
+    altnames: [],
     tags: ['social', 'website', 'editor'],
-    version: {
-      svg: ['plain', 'original-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
-    color: '#231F20',
+    color: '#000',
     aliases: [
       {
-        base: 'plain',
-        alias: 'original'
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
       }
     ]
   },
   {
     name: 'coffeescript',
-    tags: ['javascript', 'language'],
-    version: {
+    altnames: [],
+    tags: ['javascript', 'transpiler', 'language'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -512,8 +1014,9 @@ export const techIcons = [
   },
   {
     name: 'composer',
+    altnames: [],
     tags: ['package', 'manager', 'php'],
-    version: {
+    versions: {
       svg: ['original', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -531,12 +1034,58 @@ export const techIcons = [
   },
   {
     name: 'confluence',
+    altnames: ['atlassianconfluence'],
     tags: ['collaboration', 'documentation', 'wiki'],
-    version: {
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#136be6',
+    aliases: []
+  },
+  {
+    name: 'consul',
+    altnames: ['HashiCorp Consul'],
+    tags: ['networking', 'infrastructure', 'security', 'tool'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#e03875',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'contao',
+    altnames: [],
+    tags: ['cms'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
-    color: '#205081',
+    color: '#f47c00',
+    aliases: []
+  },
+  {
+    name: 'corejs',
+    altnames: ['core-js', 'core.js'],
+    tags: ['javascript', 'library', 'polyfill', 'tool'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#000000',
     aliases: [
       {
         base: 'original',
@@ -549,9 +1098,37 @@ export const techIcons = [
     ]
   },
   {
+    name: 'cosmosdb',
+    altnames: ['azurecosmosdb'],
+    tags: ['database', 'nosql', 'cloud', 'azure'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#59B3D8',
+    aliases: []
+  },
+  {
+    name: 'couchbase',
+    altnames: [],
+    tags: ['database', 'nosql', 'cloud'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#EA2328',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'couchdb',
+    altnames: ['apachecouchdb'],
     tags: ['database'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -560,12 +1137,13 @@ export const techIcons = [
   },
   {
     name: 'cplusplus',
+    altnames: ['c++', 'cpp'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'line'],
-      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+      font: ['plain', 'line']
     },
-    color: '#9c033a',
+    color: '#004482',
     aliases: [
       {
         base: 'plain',
@@ -578,9 +1156,30 @@ export const techIcons = [
     ]
   },
   {
+    name: 'crystal',
+    altnames: ['crystallang'],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'csharp',
+    altnames: ['c#'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
@@ -598,8 +1197,9 @@ export const techIcons = [
   },
   {
     name: 'css3',
+    altnames: ['cascadingstylesheets3'],
     tags: ['language', 'programming'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -608,8 +1208,9 @@ export const techIcons = [
   },
   {
     name: 'cucumber',
+    altnames: ['cucumberjs'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -617,19 +1218,28 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'crystal',
-    tags: ['programming', 'language'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
+    name: 'cypressio',
+    altnames: ['cypress'],
+    tags: ['testing', 'framework'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#000000',
+    color: '#1b1e2e',
     aliases: []
   },
   {
     name: 'd3js',
+    altnames: [],
     tags: [],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -638,8 +1248,9 @@ export const techIcons = [
   },
   {
     name: 'dart',
+    altnames: ['googledart'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -647,9 +1258,43 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'datagrip',
+    altnames: [],
+    tags: ['jetbrains', 'ide', 'sql', 'database'],
+    versions: {
+      svg: ['original', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#21d789',
+    aliases: []
+  },
+  {
+    name: 'dataspell',
+    altnames: [],
+    tags: ['jetbrains', 'ide', 'jupyter notebook', 'data science'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#087cfa',
+    aliases: []
+  },
+  {
+    name: 'dbeaver',
+    altnames: [],
+    tags: ['tool', 'database'],
+    versions: {
+      svg: ['original'],
+      font: ['plain']
+    },
+    color: '#382a24',
+    aliases: []
+  },
+  {
     name: 'debian',
+    altnames: [],
     tags: ['os', 'server'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -658,8 +1303,9 @@ export const techIcons = [
   },
   {
     name: 'denojs',
-    tags: ['javascript', 'rust', 'language'],
-    version: {
+    altnames: [],
+    tags: ['javascript', 'rust', 'runtime'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -677,8 +1323,9 @@ export const techIcons = [
   },
   {
     name: 'devicon',
+    altnames: [],
     tags: ['iconset'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -693,9 +1340,41 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'digitalocean',
+    altnames: [],
+    tags: ['cloud', 'hosting', 'database', 'storage'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#0080FF',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'discordjs',
+    altnames: [],
+    tags: ['wrapper', 'api_wrapper', 'nodejs'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#0c0c14',
+    aliases: []
+  },
+  {
     name: 'django',
+    altnames: [],
     tags: [],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -703,9 +1382,28 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'djangorest',
+    altnames: ['Django REST framework'],
+    tags: ['framework', 'rest', 'api', 'python', 'web'],
+    versions: {
+      svg: [
+        'original',
+        'plain',
+        'line',
+        'original-wordmark',
+        'plain-wordmark',
+        'line-wordmark'
+      ],
+      font: ['plain', 'line', 'plain-wordmark', 'line-wordmark']
+    },
+    color: '#a30000',
+    aliases: []
+  },
+  {
     name: 'docker',
+    altnames: [],
     tags: ['platform', 'deploy'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -714,8 +1412,9 @@ export const techIcons = [
   },
   {
     name: 'doctrine',
+    altnames: [],
     tags: [],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -731,8 +1430,9 @@ export const techIcons = [
   },
   {
     name: 'dot-net',
+    altnames: ['dotnet', '.net'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -741,8 +1441,9 @@ export const techIcons = [
   },
   {
     name: 'dotnetcore',
+    altnames: ['.netcore'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -750,9 +1451,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'dreamweaver',
+    altnames: ['Adobe Dreamweaver'],
+    tags: ['web-development', 'editor', 'software', 'tool'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#470137',
+    aliases: []
+  },
+  {
+    name: 'dropwizard',
+    altnames: [],
+    tags: ['java', 'framework'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#24265d',
+    aliases: []
+  },
+  {
     name: 'drupal',
+    altnames: [],
     tags: ['cms'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -760,29 +1484,59 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'digitalocean',
-    tags: ['cloud', 'hosting', 'database', 'storage'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'dynamodb',
+    altnames: [],
+    tags: ['key-value', 'database', 'java'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
     },
-    color: '#0080FF',
+    color: '#527fff',
     aliases: []
   },
   {
-    name: 'discordjs',
-    tags: ['wrapper', 'api_wrapper', 'nodejs'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'eclipse',
+    altnames: ['Eclipse IDE'],
+    tags: ['editor', 'IDE'],
+    versions: {
+      svg: ['original-wordmark', 'original'],
+      font: ['plain-wordmark', 'plain']
     },
-    color: '#2a2c3e',
+    color: '#2c2255',
+    aliases: []
+  },
+  {
+    name: 'ecto',
+    altnames: [],
+    tags: ['data', 'elixir', 'integration', 'query'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#77bf43',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'elasticsearch',
+    altnames: [],
+    tags: ['elastic', 'data', 'logs'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain-wordmark', 'plain']
+    },
+    color: '#00bfb3',
     aliases: []
   },
   {
     name: 'electron',
+    altnames: ['electronjs'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -791,8 +1545,9 @@ export const techIcons = [
   },
   {
     name: 'eleventy',
+    altnames: ['11ty'],
     tags: ['ssg', 'static site generator'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -801,8 +1556,9 @@ export const techIcons = [
   },
   {
     name: 'elixir',
+    altnames: ['elexirlang'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -811,8 +1567,9 @@ export const techIcons = [
   },
   {
     name: 'elm',
+    altnames: ['elmlang'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -820,13 +1577,36 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'ember',
-    tags: ['framework'],
-    version: {
-      svg: ['original-wordmark'],
-      font: ['original-wordmark']
+    name: 'emacs',
+    altnames: ['editingmacros'],
+    tags: ['editor'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
     },
-    color: '#dd3f24',
+    color: '#421f5f',
+    aliases: []
+  },
+  {
+    name: 'embeddedc',
+    altnames: [],
+    tags: ['language', 'programming'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#444444',
+    aliases: []
+  },
+  {
+    name: 'ember',
+    altnames: ['ember.js', 'emberjs'],
+    tags: ['framework', 'javascript', 'web-development', 'build'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain'],
+      font: ['original-wordmark', 'plain']
+    },
+    color: '#E04E39',
     aliases: [
       {
         base: 'original-wordmark',
@@ -835,19 +1615,21 @@ export const techIcons = [
     ]
   },
   {
-    name: 'embeddedc',
-    tags: ['language', 'programming'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+    name: 'envoy',
+    altnames: ['envoyproxy'],
+    tags: ['proxy', 'cloud'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#444444',
+    color: '#e13eaf',
     aliases: []
   },
   {
     name: 'erlang',
+    altnames: [],
     tags: [],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -856,27 +1638,27 @@ export const techIcons = [
   },
   {
     name: 'eslint',
+    altnames: [],
     tags: ['linter', 'javascript', 'code-quality', 'coding-style'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
     color: '#4b32c3',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      },
-      {
-        base: 'original-wordmark',
-        alias: 'plain-wordmark'
-      }
-    ]
+    aliases: []
   },
   {
     name: 'express',
+    altnames: ['expressjs'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -885,8 +1667,9 @@ export const techIcons = [
   },
   {
     name: 'facebook',
+    altnames: [],
     tags: ['auth'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -899,9 +1682,52 @@ export const techIcons = [
     ]
   },
   {
+    name: 'fastapi',
+    altnames: [],
+    tags: ['python', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#009688',
+    aliases: []
+  },
+  {
+    name: 'fastify',
+    altnames: [],
+    tags: ['framework', 'web', 'node.js', 'javascript', 'performance'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#000000',
+    aliases: []
+  },
+  {
+    name: 'faunadb',
+    altnames: ['fauna'],
+    tags: ['database'],
+    versions: {
+      svg: ['original-wordmark', 'original', 'line', 'line-wordmark'],
+      font: ['original-wordmark', 'original', 'line', 'line-wordmark']
+    },
+    color: '#3A1AB6',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'feathersjs',
+    altnames: [],
     tags: ['framework', 'rest'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -909,9 +1735,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'fedora',
+    altnames: [],
+    tags: ['linux', 'distribuition', 'desktop'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#294172',
+    aliases: []
+  },
+  {
     name: 'figma',
+    altnames: [],
     tags: ['design'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -920,28 +1758,45 @@ export const techIcons = [
   },
   {
     name: 'filezilla',
+    altnames: [],
     tags: ['ftp'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#b30000',
+    color: '#bb0001',
     aliases: []
   },
   {
     name: 'firebase',
+    altnames: [],
     tags: ['auth', 'hosting', 'storage', 'cloud'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#f58220',
+    color: '#ffa000',
     aliases: []
   },
   {
     name: 'firefox',
+    altnames: ['mozillafirefox'],
     tags: ['browser'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -950,8 +1805,9 @@ export const techIcons = [
   },
   {
     name: 'flask',
+    altnames: [],
     tags: ['python', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -969,8 +1825,9 @@ export const techIcons = [
   },
   {
     name: 'flutter',
+    altnames: [],
     tags: ['framework', 'sdk'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -978,9 +1835,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'fortran',
+    altnames: [],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#734f96',
+    aliases: []
+  },
+  {
     name: 'foundation',
+    altnames: [],
     tags: ['framework', 'css'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -988,9 +1857,58 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'framermotion',
+    altnames: ['framer-motion', 'framer'],
+    tags: ['library', 'open-source', 'react', 'animation'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'framework7',
+    altnames: [],
+    tags: [
+      'framework',
+      'cross-platform',
+      'development',
+      'mobile',
+      'android',
+      'ios',
+      'open-source'
+    ],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#ee350f',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'fsharp',
+    altnames: ['f#'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -999,68 +1917,129 @@ export const techIcons = [
   },
   {
     name: 'gatling',
+    altnames: [],
     tags: ['framework', 'testing'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#E77500',
-    aliases: []
+    color: '#f78557',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
   },
   {
     name: 'gatsby',
+    altnames: ['gatsbyjs'],
     tags: ['reactjs', 'framework'],
-    version: {
-      svg: ['plain', 'original', 'original-wordmark', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
     },
     color: '#64328B',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
   },
   {
-    name: 'rect',
-    tags: ['programming', 'language'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
+    name: 'gazebo',
+    altnames: [],
+    tags: ['robotics', '3d'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#262626',
+    color: '#f58113',
     aliases: []
   },
   {
     name: 'gcc',
+    altnames: ['gnucompilercollection'],
     tags: ['compiler', 'linux'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
     },
     color: '#ffcfab',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
   },
   {
     name: 'gentoo',
+    altnames: [],
     tags: ['linux', 'distribuition', 'desktop'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain-wordmark', 'plain']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
     color: '#9991d9',
     aliases: []
   },
   {
+    name: 'ghost',
+    altnames: [],
+    tags: ['cms'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#000000',
+    aliases: []
+  },
+  {
     name: 'gimp',
+    altnames: [],
     tags: ['graphic'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
     color: '#716955',
     aliases: []
   },
   {
     name: 'git',
+    altnames: [],
     tags: ['version-control'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1068,9 +2047,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'gitbook',
+    altnames: [],
+    tags: ['documentation', 'pages', 'git', 'markup'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#346ddb',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'github',
+    altnames: [],
     tags: ['version-control'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1083,9 +2083,32 @@ export const techIcons = [
     ]
   },
   {
+    name: 'githubactions',
+    altnames: ['GitHub Actions'],
+    tags: ['devops', 'integration'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#2088FF',
+    aliases: []
+  },
+  {
+    name: 'githubcodespaces',
+    altnames: ['GitHub Codespaces'],
+    tags: ['development', 'remote-development', 'editor', 'browser', 'cloud'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#24292e',
+    aliases: []
+  },
+  {
     name: 'gitlab',
+    altnames: [],
     tags: ['version-control'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1093,9 +2116,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'gitpod',
+    altnames: ['gitpod-io'],
+    tags: ['open-source', 'remote-development', 'cloud', 'IDE'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#FFA132',
+    aliases: []
+  },
+  {
     name: 'gitter',
+    altnames: [],
     tags: ['social', 'chat'],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1104,8 +2139,9 @@ export const techIcons = [
   },
   {
     name: 'go',
+    altnames: ['golang'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'line'],
       font: ['original-wordmark', 'plain', 'line']
     },
@@ -1118,9 +2154,32 @@ export const techIcons = [
     ]
   },
   {
+    name: 'godot',
+    altnames: [],
+    tags: ['game-engine', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#478cbf',
+    aliases: []
+  },
+  {
+    name: 'goland',
+    altnames: [],
+    tags: ['jetbrains', 'ide', 'go'],
+    versions: {
+      svg: ['original', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#087cfa',
+    aliases: []
+  },
+  {
     name: 'google',
+    altnames: [],
     tags: ['auth'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1138,8 +2197,9 @@ export const techIcons = [
   },
   {
     name: 'googlecloud',
+    altnames: [],
     tags: ['google', 'cloud'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1148,29 +2208,13 @@ export const techIcons = [
   },
   {
     name: 'gradle',
-    tags: ['task-runner'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#02303a',
-    aliases: []
-  },
-  {
-    name: 'grafana',
-    tags: [
-      'monitoring',
-      'analytics',
-      'metrics',
-      'logs',
-      'visualization',
-      'web-application'
-    ],
-    version: {
+    altnames: ['apachegradle', 'gradlebuildtool'],
+    tags: ['open-source', 'task-runner'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
-    color: '#E78040',
+    color: '#02303a',
     aliases: [
       {
         base: 'original',
@@ -1183,19 +2227,46 @@ export const techIcons = [
     ]
   },
   {
+    name: 'grafana',
+    altnames: [],
+    tags: [
+      'monitoring',
+      'analytics',
+      'metrics',
+      'logs',
+      'visualization',
+      'web-application'
+    ],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#f7a525',
+    aliases: []
+  },
+  {
     name: 'grails',
-    tags: ['framework'],
-    version: {
+    altnames: ['Grails Framework'],
+    tags: ['framework', 'groovy', 'web-development', 'jvm', 'build'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#feb672',
+    color: '#feb571',
     aliases: []
   },
   {
     name: 'graphql',
+    altnames: [],
     tags: ['language', 'data', 'query'],
-    version: {
+    versions: {
       svg: ['plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1204,8 +2275,9 @@ export const techIcons = [
   },
   {
     name: 'groovy',
-    tags: ['programming', 'language'],
-    version: {
+    altnames: ['groovylang', 'apachegroovy'],
+    tags: ['programming', 'language', 'jvm'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1213,9 +2285,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'grpc',
+    altnames: ['grpcio', 'Google Remote Procedure Call'],
+    tags: ['programming', 'c++', 'java', 'python', 'go', 'library'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#00b0ad',
+    aliases: []
+  },
+  {
     name: 'grunt',
+    altnames: ['gruntjs'],
     tags: ['task-runner', 'nodejs'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -1231,8 +2315,9 @@ export const techIcons = [
   },
   {
     name: 'gulp',
+    altnames: ['gulpjs'],
     tags: ['task-runner', 'nodejs'],
-    version: {
+    versions: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1240,19 +2325,85 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'godot',
-    tags: ['game-engine', 'open-source'],
-    version: {
+    name: 'hadoop',
+    altnames: ['Apache Hadoop'],
+    tags: [
+      'framework',
+      'big data',
+      'open-source',
+      'software',
+      'library',
+      'framework',
+      'java'
+    ],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#478cbf',
+    color: '#ffff00',
+    aliases: [
+      {
+        base: 'plain',
+        alias: 'line'
+      },
+      {
+        base: 'plain-wordmark',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'handlebars',
+    altnames: ['handlebarsjs'],
+    tags: ['framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'hardhat',
+    altnames: [],
+    tags: ['ethereum', 'development', 'solidity', 'javascript', 'typescript'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#fff100',
     aliases: []
   },
   {
+    name: 'harvester',
+    altnames: ['harvesterhci'],
+    tags: ['kubernetes', 'operating-system', 'hypervisor', 'rancher'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#00A580',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'haskell',
+    altnames: [],
     tags: ['language', 'functional'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1260,19 +2411,10 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'handlebars',
-    tags: ['framework'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#000000',
-    aliases: []
-  },
-  {
     name: 'haxe',
+    altnames: [],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1280,35 +2422,75 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'helm',
+    altnames: [],
+    tags: ['package', 'manager', 'kubernetes'],
+    versions: {
+      svg: ['original', 'line'],
+      font: ['original', 'line']
+    },
+    color: '#0F1689',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'heroku',
+    altnames: [],
     tags: ['cloud'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: [
+      font: ['original', 'original-wordmark', 'plain', 'plain-wordmark']
+    },
+    color: '#6762a6',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'line'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'hibernate',
+    altnames: [],
+    tags: ['database', 'framework', 'java'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#bcae79',
+    aliases: []
+  },
+  {
+    name: 'homebrew',
+    altnames: [],
+    tags: ['package', 'manager', 'linux', 'apple', 'os'],
+    versions: {
+      svg: [
         'original',
         'original-wordmark',
         'plain',
         'plain-wordmark',
         'line',
         'line-wordmark'
-      ]
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#6762a6',
-    aliases: [
-      {
-        base: 'line',
-        alias: 'original'
-      },
-      {
-        base: 'line-wordmark',
-        alias: 'original-wordmark'
-      }
-    ]
+    color: '#fbb040',
+    aliases: []
   },
   {
     name: 'html5',
+    altnames: ['hypertextmarkdownlanguage5'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1317,8 +2499,9 @@ export const techIcons = [
   },
   {
     name: 'hugo',
+    altnames: ['gohugo'],
     tags: ['framework', 'ssg', 'static-site-generator', 'go', 'html', 'css'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1327,8 +2510,9 @@ export const techIcons = [
   },
   {
     name: 'ie10',
+    altnames: ['internetexplorer10'],
     tags: ['browser'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -1342,8 +2526,9 @@ export const techIcons = [
   },
   {
     name: 'ifttt',
+    altnames: ['ifthisthenthat'],
     tags: ['automation', 'applets', 'programming'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -1357,8 +2542,9 @@ export const techIcons = [
   },
   {
     name: 'illustrator',
+    altnames: ['adobeillustrator'],
     tags: ['editor', 'vector'],
-    version: {
+    versions: {
       svg: ['plain', 'line'],
       font: ['plain', 'line']
     },
@@ -1366,9 +2552,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'influxdb',
+    altnames: [],
+    tags: ['database', 'monitoring', 'open-source', 'api'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#020a47',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'inkscape',
+    altnames: [],
     tags: ['editor', 'vector'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1376,19 +2583,32 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'intellij',
-    tags: ['editor'],
-    version: {
+    name: 'insomnia',
+    altnames: ['Insomnia Rest Client'],
+    tags: ['open-source', 'Rest API', 'Soap API', 'JSON-XML'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#136BA2',
+    color: '#4000bf',
+    aliases: []
+  },
+  {
+    name: 'intellij',
+    altnames: ['intellijidea'],
+    tags: ['jetbrains', 'editor', 'java'],
+    versions: {
+      svg: ['original', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#087cfa',
     aliases: []
   },
   {
     name: 'ionic',
+    altnames: [],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1396,9 +2616,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'jaegertracing',
+    altnames: ['jaeger'],
+    tags: ['monitoring', 'tracing'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#67cfe3',
+    aliases: []
+  },
+  {
     name: 'jamstack',
+    altnames: [],
     tags: ['javascript', 'markup'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -1412,18 +2644,29 @@ export const techIcons = [
   },
   {
     name: 'jasmine',
+    altnames: ['jasminejs'],
     tags: ['testing'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
     },
     color: '#8a4182',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
   },
   {
     name: 'java',
-    tags: ['programming', 'language'],
-    version: {
+    altnames: [],
+    tags: ['programming', 'language', 'jvm'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1432,8 +2675,9 @@ export const techIcons = [
   },
   {
     name: 'javascript',
+    altnames: ['js', 'ecmascript'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1442,8 +2686,9 @@ export const techIcons = [
   },
   {
     name: 'jeet',
+    altnames: [],
     tags: ['framework', 'css'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1451,19 +2696,21 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'jest',
-    tags: ['testing', 'javascript'],
-    version: {
-      svg: ['plain'],
-      font: ['plain']
+    name: 'jekyll',
+    altnames: ['jestjs'],
+    tags: ['ruby', 'blog'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#99425b',
+    color: '#000000',
     aliases: []
   },
   {
     name: 'jenkins',
+    altnames: ['hudson'],
     tags: ['platform', 'integration', 'server'],
-    version: {
+    versions: {
       svg: ['line', 'original', 'plain'],
       font: ['line', 'plain']
     },
@@ -1471,9 +2718,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'jest',
+    altnames: ['jestjs'],
+    tags: ['testing', 'javascript'],
+    versions: {
+      svg: ['plain'],
+      font: ['plain']
+    },
+    color: '#99425b',
+    aliases: []
+  },
+  {
     name: 'jetbrains',
+    altnames: ['intellijsoftware'],
     tags: ['ide'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1481,9 +2740,28 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'jetpackcompose',
+    altnames: [],
+    tags: ['framework', 'language', 'kotlin', 'android'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain-wordmark', 'plain', 'line', 'line-wordmark']
+    },
+    color: '#4285f4',
+    aliases: []
+  },
+  {
     name: 'jira',
+    altnames: ['atlassianjira'],
     tags: ['platform', 'organize'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1491,9 +2769,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'jiraalign',
+    altnames: ['Jira Align'],
+    tags: ['development', 'integration', 'software'],
+    versions: {
+      svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#2684FF',
+    aliases: []
+  },
+  {
     name: 'jquery',
+    altnames: ['jqueryjs'],
     tags: ['library', 'javascript'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1501,9 +2791,41 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'julia',
+    name: 'json',
+    altnames: ['JavaScript Object Notation'],
+    tags: ['format', 'standard', 'file-format', 'object-notation'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#505050',
+    aliases: []
+  },
+  {
+    name: 'jule',
+    altnames: ['julelang'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#5f7389',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'julia',
+    altnames: ['julialang'],
+    tags: ['programming', 'language'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1511,9 +2833,28 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'junit',
+    altnames: [],
+    tags: ['testing', 'framework', 'java'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#dc514a',
+    aliases: []
+  },
+  {
     name: 'jupyter',
+    altnames: ['jupyternotebook'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1521,9 +2862,64 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'k3os',
+    altnames: [],
+    tags: ['kubernetes', 'operating-system', 'k3s', 'rancher'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#fd824e',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'k3s',
+    altnames: [],
+    tags: ['kubernetes', 'container', 'platform'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#ffc519',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'k6',
+    altnames: [],
+    tags: ['testing', 'performance', 'load'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#7D64FF',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'kaggle',
+    altnames: [],
     tags: ['platform', 'auth', 'machine-learning'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1540,9 +2936,21 @@ export const techIcons = [
     ]
   },
   {
+    name: 'karatelabs',
+    altnames: ['karate'],
+    tags: ['framework', 'testing'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#000000',
+    aliases: []
+  },
+  {
     name: 'karma',
+    altnames: ['karmarunner', 'karmajs'],
     tags: ['testing', 'test-runner'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1550,19 +2958,66 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'kotlin',
-    tags: ['language'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'kdeneon',
+    altnames: [],
+    tags: ['linux', 'operating system', 'open-source'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
     },
-    color: '#7C6DB2',
+    color: '#21769a',
     aliases: []
   },
   {
+    name: 'keras',
+    altnames: [],
+    tags: ['machine-learning', 'python', 'library'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#d00000',
+    aliases: []
+  },
+  {
+    name: 'kibana',
+    altnames: [],
+    tags: ['elastic', 'dashboard'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#F04E98',
+    aliases: []
+  },
+  {
+    name: 'knexjs',
+    altnames: [],
+    tags: ['database', 'query', 'sql', 'javascript', 'library'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#e16426',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'knockout',
+    altnames: ['knockoutjs'],
     tags: ['framework', 'javascript'],
-    version: {
+    versions: {
       svg: ['plain-wordmark'],
       font: ['plain-wordmark']
     },
@@ -1570,9 +3025,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'kotlin',
+    altnames: ['kotlinlang'],
+    tags: ['language', 'jetbrains', 'jvm'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#c711e1',
+    aliases: []
+  },
+  {
     name: 'krakenjs',
+    altnames: ['kraken'],
     tags: ['nodejs', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1580,19 +3047,39 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'kubernetes',
-    tags: ['container', 'deployment'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
+    name: 'ktor',
+    altnames: [],
+    tags: ['jetbrains', 'kotlin', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#486bb3',
+    color: '#fc801d',
+    aliases: []
+  },
+  {
+    name: 'kubernetes',
+    altnames: [],
+    tags: ['container', 'deployment'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#326ce5',
     aliases: []
   },
   {
     name: 'labview',
+    altnames: [],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1601,18 +3088,29 @@ export const techIcons = [
   },
   {
     name: 'laravel',
+    altnames: [],
     tags: ['php', 'framework'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
-    color: '#fd4f31',
-    aliases: []
+    color: '#f0513f',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
   },
   {
     name: 'latex',
+    altnames: [],
     tags: ['latex3', 'latex2e', 'markup', 'tex', 'typesetting-system'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -1626,8 +3124,9 @@ export const techIcons = [
   },
   {
     name: 'less',
+    altnames: ['lesscss'],
     tags: ['css', 'pre-processor'],
-    version: {
+    versions: {
       svg: ['plain-wordmark'],
       font: ['plain-wordmark']
     },
@@ -1636,8 +3135,9 @@ export const techIcons = [
   },
   {
     name: 'linkedin',
+    altnames: [],
     tags: ['social', 'auth'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1645,27 +3145,10 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'lua',
-    tags: [
-      'programming',
-      'language',
-      'object-oriented',
-      'scripting',
-      'procedural',
-      'prototype-based',
-      'functional'
-    ],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#000080',
-    aliases: []
-  },
-  {
     name: 'linux',
+    altnames: [],
     tags: ['os'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -1673,189 +3156,14 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'materialui',
-    tags: ['framework', 'design', 'ui'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
+    name: 'liquibase',
+    altnames: [],
+    tags: ['tool', 'database'],
+    versions: {
+      svg: ['original-wordmark', 'original'],
+      font: ['original-wordmark', 'original']
     },
-    color: '#1FA6CA',
-    aliases: []
-  },
-  {
-    name: 'matlab',
-    tags: ['programming', 'language'],
-    version: {
-      svg: ['original', 'plain', 'line'],
-      font: ['plain', 'line']
-    },
-    color: '#6dd0c7',
-    aliases: []
-  },
-  {
-    name: 'magento',
-    tags: ['php', 'framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'line'],
-      font: ['original', 'original-wordmark', 'line']
-    },
-    color: '#f26322',
-    aliases: []
-  },
-  {
-    name: 'markdown',
-    tags: ['markup', 'language'],
-    version: {
-      svg: ['original'],
-      font: ['original']
-    },
-    color: '#000000',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      }
-    ]
-  },
-  {
-    name: 'maya',
-    tags: [
-      'mel',
-      'pymel',
-      'python',
-      '3d',
-      'programming',
-      'vfx',
-      'graphic',
-      'graphics',
-      'game',
-      'animation'
-    ],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#149B9A',
-    aliases: []
-  },
-  {
-    name: 'meteor',
-    tags: ['javascript'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#df5052',
-    aliases: []
-  },
-  {
-    name: 'minitab',
-    tags: ['package', 'statistics'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
-    },
-    color: '#8dc63f',
-    aliases: []
-  },
-  {
-    name: 'mocha',
-    tags: ['testing'],
-    version: {
-      svg: ['plain'],
-      font: ['plain']
-    },
-    color: '#8d6748',
-    aliases: []
-  },
-  {
-    name: 'modx',
-    tags: ['cms', 'php', 'framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#00decc',
-    aliases: []
-  },
-  {
-    name: 'mongodb',
-    tags: ['database'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#4FAA41',
-    aliases: []
-  },
-  {
-    name: 'moodle',
-    tags: ['platform'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#F7931E',
-    aliases: []
-  },
-  {
-    name: 'msdos',
-    tags: ['os'],
-    version: {
-      svg: ['original', 'plain', 'line'],
-      font: ['line']
-    },
-    color: '#ff0000',
-    aliases: []
-  },
-  {
-    name: 'mysql',
-    tags: ['database', 'language'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#00618a',
-    aliases: []
-  },
-  {
-    name: 'neo4j',
-    tags: ['database'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#018BFF',
-    aliases: []
-  },
-  {
-    name: 'nestjs',
-    tags: ['framework'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#DF234F',
-    aliases: []
-  },
-  {
-    name: 'networkx',
-    tags: ['graph', 'library', 'python'],
-    version: {
-      svg: ['original'],
-      font: ['original']
-    },
-    color: '#2C7FB8',
-    aliases: []
-  },
-  {
-    name: 'nextjs',
-    tags: ['framework'],
-    version: {
-      svg: ['original', 'line', 'original-wordmark'],
-      font: ['original', 'plain', 'line', 'original-wordmark', 'plain-wordmark']
-    },
-    color: '#000000',
+    color: '#FF3C00',
     aliases: [
       {
         base: 'original',
@@ -1868,11 +3176,531 @@ export const techIcons = [
     ]
   },
   {
-    name: 'nginx',
-    tags: ['server'],
-    version: {
+    name: 'livewire',
+    altnames: ['laravel-livewire'],
+    tags: ['framework', 'laravel', 'php', 'open-source'],
+    versions: {
+      svg: ['original-wordmark', 'original', 'plain', 'plain-wordmark'],
+      font: ['plain-wordmark', 'plain']
+    },
+    color: '#FB70A9',
+    aliases: []
+  },
+  {
+    name: 'llvm',
+    altnames: ['Low Level Virtual Machine'],
+    tags: ['compiler', 'framework', 'c++', 'open-source'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#5A90B6',
+    aliases: []
+  },
+  {
+    name: 'lodash',
+    altnames: [],
+    tags: ['javascript', 'framework'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#000',
+    aliases: []
+  },
+  {
+    name: 'logstash',
+    altnames: [],
+    tags: ['logs', 'elastic'],
+    versions: {
+      svg: ['original-wordmark', 'original', 'plain-wordmark', 'plain'],
+      font: ['plain-wordmark', 'plain']
+    },
+    color: '#fec514',
+    aliases: []
+  },
+  {
+    name: 'lua',
+    altnames: ['lualang'],
+    tags: [
+      'programming',
+      'language',
+      'object-oriented',
+      'scripting',
+      'procedural',
+      'prototype-based',
+      'functional'
+    ],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#000080',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'lumen',
+    altnames: [
+      'Laravel Lumen',
+      'Lumen Laravel',
+      'Laravel Lumen Framework',
+      'laravel.lumen'
+    ],
+    tags: ['laravel', 'php', 'framework', 'micro-framework'],
+    versions: {
       svg: ['original'],
-      font: ['original', 'original-wordmark', 'plain', 'plain-wordmark']
+      font: ['original']
+    },
+    color: '#e54537',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'magento',
+    altnames: [],
+    tags: ['php', 'framework'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#f26322',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'mariadb',
+    altnames: [],
+    tags: ['database', 'sql', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#003545',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'markdown',
+    altnames: ['md'],
+    tags: ['markup', 'language'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'materializecss',
+    altnames: ['materialize', 'materialize-css', 'materialize css'],
+    tags: ['framework', 'css', 'design', 'material-design'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#EB7077',
+    aliases: []
+  },
+  {
+    name: 'materialui',
+    altnames: ['mui'],
+    tags: ['framework', 'design', 'ui'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#1FA6CA',
+    aliases: []
+  },
+  {
+    name: 'matlab',
+    altnames: [],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#6dd0c7',
+    aliases: []
+  },
+  {
+    name: 'matplotlib',
+    altnames: [],
+    tags: ['plotting', 'library', 'math', 'visualization', 'python', 'api'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#11557C',
+    aliases: []
+  },
+  {
+    name: 'maven',
+    altnames: ['apachemaven', 'mvn'],
+    tags: ['build'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#e97826',
+    aliases: []
+  },
+  {
+    name: 'maya',
+    altnames: [],
+    tags: [
+      'mel',
+      'pymel',
+      'python',
+      '3d',
+      'programming',
+      'vfx',
+      'graphic',
+      'graphics',
+      'game',
+      'animation'
+    ],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#149B9A',
+    aliases: []
+  },
+  {
+    name: 'meteor',
+    altnames: ['meteorjs'],
+    tags: ['javascript', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#df5052',
+    aliases: []
+  },
+  {
+    name: 'microsoftsqlserver',
+    altnames: ['msql', 'mssql', 'Microsoft SQL Server'],
+    tags: ['database', 'sql', 'db'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#ee352c',
+    aliases: []
+  },
+  {
+    name: 'minitab',
+    altnames: [],
+    tags: ['package', 'statistics'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#8dc63f',
+    aliases: []
+  },
+  {
+    name: 'mithril',
+    altnames: ['mithril.js'],
+    tags: ['javascript', 'framework', 'frontend', 'js'],
+    versions: {
+      svg: ['original', 'line'],
+      font: ['original', 'line']
+    },
+    color: '#010002',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'mobx',
+    altnames: ['mobxjs'],
+    tags: ['state-management', 'testing', 'reactjs', 'nodejs'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#e05e11',
+    aliases: []
+  },
+  {
+    name: 'mocha',
+    altnames: [],
+    tags: ['testing'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#8d6748',
+    aliases: []
+  },
+  {
+    name: 'modx',
+    altnames: [],
+    tags: ['cms', 'php', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#00decc',
+    aliases: []
+  },
+  {
+    name: 'moleculer',
+    altnames: ['moleculerjs', 'moleculer.js'],
+    tags: [
+      'nodejs',
+      'javascript',
+      'js',
+      'microservices',
+      'micro-services',
+      'framework'
+    ],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#3cafce',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'mongodb',
+    altnames: [],
+    tags: ['database'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#4FAA41',
+    aliases: []
+  },
+  {
+    name: 'mongoose',
+    altnames: ['mongoosejs'],
+    tags: ['data-model', 'nodejs'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#860000',
+    aliases: []
+  },
+  {
+    name: 'moodle',
+    altnames: [],
+    tags: ['platform'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#F7931E',
+    aliases: []
+  },
+  {
+    name: 'msdos',
+    altnames: ['microsoftdiskoperatingsystem'],
+    tags: ['os'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#000',
+    aliases: []
+  },
+  {
+    name: 'mysql',
+    altnames: ['mystructuredquerylanguage'],
+    tags: ['database', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#00618a',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'nano',
+    altnames: ['gnu-nano', 'GNU nano'],
+    tags: ['text editor', 'editor', 'GNU', 'terminal'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#C8F',
+    aliases: []
+  },
+  {
+    name: 'neo4j',
+    altnames: [],
+    tags: ['database'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#018BFF',
+    aliases: []
+  },
+  {
+    name: 'neovim',
+    altnames: [],
+    tags: ['text editor', 'editor', 'ide', 'IDE', 'open-source'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#5fb950',
+    aliases: []
+  },
+  {
+    name: 'nestjs',
+    altnames: [],
+    tags: ['framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#df234f',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'netlify',
+    altnames: [],
+    tags: [
+      'cloud hosting',
+      'serverless',
+      'dynamic websites',
+      'web applications',
+      'open-source'
+    ],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#05BDBA',
+    aliases: []
+  },
+  {
+    name: 'networkx',
+    altnames: [],
+    tags: ['graph', 'library', 'python'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#2c7fb8',
+    aliases: []
+  },
+  {
+    name: 'nextjs',
+    altnames: [],
+    tags: ['framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'line', 'line-wordmark'],
+      font: ['original-wordmark', 'plain', 'line', 'line-wordmark']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'nginx',
+    altnames: [],
+    tags: ['server'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
     },
     color: '#090',
     aliases: [
@@ -1891,9 +3719,76 @@ export const techIcons = [
     ]
   },
   {
+    name: 'ngrx',
+    altnames: [],
+    tags: ['state-management', 'angular', 'redux', 'store', 'javascript'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#412846',
+    aliases: []
+  },
+  {
+    name: 'nhibernate',
+    altnames: [],
+    tags: [
+      'library',
+      'dotnet',
+      '.net',
+      'object-relational mapper',
+      'orm',
+      'C#',
+      'c-sharp'
+    ],
+    versions: {
+      svg: [
+        'original-wordmark',
+        'original',
+        'plain-wordmark',
+        'plain',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain-wordmark', 'plain', 'line', 'line-wordmark']
+    },
+    color: '#903a36',
+    aliases: []
+  },
+  {
+    name: 'nim',
+    altnames: ['nimlang'],
+    tags: ['programming', 'functional', 'object-oriented', 'procedural'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#ffe953',
+    aliases: []
+  },
+  {
+    name: 'nimble',
+    altnames: [],
+    tags: ['package-manager'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#f7e941',
+    aliases: []
+  },
+  {
     name: 'nixos',
+    altnames: [],
     tags: ['os'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1902,18 +3797,38 @@ export const techIcons = [
   },
   {
     name: 'nodejs',
+    altnames: [],
     tags: ['javascript', 'language'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#83CD29',
+    color: '#5fa04e',
+    aliases: []
+  },
+  {
+    name: 'nodemon',
+    altnames: ['nodemonjs'],
+    tags: ['nodejs', 'tool', 'javascript'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#76d04b',
     aliases: []
   },
   {
     name: 'nodewebkit',
+    altnames: ['nwjs'],
     tags: [],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -1928,9 +3843,48 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'nomad',
+    altnames: ['HashiCorp Nomad'],
+    tags: ['container', 'virtual machine', 'deployment'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#00ca8e',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'norg',
+    altnames: ['neorg'],
+    tags: ['note-taking', 'organization'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#4878be',
+    aliases: []
+  },
+  {
+    name: 'notion',
+    altnames: [],
+    tags: ['project-management'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#fff',
+    aliases: []
+  },
+  {
     name: 'npm',
+    altnames: ['npmjs', 'nodepackagemanager'],
     tags: ['package', 'manager'],
-    version: {
+    versions: {
       svg: ['original-wordmark'],
       font: ['original-wordmark']
     },
@@ -1939,8 +3893,9 @@ export const techIcons = [
   },
   {
     name: 'nuget',
+    altnames: [],
     tags: ['package', 'manager'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -1949,23 +3904,27 @@ export const techIcons = [
   },
   {
     name: 'numpy',
+    altnames: [],
     tags: ['library', 'python'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#4DABCF',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      }
-    ]
+    color: '#4dabcf',
+    aliases: []
   },
   {
     name: 'nuxtjs',
+    altnames: [],
     tags: ['js', 'javascript', 'framework', 'frontend', 'vuejs'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -1973,9 +3932,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'oauth',
+    altnames: [],
+    tags: ['authentication', 'security'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'objectivec',
+    altnames: [],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['plain'],
       font: ['plain']
     },
@@ -1983,19 +3963,10 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'opera',
-    tags: ['browser'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#f7192d',
-    aliases: []
-  },
-  {
     name: 'ocaml',
+    altnames: [],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2003,9 +3974,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'ohmyzsh',
+    altnames: ['omz', 'ohmyz.sh', 'Oh My Zsh'],
+    tags: ['shell', 'script', 'scripting', 'language', 'command'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#000000',
+    aliases: []
+  },
+  {
+    name: 'okta',
+    altnames: ['okta developer'],
+    tags: ['auth', 'security'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#0f82c2',
+    aliases: []
+  },
+  {
     name: 'openal',
+    altnames: [],
     tags: ['library', 'audio', 'game', '3d'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2013,9 +4007,71 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'openapi',
+    altnames: [],
+    tags: ['specification', 'api', 'open-source'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#91d400',
+    aliases: []
+  },
+  {
+    name: 'opencl',
+    altnames: [],
+    tags: [
+      'framework',
+      'language',
+      'heterogeneous-computing',
+      'cpp',
+      'api',
+      'khronos',
+      'programming'
+    ],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'opencv',
+    altnames: [],
+    tags: ['library', 'c/c++', 'computer-vision'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#128dff',
+    aliases: []
+  },
+  {
     name: 'opengl',
+    altnames: ['opengraphicslibrary'],
     tags: ['library', 'graphics', 'game', '3d'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2023,23 +4079,14 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'opensuse',
-    tags: ['linux', 'distribuition', 'desktop'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'openstack',
+    altnames: [],
+    tags: ['infrastructure-as-a-service', 'cloud-computing-platform'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
     },
-    color: '#73ba25',
-    aliases: []
-  },
-  {
-    name: 'oracle',
-    tags: ['database'],
-    version: {
-      svg: ['original'],
-      font: ['original']
-    },
-    color: '#EA1B22',
+    color: '#ed1944',
     aliases: [
       {
         base: 'original',
@@ -2048,13 +4095,14 @@ export const techIcons = [
     ]
   },
   {
-    name: 'pandas',
-    tags: ['library', 'python'],
-    version: {
+    name: 'opensuse',
+    altnames: [],
+    tags: ['linux', 'distribuition', 'desktop'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
-    color: '#130754',
+    color: '#73ba25',
     aliases: [
       {
         base: 'original',
@@ -2067,9 +4115,128 @@ export const techIcons = [
     ]
   },
   {
+    name: 'opentelemetry',
+    altnames: [],
+    tags: ['telemetry'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f5a800',
+    aliases: []
+  },
+  {
+    name: 'opera',
+    altnames: [],
+    tags: ['browser'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f7192d',
+    aliases: []
+  },
+  {
+    name: 'oracle',
+    altnames: ['oracledatabase'],
+    tags: ['database'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#EA1B22',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'ory',
+    altnames: [],
+    tags: ['library', 'open-source', 'security'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#5528ff',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'p5js',
+    altnames: ['p5.js'],
+    tags: ['javascript', 'js', 'library'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#ED225D',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'original',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'packer',
+    altnames: [],
+    tags: ['infrastructure', 'infrastructure-as-code', 'continuous-delivery'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#1d94dd',
+    aliases: []
+  },
+  {
+    name: 'pandas',
+    altnames: [],
+    tags: ['library', 'python'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#130754',
+    aliases: []
+  },
+  {
     name: 'perl',
+    altnames: [],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2077,9 +4244,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'pfsense',
+    altnames: ['pfSense'],
+    tags: ['cloud', 'network', 'open-source', 'security', 'software'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'phalcon',
+    altnames: [],
     tags: ['php', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2087,59 +4275,188 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'phoenix',
+    altnames: ['Phoenix Framework'],
+    tags: [
+      'framework',
+      'build',
+      'web',
+      'web-development',
+      'development',
+      'elixir'
+    ],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#FD4F00',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'photonengine',
+    altnames: ['photon'],
+    tags: ['game', 'game-engine'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#004480',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'photoshop',
+    altnames: ['adobephotoshop'],
     tags: ['editor', 'graphic'],
-    version: {
-      svg: ['plain', 'line'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
       font: ['plain', 'line']
     },
-    color: '#80b5e2',
+    color: '#001e36',
     aliases: []
   },
   {
     name: 'php',
+    altnames: ['PHP Hypertext Preprocessor', 'Personal Home Page'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#6181b6',
+    color: '#777bb3',
     aliases: []
   },
   {
     name: 'phpstorm',
-    tags: ['editor'],
-    version: {
+    altnames: [],
+    tags: ['jetbrains', 'editor', 'php', 'web', 'html'],
+    versions: {
+      svg: ['original', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#b74af7',
+    aliases: []
+  },
+  {
+    name: 'playwright',
+    altnames: [],
+    tags: ['testing', 'framework'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#2EAD33',
+    aliases: []
+  },
+  {
+    name: 'plotly',
+    altnames: [],
+    tags: ['frontend', 'machine-learning', 'dashboard'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#5058A6',
+    color: '#3d4c73',
+    aliases: []
+  },
+  {
+    name: 'pnpm',
+    altnames: ['performant npm'],
+    tags: ['package', 'manager'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f9ad00',
     aliases: []
   },
   {
     name: 'podman',
+    altnames: [],
     tags: ['container', 'pods', 'docker'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#872b9e',
+    color: '#892ca0',
+    aliases: []
+  },
+  {
+    name: 'poetry',
+    altnames: ['python-poetry'],
+    tags: ['package-manager', 'python'],
+    versions: {
+      svg: ['original'],
+      font: ['plain']
+    },
+    color: '#0080c5',
     aliases: []
   },
   {
     name: 'polygon',
+    altnames: [],
     tags: ['ethereum', 'erc20', 'blockchain'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#38285B',
+    color: '#7950DD',
     aliases: []
   },
   {
+    name: 'portainer',
+    altnames: [],
+    tags: ['docker', 'kubernetes', 'orchestrator'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#3BBCED',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'postcss',
+    altnames: [],
+    tags: ['pre-processor', 'css', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#DD3A0A',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'postgresql',
+    altnames: [],
     tags: ['database'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2147,9 +4464,32 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'postman',
+    altnames: [],
+    tags: ['tool', 'testing'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f37036',
+    aliases: []
+  },
+  {
+    name: 'powershell',
+    altnames: ['ps'],
+    tags: ['command-line', 'shell', 'terminal', 'cli', 'windows', 'cmdlets'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#1E2A3A',
+    aliases: []
+  },
+  {
     name: 'premierepro',
+    altnames: ['adobepremierepro'],
     tags: ['editor', 'video'],
-    version: {
+    versions: {
       svg: ['plain', 'original'],
       font: ['plain']
     },
@@ -2157,9 +4497,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'prisma',
+    altnames: [],
+    tags: ['orm', 'nodejs', 'typescript'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#2D3748',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'processing',
+    altnames: ['processingpy'],
     tags: ['java', 'python', 'android', 'application', 'ide', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2167,19 +4528,123 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'protractor',
-    tags: ['framework', 'javascript'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
+    name: 'prolog',
+    altnames: ['swi-prolog'],
+    tags: ['programming', 'logic', 'language', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#b7111d',
+    color: '#F46C30',
+    aliases: []
+  },
+  {
+    name: 'prometheus',
+    altnames: [],
+    tags: ['monitoring', 'observability', 'analysis'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#e75225',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'protractor',
+    altnames: ['protractorjs', 'protractortest'],
+    tags: ['framework', 'javascript'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#d51c2f',
+    aliases: []
+  },
+  {
+    name: 'pulsar',
+    altnames: ['Pulsar Edit'],
+    tags: ['open-source', 'cross-platform', 'editor'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#2c3e50',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'pulumi',
+    altnames: [],
+    tags: ['infrastructure-as-code', 'cloud'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f6bf29',
+    aliases: []
+  },
+  {
+    name: 'puppeteer',
+    altnames: [],
+    tags: ['open-source', 'devtools protocol', 'testing', 'extension'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#00d8a2',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'purescript',
+    altnames: [],
+    tags: ['functional', 'programming', 'javascript'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#14161a',
     aliases: []
   },
   {
     name: 'putty',
+    altnames: [],
     tags: ['ssh', 'server'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2188,18 +4653,53 @@ export const techIcons = [
   },
   {
     name: 'pycharm',
-    tags: ['editor'],
-    version: {
+    altnames: [],
+    tags: ['jetbrains', 'editor'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#4D8548',
+    color: '#21D789',
+    aliases: []
+  },
+  {
+    name: 'pypi',
+    altnames: ['Python Package Index'],
+    tags: ['python', 'package', 'programming'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#3775a9',
+    aliases: []
+  },
+  {
+    name: 'pyscript',
+    altnames: [],
+    tags: ['browser', 'python', 'html', 'framework'],
+    versions: {
+      svg: ['original-wordmark', 'plain-wordmark'],
+      font: ['plain-wordmark']
+    },
+    color: '#fda703',
+    aliases: []
+  },
+  {
+    name: 'pytest',
+    altnames: [],
+    tags: ['python', 'framework', 'testing'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#009fe3',
     aliases: []
   },
   {
     name: 'python',
+    altnames: [],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2208,8 +4708,9 @@ export const techIcons = [
   },
   {
     name: 'pytorch',
+    altnames: [],
     tags: ['programming', 'framework', 'machine-learning', 'python'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -2222,29 +4723,21 @@ export const techIcons = [
     ]
   },
   {
-    name: 'raspberrypi',
-    tags: ['arm', 'computer'],
-    version: {
-      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
-      font: ['line', 'line-wordmark']
-    },
-    color: '#c51850',
-    aliases: []
-  },
-  {
-    name: 'phoenix',
-    tags: ['framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+    name: 'qodana',
+    altnames: [],
+    tags: ['jetbrains', 'code quality', 'security'],
+    versions: {
+      svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#F15524',
+    color: '#ff318c',
     aliases: []
   },
   {
     name: 'qt',
+    altnames: [],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2257,19 +4750,70 @@ export const techIcons = [
     ]
   },
   {
-    name: 'r',
-    tags: ['programming', 'language'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['original', 'plain']
+    name: 'quarkus',
+    altnames: [],
+    tags: ['java', 'framework'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
     },
-    color: '#2369bc',
+    color: '#4695EB',
     aliases: []
   },
   {
+    name: 'quasar',
+    altnames: [],
+    tags: ['framework', 'javascript'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain-wordmark', 'plain']
+    },
+    color: '#00b4ff',
+    aliases: []
+  },
+  {
+    name: 'qwik',
+    altnames: [],
+    tags: ['framework', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#18B6F6',
+    aliases: []
+  },
+  {
+    name: 'r',
+    altnames: ['rlang'],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#1f65b7',
+    aliases: []
+  },
+  {
+    name: 'rabbitmq',
+    altnames: [],
+    tags: ['message-broker', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#ff6600',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'rails',
+    altnames: ['rubyonrails'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2277,9 +4821,81 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'railway',
+    altnames: [],
+    tags: ['hosting', 'platform', 'deployment'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#fff',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'rancher',
+    altnames: [],
+    tags: ['kubernetes', 'orchestrator'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#2453FF',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'raspberrypi',
+    altnames: ['rpi'],
+    tags: ['arm', 'computer'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#c51850',
+    aliases: []
+  },
+  {
+    name: 'reach',
+    altnames: ['Reach Lang'],
+    tags: ['web3', 'blockchain', 'development'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#6AC6E7',
+    aliases: []
+  },
+  {
     name: 'react',
+    altnames: ['reactjs'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2296,9 +4912,84 @@ export const techIcons = [
     ]
   },
   {
+    name: 'reactbootstrap',
+    altnames: ['React-Bootstrap', 'react bootstrap'],
+    tags: ['framework', 'library', 'frontend', 'reactjs', 'javascript'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#41e0fd',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'reactnavigation',
+    altnames: [],
+    tags: ['routing', 'navigation', 'react native', 'app', 'open-source'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#7b61c1',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'readthedocs',
+    altnames: ['Read The Docs'],
+    tags: ['documentation', 'python', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line'],
+      font: ['original', 'original-wordmark', 'line']
+    },
+    color: '#32322A',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'realm',
+    altnames: [],
+    tags: ['sql', 'database', 'cloud'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#6e60f9',
+    aliases: []
+  },
+  {
+    name: 'rect',
+    altnames: ['rectlang'],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#262626',
+    aliases: []
+  },
+  {
     name: 'redhat',
+    altnames: [],
     tags: ['server', 'linux'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2307,8 +4998,9 @@ export const techIcons = [
   },
   {
     name: 'redis',
+    altnames: ['remotedictionaryserver'],
     tags: ['server'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2317,8 +5009,9 @@ export const techIcons = [
   },
   {
     name: 'redux',
+    altnames: ['reduxjs'],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2331,19 +5024,133 @@ export const techIcons = [
     ]
   },
   {
-    name: 'rocksdb',
-    tags: ['database'],
-    version: {
-      svg: ['plain'],
+    name: 'renpy',
+    altnames: ["Ren'Py"],
+    tags: ['programming', 'game-engine', 'engine', 'python'],
+    versions: {
+      svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#f5be17',
+    color: '#ff7f7f',
+    aliases: []
+  },
+  {
+    name: 'replit',
+    altnames: [],
+    tags: ['software'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#F26207',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'rider',
+    altnames: [],
+    tags: ['jetbrains', 'ide', 'editor', 'dotnet'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#dd1265',
+    aliases: []
+  },
+  {
+    name: 'rocksdb',
+    altnames: [],
+    tags: ['database'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#ffbe00',
+    aliases: []
+  },
+  {
+    name: 'rockylinux',
+    altnames: ['rocky'],
+    tags: ['os', 'open-source', 'linux'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#10b982',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'rollup',
+    altnames: ['rollupjs', 'rollup.js'],
+    tags: ['bundler', 'build', 'javascript'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#ff3333',
+    aliases: []
+  },
+  {
+    name: 'ros',
+    altnames: ['robotoperatingsystem'],
+    tags: ['robotics'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#21304c',
+    aliases: []
+  },
+  {
+    name: 'rspec',
+    altnames: [],
+    tags: ['ruby', 'framework', 'testing'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#6de1fa',
+    aliases: []
+  },
+  {
+    name: 'rstudio',
+    altnames: [],
+    tags: ['editor', 'package', 'statistics'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#75aadb',
     aliases: []
   },
   {
     name: 'ruby',
+    altnames: ['rubylang'],
     tags: ['programming', 'language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2352,28 +5159,47 @@ export const techIcons = [
   },
   {
     name: 'rubymine',
-    tags: ['editor'],
-    version: {
+    altnames: [],
+    tags: ['jetbrains', 'editor'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#C12C4C',
+    color: '#FC801D',
     aliases: []
   },
   {
     name: 'rust',
+    altnames: ['rustlang'],
     tags: ['programming', 'language'],
-    version: {
-      svg: ['plain'],
+    versions: {
+      svg: ['original', 'line'],
+      font: ['original', 'line']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'rxjs',
+    altnames: ['Reactive Extensions for JavaScript'],
+    tags: ['javascript', 'library', 'observability'],
+    versions: {
+      svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#000000',
+    color: '#df1c85',
     aliases: []
   },
   {
     name: 'safari',
+    altnames: ['applesafari'],
     tags: ['browser'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -2389,8 +5215,9 @@ export const techIcons = [
   },
   {
     name: 'salesforce',
+    altnames: [],
     tags: ['platform', 'ecommerce'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2398,29 +5225,21 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'sdl',
-    tags: ['library', 'cross-platform', 'multimedia', 'game'],
-    version: {
+    name: 'sanity',
+    altnames: [],
+    tags: ['CMS'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#173354',
-    aliases: []
-  },
-  {
-    name: 'rstudio',
-    tags: ['editor', 'package', 'statistics'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
-    },
-    color: '#75aadb',
+    color: '#F03E2F',
     aliases: []
   },
   {
     name: 'sass',
+    altnames: ['scss'],
     tags: ['pre-processor', 'css'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2434,8 +5253,9 @@ export const techIcons = [
   },
   {
     name: 'scala',
-    tags: ['programming', 'language'],
-    version: {
+    altnames: ['scalalang'],
+    tags: ['programming', 'language', 'jvm'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2443,9 +5263,63 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'scalingo',
+    altnames: [],
+    tags: ['cloud', 'platform', 'hosting'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#173aee',
+    aliases: []
+  },
+  {
+    name: 'scikitlearn',
+    altnames: ['scikit-learn', 'scikit', 'sklearn'],
+    tags: ['machine-learning', 'python', 'tool', 'library'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#f89939',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'sdl',
+    altnames: ['simpledirectmedialayer'],
+    tags: ['library', 'cross-platform', 'multimedia', 'game'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#173354',
+    aliases: []
+  },
+  {
     name: 'selenium',
+    altnames: [],
     tags: ['webdrive', 'automation'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2458,28 +5332,72 @@ export const techIcons = [
     ]
   },
   {
-    name: 'sequelize',
-    tags: ['database', 'language'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'sema',
+    altnames: ['Sema Software'],
+    tags: ['software', 'development', 'company', 'code-review', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
     },
-    color: '#3b4b72',
+    color: '#000',
     aliases: [
       {
-        base: 'plain',
+        base: 'original',
         alias: 'plain'
       },
       {
-        base: 'plain-wordmark',
+        base: 'original-wordmark',
         alias: 'plain-wordmark'
       }
     ]
   },
   {
+    name: 'sentry',
+    altnames: [],
+    tags: ['monitoring', 'analytics', 'metrics'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#362d59',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'reactrouter',
+    altnames: [],
+    tags: ['framework', 'react'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#f44250',
+    aliases: []
+  },
+  {
+    name: 'sequelize',
+    altnames: ['sequelizejs'],
+    tags: ['database', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#3b4b72',
+    aliases: []
+  },
+  {
     name: 'shopware',
+    altnames: [],
     tags: ['cloud', 'platform'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2488,6 +5406,7 @@ export const techIcons = [
   },
   {
     name: 'shotgrid',
+    altnames: [],
     tags: [
       'web-application',
       'autodesk',
@@ -2496,7 +5415,7 @@ export const techIcons = [
       'production-tool',
       'production-tracking'
     ],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain'],
       font: ['plain', 'original-wordmark']
     },
@@ -2510,18 +5429,27 @@ export const techIcons = [
   },
   {
     name: 'sketch',
+    altnames: [],
     tags: ['application'],
-    version: {
-      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
-      font: ['line', 'line-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
     color: '#fdad00',
     aliases: []
   },
   {
     name: 'slack',
+    altnames: [],
     tags: ['chat'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2530,8 +5458,9 @@ export const techIcons = [
   },
   {
     name: 'socketio',
+    altnames: [],
     tags: ['library', 'networking', 'websockets'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2549,8 +5478,9 @@ export const techIcons = [
   },
   {
     name: 'solidity',
+    altnames: ['soliditylang'],
     tags: ['programming', 'language', 'blockchain'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2558,9 +5488,43 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'solidjs',
+    altnames: [],
+    tags: ['javascript', 'framework', 'frontend'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#2c4f7c',
+    aliases: []
+  },
+  {
+    name: 'sonarqube',
+    altnames: ['sonar'],
+    tags: ['tool', 'security'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#549dd0',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'sourcetree',
+    altnames: [],
     tags: ['version-control'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2577,33 +5541,25 @@ export const techIcons = [
     ]
   },
   {
-    name: 'spring',
-    tags: ['framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#5FB832',
-    aliases: []
-  },
-  {
-    name: 'spss',
-    tags: ['package', 'statistics'],
-    version: {
+    name: 'spack',
+    altnames: [],
+    tags: ['package-manager', 'package', 'manager', 'python', 'open-source'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
-    color: '#cc1e4c',
+    color: '#0F3A80',
     aliases: []
   },
   {
-    name: 'sqlalchemy',
-    tags: ['python', 'orm'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain'],
-      font: ['plain', 'original-wordmark']
+    name: 'splunk',
+    altnames: [],
+    tags: ['platform', 'data', 'log', 'monitoring'],
+    versions: {
+      svg: ['original-wordmark'],
+      font: ['original-wordmark']
     },
-    color: '#333333',
+    color: '#0C1724',
     aliases: [
       {
         base: 'original-wordmark',
@@ -2612,9 +5568,74 @@ export const techIcons = [
     ]
   },
   {
+    name: 'spring',
+    altnames: ['springframework'],
+    tags: ['framework'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#5FB832',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'spss',
+    altnames: ['ibmspss'],
+    tags: ['package', 'statistics'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#cc1e4c',
+    aliases: []
+  },
+  {
+    name: 'spyder',
+    altnames: [],
+    tags: ['python', 'ide', 'editor', 'data-science'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#8c0000',
+    aliases: []
+  },
+  {
+    name: 'sqlalchemy',
+    altnames: [],
+    tags: ['python', 'orm'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#333333',
+    aliases: []
+  },
+  {
+    name: 'sqldeveloper',
+    altnames: [],
+    tags: ['tool', 'database'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#adadad',
+    aliases: []
+  },
+  {
     name: 'sqlite',
+    altnames: [],
     tags: ['sql', 'database', 'db'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2622,34 +5643,10 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'subversion',
-    tags: ['svn', 'version'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original']
-    },
-    color: '#809cc8',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      }
-    ]
-  },
-  {
-    name: 'microsoftsqlserver',
-    tags: ['database'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#909DAA',
-    aliases: []
-  },
-  {
     name: 'ssh',
+    altnames: ['secureshell'],
     tags: ['security'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2666,9 +5663,66 @@ export const techIcons = [
     ]
   },
   {
+    name: 'stackoverflow',
+    altnames: ['Stack Overflow'],
+    tags: ['website', 'development', 'community'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#F58025',
+    aliases: []
+  },
+  {
+    name: 'stata',
+    altnames: [],
+    tags: ['analysis', 'data', 'data-science', 'software', 'statistics'],
+    versions: {
+      svg: ['original-wordmark'],
+      font: ['original-wordmark']
+    },
+    color: '#195f92',
+    aliases: [
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'storybook',
+    altnames: ['storybookjs'],
+    tags: ['framework', 'documentation', 'ui'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#FF4785',
+    aliases: []
+  },
+  {
+    name: 'streamlit',
+    altnames: [],
+    tags: ['python', 'machine-learning', 'data-science'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#7d353b',
+    aliases: []
+  },
+  {
     name: 'stylus',
+    altnames: ['styluslang'],
     tags: ['css', 'pre-processor'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2676,9 +5730,37 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'subversion',
+    altnames: ['apachesubversion'],
+    tags: ['svn', 'version'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#809cc8',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'supabase',
+    altnames: [],
+    tags: ['authentication', 'cloud-computing-platform', 'database', 'storage'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#3ecf8e',
+    aliases: []
+  },
+  {
     name: 'svelte',
-    tags: ['javascript', 'framework'],
-    version: {
+    altnames: ['sveltejs'],
+    tags: ['javascript', 'framework', 'compiler'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2686,9 +5768,21 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'swagger',
+    altnames: ['Swagger'],
+    tags: ['development', 'software', 'tool'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#85ea2d',
+    aliases: []
+  },
+  {
     name: 'swift',
+    altnames: [],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2696,9 +5790,26 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'swiper',
+    altnames: [],
+    tags: ['library', 'javascript', 'open-source'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#0080FF',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'symfony',
-    tags: ['framework'],
-    version: {
+    altnames: [],
+    tags: ['framework', 'php'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2715,29 +5826,37 @@ export const techIcons = [
     ]
   },
   {
-    name: 'storybook',
-    tags: ['framework', 'documentation', 'ui'],
-    version: {
+    name: 'tailwindcss',
+    altnames: [],
+    tags: ['css', 'framework'],
+    versions: {
+      svg: ['original-wordmark', 'original', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#38bdf8',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'tauri',
+    altnames: [],
+    tags: ['nodejs', 'rust', 'desktop', 'framework', 'programming'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#FF4785',
-    aliases: []
-  },
-  {
-    name: 'tailwindcss',
-    tags: ['css', 'framework'],
-    version: {
-      svg: ['original-wordmark', 'plain'],
-      font: ['original-wordmark', 'plain']
-    },
-    color: '#2298BD',
+    color: '#FFC131',
     aliases: []
   },
   {
     name: 'tensorflow',
+    altnames: [],
     tags: ['library', 'machine-learning', 'deep-learning'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
@@ -2746,8 +5865,9 @@ export const techIcons = [
   },
   {
     name: 'terraform',
+    altnames: [],
     tags: ['deployment', 'architecture', 'automation'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2755,9 +5875,45 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'tex',
+    altnames: [],
+    tags: ['typesetting-system', 'markup', 'tex'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#000000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'thealgorithms',
+    altnames: [],
+    tags: ['organization', 'algorithms'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#00BCB4',
+    aliases: []
+  },
+  {
     name: 'threejs',
+    altnames: [],
     tags: ['javascript', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2765,9 +5921,26 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'titaniumsdk',
+    altnames: [],
+    tags: ['app', 'mobile', 'javascript', 'cross-platform', 'sdk'],
+    versions: {
+      svg: ['original'],
+      font: ['original']
+    },
+    color: '#bd222b',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'tomcat',
+    altnames: [],
     tags: ['server'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
       font: ['line', 'line-wordmark']
     },
@@ -2776,18 +5949,20 @@ export const techIcons = [
   },
   {
     name: 'tortoisegit',
+    altnames: [],
     tags: ['git'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'line'],
       font: ['plain', 'line']
     },
-    color: '#4a8fb5',
+    color: '#4b8eb4',
     aliases: []
   },
   {
     name: 'towergit',
+    altnames: ['towergitclient'],
     tags: ['git'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2795,43 +5970,105 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'travis',
-    tags: ['platform', 'integration'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'traefikmesh',
+    altnames: [],
+    tags: ['mesh', 'kubernetes'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#bb2031',
-    aliases: []
+    color: '#9D0FB0',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
   },
   {
-    name: 'thealgorithms',
-    tags: ['organization', 'algorithms'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'traefikproxy',
+    altnames: [],
+    tags: ['proxy', 'router'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#00BCB4',
+    color: '#24a1c1',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'travis',
+    altnames: ['travisci'],
+    tags: ['platform', 'integration'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#2d3136',
     aliases: []
   },
   {
     name: 'trello',
+    altnames: ['atlassiantrello'],
     tags: ['platform', 'organize'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#0052cc',
+    aliases: []
+  },
+  {
+    name: 'trpc',
+    altnames: ['Typescript Remote Procedure Call'],
+    tags: ['typescript', 'javascript', 'typesafe', 'api'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#23719f',
+    color: '#398ccb',
     aliases: []
   },
   {
     name: 'twitter',
+    altnames: ['x'],
     tags: ['auth'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
-    color: '#1da1f2',
+    color: '#000',
     aliases: [
       {
         base: 'original',
@@ -2841,8 +6078,9 @@ export const techIcons = [
   },
   {
     name: 'typescript',
-    tags: ['programming', 'transpiler'],
-    version: {
+    altnames: ['ts'],
+    tags: ['programming', 'transpiler', 'javascript', 'language'],
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2856,38 +6094,71 @@ export const techIcons = [
   },
   {
     name: 'typo3',
+    altnames: [],
     tags: ['cms', 'php'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['original', 'plain-wordmark', 'line', 'line-wordmark']
     },
     color: '#f49700',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
   },
   {
     name: 'ubuntu',
-    tags: ['os'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
+    altnames: [],
+    tags: ['os', 'open-source', 'linux'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#dd4814',
+    color: '#e95420',
+    aliases: []
+  },
+  {
+    name: 'unifiedmodelinglanguage',
+    altnames: ['uml', 'unified modeling language'],
+    tags: ['modeling', 'design', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#452e7f',
     aliases: []
   },
   {
     name: 'unity',
-    tags: ['csharp', 'engine', 'game'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
+    altnames: [],
+    tags: ['C#', 'c-sharp', 'csharp', 'engine', 'game-engine'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
     },
-    color: '#000000',
+    color: '#4d4d4d',
     aliases: []
   },
   {
     name: 'unix',
+    altnames: [],
     tags: ['os'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -2896,8 +6167,9 @@ export const techIcons = [
   },
   {
     name: 'unrealengine',
-    tags: ['c++', 'engine', 'game'],
-    version: {
+    altnames: [],
+    tags: ['c++', 'engine', 'game-engine'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -2915,8 +6187,9 @@ export const techIcons = [
   },
   {
     name: 'uwsgi',
+    altnames: ['uwebservergatewayinterface'],
     tags: ['hosting'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2924,9 +6197,30 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'v8',
+    altnames: ['v8 engine'],
+    tags: ['javascript-runtime', 'framework', 'javascript', 'web', 'cpp'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#00C4CC',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
     name: 'vagrant',
+    altnames: [],
     tags: ['platform'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -2934,9 +6228,75 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'vala',
+    altnames: [],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#a56de2',
+    aliases: []
+  },
+  {
+    name: 'vault',
+    altnames: ['HashiCorp Vault'],
+    tags: ['tool', 'security', 'infrastructure'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#ffd814',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
+    name: 'vercel',
+    altnames: [],
+    tags: ['hosting', 'platform', 'deployment', 'git'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#000',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'vertx',
+    altnames: ['eclipsevertx'],
+    tags: ['sdk', 'java', 'framework'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#782a91',
+    aliases: []
+  },
+  {
     name: 'vim',
+    altnames: ['viimproved'],
     tags: ['editor'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2944,19 +6304,114 @@ export const techIcons = [
     aliases: []
   },
   {
+    name: 'visualbasic',
+    altnames: ['vb'],
+    tags: ['programming', 'language'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#004e8c',
+    aliases: []
+  },
+  {
     name: 'visualstudio',
+    altnames: ['vs'],
     tags: ['editor'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#52218a',
+    aliases: []
+  },
+  {
+    name: 'vite',
+    altnames: [],
+    tags: ['web3', 'blockchain', 'DAG'],
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#006BFF',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'vitejs',
+    altnames: ['vite.js', 'Vite'],
+    tags: ['javascript', 'build', 'compiler', 'esbuild'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#ffdd35',
+    aliases: []
+  },
+  {
+    name: 'vitess',
+    altnames: [],
+    tags: ['sharding', 'database', 'mysql'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#68217A',
+    color: '#f16827',
+    aliases: []
+  },
+  {
+    name: 'vitest',
+    altnames: [],
+    tags: ['framework', 'open-source', 'testing', 'vite'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#fcc72b',
+    aliases: []
+  },
+  {
+    name: 'vscode',
+    altnames: ['visualstudiocode'],
+    tags: ['editor', 'ide'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#3C99D4',
+    aliases: []
+  },
+  {
+    name: 'vsphere',
+    altnames: ['vmwarevsphere'],
+    tags: ['hypervisor', 'operating-system', 'vmware'],
+    versions: {
+      svg: [
+        'original',
+        'original-wordmark',
+        'plain',
+        'plain-wordmark',
+        'line',
+        'line-wordmark'
+      ],
+      font: ['plain', 'plain-wordmark', 'line', 'line-wordmark']
+    },
+    color: '#0091da',
     aliases: []
   },
   {
     name: 'vuejs',
+    altnames: [],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: [
         'original',
         'original-wordmark',
@@ -2972,8 +6427,9 @@ export const techIcons = [
   },
   {
     name: 'vuestorefront',
+    altnames: [],
     tags: ['framework'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -2981,19 +6437,48 @@ export const techIcons = [
     aliases: []
   },
   {
-    name: 'vscode',
-    tags: ['editor', 'ide'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    name: 'vuetify',
+    altnames: [],
+    tags: ['css', 'framework', 'vuejs-library', 'material-design'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['line', 'plain']
     },
-    color: '#3C99D4',
+    color: '#1697F6',
     aliases: []
   },
   {
+    name: 'vyper',
+    altnames: ['vyperlang'],
+    tags: ['programming', 'language', 'python', 'blockchain', 'ethereum'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#000000',
+    aliases: []
+  },
+  {
+    name: 'wasm',
+    altnames: ['WebAssembly'],
+    tags: ['binary', 'programming', 'virtual machine', 'web', 'language'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain-wordmark'],
+      font: ['original', 'plain-wordmark']
+    },
+    color: '#654ff0',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      }
+    ]
+  },
+  {
     name: 'webflow',
+    altnames: [],
     tags: ['cms', 'ecommerce'],
-    version: {
+    versions: {
       svg: ['original'],
       font: ['original']
     },
@@ -3002,8 +6487,9 @@ export const techIcons = [
   },
   {
     name: 'weblate',
+    altnames: [],
     tags: ['localization'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3012,8 +6498,9 @@ export const techIcons = [
   },
   {
     name: 'webpack',
+    altnames: ['webpackjs'],
     tags: ['package', 'manager'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3022,18 +6509,40 @@ export const techIcons = [
   },
   {
     name: 'webstorm',
-    tags: ['editor'],
-    version: {
+    altnames: [],
+    tags: ['jetbrains', 'editor'],
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#2788B5',
+    color: '#07c3f2',
     aliases: []
   },
   {
-    name: 'windows8',
+    name: 'windows11',
+    altnames: [],
     tags: ['os'],
-    version: {
+    versions: {
+      svg: ['original', 'original-wordmark'],
+      font: ['original', 'original-wordmark']
+    },
+    color: '#0078d4',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'windows8',
+    altnames: [],
+    tags: ['os'],
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3051,8 +6560,9 @@ export const techIcons = [
   },
   {
     name: 'woocommerce',
+    altnames: [],
     tags: ['ecommerce'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'original-wordmark', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3061,8 +6571,9 @@ export const techIcons = [
   },
   {
     name: 'wordpress',
+    altnames: [],
     tags: ['cms'],
-    version: {
+    versions: {
       svg: ['original', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
@@ -3071,6 +6582,7 @@ export const techIcons = [
   },
   {
     name: 'xamarin',
+    altnames: [],
     tags: [
       'application',
       'programming',
@@ -3082,7 +6594,7 @@ export const techIcons = [
       'android',
       'windows'
     ],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark'],
       font: ['original', 'original-wordmark']
     },
@@ -3100,8 +6612,9 @@ export const techIcons = [
   },
   {
     name: 'xcode',
+    altnames: [],
     tags: ['application', 'editor', 'ide', 'ios', 'iphone', 'mobile', 'apple'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -3110,38 +6623,106 @@ export const techIcons = [
   },
   {
     name: 'xd',
+    altnames: ['adobexd'],
     tags: ['design', 'editor', 'ui'],
-    version: {
-      svg: ['plain', 'line'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
       font: ['plain', 'line']
     },
-    color: '#DD80BC',
+    color: '#470137',
     aliases: []
+  },
+  {
+    name: 'xml',
+    altnames: ['extensiblemarkuplanguage'],
+    tags: ['markup', 'language'],
+    versions: {
+      svg: ['original', 'plain', 'line'],
+      font: ['plain', 'line']
+    },
+    color: '#005fad',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      },
+      {
+        base: 'line',
+        alias: 'line-wordmark'
+      }
+    ]
+  },
+  {
+    name: 'yaml',
+    altnames: ["YAML Ain't Markup Language"],
+    tags: ['data', 'language'],
+    versions: {
+      svg: ['original', 'plain'],
+      font: ['plain']
+    },
+    color: '#cb171e',
+    aliases: [
+      {
+        base: 'original',
+        alias: 'original-wordmark'
+      },
+      {
+        base: 'plain',
+        alias: 'plain-wordmark'
+      }
+    ]
   },
   {
     name: 'yarn',
-    tags: ['package', 'manager'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    altnames: [],
+    tags: ['package', 'manager', 'javascript', 'js'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
     color: '#2c8ebb',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
   },
   {
     name: 'yii',
+    altnames: ['yesitis'],
     tags: ['php', 'framework'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
       font: ['plain', 'plain-wordmark']
     },
-    color: '#0073bb',
+    color: '#40b3d8',
+    aliases: []
+  },
+  {
+    name: 'yugabytedb',
+    altnames: [],
+    tags: ['database', 'relational', 'sql', 'scale', 'open-source'],
+    versions: {
+      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
+      font: ['plain', 'plain-wordmark']
+    },
+    color: '#ff5f3b',
     aliases: []
   },
   {
     name: 'yunohost',
+    altnames: [],
     tags: ['os'],
-    version: {
+    versions: {
       svg: ['original', 'plain'],
       font: ['plain']
     },
@@ -3150,18 +6731,29 @@ export const techIcons = [
   },
   {
     name: 'zend',
+    altnames: [],
     tags: ['php', 'framework'],
-    version: {
-      svg: ['plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
+    versions: {
+      svg: ['original', 'original-wordmark', 'line', 'line-wordmark'],
+      font: ['original', 'original-wordmark', 'line', 'line-wordmark']
     },
     color: '#68b604',
-    aliases: []
+    aliases: [
+      {
+        base: 'original',
+        alias: 'plain'
+      },
+      {
+        base: 'original-wordmark',
+        alias: 'plain-wordmark'
+      }
+    ]
   },
   {
     name: 'zig',
+    altnames: ['ziglang'],
     tags: ['language'],
-    version: {
+    versions: {
       svg: ['original', 'original-wordmark', 'plain-wordmark'],
       font: ['original', 'plain-wordmark']
     },
@@ -3172,167 +6764,5 @@ export const techIcons = [
         alias: 'plain'
       }
     ]
-  },
-  {
-    name: 'pytest',
-    tags: ['python', 'framework', 'testing'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#009fe3',
-    aliases: []
-  },
-  {
-    name: 'opencv',
-    tags: ['library', 'c/c++', 'computer-vision'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#128dff',
-    aliases: []
-  },
-  {
-    name: 'fastapi',
-    tags: ['python', 'framework'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#009688',
-    aliases: []
-  },
-  {
-    name: 'k3s',
-    tags: ['kubernetes', 'container', 'platform'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain-wordmark'],
-      font: ['original', 'plain-wordmark']
-    },
-    color: '#ffc519',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      }
-    ]
-  },
-  {
-    name: 'packer',
-    tags: ['infrastructure', 'infrastructure-as-code', 'continuous-delivery'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
-    },
-    color: '#1d94dd',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      },
-      {
-        base: 'original-wordmark',
-        alias: 'plain-wordmark'
-      }
-    ]
-  },
-  {
-    name: 'anaconda',
-    tags: ['python', 'data-science'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
-    },
-    color: '#3eb049',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      },
-      {
-        base: 'original-wordmark',
-        alias: 'plain-wordmark'
-      }
-    ]
-  },
-  {
-    name: 'rspec',
-    tags: ['ruby', 'framework', 'testing'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
-    },
-    color: '#6de1fa',
-    aliases: [
-      {
-        base: 'original',
-        alias: 'plain'
-      },
-      {
-        base: 'original-wordmark',
-        alias: 'plain-wordmark'
-      }
-    ]
-  },
-  {
-    name: 'argocd',
-    tags: ['gitops', 'continuous-delivery'],
-    version: {
-      svg: ['original', 'original-wordmark', 'plain', 'plain-wordmark'],
-      font: ['plain', 'plain-wordmark']
-    },
-    color: '#ef7b4d',
-    aliases: []
-  },
-  {
-    name: 'prometheus',
-    tags: ['monitoring', 'observability', 'analysis'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
-    },
-    color: '#e75225',
-    aliases: []
-  },
-  {
-    name: 'blender',
-    tags: ['modelling', 'python', '3d', 'animation'],
-    version: {
-      svg: ['original', 'original-wordmark'],
-      font: ['original', 'original-wordmark']
-    },
-    color: '#DC7B2E',
-    aliases: []
-  },
-  {
-    name: 'dropwizard',
-    tags: ['java', 'framework'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
-    },
-    color: '#24265d',
-    aliases: []
-  },
-  {
-    name: 'vuetify',
-    tags: ['css', 'framework', 'vuejs-library', 'material-design'],
-    version: {
-      svg: ['original', 'plain', 'line'],
-      font: ['line', 'plain']
-    },
-    color: '#1697F6',
-    aliases: []
-  },
-  {
-    name: 'fedora',
-    tags: ['linux', 'distribuition', 'desktop'],
-    version: {
-      svg: ['original', 'plain'],
-      font: ['plain']
-    },
-    color: '#294172',
-    aliases: []
   }
 ];

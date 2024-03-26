@@ -2,6 +2,7 @@ import EditProfileAboutForm from '../../../components/forms/editProfile/EditProf
 import EditProfileBasicForm from '../../../components/forms/editProfile/EditProfileBasicForm/EditProfileBasicForm';
 import EditProfileProjectForm from '../../../components/forms/editProfile/EditProfileProjectForm/EditProfileProjectForm';
 import EditProfileSocialForm from '../../../components/forms/editProfile/EditProfileSocialForm/EditProfileSocialForm';
+import EditProfileWorkForm from '../../../components/forms/editProfile/EditProfileWorkForm/EditProfileWorkForm';
 
 export const profileEditorOptions: {
   nameId: string;
@@ -25,14 +26,13 @@ export const profileEditorOptions: {
     form: EditProfileProjectForm
   },
   {
+    nameId: 'edit_profile_work_form',
+    heading: 'Work',
+    form: EditProfileWorkForm
+  },
+  {
     nameId: 'edit_profile_about_form',
     heading: 'About',
     form: EditProfileAboutForm
   }
 ];
-
-// TODO @thesudeshdas => to be added
-// blogs
-// work
-// about
-// contact

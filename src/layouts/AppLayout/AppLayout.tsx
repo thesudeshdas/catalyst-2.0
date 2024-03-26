@@ -11,7 +11,7 @@ export default function AppLayout() {
     <div className='flex flex-col min-h-full max-w-[1400px] mx-auto'>
       <AppNav />
 
-      <div className='flex flex-col items-center flex-grow p-3 lg:px-6 py-11 lg:py-14'>
+      <div className='flex flex-col items-center flex-grow p-3 lg:px-6 py-5 lg:py-8'>
         <Outlet context={{ powstToBeShown, setPowstToBeShown }} />
       </div>
 

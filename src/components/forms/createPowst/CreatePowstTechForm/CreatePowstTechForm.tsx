@@ -53,7 +53,7 @@ export default function CreatePowstTechForm() {
 
   return (
     <form
-      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto'
+      className='flex flex-col gap-6 items-center w-full md:max-w-[800px]'
       onSubmit={handleSubmit(onCreatePowstNameSubmit)}
     >
       <div className='w-full'>
@@ -83,7 +83,7 @@ export default function CreatePowstTechForm() {
       <div className='w-full'>
         <h3 className='font-semibold'>Choose a tech</h3>
 
-        <div className='grid grid-cols-[repeat(auto-fill,24px)] gap-12 p-4 mt-2 border input-bordered rounded-md'>
+        <div className='flex flex-wrap gap-12 p-4 mt-2 border input-bordered rounded-md place-content-around'>
           {techIcons
             ?.filter((icon) =>
               icon.name.includes(watchSearch?.toLowerCase()?.replace(/ /g, ''))
@@ -94,13 +94,13 @@ export default function CreatePowstTechForm() {
                 onClick={() =>
                   handleAddTech({
                     name: icon.name,
-                    version: icon.version.svg[0]
+                    version: icon.versions.svg[0]
                   })
                 }
                 type='button'
               >
                 <img
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version.svg[0]}.svg`}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.versions.svg[0]}.svg`}
                   alt={icon.name}
                   className='h-8 w-8'
                   key={icon.name}

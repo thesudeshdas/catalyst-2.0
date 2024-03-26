@@ -9,6 +9,7 @@ import {
 } from 'react-icons/lu';
 
 import queryClient from '../../../config/queryClient';
+import * as apiKeys from '../../../constants/apisKeys.constants';
 import { IPowst } from '../../../types/powstTypes/powst.types';
 import UserAvatar from '../../avatars/UserAvatar/UserAvatar';
 import CustomImage from '../../images/CustomImage/CustomImage';
@@ -24,7 +25,9 @@ export default function PowstDetailsModal({
   powstToBeShown,
   setPowstToBeShown
 }: IPowstDetailsModalProps) {
-  const allPowsts = queryClient.getQueryData<IPowst[]>(['allPowsts']);
+  const allPowsts = queryClient.getQueryData<IPowst[]>([
+    apiKeys.powst.GET_ALL_POWSTS
+  ]);
 
   const {
     title,
@@ -34,7 +37,8 @@ export default function PowstDetailsModal({
     live,
     source,
     owner,
-    techStack
+    techStack,
+    keywords
   } = allPowsts?.find((powst) => powst._id === powstToBeShown) || {};
 
   const sameUserPowsts = allPowsts
@@ -126,32 +130,18 @@ export default function PowstDetailsModal({
                 )}
               </div>
 
-              <div className='flex flex-wrap gap-2 mb-12'>
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
+              {keywords && keywords?.length > 0 && (
+                <div className='flex flex-wrap gap-2 mb-12'>
+                  {keywords?.map((keyword, index) => (
+                    <div
+                      key={`pill_${index}_${keyword}`}
+                      className='badge cursor-pointer badge-outline'
+                    >
+                      {keyword}
+                    </div>
+                  ))}
                 </div>
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-
-                <div className='badge badge-outline badge-sm py-2.5'>
-                  #default
-                </div>
-              </div>
+              )}
 
               {owner?.profilePic && (
                 <UserAvatar

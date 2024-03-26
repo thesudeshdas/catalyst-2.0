@@ -4,6 +4,7 @@ import { useSnackbar } from 'notistack';
 
 import axiosClient from '../../config/axiosInstance';
 import queryClient from '../../config/queryClient';
+import * as apiKeys from '../../constants/apisKeys.constants';
 import {
   ICreatePowst,
   ICreatePowstBody
@@ -31,7 +32,7 @@ export default function useCreatePowstServer() {
     mutationFn: createPowst,
     onSuccess: (data) => {
       queryClient.setQueryData(
-        ['allPowsts'],
+        [apiKeys.powst.GET_ALL_POWSTS],
         (prevData: IPowst[] | undefined) => {
           return prevData ? [...prevData, data] : [data];
         }

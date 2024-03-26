@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -8,13 +7,12 @@ import useUpdateUserDetails from '../../../../mutations/updateUserDetails/useUpd
 import useGetUserDetails from '../../../../queries/getUserDetails/useGetUserDetails';
 import { IEditProfileSocialForm } from '../../../../types/profileTypes/profile.types';
 import { IUserSocials } from '../../../../types/userTypes/user.types';
-import handleCloseModal from '../../../../utils/closeModal/closeModal.utils';
 import sanitiseObject from '../../../../utils/sanitiseObject/sanitiseObject.utils';
 import TextInput from '../../../inputs/TextInput/TextInput';
 
 import { editProfileSocialSchema } from './editProfileSocialForm.schema';
 
-export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
+export default function EditProfileSocialForm() {
   const { authState } = useAuthContext();
 
   const { data: userDetails } = useGetUserDetails({
@@ -23,8 +21,7 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
 
   const {
     mutate: updateUserDetailsMutation,
-    isPending: isUpdateUserDetailsPending,
-    isSuccess: isUpdateUserDetailsSuccess
+    isPending: isUpdateUserDetailsPending
   } = useUpdateUserDetails();
 
   const { control, handleSubmit } = useForm<IEditProfileSocialForm>({
@@ -56,15 +53,9 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     });
   };
 
-  useEffect(() => {
-    if (isUpdateUserDetailsSuccess) {
-      handleCloseModal(nameId);
-    }
-  }, [isUpdateUserDetailsSuccess, nameId]);
-
   return (
     <form
-      className='flex flex-col gap-6 items-center w-full md:max-w-[800px] mx-auto'
+      className='flex flex-col gap-6 items-center w-full mx-auto'
       onSubmit={handleSubmit(onEditProfileSocialSubmit)}
     >
       <h3 className='font-bold text-lg'>Social Links</h3>
@@ -89,7 +80,6 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
         <button
           className='btn btn-outline'
           type='button'
-          onClick={() => handleCloseModal(nameId)}
           disabled={isUpdateUserDetailsPending}
         >
           Cancel
@@ -108,5 +98,3 @@ export default function EditProfileSocialForm({ nameId }: { nameId: string }) {
     </form>
   );
 }
-
-// TODO @thesudeshdas => The cancel and save button should be a different component

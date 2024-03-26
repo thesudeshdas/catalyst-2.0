@@ -57,9 +57,11 @@ export default function SelectInput(
 
         <select
           className='select select-bordered join-item w-full focus:outline-none focus:border-primary text-sm'
-          defaultValue={props?.defaultValue || props?.options[0].value}
+          defaultValue={props?.defaultValue}
           {...field}
         >
+          <option value={'Select'}>Select</option>
+
           {props?.options.map(({ label, value }) => (
             <option
               key={value}

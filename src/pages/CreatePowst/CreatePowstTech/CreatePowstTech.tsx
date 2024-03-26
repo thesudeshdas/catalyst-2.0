@@ -16,7 +16,7 @@ export default function CreatePowstTech() {
   }, [pathname, setActiveStep]);
 
   return (
-    <main className='flex flex-col gap-4'>
+    <main className='flex flex-col items-center gap-4 overflow-x-hidden'>
       <h2 className='text-center font-bold text-xl'>Tech Stack</h2>
 
       <CreatePowstTechForm />

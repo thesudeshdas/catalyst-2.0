@@ -7,27 +7,45 @@ import CustomImage from '../../../components/images/CustomImage/CustomImage';
 import useAuthContext from '../../../contexts/AuthContext/authContext.hook';
 import useCreatePowst from '../../../layouts/CreatePowstLayout/createPowstLayout.hook';
 import useCreatePowstServer from '../../../mutations/createPowst/useCreatePowst.hook';
+import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails';
+import sanitiseObject from '../../../utils/sanitiseObject/sanitiseObject.utils';
 
 export default function CreatePowstReview() {
   const { pathname } = useLocation();
 
   const { authState } = useAuthContext();
-  const { localPowst, setActiveStep } = useCreatePowst();
+  const { localPowst, setActiveStep, clearPowstInLocal } = useCreatePowst();
 
-  const { mutate } = useCreatePowstServer();
+  const {
+    mutate: mutateCreatePowst,
+    isPending: isCreatePowstPending,
+    isSuccess: isCreatePowstSuccess
+  } = useCreatePowstServer();
+
+  const { data: userDetails } = useGetUserDetails({
+    userId: authState.username
+  });
 
   const [file] = useState<File>(localPowst?.image);
   const [fileDataURL, setFileDataURL] = useState<string | ArrayBuffer>();
 
   const handleCreatePowst = () => {
-    mutate({
+    const body = {
       title: localPowst?.title,
       live: localPowst?.live,
       source: localPowst?.source,
       description: localPowst?.description,
       techStack: localPowst?.techStack,
-      image: localPowst?.image,
       imageAlt: localPowst?.alt,
+      keywords: localPowst?.keywords.reduce(
+        (acc: string[], cur: { text: string }) => [...acc, cur.text],
+        []
+      )
+    };
+
+    mutateCreatePowst({
+      ...sanitiseObject(body),
+      image: localPowst?.image,
       owner: authState.userId
     });
   };
@@ -61,6 +79,12 @@ export default function CreatePowstReview() {
     };
   }, [file]);
 
+  useEffect(() => {
+    if (isCreatePowstSuccess) {
+      clearPowstInLocal();
+    }
+  }, [clearPowstInLocal, isCreatePowstSuccess]);
+
   return (
     <main className='flex flex-col gap-4 items-center'>
       <h2 className='text-center font-bold text-xl'>Powst Review 2</h2>
@@ -70,14 +94,16 @@ export default function CreatePowstReview() {
           <div className='w-full p-4 bg-base-100 '>
             <h2 className='text-2xl font-semibold mb-2'>{localPowst?.title}</h2>
 
-            <UserAvatar
-              src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-              name='Sudesh Das'
-              variant='profile'
-              size='md'
-              username={'no-username-found'}
-              noRedirect
-            />
+            {userDetails?.profilePic && (
+              <UserAvatar
+                src={userDetails?.profilePic}
+                name={`${userDetails?.firstName} ${userDetails?.lastName}`}
+                variant='profile'
+                size='md'
+                username={'no-username-found'}
+                noRedirect
+              />
+            )}
           </div>
 
           <div className='flex flex-col gap-4 bg-red'>
@@ -97,7 +123,7 @@ export default function CreatePowstReview() {
 
             <div className='flex flex-col sm:flex-row gap-4 justify-between'>
               <div className='flex flex-wrap gap-3'>
-                {localPowst?.techStack.map((icon) => {
+                {localPowst?.techStack?.map((icon) => {
                   return (
                     <img
                       src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon.name}/${icon.name}-${icon.version}.svg`}
@@ -138,48 +164,39 @@ export default function CreatePowstReview() {
               )}
             </div>
 
-            <div className='flex flex-wrap gap-2 mb-12'>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
+            {localPowst?.keywords?.length > 0 && (
+              <div className='flex flex-wrap gap-2 mb-12'>
+                {localPowst?.keywords?.map((keyword, index) => (
+                  <div
+                    key={`pill_${index}_${keyword?.text}`}
+                    className='badge cursor-pointer badge-outline'
+                  >
+                    {keyword?.text}
+                  </div>
+                ))}
               </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-
-              <div className='badge badge-outline badge-sm py-2.5'>
-                #default
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
 
       <div className='flex justify-between w-full max-w-[800px]'>
-        <CreatePowstPreviousButton link='/create/image' />
+        <CreatePowstPreviousButton
+          link='/create/image'
+          disabled={isCreatePowstPending}
+        />
 
         <button
           className='btn btn-primary'
           onClick={handleCreatePowst}
+          disabled={isCreatePowstPending}
         >
+          {isCreatePowstPending && (
+            <span className='loading loading-spinner'></span>
+          )}
           Create
         </button>
       </div>
     </main>
   );
 }
-
-// TODO @thesudeshdas => sanitise the create powst body to not send the undefined

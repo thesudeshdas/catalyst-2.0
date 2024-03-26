@@ -99,13 +99,13 @@ export default function DragCard({
     <div
       ref={ref}
       data-handler-id={handlerId}
-      className={`flex gap-2 items-center border textarea-bordered rounded-md mb-2 py-2 px-3 cursor-move text-left ${opacity}`}
+      className={`flex gap-2 items-center border textarea-bordered rounded-md mb-2 py-2 px-3 text-left cursor-move ${opacity}`}
     >
       <LuGripVertical className='flex-shrink-0' />
 
       {text}
 
-      <LuTrash className='flex-shrink-0 ml-auto' />
+      <LuTrash className='flex-shrink-0 ml-auto cursor-pointer hover:text-error' />
     </div>
   );
 }

@@ -9,8 +9,13 @@ export interface ICreatePowstContext {
 
 export interface ICreatePowstBasicForm {
   title: string;
-  live?: string;
-  source?: string;
+  live: string;
+  source: string;
+}
+
+export interface ICreatePowstDescriptionForm {
+  description: string;
+  keywords: { text: string }[];
 }
 
 export interface ICreatePowstTechForm {
@@ -18,17 +23,17 @@ export interface ICreatePowstTechForm {
 }
 
 export interface ICreatePowstImageForm {
-  alt?: string;
+  alt: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image?: any;
+  image: any;
 }
 
 export interface ICreatePowst
   extends ICreatePowstBasicForm,
+    ICreatePowstDescriptionForm,
     ICreatePowstTechForm,
     ICreatePowstImageForm {
   _id: string;
-  description: string;
   techStack: { name: string; version: string }[];
   owner: string;
 }
@@ -42,4 +47,5 @@ export interface ICreatePowstBody {
   image: File;
   imageAlt?: string;
   owner: string;
+  keywords: string[];
 }

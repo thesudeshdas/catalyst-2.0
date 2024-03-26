@@ -1,31 +1,25 @@
 import { useEffect, useState } from 'react';
 import { LuInfo, LuLink, LuMail, LuMapPin } from 'react-icons/lu';
 import { LuFileSignature } from 'react-icons/lu';
-import {
-  Link,
-  useNavigate,
-  useParams,
-  useSearchParams
-} from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 
 import socialIconsList from '../../assets/icons/socialIcons';
 import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
+import Logout from '../../components/Logout/Logout';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
-import { removeTokensFromLocalStorage } from '../../utils/localStorage/removeTokensFromLocalStorage/removeTokensFromLocalStorage';
 
 import { profileTabsList } from './profile.data';
 import ProfileSkeleton from './ProfileSkeleton';
 
 export default function Profile() {
-  const navigate = useNavigate();
   const { username } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { setDocumentTitle } = useDocumentTitle('Catalyst | Profile');
-  const { authState, authDispatch } = useAuthContext();
+  const { authState } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
     useGetUserDetails({
@@ -39,14 +33,6 @@ export default function Profile() {
   const handleProfileTabChange = (tab: string) => {
     setProfileTab(tab);
     setSearchParams({ tab });
-  };
-
-  const handleLogout = () => {
-    authDispatch({ type: 'LOGOUT', payload: {} });
-
-    removeTokensFromLocalStorage();
-
-    navigate('/feed');
   };
 
   useEffect(() => {
@@ -107,12 +93,7 @@ export default function Profile() {
             <LuCheck />
           </button> */}
 
-        <button
-          className='btn btn-sm btn-error btn-outline'
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
+        <Logout />
 
         {/* The logic written here is to send the user to the relevant form depending
           on the tab they currently are. For example, if the user is in about tab, they will
@@ -210,20 +191,6 @@ export default function Profile() {
     </main>
   );
 }
-
-// IDEA @thesudeshdas => Show analytics on the bottom right like number of followers gained, powst engagement, etc
-
-// TODO @thesudeshdas => Create a logout component, a modal confirmation for logging out which should navigate to /feed on logging out
-
-// IDEA @thesudeshdas => The tags for the user should be auto generated, this will depend on the work experience and the project experience. Suppose,
-// someone has crated 2 react projects and 1 css, then react will be shown first, then css
-
-// TODO @thesudeshdas => Create hide above and below component which takes child and a width
-// like 'lg', 'md' and shows or hides the component
-
-// TODO @thesudeshdas => Create a component for the right side panel
-
-// TODO @thesudeshdas => For the profile pic, have a fallback image
 
 // <div className='flex gap-3 flex-wrap'>
 //   <div className='badge badge-outline h-fit px-1.5 flex gap-1.5 textarea-bordered text-xxs'>

@@ -39,10 +39,7 @@ export default function AboutTab({ username }: { username: string }) {
       <article className='flex flex-col sm:flex-row justify-between gap-8'>
         <div className='w-full sm:max-w-[1000px] sm:max-h-[calc(100vh-13rem)] overflow-auto no-scrollbar'>
           <div className='mdx_editor'>
-            <ReactMarkdown
-              rehypePlugins={[rehypeRaw]}
-              className='line-break'
-            >
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
               {userDetails?.description?.replace(/&#x20;&#x20;/g, '<br />')}
             </ReactMarkdown>
           </div>
