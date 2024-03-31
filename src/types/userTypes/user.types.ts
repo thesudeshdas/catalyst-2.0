@@ -23,6 +23,10 @@ export interface IUser {
   bio: string;
   description: string;
   specialisation: string[];
+  noOfFollowers: number;
+  noOfFollowings: number;
+  followers: string[];
+  followings: string[];
 }
 
 export interface IUpdateUserDetailsBody {
@@ -61,4 +65,24 @@ export interface IUserBlog {
 export interface IUserWork {
   work: IWork;
   starred: boolean;
+}
+
+export interface IFollowUserBody {
+  userId: string;
+  userToFollow: string;
+}
+
+export interface IFollowUserReturn {
+  followings: string[];
+  noOfFollowings: number;
+}
+
+export interface IUnfollowUserBody {
+  userId: string;
+  userToUnfollow: string;
+}
+
+export interface IUnfollowUserReturn {
+  followings: string[];
+  noOfFollowings: number;
 }
