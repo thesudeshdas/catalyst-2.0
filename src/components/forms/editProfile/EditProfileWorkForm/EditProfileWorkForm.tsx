@@ -21,7 +21,7 @@ export default function EditProfileWorkForm({
   const { authState } = useAuthContext();
 
   const { data: allUserWorks } = useGetAllUserWorks({
-    userId: authState.username
+    userId: authState.userId
   });
 
   const {

@@ -86,3 +86,11 @@ export interface IUnfollowUserReturn {
   followings: string[];
   noOfFollowings: number;
 }
+
+export interface IGetUserIdFromUsernameBody {
+  username: string;
+}
+
+export interface IGetUserIdFromUsernameReturn {
+  _id: string;
+}

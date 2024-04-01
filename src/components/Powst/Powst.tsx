@@ -53,6 +53,7 @@ export default function Powst({
           name={`${owner?.firstName} ${owner?.lastName}`}
           variant='profile'
           username={owner?.username || 'no-username-found'}
+          userId={owner?._id || 'no-userId'}
         />
       )}
 

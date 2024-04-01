@@ -11,6 +11,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
 import useFollowUser from '../../mutations/followUser/useFollowUser.mutation';
 import useUnfollowUser from '../../mutations/unfollowUser/useUnfollowUser.mutation';
 import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
+import useGetUserIdFromUsername from '../../queries/getUserIdFromUsername/useGetUserIdFromUsername.query';
 
 import { profileTabsList } from './profile.data';
 import ProfileSkeleton from './ProfileSkeleton';
@@ -21,13 +22,20 @@ export default function Profile() {
   const { setDocumentTitle } = useDocumentTitle('Catalyst | Profile');
   const { authState } = useAuthContext();
 
+  const { data: userId } = useGetUserIdFromUsername({
+    username: username ?? ''
+  });
+
   const { data: userDetails, isPending: isUserDetailsPending } =
     useGetUserDetails({
-      userId: username && username !== 'profile' ? username : authState.username
+      userId:
+        username && username !== 'profile'
+          ? userId?._id || ''
+          : authState.userId
     });
 
   const { data: authUserDetails } = useGetUserDetails({
-    userId: authState.username
+    userId: authState.userId
   });
 
   const { mutate: mutateFollowUser } = useFollowUser({
@@ -99,7 +107,8 @@ export default function Profile() {
               name={`${userDetails?.firstName} ${userDetails?.lastName}`}
               variant='avatar'
               size='2xl'
-              username={'no-username-found'}
+              username='no-username-found'
+              userId='no-userId'
               noRedirect
             />
           )}
@@ -211,10 +220,10 @@ export default function Profile() {
             />
 
             <tab.panel
-              username={
+              userId={
                 username && username !== 'profile'
-                  ? username
-                  : authState.username
+                  ? userId?._id || ''
+                  : authState.userId
               }
             />
           </Fragment>
