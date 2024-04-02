@@ -101,7 +101,6 @@ export default function CreatePowstReview() {
                 variant='profile'
                 size='md'
                 username='no-username-found'
-                userId='no-userId'
                 noRedirect
               />
             )}

@@ -45,7 +45,6 @@ export default function WorkTimelineCard({
             name={company}
             src={companyLogo}
             username={company}
-            userId='company-id'
             size='md'
             noRedirect
           />

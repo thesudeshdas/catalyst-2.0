@@ -108,7 +108,6 @@ export default function Profile() {
               variant='avatar'
               size='2xl'
               username='no-username-found'
-              userId='no-userId'
               noRedirect
             />
           )}

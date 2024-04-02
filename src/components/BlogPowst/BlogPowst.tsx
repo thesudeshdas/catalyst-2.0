@@ -37,7 +37,6 @@ export default function BlogPowst({ sameUser, blogDetails }: IBlogPowstProps) {
               name='Sudesh Das'
               variant='profile'
               username='no-username-found'
-              userId='no-userId'
             />
           </div>
         </div>
