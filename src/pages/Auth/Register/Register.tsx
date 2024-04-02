@@ -34,7 +34,16 @@ export default function Register() {
             Register for Catalyst
           </h1>
 
-          <button className='btn btn-primary'>Continue with Google</button>
+          <div className='flex flex-col md:flex-row items-center gap-4'>
+            <button
+              className='btn btn-primary'
+              disabled
+            >
+              Continue with Google
+            </button>
+
+            <p>Coming soon 😁</p>
+          </div>
 
           <div className='divider'>Or</div>
 
