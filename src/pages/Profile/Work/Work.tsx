@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import WorkTimelineCard from '../../../components/work/WorkTimelineCard/WorkTimelineCard';
 import { useGetAllUserWorks } from '../../../queries/getAllUserWorks/useGetAllUserWorks.hook';
 
-export default function WorkTab({ username }: { username: string }) {
-  const { data: workData } = useGetAllUserWorks({ userId: username });
+export default function WorkTab({ userId }: { userId: string }) {
+  const { data: workData } = useGetAllUserWorks({ userId });
 
   return (
     <div

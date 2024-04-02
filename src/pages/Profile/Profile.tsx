@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { LuInfo, LuLink, LuMail, LuMapPin } from 'react-icons/lu';
+import { Fragment, useEffect, useState } from 'react';
+import { LuInfo, LuLink, LuMail, LuMapPin, LuPlus } from 'react-icons/lu';
 import { LuFileSignature } from 'react-icons/lu';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 
@@ -8,27 +8,61 @@ import UserAvatar from '../../components/avatars/UserAvatar/UserAvatar';
 import Logout from '../../components/Logout/Logout';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import useDocumentTitle from '../../hooks/useDocumentTitle/useDocumentTitle';
+import useFollowUser from '../../mutations/followUser/useFollowUser.mutation';
+import useUnfollowUser from '../../mutations/unfollowUser/useUnfollowUser.mutation';
 import useGetUserDetails from '../../queries/getUserDetails/useGetUserDetails';
+import useGetUserIdFromUsername from '../../queries/getUserIdFromUsername/useGetUserIdFromUsername.query';
 
 import { profileTabsList } from './profile.data';
 import ProfileSkeleton from './ProfileSkeleton';
 
 export default function Profile() {
   const { username } = useParams();
-
   const [searchParams, setSearchParams] = useSearchParams();
-
   const { setDocumentTitle } = useDocumentTitle('Catalyst | Profile');
   const { authState } = useAuthContext();
 
+  const { data: userId } = useGetUserIdFromUsername({
+    username: username ?? ''
+  });
+
   const { data: userDetails, isPending: isUserDetailsPending } =
     useGetUserDetails({
-      userId: username && username !== 'profile' ? username : authState.username
+      userId:
+        username && username !== 'profile'
+          ? userId?._id || ''
+          : authState.userId
     });
+
+  const { data: authUserDetails } = useGetUserDetails({
+    userId: authState.userId
+  });
+
+  const { mutate: mutateFollowUser } = useFollowUser({
+    userId: authState.userId
+  });
+
+  const { mutate: mutateUnfollowUser } = useUnfollowUser({
+    userId: authState.userId
+  });
 
   const [profileTab, setProfileTab] = useState<string>(
     searchParams?.get('tab') || 'portfolio'
   );
+
+  const handleFollowUser = () => {
+    mutateFollowUser({
+      userId: authState.userId,
+      userToFollow: userDetails?._id ?? ''
+    });
+  };
+
+  const handleUnfollowUser = () => {
+    mutateUnfollowUser({
+      userId: authState.userId,
+      userToUnfollow: userDetails?._id ?? ''
+    });
+  };
 
   const handleProfileTabChange = (tab: string) => {
     setProfileTab(tab);
@@ -73,7 +107,8 @@ export default function Profile() {
               name={`${userDetails?.firstName} ${userDetails?.lastName}`}
               variant='avatar'
               size='2xl'
-              username={'no-username-found'}
+              username='no-username-found'
+              userId='no-userId'
               noRedirect
             />
           )}
@@ -87,27 +122,36 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* <button className='btn btn-sm btn-primary'>Follow</button> */}
-
-        {/* <button className='btn btn-square btn-sm btn-primary btn-outline'>
-            <LuCheck />
-          </button> */}
-
         <Logout />
 
-        {/* The logic written here is to send the user to the relevant form depending
-          on the tab they currently are. For example, if the user is in about tab, they will
-          go directly to the edit about form  */}
-        <Link
-          to={`/edit-profile?form=${
-            searchParams?.get('tab') === 'about' ? 'about' : 'basic'
-          }`}
-        >
-          <button className='btn btn-sm btn-outline'>
-            <LuFileSignature />
-            Edit
+        {username === authState.username ? (
+          <Link
+            to={`/edit-profile?form=${
+              searchParams?.get('tab') === 'about' ? 'about' : 'basic'
+            }`}
+          >
+            <button className='btn btn-sm btn-outline'>
+              <LuFileSignature />
+              Edit
+            </button>
+          </Link>
+        ) : authUserDetails?.followings?.includes(userDetails?._id || '') ? (
+          <button
+            className='btn btn-sm btn-primary'
+            onClick={handleUnfollowUser}
+          >
+            <LuPlus className='h-4 w-4' />
+            UnFollow
           </button>
-        </Link>
+        ) : (
+          <button
+            className='btn btn-sm btn-primary'
+            onClick={handleFollowUser}
+          >
+            <LuPlus className='h-4 w-4' />
+            Follow
+          </button>
+        )}
       </div>
 
       <div className='flex justify-between items-start flex-col gap-4 sm:flex-row'>
@@ -115,7 +159,6 @@ export default function Profile() {
           {userDetails?.location && (
             <div className='flex w-fit gap-2 items-center'>
               <LuMapPin className='h-4 w-4' />
-
               <p className='text-xs lg:text-sm'>{userDetails?.location}</p>
             </div>
           )}
@@ -134,7 +177,6 @@ export default function Profile() {
               className='flex w-fit gap-2 items-center hover:text-primary'
             >
               <LuLink className='h-4 w-4' />
-
               <p className='text-xs lg:text-sm'>
                 {
                   userDetails?.socials?.find(
@@ -146,11 +188,10 @@ export default function Profile() {
           )}
 
           <a
-            href='mailto:sudeshkumardas7@gmail.com'
+            href={`mailto:${userDetails?.email}`}
             className='flex w-fit gap-2 items-center hover:text-primary'
           >
             <LuMail className='h-4 w-4' />
-
             <p className='text-xs lg:text-sm'>{userDetails?.email}</p>
           </a>
         </div>
@@ -167,7 +208,7 @@ export default function Profile() {
         className='tabs tabs-bordered max-h-[calc(100vh-6rem)] sm:max-h-[calc(100vh-8rem)] overflow-auto w-full grid-cols-5 md:grid-cols-none'
       >
         {profileTabsList?.map((tab) => (
-          <>
+          <Fragment key={tab.name}>
             <input
               type='radio'
               name='profile_tabs'
@@ -179,13 +220,13 @@ export default function Profile() {
             />
 
             <tab.panel
-              username={
+              userId={
                 username && username !== 'profile'
-                  ? username
-                  : authState.username
+                  ? userId?._id || ''
+                  : authState.userId
               }
             />
-          </>
+          </Fragment>
         ))}
       </div>
     </main>

@@ -7,10 +7,10 @@ import { useGetAllUserPowsts } from '../../../queries/getAllUserPowsts/useGetAll
 
 import ProjectsSkeleton from './ProjectsSkeleton';
 
-export default function ProjectsTab({ username }: { username: string }) {
+export default function ProjectsTab({ userId }: { userId: string }) {
   const { setPowstToBeShown } = useShowPowst();
 
-  const { data, isPending } = useGetAllUserPowsts({ userId: username });
+  const { data, isPending } = useGetAllUserPowsts({ userId });
 
   if (isPending) {
     return <ProjectsSkeleton />;

@@ -16,7 +16,7 @@ export default function EditProfileSocialForm() {
   const { authState } = useAuthContext();
 
   const { data: userDetails } = useGetUserDetails({
-    userId: authState.username
+    userId: authState.userId
   });
 
   const {

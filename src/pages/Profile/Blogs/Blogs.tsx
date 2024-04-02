@@ -4,9 +4,9 @@ import { useGetAllUserBlogs } from '../../../queries/getAllUserBlogs/useGetAllUs
 
 import BlogsSkeleton from './BlogsSkeleton';
 
-export default function BlogsTab({ username }: { username: string }) {
+export default function BlogsTab({ userId }: { userId: string }) {
   const { data: userBlogs, isPending: isUserBlogsPending } = useGetAllUserBlogs(
-    { userId: username }
+    { userId }
   );
 
   if (isUserBlogsPending) {

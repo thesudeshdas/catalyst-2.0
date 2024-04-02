@@ -5,11 +5,11 @@ import useGetUserDetails from '../../../queries/getUserDetails/useGetUserDetails
 
 import PortfolioSkeleton from './PortfolioSkeleton';
 
-export default function PortfolioTab({ username }: { username: string }) {
+export default function PortfolioTab({ userId }: { userId: string }) {
   const { setPowstToBeShown } = useShowPowst();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
-    useGetUserDetails({ userId: username });
+    useGetUserDetails({ userId });
 
   if (isUserDetailsPending) {
     return <PortfolioSkeleton />;

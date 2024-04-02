@@ -20,7 +20,7 @@ export default function EditProfileAboutForm() {
   const { authState } = useAuthContext();
 
   const { data: userDetails, isPending: isUserDetailsPending } =
-    useGetUserDetails({ userId: authState.username });
+    useGetUserDetails({ userId: authState.userId });
 
   const {
     mutate: updateUserDetailsMutation,

@@ -14,7 +14,7 @@ export default function EditProfileProjectForm() {
   const { authState } = useAuthContext();
 
   const { data: allUsersPowsts } = useGetAllUserPowsts({
-    userId: authState.username
+    userId: authState.userId
   });
 
   const {

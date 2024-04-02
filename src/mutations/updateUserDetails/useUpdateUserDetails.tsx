@@ -13,7 +13,7 @@ import sanitiseObject from '../../utils/sanitiseObject/sanitiseObject.utils';
 
 const updateUserDetails = async (
   req: Partial<IUpdateUserDetailsBody>
-): Promise<Partial<IUser>> => {
+): Promise<IUser> => {
   return axiosClient
     .post(`/users/${req.userId}`, objectToFormData(sanitiseObject(req)), {
       headers: {

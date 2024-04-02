@@ -10,7 +10,7 @@ const getAllUserBlogs = (req: IGetAllUserBlogsBody): Promise<IUserBlog[]> =>
 
 export function useGetAllUserBlogs({ userId }: IGetAllUserBlogsBody) {
   return useQuery({
-    queryKey: [apiKeys.blogs.GET_USER_BLOGS],
+    queryKey: [apiKeys.blogs.GET_USER_BLOGS, userId],
     queryFn: () => getAllUserBlogs({ userId }),
     enabled: Boolean(userId) && userId !== ''
   });

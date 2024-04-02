@@ -15,6 +15,10 @@ export default function Logout() {
 
     removeTokensFromLocalStorage();
 
+    localStorage.removeItem('userId');
+    localStorage.removeItem('username');
+    localStorage.removeItem('localPowst');
+
     navigate('/feed');
   };
 

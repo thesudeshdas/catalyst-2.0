@@ -5,7 +5,7 @@ import { IGetAllUserPowstsBody } from '../../types/powstTypes/powst.types';
 import { IUserPowst } from '../../types/userTypes/user.types';
 
 const getAllUserPowsts = (req: IGetAllUserPowstsBody): Promise<IUserPowst[]> =>
-  axiosClient.get(`/users/${req.userId}/powsts`).then((res) => res.data.powsts);
+  axiosClient.get(`/powst/${req.userId}`).then((res) => res.data.powsts);
 
 export function useGetAllUserPowsts({ userId }: IGetAllUserPowstsBody) {
   return useQuery({

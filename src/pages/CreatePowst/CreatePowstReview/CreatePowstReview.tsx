@@ -23,7 +23,7 @@ export default function CreatePowstReview() {
   } = useCreatePowstServer();
 
   const { data: userDetails } = useGetUserDetails({
-    userId: authState.username
+    userId: authState.userId
   });
 
   const [file] = useState<File>(localPowst?.image);
@@ -100,7 +100,8 @@ export default function CreatePowstReview() {
                 name={`${userDetails?.firstName} ${userDetails?.lastName}`}
                 variant='profile'
                 size='md'
-                username={'no-username-found'}
+                username='no-username-found'
+                userId='no-userId'
                 noRedirect
               />
             )}
