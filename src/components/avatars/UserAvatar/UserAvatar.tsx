@@ -10,7 +10,6 @@ interface IUserAvatarProps {
   variant?: 'avatar' | 'profile' | 'divider';
   followAction?: boolean;
   username: string;
-  userId: string;
   noRedirect?: boolean;
 }
 
@@ -21,7 +20,6 @@ export default function UserAvatar({
   variant = 'avatar',
   followAction = false,
   username,
-  userId,
   noRedirect = false
 }: IUserAvatarProps) {
   const navigate = useNavigate();

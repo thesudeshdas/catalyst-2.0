@@ -65,7 +65,6 @@ export default function PowstDetailsModal({
                   src={owner.profilePic}
                   name={`${owner.firstName} ${owner.lastName}`}
                   username={owner?.username || 'no-username-found'}
-                  userId={owner?._id || 'no-userId'}
                   variant='profile'
                   size='md'
                   followAction
@@ -152,7 +151,6 @@ export default function PowstDetailsModal({
                   size='xl'
                   followAction
                   username={owner?.username || 'no-username-found'}
-                  userId={owner?._id || 'no-userId'}
                 />
               )}
 
@@ -209,7 +207,6 @@ export default function PowstDetailsModal({
                   src={owner?.profilePic}
                   name={`${owner?.firstName} ${owner?.lastName}`}
                   username={owner?.username || 'no-username-found'}
-                  userId={owner?._id || 'no-userId'}
                 />
               </button>
             )}
