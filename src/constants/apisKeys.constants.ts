@@ -22,3 +22,8 @@ export const powst = {
   LIKE_POWST: 'LIKE_POWST',
   UNLIKE_POWST: 'UNLIKE_POWST'
 };
+
+export const auth = {
+  LOGIN: 'LOGIN',
+  REGISTER: 'REGISTER'
+};

@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
 import { useSnackbar } from 'notistack';
 
 import axiosClient from '../../config/axiosInstance';
+import * as apiKeys from '../../constants/apisKeys.constants';
 import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import { ILoginBody, ILoginResponse } from '../../types/authTypes/auth.types';
 import { getErrorMessage } from '../../utils/getErrorMessage/getErrorMessage.utils';
@@ -16,12 +18,8 @@ export function useLogin() {
 
   const { authDispatch } = useAuthContext();
 
-  const { mutate: loginMutation, isPending: isLoginPending } = useMutation<
-    ILoginResponse,
-    Error,
-    ILoginBody
-  >({
-    mutationKey: ['login'],
+  return useMutation<ILoginResponse, AxiosError, ILoginBody, unknown>({
+    mutationKey: [apiKeys.auth.LOGIN],
     mutationFn: loginApi,
     onSuccess: (data) => {
       // storing the access token and refresh token in the local storage to persist the tokens
@@ -44,11 +42,9 @@ export function useLogin() {
       navigate('/feed');
     },
     onError: (error) => {
-      enqueueSnackbar(getErrorMessage(error), {
+      enqueueSnackbar(getErrorMessage(error?.response?.data), {
         variant: 'error'
       });
     }
   });
-
-  return { loginMutation, isLoginPending };
 }
