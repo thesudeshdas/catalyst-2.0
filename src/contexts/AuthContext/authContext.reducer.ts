@@ -24,14 +24,23 @@ export const authReducer = (
         firstName: '',
         lastName: '',
         userId: '',
-        username: ''
+        username: '',
+        showModal: false
       };
+
+    case 'SHOW_MODAL': {
+      return { ...state, showModal: true };
+    }
+
+    case 'HIDE_MODAL': {
+      return { ...state, showModal: false };
+    }
 
     case 'REFRESH_TOKEN':
       return {
         ...state,
-        accessToken: payload.accessToken,
-        refreshToken: payload.refreshToken
+        accessToken: payload?.accessToken,
+        refreshToken: payload?.refreshToken
       };
 
     default:

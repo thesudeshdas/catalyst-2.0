@@ -1,3 +1,4 @@
+import useAuthContext from '../../contexts/AuthContext/authContext.hook';
 import useLikePowst from '../../mutations/likePowst/useLikePowst.mutation';
 import useUnlikePowst from '../../mutations/unlikePowst/useUnlikePowst.mutation';
 
@@ -12,8 +13,14 @@ export default function useLikes({ powstId, userId, likedBy }: IUseLikes) {
   const { mutate: mutateLikePowst } = useLikePowst();
   const { mutate: mutateUnlikePowst } = useUnlikePowst();
 
+  const { authDispatch } = useAuthContext();
+
   const handleLikePowst = () => {
-    mutateLikePowst({ powstId, userId });
+    if (userId) {
+      mutateLikePowst({ powstId, userId });
+    } else {
+      authDispatch({ type: 'SHOW_MODAL' });
+    }
   };
 
   const handleUnlikePowst = () => {

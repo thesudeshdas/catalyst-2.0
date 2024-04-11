@@ -19,7 +19,8 @@ const initialState: IAuthContextState = {
   firstName: '',
   lastName: '',
   username: username || '',
-  userId: userId || ''
+  userId: userId || '',
+  showModal: false
 };
 
 export const AuthContext = createContext<IAuthContext>({

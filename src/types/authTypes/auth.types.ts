@@ -8,11 +8,18 @@ export interface IAuthContextState {
   email: string;
   userId: string;
   username: string;
+  showModal: boolean;
 }
 
 export interface IAuthReducerActions {
-  type: 'LOGIN' | 'REGISTER' | 'REFRESH_TOKEN' | 'LOGOUT';
-  payload: Partial<IAuthContextState>;
+  type:
+    | 'LOGIN'
+    | 'REGISTER'
+    | 'REFRESH_TOKEN'
+    | 'LOGOUT'
+    | 'SHOW_MODAL'
+    | 'HIDE_MODAL';
+  payload?: Partial<IAuthContextState>;
 }
 
 export interface IAuthContext {
